@@ -63,6 +63,8 @@ def rules_for(path: str, media_cfg: dict) -> dict:
         unknown = set(rule) - IMAGE_KEYS - AUDIO_KEYS - COMMON_KEYS
         if unknown:
             raise ValueError(f"media rule {rule.get('glob')!r}: unknown keys {sorted(unknown)}")
+        if rule.get("alpha", "any") not in ("required", "forbidden", "any"):
+            raise ValueError(f"media rule {rule['glob']!r}: alpha must be required, forbidden, or any")
         if p.full_match(rule["glob"]):
             merged.update({k: v for k, v in rule.items() if k != "glob"})
     return merged
@@ -355,7 +357,8 @@ def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
     tail_ms = (n - 1 - loud[-1]) / sr * 1000
 
     if r.get("loop"):
-        if lead_ms > 10 or tail_ms > 10:
+        gap = lead_ms > 10 or tail_ms > 10
+        if gap:
             ctx.add(
                 "loop-gap",
                 "error",
@@ -382,7 +385,7 @@ def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
 
         head, tail = rms(pcm[:win]), rms(pcm[-win:])
         db = 20 * np.log10(max(head, tail) / max(min(head, tail), 1e-9))
-        if db > 6:
+        if db > 6 and not gap:  # a gap already explains the level change
             ctx.add(
                 "loop-level-jump",
                 "error",
