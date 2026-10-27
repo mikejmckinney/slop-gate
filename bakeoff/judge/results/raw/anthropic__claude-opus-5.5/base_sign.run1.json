@@ -1,0 +1,18 @@
+{
+ "seconds": 10.2,
+ "cost": 0.015896,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"distant arena interior seen through the archway, around the far pillars\", \"evidence\": \"A warm glow lights the far stands and pillars well beyond the lantern's reach, which suggests a second light source the spec does not allow.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "distant arena interior seen through the archway, around the far pillars",
+   "evidence": "A warm glow lights the far stands and pillars well beyond the lantern's reach, which suggests a second light source the spec does not allow."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_sign",
+ "run": 1
+}

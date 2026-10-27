@@ -1,0 +1,42 @@
+{
+ "seconds": 12.8,
+ "cost": 0.032624,
+ "raw": "```json\n{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"outer sides of both yellow sneakers\", \"evidence\": \"Each sneaker carries an embossed swoosh-style brand mark, and the spec forbids any logo.\"}, {\"category\": \"lettering\", \"severity\": \"advisory\", \"where\": \"sneaker tongues\", \"evidence\": \"Small rectangular tan tabs on both tongues read as brand label patches, and the spec forbids labels.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"both arms\", \"evidence\": \"The arms hang nearly straight down close to the torso instead of the requested 25-degree A pose, which reduces silhouette separation for 3D modeling.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ears\", \"evidence\": \"The ears are tall, pointed and fairly thin-rimmed rather than the requested short thick triangular ears.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail at viewer's right\", \"evidence\": \"The tail sweeps out to the side past the leg instead of being kept close behind the body.\"}], \"verdict\": \"fail\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "outer sides of both yellow sneakers",
+   "evidence": "Each sneaker carries an embossed swoosh-style brand mark, and the spec forbids any logo."
+  },
+  {
+   "category": "lettering",
+   "severity": "advisory",
+   "where": "sneaker tongues",
+   "evidence": "Small rectangular tan tabs on both tongues read as brand label patches, and the spec forbids labels."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "both arms",
+   "evidence": "The arms hang nearly straight down close to the torso instead of the requested 25-degree A pose, which reduces silhouette separation for 3D modeling."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ears",
+   "evidence": "The ears are tall, pointed and fairly thin-rimmed rather than the requested short thick triangular ears."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail at viewer's right",
+   "evidence": "The tail sweeps out to the side past the leg instead of being kept close behind the body."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_pip",
+ "run": 2
+}

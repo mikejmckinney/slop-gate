@@ -1,0 +1,18 @@
+{
+ "seconds": 24.9,
+ "cost": 0.006954,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"brown shoulder straps on the jacket\", \"evidence\": \"The strap on the viewer's left has a brass buckle while the matching strap on the right has none.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "brown shoulder straps on the jacket",
+   "evidence": "The strap on the viewer's left has a brass buckle while the matching strap on the right has none."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_brine",
+ "run": 1
+}

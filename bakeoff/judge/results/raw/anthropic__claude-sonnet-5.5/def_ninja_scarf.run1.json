@@ -1,0 +1,30 @@
+{
+ "seconds": 6.9,
+ "cost": 0.01081,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom edge of the image, below the red sash\",\"evidence\":\"The figure is cropped at the waist, with no legs or feet visible, but the spec asks for a full-body character.\"},{\"category\":\"merged-objects\",\"severity\":\"advisory\",\"where\":\"right side, where the long red scarf tail descends into the staff\",\"evidence\":\"The scarf tail fades from red into brown wood and joins the staff's upper end with no clear boundary, so the scarf and staff read as one object.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"raised open hand on the viewer's left\",\"evidence\":\"The ninja faces the viewer, so the raised hand on the viewer's left is his right hand, while the spec asks for the left hand raised and the staff in the right.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image, below the red sash",
+   "evidence": "The figure is cropped at the waist, with no legs or feet visible, but the spec asks for a full-body character."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "advisory",
+   "where": "right side, where the long red scarf tail descends into the staff",
+   "evidence": "The scarf tail fades from red into brown wood and joins the staff's upper end with no clear boundary, so the scarf and staff read as one object."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised open hand on the viewer's left",
+   "evidence": "The ninja faces the viewer, so the raised hand on the viewer's left is his right hand, while the spec asks for the left hand raised and the staff in the right."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

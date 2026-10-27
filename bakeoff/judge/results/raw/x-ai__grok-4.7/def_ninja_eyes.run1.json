@@ -1,0 +1,18 @@
+{
+ "seconds": 50.7,
+ "cost": 0.024378,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The figure is cut off at the waist with only the red sash visible, so the legs and feet of the required full-body view are missing.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The figure is cut off at the waist with only the red sash visible, so the legs and feet of the required full-body view are missing."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

@@ -1,0 +1,30 @@
+{
+ "seconds": 12.3,
+ "cost": 0.015212,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"hand overall\",\"evidence\":\"The spec asks for a right hand, but the thumb is on top, the fingers point left and the nails face the viewer, which only fits a left hand.\"},{\"category\":\"contact-weight\",\"severity\":\"advisory\",\"where\":\"fingers and mug handle\",\"evidence\":\"Four fingers pass through a small handle loop and their tips rest against the mug body instead of wrapping around the handle, so the grip looks implausible and the handle does not seem to take the mug's weight.\"},{\"category\":\"hands-limbs\",\"severity\":\"advisory\",\"where\":\"thumb and index finger at top\",\"evidence\":\"The thumb rests loosely above the handle and does not grip it, and the second finger looks much longer than the others, which makes the hand anatomy look odd.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "hand overall",
+   "evidence": "The spec asks for a right hand, but the thumb is on top, the fingers point left and the nails face the viewer, which only fits a left hand."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "fingers and mug handle",
+   "evidence": "Four fingers pass through a small handle loop and their tips rest against the mug body instead of wrapping around the handle, so the grip looks implausible and the handle does not seem to take the mug's weight."
+  },
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "thumb and index finger at top",
+   "evidence": "The thumb rests loosely above the handle and does not grip it, and the second finger looks much longer than the others, which makes the hand anatomy look odd."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_mug_grip",
+ "run": 1
+}

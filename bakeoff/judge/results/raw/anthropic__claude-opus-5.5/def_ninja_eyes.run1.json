@@ -1,0 +1,30 @@
+{
+ "seconds": 9.2,
+ "cost": 0.02118,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"bottom edge of the frame\", \"evidence\": \"The spec asks for full body, but the figure is cropped just below the waist at the red sash, so the legs and feet are missing.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"raised hand and staff hand\", \"evidence\": \"The ninja faces the viewer, yet the raised open palm is the character's right hand and the staff is in the character's left hand, the reverse of the spec.\"}, {\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"eyes in the mask opening\", \"evidence\": \"The character's right eye is wide and round while the left is narrowed and squinting, and the pupils do not clearly agree on one gaze direction.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the frame",
+   "evidence": "The spec asks for full body, but the figure is cropped just below the waist at the red sash, so the legs and feet are missing."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "raised hand and staff hand",
+   "evidence": "The ninja faces the viewer, yet the raised open palm is the character's right hand and the staff is in the character's left hand, the reverse of the spec."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes in the mask opening",
+   "evidence": "The character's right eye is wide and round while the left is narrowed and squinting, and the pupils do not clearly agree on one gaze direction."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

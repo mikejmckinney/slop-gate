@@ -1,0 +1,30 @@
+{
+ "seconds": 9.9,
+ "cost": 0.024,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground under both boots\", \"evidence\": \"The boots show almost no visible contact shadow on the light grey floor, so the spec's soft contact shadow is barely present and the figure reads slightly ungrounded.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms and mittens\", \"evidence\": \"The arms hang close to the body, with the mittens near the hips, at noticeably less than the 25-degree A pose the spec asks for.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"coat silhouette\", \"evidence\": \"The coat is fairly straight and boxy rather than clearly bell-shaped, so the distinct silhouette the spec describes is weakened.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground under both boots",
+   "evidence": "The boots show almost no visible contact shadow on the light grey floor, so the spec's soft contact shadow is barely present and the figure reads slightly ungrounded."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms and mittens",
+   "evidence": "The arms hang close to the body, with the mittens near the hips, at noticeably less than the 25-degree A pose the spec asks for."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "coat silhouette",
+   "evidence": "The coat is fairly straight and boxy rather than clearly bell-shaped, so the distinct silhouette the spec describes is weakened."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_vesper",
+ "run": 1
+}

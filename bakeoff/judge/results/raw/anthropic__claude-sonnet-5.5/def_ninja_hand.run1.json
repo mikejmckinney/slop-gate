@@ -1,0 +1,24 @@
+{
+ "seconds": 8.1,
+ "cost": 0.01054,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"bottom edge of the image\", \"evidence\": \"The figure is cropped at the red sash and the legs and feet are missing, though the spec asks for a full-body character.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"raised open hand on the viewer's left\", \"evidence\": \"The raised palm is the character's right hand, and the staff is in the left hand, which reverses the spec's left-hand-raised, right-hand-staff assignment.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image",
+   "evidence": "The figure is cropped at the red sash and the legs and feet are missing, though the spec asks for a full-body character."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised open hand on the viewer's left",
+   "evidence": "The raised palm is the character's right hand, and the staff is in the left hand, which reverses the spec's left-hand-raised, right-hand-staff assignment."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_ninja_hand",
+ "run": 1
+}

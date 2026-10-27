@@ -1,0 +1,30 @@
+{
+ "seconds": 78.2,
+ "cost": 0.00270408,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing / lower body\", \"evidence\": \"The spec calls for a full-body character, but the image is cropped at the hips with no legs or feet visible.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"both arms/hands\", \"evidence\": \"The raised open palm is on the arm attached to the character's right shoulder (viewer's left) and the staff is gripped by the hand on the character's left side (viewer's right), the reverse of the spec's 'left hand raised, right hand holding staff.'\"}, {\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"raised hand\", \"evidence\": \"The palm faces the viewer with the thumb pointing toward the body midline (left-hand anatomy), yet the arm rises from the character's right shoulder, so the hand and arm do not agree.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing / lower body",
+   "evidence": "The spec calls for a full-body character, but the image is cropped at the hips with no legs or feet visible."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "both arms/hands",
+   "evidence": "The raised open palm is on the arm attached to the character's right shoulder (viewer's left) and the staff is gripped by the hand on the character's left side (viewer's right), the reverse of the spec's 'left hand raised, right hand holding staff.'"
+  },
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "raised hand",
+   "evidence": "The palm faces the viewer with the thumb pointing toward the body midline (left-hand anatomy), yet the arm rises from the character's right shoulder, so the hand and arm do not agree."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

@@ -1,0 +1,10 @@
+{
+ "verdict": "error",
+ "findings": [],
+ "error": "[Errno 104] Connection reset by peer",
+ "seconds": null,
+ "cost": null,
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_robot_float",
+ "run": 1
+}

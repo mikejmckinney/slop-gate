@@ -1,0 +1,18 @@
+{
+ "seconds": 6.3,
+ "cost": 0.00151145,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Behind the legs, on the image's left\",\"evidence\":\"The tail curves conspicuously out to the side instead of staying directly behind the body.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Behind the legs, on the image's left",
+   "evidence": "The tail curves conspicuously out to the side instead of staying directly behind the body."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "real_riff",
+ "run": 2
+}

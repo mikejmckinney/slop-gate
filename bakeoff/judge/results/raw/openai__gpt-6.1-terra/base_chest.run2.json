@@ -1,0 +1,11 @@
+{
+ "seconds": 3.9,
+ "cost": 0.00057715,
+ "raw": "{\"findings\":[],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-terra",
+ "image": "base_chest",
+ "run": 2
+}

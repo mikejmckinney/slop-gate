@@ -1,0 +1,18 @@
+{
+ "seconds": 42.5,
+ "cost": 0.0016998,
+ "raw": "{\n  \"findings\": [\n    {\n      \"category\": \"spec-mismatch\",\n      \"severity\": \"blocking\",\n      \"where\": \"Yellow sneakers\",\n      \"evidence\": \"The sides of the shoes display a distinct swoosh-like brand logo, violating the explicit constraint against logos.\"\n    }\n  ],\n  \"verdict\": \"fail\"\n}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Yellow sneakers",
+   "evidence": "The sides of the shoes display a distinct swoosh-like brand logo, violating the explicit constraint against logos."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_pip",
+ "run": 1
+}

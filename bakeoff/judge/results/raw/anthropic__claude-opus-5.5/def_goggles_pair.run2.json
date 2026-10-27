@@ -1,0 +1,24 @@
+{
+ "seconds": 5.2,
+ "cost": 0.013836,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"right lens of the goggles\", \"evidence\": \"The left lens is a round brass eyecup, but the right lens is a rectangular frame with corner screws, so the pair does not match and the spec's 'two matching round glass lenses' is contradicted.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"right side of the goggles\", \"evidence\": \"The leather strap attaches with a buckle and rivet on the left eyecup, but the right square frame shows no strap or attachment point, so the strap could not wrap around and secure the goggles as drawn.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "right lens of the goggles",
+   "evidence": "The left lens is a round brass eyecup, but the right lens is a rectangular frame with corner screws, so the pair does not match and the spec's 'two matching round glass lenses' is contradicted."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "right side of the goggles",
+   "evidence": "The leather strap attaches with a buckle and rivet on the left eyecup, but the right square frame shows no strap or attachment point, so the strap could not wrap around and secure the goggles as drawn."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_goggles_pair",
+ "run": 2
+}

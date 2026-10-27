@@ -1,0 +1,24 @@
+{
+ "seconds": 20.0,
+ "cost": 0.005028,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"raised hand (left side of image)\", \"evidence\": \"The raised hand has six digits (five fingers plus a thumb) instead of five.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing and character pose\", \"evidence\": \"The character is cropped at the waist rather than showing the full body, and the raised open palm and held staff are on the opposite hands from what the spec requires.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "raised hand (left side of image)",
+   "evidence": "The raised hand has six digits (five fingers plus a thumb) instead of five."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing and character pose",
+   "evidence": "The character is cropped at the waist rather than showing the full body, and the raised open palm and held staff are on the opposite hands from what the spec requires."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_ninja_hand",
+ "run": 1
+}

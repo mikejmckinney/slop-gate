@@ -1,0 +1,18 @@
+{
+ "seconds": 5.7,
+ "cost": 0.00440425,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Legs between the shorts and socks\",\"evidence\":\"The exposed orange legs are smooth, with no recognizable knee definition.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Legs between the shorts and socks",
+   "evidence": "The exposed orange legs are smooth, with no recognizable knee definition."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-terra",
+ "image": "real_pip",
+ "run": 2
+}

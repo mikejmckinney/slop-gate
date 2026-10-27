@@ -1,0 +1,312 @@
+{
+ "per_defect": {
+  "def_ninja_hand/six-digits": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 0,
+   "anthropic/claude-sonnet-5.5": 1,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 1,
+   "x-ai/grok-4.7": 0
+  },
+  "def_mug_grip/finger-through-handle": {
+   "anthropic/claude-haiku-5.5": 1,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 1,
+   "x-ai/grok-4.7": 2
+  },
+  "def_goggles_pair/lenses": {
+   "anthropic/claude-haiku-5.5": 2,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 2,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "def_chest_hinges/front-hinges": {
+   "anthropic/claude-haiku-5.5": 1,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 1,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "def_sign_text/garbled-text": {
+   "anthropic/claude-haiku-5.5": 2,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 2,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "def_lamps_count/five-lamps": {
+   "anthropic/claude-haiku-5.5": 2,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 1,
+   "nvidia/nemotron-3.5-super-vl": 2,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "def_ninja_scarf/scarf-into-staff": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 1,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 0
+  },
+  "def_robot_float/floating": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 0,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  },
+  "def_ninja_eyes/eyes": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 0,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 1,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  },
+  "def_street_light/sun-position": {
+   "anthropic/claude-haiku-5.5": 2,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "base_ninja/cropped-not-full-body": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 2,
+   "google/gemini-4-argon": 2,
+   "nvidia/nemotron-3.5-super-vl": 2,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 2,
+   "x-ai/grok-4.7": 2
+  },
+  "real_mochi/long-ears": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 0,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  },
+  "real_mochi/fingers-not-mittens": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 0,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 1,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  },
+  "real_pip/swoosh-logo": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 0,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 1,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 1,
+   "x-ai/grok-4.7": 2
+  },
+  "real_riff/tail-to-side": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 0,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 1
+  },
+  "real_riff/fingers-not-mittens": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 0,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 1,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  },
+  "real_stalker/cast-shadow": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 2,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 0,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 2,
+   "openai/gpt-6.1-sol": 2,
+   "openai/gpt-6.1-terra": 2,
+   "qwen/qwen3.8-omni-flash": 1,
+   "x-ai/grok-4.7": 0
+  },
+  "real_drifter/frontal-view": {
+   "anthropic/claude-haiku-5.5": 0,
+   "anthropic/claude-opus-5.5": 1,
+   "anthropic/claude-sonnet-5.5": 0,
+   "google/gemini-4-argon": 0,
+   "nvidia/nemotron-3.5-super-vl": 0,
+   "openai/gpt-6-luna": 0,
+   "openai/gpt-6.1-sol": 0,
+   "openai/gpt-6.1-terra": 0,
+   "qwen/qwen3.8-omni-flash": 0,
+   "x-ai/grok-4.7": 0
+  }
+ },
+ "ensembles_top10": [
+  {
+   "models": [
+    "anthropic/claude-opus-5.5",
+    "google/gemini-4-argon"
+   ],
+   "recall": 0.917,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.02713
+  },
+  {
+   "models": [
+    "anthropic/claude-opus-5.5",
+    "openai/gpt-6.1-sol"
+   ],
+   "recall": 0.833,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.02517
+  },
+  {
+   "models": [
+    "anthropic/claude-opus-5.5",
+    "openai/gpt-6.1-terra"
+   ],
+   "recall": 0.806,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.02374
+  },
+  {
+   "models": [
+    "google/gemini-4-argon",
+    "openai/gpt-6.1-terra"
+   ],
+   "recall": 0.778,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.00797
+  },
+  {
+   "models": [
+    "google/gemini-4-argon",
+    "openai/gpt-6-luna"
+   ],
+   "recall": 0.75,
+   "false_claims": 1,
+   "cost_per_image_usd": 0.006
+  },
+  {
+   "models": [
+    "google/gemini-4-argon",
+    "x-ai/grok-4.7"
+   ],
+   "recall": 0.75,
+   "false_claims": 3,
+   "cost_per_image_usd": 0.03674
+  },
+  {
+   "models": [
+    "google/gemini-4-argon",
+    "qwen/qwen3.8-omni-flash"
+   ],
+   "recall": 0.722,
+   "false_claims": 2,
+   "cost_per_image_usd": 0.00756
+  },
+  {
+   "models": [
+    "google/gemini-4-argon",
+    "openai/gpt-6.1-sol"
+   ],
+   "recall": 0.722,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.0094
+  },
+  {
+   "models": [
+    "anthropic/claude-opus-5.5",
+    "qwen/qwen3.8-omni-flash"
+   ],
+   "recall": 0.722,
+   "false_claims": 2,
+   "cost_per_image_usd": 0.02333
+  },
+  {
+   "models": [
+    "anthropic/claude-opus-5.5",
+    "anthropic/claude-sonnet-5.5"
+   ],
+   "recall": 0.722,
+   "false_claims": 0,
+   "cost_per_image_usd": 0.03201
+  }
+ ]
+}

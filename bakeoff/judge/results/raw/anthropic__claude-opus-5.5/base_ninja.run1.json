@@ -1,0 +1,24 @@
+{
+ "seconds": 8.3,
+ "cost": 0.01498,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"bottom edge of image / overall framing\", \"evidence\": \"The spec asks for full body, but the figure is cropped at the waist just below the red sash, so legs and feet are missing.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"raised hand (image left) and staff hand (image right)\", \"evidence\": \"The figure faces the viewer, so the raised open palm is the character's right hand and the staff is in the character's left hand, the reverse of the spec unless the spec meant the viewer's left and right.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of image / overall framing",
+   "evidence": "The spec asks for full body, but the figure is cropped at the waist just below the red sash, so legs and feet are missing."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised hand (image left) and staff hand (image right)",
+   "evidence": "The figure faces the viewer, so the raised open palm is the character's right hand and the staff is in the character's left hand, the reverse of the spec unless the spec meant the viewer's left and right."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_ninja",
+ "run": 1
+}

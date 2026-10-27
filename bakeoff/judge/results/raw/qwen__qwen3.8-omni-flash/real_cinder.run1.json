@@ -1,0 +1,18 @@
+{
+ "seconds": 62.7,
+ "cost": 0.00225496,
+ "raw": "{\"findings\": [{\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"eyes\", \"evidence\": \"The viewer-left pupil sits pushed toward the inner corner while the viewer-right pupil is centered, so the two eyes do not quite agree on a single gaze direction.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes",
+   "evidence": "The viewer-left pupil sits pushed toward the inner corner while the viewer-right pupil is centered, so the two eyes do not quite agree on a single gaze direction."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_cinder",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 7.3,
+ "cost": 0.00357175,
+ "raw": "{\"findings\":[{\"category\":\"count-repetition\",\"severity\":\"blocking\",\"where\":\"Front of the chest\",\"evidence\":\"Two additional hinges bridge the front lid seam beside the latch, in addition to the two hinges along the back edge.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "Front of the chest",
+   "evidence": "Two additional hinges bridge the front lid seam beside the latch, in addition to the two hinges along the back edge."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_chest_hinges",
+ "run": 2
+}

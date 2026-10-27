@@ -1,0 +1,24 @@
+{
+ "seconds": 6.2,
+ "cost": 0.008962,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sky, upper left, with strong backlight and glare across the street\", \"evidence\": \"The sun is visible in front of the viewer and the scene is backlit, but the spec places the sun behind the viewer's left shoulder with shadows falling forward and to the right.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"whole scene lighting direction\", \"evidence\": \"The glowing sun disc, flare, and long light streaks on the cobbles contradict the requested noon front-lit setup with short shadows falling forward and right.\"}]\n, \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sky, upper left, with strong backlight and glare across the street",
+   "evidence": "The sun is visible in front of the viewer and the scene is backlit, but the spec places the sun behind the viewer's left shoulder with shadows falling forward and to the right."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "whole scene lighting direction",
+   "evidence": "The glowing sun disc, flare, and long light streaks on the cobbles contradict the requested noon front-lit setup with short shadows falling forward and right."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_street_light",
+ "run": 1
+}

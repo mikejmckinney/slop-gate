@@ -1,0 +1,24 @@
+{
+ "seconds": 26.3,
+ "cost": 0.005566,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"hands\", \"evidence\": \"The character has separated fingers instead of the cream mittens requested in the spec.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs\", \"evidence\": \"The short legs covered by shorts and socks lack the recognizable knees specified.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "hands",
+   "evidence": "The character has separated fingers instead of the cream mittens requested in the spec."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs",
+   "evidence": "The short legs covered by shorts and socks lack the recognizable knees specified."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_pip",
+ "run": 2
+}

@@ -1,0 +1,36 @@
+{
+ "seconds": 4.0,
+ "cost": 0.007178,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"right lens vs left lens\", \"evidence\": \"The left lens is a round brass-rimmed lens, but the right lens sits in a square, bolted rectangular frame, so the pair does not match as the spec's 'two matching round glass lenses' requires.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"right lens housing\", \"evidence\": \"The spec asks for two round lenses, but one lens is square with corner bolts, which contradicts the spec.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"strap attachment on left side and the bridge/top rail\", \"evidence\": \"The strap joins the goggle body through a small ring and a thin rod, and the flat brass rail along the top of the right frame does not connect to anything, so the hardware would not hold or work as drawn.\"}, {\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"table shadows\", \"evidence\": \"The spec asks for window light from the left, but the shadows fall toward the lower left and foreground, which suggests light coming from the back right rather than from the left window.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "right lens vs left lens",
+   "evidence": "The left lens is a round brass-rimmed lens, but the right lens sits in a square, bolted rectangular frame, so the pair does not match as the spec's 'two matching round glass lenses' requires."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "right lens housing",
+   "evidence": "The spec asks for two round lenses, but one lens is square with corner bolts, which contradicts the spec."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "strap attachment on left side and the bridge/top rail",
+   "evidence": "The strap joins the goggle body through a small ring and a thin rod, and the flat brass rail along the top of the right frame does not connect to anything, so the hardware would not hold or work as drawn."
+  },
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "table shadows",
+   "evidence": "The spec asks for window light from the left, but the shadows fall toward the lower left and foreground, which suggests light coming from the back right rather than from the left window."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_goggles_pair",
+ "run": 2
+}

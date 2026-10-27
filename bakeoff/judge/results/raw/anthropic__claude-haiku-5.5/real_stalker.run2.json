@@ -1,0 +1,30 @@
+{
+ "seconds": 6.7,
+ "cost": 0.0007856,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ground beneath the feet and body\", \"evidence\": \"A soft grey contact shadow sits under the body and feet, though the spec asks for no ground plane and no cast shadow.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"mouth, ivory mandibles\", \"evidence\": \"The ivory mandibles are long, curved fangs rather than the short split mandibles the spec describes.\"}, {\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"ivory eyes in the dark inset face\", \"evidence\": \"The left eye (viewer's left) is narrower and differently shaped than the right eye, so the pair does not read as matched.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ground beneath the feet and body",
+   "evidence": "A soft grey contact shadow sits under the body and feet, though the spec asks for no ground plane and no cast shadow."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "mouth, ivory mandibles",
+   "evidence": "The ivory mandibles are long, curved fangs rather than the short split mandibles the spec describes."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "ivory eyes in the dark inset face",
+   "evidence": "The left eye (viewer's left) is narrower and differently shaped than the right eye, so the pair does not read as matched."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_stalker",
+ "run": 2
+}

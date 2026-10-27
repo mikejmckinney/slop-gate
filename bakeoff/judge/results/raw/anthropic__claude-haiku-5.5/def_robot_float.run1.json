@@ -1,0 +1,24 @@
+{
+ "seconds": 5.4,
+ "cost": 0.0006165,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"both hands gripping the bomb\", \"evidence\": \"The fingers wrapping the bomb are bunched and partly hidden, so it is hard to confirm that all fingers are clearly visible as the spec requires.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"left and right arms holding the bomb\", \"evidence\": \"The viewer's right arm ends in a brown leather glove while the viewer's left hand appears bare grey robot fingers, so the paired hands do not clearly match.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "both hands gripping the bomb",
+   "evidence": "The fingers wrapping the bomb are bunched and partly hidden, so it is hard to confirm that all fingers are clearly visible as the spec requires."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "left and right arms holding the bomb",
+   "evidence": "The viewer's right arm ends in a brown leather glove while the viewer's left hand appears bare grey robot fingers, so the paired hands do not clearly match."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_robot_float",
+ "run": 1
+}

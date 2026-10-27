@@ -1,0 +1,30 @@
+{
+ "seconds": 9.5,
+ "cost": 0.01161,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom edge of the image\",\"evidence\":\"The figure is cut off at the waist and the staff runs off the frame, so it is not the full-body character the spec asks for.\"},{\"category\":\"merged-objects\",\"severity\":\"blocking\",\"where\":\"right side, where the scarf tail meets the top of the staff\",\"evidence\":\"The long red scarf tail tapers down and blends into the wooden staff with no boundary, so it is unclear where the cloth ends and the wood starts.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"raised hand and staff hand\",\"evidence\":\"The raised open palm is on the character's right side (viewer's left) and the staff is in the character's left hand, which reverses the spec's left-hand-raised, right-hand-staff arrangement.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image",
+   "evidence": "The figure is cut off at the waist and the staff runs off the frame, so it is not the full-body character the spec asks for."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "right side, where the scarf tail meets the top of the staff",
+   "evidence": "The long red scarf tail tapers down and blends into the wooden staff with no boundary, so it is unclear where the cloth ends and the wood starts."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised hand and staff hand",
+   "evidence": "The raised open palm is on the character's right side (viewer's left) and the staff is in the character's left hand, which reverses the spec's left-hand-raised, right-hand-staff arrangement."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_ninja_scarf",
+ "run": 2
+}

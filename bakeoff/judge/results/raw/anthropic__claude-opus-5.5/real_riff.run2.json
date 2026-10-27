@@ -1,0 +1,36 @@
+{
+ "seconds": 11.0,
+ "cost": 0.030576,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"tail, lower left of the figure\", \"evidence\": \"The tail sweeps out sideways past the left leg and breaks the silhouette, instead of staying short and directly behind the body as the spec requires.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"both hands\", \"evidence\": \"The hands show a separated thumb and partly split finger shapes rather than the simple rounded mittens the spec asks for.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"head-to-body proportion\", \"evidence\": \"Measured without the gill lobes, the head is only about a third of total height, short of the requested roughly 40 percent.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"gill lobes\", \"evidence\": \"The gills are covered in pore-like dimple texture, which leans toward the realistic pores the spec excludes for this matte vinyl look.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail, lower left of the figure",
+   "evidence": "The tail sweeps out sideways past the left leg and breaks the silhouette, instead of staying short and directly behind the body as the spec requires."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "both hands",
+   "evidence": "The hands show a separated thumb and partly split finger shapes rather than the simple rounded mittens the spec asks for."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "head-to-body proportion",
+   "evidence": "Measured without the gill lobes, the head is only about a third of total height, short of the requested roughly 40 percent."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "gill lobes",
+   "evidence": "The gills are covered in pore-like dimple texture, which leans toward the realistic pores the spec excludes for this matte vinyl look."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_riff",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 30.1,
+ "cost": 0.00122785,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"the two hanging banners on the left and right stone walls\", \"evidence\": \"The left banner's shield emblem is pale white/gray while the right banner's emblem is gold, so the paired arena banners do not match.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "the two hanging banners on the left and right stone walls",
+   "evidence": "The left banner's shield emblem is pale white/gray while the right banner's emblem is gold, so the paired arena banners do not match."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "base_sign",
+ "run": 2
+}

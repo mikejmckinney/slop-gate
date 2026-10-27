@@ -1,0 +1,24 @@
+{
+ "seconds": 35.9,
+ "cost": 0.019302,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body framing\", \"evidence\": \"The ninja is cropped at the waist and sash with no legs or feet shown, not the full body the spec requires.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"hands\", \"evidence\": \"The open palm is raised on the character's right (image left) while the staff is held in the character's left hand (image right), reversing the spec's left-hand-raised and right-hand-staff assignment.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body framing",
+   "evidence": "The ninja is cropped at the waist and sash with no legs or feet shown, not the full body the spec requires."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "hands",
+   "evidence": "The open palm is raised on the character's right (image left) while the staff is held in the character's left hand (image right), reversing the spec's left-hand-raised and right-hand-staff assignment."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_ninja_hand",
+ "run": 2
+}

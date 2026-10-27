@@ -1,0 +1,18 @@
+{
+ "seconds": 2.4,
+ "cost": 0.0002124,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left post\", \"evidence\": \"The sign has invented, near-readable carved lettering reading something like 'NOR\u010bdsnd' although the spec requires a blank sign with no text anywhere.\"}]}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left post",
+   "evidence": "The sign has invented, near-readable carved lettering reading something like 'NOR\u010bdsnd' although the spec requires a blank sign with no text anywhere."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_sign_text",
+ "run": 1
+}

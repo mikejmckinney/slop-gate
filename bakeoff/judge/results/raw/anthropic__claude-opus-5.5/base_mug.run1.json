@@ -1,0 +1,18 @@
+{
+ "seconds": 15.7,
+ "cost": 0.031944,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"curled fingers on the mug handle versus the back of the hand\", \"evidence\": \"The back of the hand and knuckles face the camera, yet the curled fingers also show their fingernails toward the camera, a combination that is hard to reconcile anatomically and leaves it unclear whether this reads as the right hand the spec asks for.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "curled fingers on the mug handle versus the back of the hand",
+   "evidence": "The back of the hand and knuckles face the camera, yet the curled fingers also show their fingernails toward the camera, a combination that is hard to reconcile anatomically and leaves it unclear whether this reads as the right hand the spec asks for."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_mug",
+ "run": 1
+}

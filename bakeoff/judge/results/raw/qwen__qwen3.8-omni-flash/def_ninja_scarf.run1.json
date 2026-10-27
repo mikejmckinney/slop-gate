@@ -1,0 +1,30 @@
+{
+ "seconds": 88.8,
+ "cost": 0.00317408,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"Raised open palm and its arm\", \"evidence\": \"The raised hand is drawn as a left hand (palm to viewer, thumb on the viewer's right) but is attached to the arm emerging from the character's right shoulder on the viewer's left, so hand and arm cannot connect as drawn.\"}, {\"category\": \"merged-objects\", \"severity\": \"blocking\", \"where\": \"Red scarf tail and wooden staff on the right side\", \"evidence\": \"The scarf's red fabric tail transitions seamlessly into the brown wooden shaft above the gripping fist, with no boundary between cloth and wood, making the scarf and staff one fused object.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"Lower body / frame crop\", \"evidence\": \"The character is cut off at the waist by the bottom edge of the image, but the spec calls for a full-body illustration.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "Raised open palm and its arm",
+   "evidence": "The raised hand is drawn as a left hand (palm to viewer, thumb on the viewer's right) but is attached to the arm emerging from the character's right shoulder on the viewer's left, so hand and arm cannot connect as drawn."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "Red scarf tail and wooden staff on the right side",
+   "evidence": "The scarf's red fabric tail transitions seamlessly into the brown wooden shaft above the gripping fist, with no boundary between cloth and wood, making the scarf and staff one fused object."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Lower body / frame crop",
+   "evidence": "The character is cut off at the waist by the bottom edge of the image, but the spec calls for a full-body illustration."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

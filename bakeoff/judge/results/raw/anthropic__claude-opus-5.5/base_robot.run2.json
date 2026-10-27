@@ -1,0 +1,18 @@
+{
+ "seconds": 8.5,
+ "cost": 0.0175,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground beneath both tread units\", \"evidence\": \"The heavy treads cast only a very faint, diffuse shadow on the gray floor, so the robot's weight reads slightly light under the soft studio lighting.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground beneath both tread units",
+   "evidence": "The heavy treads cast only a very faint, diffuse shadow on the gray floor, so the robot's weight reads slightly light under the soft studio lighting."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_robot",
+ "run": 2
+}

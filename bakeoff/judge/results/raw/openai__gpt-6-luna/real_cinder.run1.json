@@ -1,0 +1,18 @@
+{
+ "seconds": 10.4,
+ "cost": 0.0006643,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"arms and hands\",\"evidence\":\"Both arms bend and hang down toward the hips, rather than forming the specified relaxed symmetric A pose with arms held about 25 degrees away from the torso.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms and hands",
+   "evidence": "Both arms bend and hang down toward the hips, rather than forming the specified relaxed symmetric A pose with arms held about 25 degrees away from the torso."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_cinder",
+ "run": 1
+}

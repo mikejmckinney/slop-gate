@@ -1,0 +1,18 @@
+{
+ "seconds": 8.7,
+ "cost": 0.012454,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall pose and body orientation\", \"evidence\": \"The body and backpack read as turned roughly 25-30 degrees, not the near-front 10 degrees the spec asks for, and the head is only about a third of total height rather than 40 percent.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall pose and body orientation",
+   "evidence": "The body and backpack read as turned roughly 25-30 degrees, not the near-front 10 degrees the spec asks for, and the head is only about a third of total height rather than 40 percent."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_mochi",
+ "run": 1
+}

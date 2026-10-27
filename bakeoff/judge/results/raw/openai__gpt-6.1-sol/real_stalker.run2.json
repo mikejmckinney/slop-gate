@@ -1,0 +1,18 @@
+{
+ "seconds": 6.4,
+ "cost": 0.006556,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"Beneath the torso and around all four feet\",\"evidence\":\"A visible soft cast shadow anchors the creature to a ground plane, contrary to the explicit requirement for no ground plane and no cast shadow.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the torso and around all four feet",
+   "evidence": "A visible soft cast shadow anchors the creature to a ground plane, contrary to the explicit requirement for no ground plane and no cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "real_stalker",
+ "run": 2
+}

@@ -1,0 +1,24 @@
+{
+ "seconds": 44.5,
+ "cost": 0.021176,
+ "raw": "{\"findings\": [{\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"chest hardware\", \"evidence\": \"Four iron hinge assemblies are visible \u2014 two on the lid near the back and two more on the front face flanking the latch \u2014 where the spec calls for only two hinges.\"}, {\"category\": \"construction\", \"severity\": \"blocking\", \"where\": \"front face, left and right of the latch\", \"evidence\": \"The front-left and front-right fittings have hinge barrels and leaves mounted on the lid's opening edge, so they could not pivot the lid open as drawn.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "chest hardware",
+   "evidence": "Four iron hinge assemblies are visible \u2014 two on the lid near the back and two more on the front face flanking the latch \u2014 where the spec calls for only two hinges."
+  },
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "front face, left and right of the latch",
+   "evidence": "The front-left and front-right fittings have hinge barrels and leaves mounted on the lid's opening edge, so they could not pivot the lid open as drawn."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_chest_hinges",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 10.0,
+ "cost": 0.004284,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"the hand\", \"evidence\": \"A left hand is shown instead of the requested right hand.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "the hand",
+   "evidence": "A left hand is shown instead of the requested right hand."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "base_mug",
+ "run": 2
+}

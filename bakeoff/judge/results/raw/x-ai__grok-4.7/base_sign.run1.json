@@ -1,0 +1,18 @@
+{
+ "seconds": 56.9,
+ "cost": 0.026164,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"distant arena seen through the gate\", \"evidence\": \"Several small warm point lights glow along the far arena wall, so the single left lantern is not the only light source the spec requires.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "distant arena seen through the gate",
+   "evidence": "Several small warm point lights glow along the far arena wall, so the single left lantern is not the only light source the spec requires."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "base_sign",
+ "run": 1
+}

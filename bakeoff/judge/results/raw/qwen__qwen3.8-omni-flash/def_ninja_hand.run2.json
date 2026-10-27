@@ -1,0 +1,30 @@
+{
+ "seconds": 76.8,
+ "cost": 0.00240328,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing\", \"evidence\": \"The figure is cropped at the waist with no legs or feet shown, but the spec calls for a full-body character.\"}, {\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"raised open palm at upper left\", \"evidence\": \"The thumb and thenar bulge sit on the viewer's right, making the raised hand anatomically a left hand, yet it connects to the arm on the character's right side.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"staff-holding hand at lower right\", \"evidence\": \"The staff is gripped by the hand on the character's left side while the open palm is on the right, reversing the spec's left-hand-raised / right-hand-staff assignment.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing",
+   "evidence": "The figure is cropped at the waist with no legs or feet shown, but the spec calls for a full-body character."
+  },
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "raised open palm at upper left",
+   "evidence": "The thumb and thenar bulge sit on the viewer's right, making the raised hand anatomically a left hand, yet it connects to the arm on the character's right side."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "staff-holding hand at lower right",
+   "evidence": "The staff is gripped by the hand on the character's left side while the open palm is on the right, reversing the spec's left-hand-raised / right-hand-staff assignment."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_ninja_hand",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 12.6,
+ "cost": 0.014024,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"top of head between the horns\", \"evidence\": \"A spiky tuft of hair sits between the horns, which the spec doesn't describe, and the horns curve upward rather than sweeping back.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "top of head between the horns",
+   "evidence": "A spiky tuft of hair sits between the horns, which the spec doesn't describe, and the horns curve upward rather than sweeping back."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_cinder",
+ "run": 2
+}

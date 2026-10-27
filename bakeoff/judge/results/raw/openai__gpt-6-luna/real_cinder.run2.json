@@ -1,0 +1,18 @@
+{
+ "seconds": 15.8,
+ "cost": 0.00053884,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Horns\",\"evidence\":\"The horns are long, prominently curled upward, and banded rather than short, rounded, and swept back as specified.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Horns",
+   "evidence": "The horns are long, prominently curled upward, and banded rather than short, rounded, and swept back as specified."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_cinder",
+ "run": 2
+}

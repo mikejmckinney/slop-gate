@@ -1,0 +1,24 @@
+{
+ "seconds": 51.8,
+ "cost": 0.00226087,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"raised open-palm hand (upper left)\", \"evidence\": \"The thumb points inward toward the head (viewer's right), making it a left hand grafted onto the arm rising from the character's right shoulder, so the hand and arm cannot connect as drawn and the staff ends up in the opposite hand from the spec.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body / bottom edge\", \"evidence\": \"The spec asks for a full-body character, but the figure is cropped at the waist with no legs or feet visible.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "raised open-palm hand (upper left)",
+   "evidence": "The thumb points inward toward the head (viewer's right), making it a left hand grafted onto the arm rising from the character's right shoulder, so the hand and arm cannot connect as drawn and the staff ends up in the opposite hand from the spec."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body / bottom edge",
+   "evidence": "The spec asks for a full-body character, but the figure is cropped at the waist with no legs or feet visible."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "base_ninja",
+ "run": 1
+}

@@ -1,0 +1,36 @@
+{
+ "seconds": 15.4,
+ "cost": 0.030944,
+ "raw": "```json\n{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall silhouette, head vs. carapace\", \"evidence\": \"The segmented carapace behind the head is taller and bulkier than the head and rises into a hump, so the head is not the broadest part and the hindquarters do not slope down into a forward wedge.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ear fins on top of head\", \"evidence\": \"The two triangular fins point straight up like cat ears instead of sweeping back.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"mouth / ivory mandibles\", \"evidence\": \"The ivory pieces are two long downward-curving fangs, not short split insect-like mandibles.\"}, {\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"background under body and around feet\", \"evidence\": \"A soft grey shadow pools on the background beneath the creature and its toes, although the spec asks for no cast shadow.\"}], \"verdict\": \"fail\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall silhouette, head vs. carapace",
+   "evidence": "The segmented carapace behind the head is taller and bulkier than the head and rises into a hump, so the head is not the broadest part and the hindquarters do not slope down into a forward wedge."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ear fins on top of head",
+   "evidence": "The two triangular fins point straight up like cat ears instead of sweeping back."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "mouth / ivory mandibles",
+   "evidence": "The ivory pieces are two long downward-curving fangs, not short split insect-like mandibles."
+  },
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "background under body and around feet",
+   "evidence": "A soft grey shadow pools on the background beneath the creature and its toes, although the spec asks for no cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_stalker",
+ "run": 2
+}

@@ -1,0 +1,24 @@
+{
+ "seconds": 32.6,
+ "cost": 0.00109198,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"character's arms/hands\", \"evidence\": \"The open raised palm is on the ninja's right hand (viewer's left) and the staff is gripped in the left hand, the reverse of the spec's 'left hand raised, right hand holding staff'.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body / bottom edge of frame\", \"evidence\": \"The figure is cropped at the waist with the red sash cut off by the frame edge, so the 'full body' requirement is not met.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "character's arms/hands",
+   "evidence": "The open raised palm is on the ninja's right hand (viewer's left) and the staff is gripped in the left hand, the reverse of the spec's 'left hand raised, right hand holding staff'."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body / bottom edge of frame",
+   "evidence": "The figure is cropped at the waist with the red sash cut off by the frame edge, so the 'full body' requirement is not met."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

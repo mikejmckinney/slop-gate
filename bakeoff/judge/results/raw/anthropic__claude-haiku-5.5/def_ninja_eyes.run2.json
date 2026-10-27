@@ -1,0 +1,24 @@
+{
+ "seconds": 6.5,
+ "cost": 0.0005685,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"bottom edge of the figure\", \"evidence\": \"The spec asks for a full-body character, but the figure is cropped at the waist with the red sash cut off by the bottom edge of the canvas.\"}, {\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"eyes above the mask\", \"evidence\": \"The left eye is wide open with a large white and a pupil turned to the side, while the right eye is narrowed and looks in a different direction, so the gaze may not agree.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the figure",
+   "evidence": "The spec asks for a full-body character, but the figure is cropped at the waist with the red sash cut off by the bottom edge of the canvas."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes above the mask",
+   "evidence": "The left eye is wide open with a large white and a pupil turned to the side, while the right eye is narrowed and looks in a different direction, so the gaze may not agree."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

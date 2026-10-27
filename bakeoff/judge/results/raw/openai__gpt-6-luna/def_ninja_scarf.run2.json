@@ -1,0 +1,18 @@
+{
+ "seconds": 5.1,
+ "cost": 0.00014069,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom of the character\",\"evidence\":\"The image cuts off around the waist, so the ninja is not shown full body as specified.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom of the character",
+   "evidence": "The image cuts off around the waist, so the ninja is not shown full body as specified."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_ninja_scarf",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 6.1,
+ "cost": 0.00013512,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"blocking\",\"where\":\"wooden sign in the lower-left foreground\",\"evidence\":\"The sign has prominent invented lettering, though the spec requires it to be blank and forbids text.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign in the lower-left foreground",
+   "evidence": "The sign has prominent invented lettering, though the spec requires it to be blank and forbids text."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_sign_text",
+ "run": 2
+}

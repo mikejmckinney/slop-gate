@@ -1,0 +1,24 @@
+{
+ "seconds": 9.9,
+ "cost": 0.005098,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"blocking\", \"where\": \"front and top of the chest\", \"evidence\": \"Two additional hinges are bolted across the front seam on either side of the latch, and the two top hinges sit at the apex of the curved lid rather than along the back edge, making the lid impossible to open.\"}, {\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"iron hinges on the chest\", \"evidence\": \"There are four hinges visible instead of the two back-edge hinges requested by the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "front and top of the chest",
+   "evidence": "Two additional hinges are bolted across the front seam on either side of the latch, and the two top hinges sit at the apex of the curved lid rather than along the back edge, making the lid impossible to open."
+  },
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "iron hinges on the chest",
+   "evidence": "There are four hinges visible instead of the two back-edge hinges requested by the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_chest_hinges",
+ "run": 2
+}

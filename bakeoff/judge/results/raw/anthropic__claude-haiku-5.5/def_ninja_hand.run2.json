@@ -1,0 +1,11 @@
+{
+ "seconds": 4.9,
+ "cost": 0.000404,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"where\": \"lower edge of the image, below the waist\", \"evidence\": \"The spec asks for a full-body character, but the figure is cropped at the waist and the legs and feet are absent.\"}], \"verdict\": \"fail\"}",
+ "error": "bad finding: {'category': 'spec-mismatch', 'where': 'lower edge of the image, below the waist', 'evidence': 'The spec asks for a full-body character, but the figure is cropped at the waist and the legs and feet are absent.'}",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_ninja_hand",
+ "run": 2
+}

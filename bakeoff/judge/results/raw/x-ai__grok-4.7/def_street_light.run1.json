@@ -1,0 +1,24 @@
+{
+ "seconds": 48.0,
+ "cost": 0.019288,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sun in the upper sky\", \"evidence\": \"The sun disk sits high in the sky ahead of the camera, not behind the viewer's left shoulder as specified.\"}, {\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"cobblestone street\", \"evidence\": \"A long shadow from the right stall stretches across the path toward the left, not a short shadow falling forward and to the right, and it disagrees with the sun's position.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sun in the upper sky",
+   "evidence": "The sun disk sits high in the sky ahead of the camera, not behind the viewer's left shoulder as specified."
+  },
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "cobblestone street",
+   "evidence": "A long shadow from the right stall stretches across the path toward the left, not a short shadow falling forward and to the right, and it disagrees with the sun's position."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_street_light",
+ "run": 1
+}

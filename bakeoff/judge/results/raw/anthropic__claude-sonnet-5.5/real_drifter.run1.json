@@ -1,0 +1,36 @@
+{
+ "seconds": 7.4,
+ "cost": 0.013862,
+ "raw": "{\"findings\":[{\"category\":\"mismatched-pair\",\"severity\":\"advisory\",\"where\":\"ear fins on left and right of the shell\",\"evidence\":\"The left fin is thinner and attaches behind the shell, while the right fin is thicker and sits on the shell front; they read as different shapes and sizes for a spec that asks for a symmetrical pair.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"ear fins\",\"evidence\":\"They look like pointed horns curving up and outward, not short backward-curving fins, which gives a devil-like silhouette.\"},{\"category\":\"mismatched-pair\",\"severity\":\"advisory\",\"where\":\"eyes\",\"evidence\":\"The left eye is noticeably smaller than the right and its eyelid and pupil sit differently, so the pair is not neutral and symmetrical for 3D reconstruction.\"},{\"category\":\"mismatched-pair\",\"severity\":\"advisory\",\"where\":\"feet at the bottom\",\"evidence\":\"The right foot is larger and extends farther out than the left, so the stance is not symmetrical.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "ear fins on left and right of the shell",
+   "evidence": "The left fin is thinner and attaches behind the shell, while the right fin is thicker and sits on the shell front; they read as different shapes and sizes for a spec that asks for a symmetrical pair."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ear fins",
+   "evidence": "They look like pointed horns curving up and outward, not short backward-curving fins, which gives a devil-like silhouette."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "eyes",
+   "evidence": "The left eye is noticeably smaller than the right and its eyelid and pupil sit differently, so the pair is not neutral and symmetrical for 3D reconstruction."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "feet at the bottom",
+   "evidence": "The right foot is larger and extends farther out than the left, so the stance is not symmetrical."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_drifter",
+ "run": 1
+}

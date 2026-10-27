@@ -1,0 +1,18 @@
+{
+ "seconds": 41.9,
+ "cost": 0.019366,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sun and street shadows\", \"evidence\": \"The sun disk sits ahead in the sky rather than high behind the viewer's left shoulder, and the stall shadows stretch long across the cobbles instead of falling short, forward, and to the right.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sun and street shadows",
+   "evidence": "The sun disk sits ahead in the sky rather than high behind the viewer's left shoulder, and the stall shadows stretch long across the cobbles instead of falling short, forward, and to the right."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_street_light",
+ "run": 2
+}

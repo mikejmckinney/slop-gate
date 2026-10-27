@@ -1,0 +1,18 @@
+{
+ "seconds": 10.6,
+ "cost": 0.000534175,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Front face, to either side of the latch\",\"evidence\":\"Two additional large iron hinge-like fittings are visible on the front, beyond the specified back hinges and single front latch.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Front face, to either side of the latch",
+   "evidence": "Two additional large iron hinge-like fittings are visible on the front, beyond the specified back hinges and single front latch."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "def_chest_hinges",
+ "run": 1
+}

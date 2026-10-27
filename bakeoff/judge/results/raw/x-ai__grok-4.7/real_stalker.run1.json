@@ -1,0 +1,24 @@
+{
+ "seconds": 246.9,
+ "cost": 0.10196,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"front legs\", \"evidence\": \"The far front leg is orange-armored from shoulder to paw, while the near front leg is a charcoal limb with orange toes only.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs\", \"evidence\": \"The spec calls for charcoal legs with broad orange toe armour, but the far front limb and the rear thigh are predominantly orange armour rather than charcoal.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "front legs",
+   "evidence": "The far front leg is orange-armored from shoulder to paw, while the near front leg is a charcoal limb with orange toes only."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs",
+   "evidence": "The spec calls for charcoal legs with broad orange toe armour, but the far front limb and the rear thigh are predominantly orange armour rather than charcoal."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "real_stalker",
+ "run": 1
+}

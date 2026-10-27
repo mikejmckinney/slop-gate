@@ -1,0 +1,18 @@
+{
+ "seconds": 29.7,
+ "cost": 0.0010789,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"upper sky and cobblestone street\", \"evidence\": \"The sun glare is rendered inside the frame at the top and the cobblestone/figure shadows fall toward the viewer, indicating a front\u2011left light source instead of the spec's sun behind the viewer's left shoulder with short shadows falling forward and to the right.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "upper sky and cobblestone street",
+   "evidence": "The sun glare is rendered inside the frame at the top and the cobblestone/figure shadows fall toward the viewer, indicating a front\u2011left light source instead of the spec's sun behind the viewer's left shoulder with short shadows falling forward and to the right."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_street_light",
+ "run": 2
+}

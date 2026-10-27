@@ -1,0 +1,24 @@
+{
+ "seconds": 8.7,
+ "cost": 0.005098,
+ "raw": "{\"findings\": [{\"category\": \"merged-objects\", \"severity\": \"blocking\", \"where\": \"right side of image (wooden staff and red scarf)\", \"evidence\": \"The top end of the wooden staff melts seamlessly into the flowing red scarf.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing and hands\", \"evidence\": \"The character is cropped at the waist instead of full body, and the raised open palm is on the character's right arm while the staff is held in the left hand (opposite of the spec).\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "right side of image (wooden staff and red scarf)",
+   "evidence": "The top end of the wooden staff melts seamlessly into the flowing red scarf."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing and hands",
+   "evidence": "The character is cropped at the waist instead of full body, and the raised open palm is on the character's right arm while the staff is held in the left hand (opposite of the spec)."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

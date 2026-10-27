@@ -1,0 +1,18 @@
+{
+ "seconds": 6.6,
+ "cost": 0.0005761,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"front face of the chest, left and right of the central latch\", \"evidence\": \"Two extra hinge-style iron straps with pins sit on the front face, but the spec calls for hinges only along the back edge plus one front latch.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "front face of the chest, left and right of the central latch",
+   "evidence": "Two extra hinge-style iron straps with pins sit on the front face, but the spec calls for hinges only along the back edge plus one front latch."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_chest_hinges",
+ "run": 1
+}

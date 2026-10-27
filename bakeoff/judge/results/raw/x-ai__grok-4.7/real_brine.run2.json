@@ -1,0 +1,11 @@
+{
+ "seconds": 159.2,
+ "cost": 0.070234,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "x-ai/grok-4.7",
+ "image": "real_brine",
+ "run": 2
+}

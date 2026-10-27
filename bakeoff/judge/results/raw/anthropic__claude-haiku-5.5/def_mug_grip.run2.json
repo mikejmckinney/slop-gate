@@ -1,0 +1,24 @@
+{
+ "seconds": 6.4,
+ "cost": 0.0006456,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"where\": \"fingers wrapped around the mug handle, especially the digit crossing the front of the mug body near the left edge\", \"evidence\": \"One finger with a visible nail lies flat across the front of the mug body, starting from inside the handle loop, and it is unclear which knuckle joint or hand it connects to, so the finger path is anatomically implausible.\", \"severity\": \"blocking\"}, {\"category\": \"contact-weight\", \"where\": \"mug base and surrounding background\", \"evidence\": \"The mug is held in mid-air with no visible contact shadow or surface cue, so it reads as slightly floating in the frame.\", \"severity\": \"advisory\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "where": "fingers wrapped around the mug handle, especially the digit crossing the front of the mug body near the left edge",
+   "evidence": "One finger with a visible nail lies flat across the front of the mug body, starting from inside the handle loop, and it is unclear which knuckle joint or hand it connects to, so the finger path is anatomically implausible.",
+   "severity": "blocking"
+  },
+  {
+   "category": "contact-weight",
+   "where": "mug base and surrounding background",
+   "evidence": "The mug is held in mid-air with no visible contact shadow or surface cue, so it reads as slightly floating in the frame.",
+   "severity": "advisory"
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_mug_grip",
+ "run": 2
+}

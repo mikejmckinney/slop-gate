@@ -1,0 +1,18 @@
+{
+ "seconds": 6.1,
+ "cost": 0.00010369,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom of the image\",\"evidence\":\"The character is cropped at the waist, so the full body is not shown.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom of the image",
+   "evidence": "The character is cropped at the waist, so the full body is not shown."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_ninja_hand",
+ "run": 1
+}

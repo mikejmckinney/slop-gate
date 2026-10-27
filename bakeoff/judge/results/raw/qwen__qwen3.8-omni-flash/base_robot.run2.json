@@ -1,0 +1,18 @@
+{
+ "seconds": 31.6,
+ "cost": 0.00124204,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"The robot's hands holding the bomb\", \"evidence\": \"The hand on the viewer's left displays four digits wrapping around the bomb, whereas the hand on the viewer's right displays five digits (including a distinct thumb).\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "The robot's hands holding the bomb",
+   "evidence": "The hand on the viewer's left displays four digits wrapping around the bomb, whereas the hand on the viewer's right displays five digits (including a distinct thumb)."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "base_robot",
+ "run": 2
+}

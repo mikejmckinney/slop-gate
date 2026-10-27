@@ -1,0 +1,18 @@
+{
+ "seconds": 7.3,
+ "cost": 0.0021368,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Head and overall proportions\",\"evidence\":\"The visible head is roughly one quarter of the character\u2019s total height, rather than approximately 40 percent.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Head and overall proportions",
+   "evidence": "The visible head is roughly one quarter of the character\u2019s total height, rather than approximately 40 percent."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-terra",
+ "image": "real_vesper",
+ "run": 2
+}

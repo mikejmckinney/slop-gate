@@ -1,0 +1,18 @@
+{
+ "seconds": 6.8,
+ "cost": 0.0051285,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Bottom edge of the image\",\"evidence\":\"The character is cropped at the waist, with the legs and feet missing despite the full-body requirement.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Bottom edge of the image",
+   "evidence": "The character is cropped at the waist, with the legs and feet missing despite the full-body requirement."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "base_ninja",
+ "run": 1
+}

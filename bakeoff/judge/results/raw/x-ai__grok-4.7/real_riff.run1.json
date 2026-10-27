@@ -1,0 +1,18 @@
+{
+ "seconds": 91.4,
+ "cost": 0.04185,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"headphones around the neck\", \"evidence\": \"The two earcups do not match: the viewer's-left cup face is pale pink while the viewer's-right cup is coral-orange, and the brighter cup is on the shadow side, so studio lighting does not explain it.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "headphones around the neck",
+   "evidence": "The two earcups do not match: the viewer's-left cup face is pale pink while the viewer's-right cup is coral-orange, and the brighter cup is on the shadow side, so studio lighting does not explain it."
+  }
+ ],
+ "verdict": "pass",
+ "model": "x-ai/grok-4.7",
+ "image": "real_riff",
+ "run": 1
+}

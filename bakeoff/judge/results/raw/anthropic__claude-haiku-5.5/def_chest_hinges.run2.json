@@ -1,0 +1,18 @@
+{
+ "seconds": 4.2,
+ "cost": 0.0004596,
+ "raw": "{\"findings\": [{\"category\": \"count-repetition\", \"severity\": \"advisory\", \"where\": \"front face, left and right fleur-de-lis straps flanking the latch\", \"evidence\": \"The spec calls for two hinges on the back edge, but the front face shows two additional hinge-like iron straps with knuckles, which may read as extra hinges rather than decoration.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "advisory",
+   "where": "front face, left and right fleur-de-lis straps flanking the latch",
+   "evidence": "The spec calls for two hinges on the back edge, but the front face shows two additional hinge-like iron straps with knuckles, which may read as extra hinges rather than decoration."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_chest_hinges",
+ "run": 2
+}

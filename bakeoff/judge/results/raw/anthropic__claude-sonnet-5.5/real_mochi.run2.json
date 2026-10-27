@@ -1,0 +1,18 @@
+{
+ "seconds": 7.7,
+ "cost": 0.011374,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"torso, backpack and boots\", \"evidence\": \"The body is turned noticeably more than the specified 10 degrees: the backpack side and shoulder patch show clearly and the boots point at different angles. The head still faces nearly front.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "torso, backpack and boots",
+   "evidence": "The body is turned noticeably more than the specified 10 degrees: the backpack side and shoulder patch show clearly and the boots point at different angles. The head still faces nearly front."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_mochi",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 5.1,
+ "cost": 0.0015843,
+ "raw": "{\"findings\":[{\"category\":\"count-repetition\",\"severity\":\"blocking\",\"where\":\"Iron hardware on the front, to either side of the center latch\",\"evidence\":\"Two extra hinges bridge the front lid seam in addition to the two back-edge hinges, giving four hinges rather than the specified two.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "Iron hardware on the front, to either side of the center latch",
+   "evidence": "Two extra hinges bridge the front lid seam in addition to the two back-edge hinges, giving four hinges rather than the specified two."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_chest_hinges",
+ "run": 2
+}

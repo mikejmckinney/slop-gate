@@ -1,0 +1,11 @@
+{
+ "seconds": 356.2,
+ "cost": 0.00147254,
+ "raw": "",
+ "error": "no JSON object in reply",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_robot_float",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 28.2,
+ "cost": 0.0011776,
+ "raw": "{\n  \"findings\": [\n    {\n      \"category\": \"lettering\",\n      \"severity\": \"blocking\",\n      \"where\": \"Small belt pouch on the character's left hip (viewer's right)\",\n      \"evidence\": \"A distinct letter 'S' or logo mark is visible on the flap of the pouch, violating the strict constraint against any text, lettering, or logos.\"\n    }\n  ],\n  \"verdict\": \"fail\"\n}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "Small belt pouch on the character's left hip (viewer's right)",
+   "evidence": "A distinct letter 'S' or logo mark is visible on the flap of the pouch, violating the strict constraint against any text, lettering, or logos."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_mochi",
+ "run": 1
+}

@@ -1,0 +1,24 @@
+{
+ "seconds": 110.2,
+ "cost": 0.00421507,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"left side of head and underside of chest\", \"evidence\": \"One stout leg emerges from beneath the head's cheek plate at eye level, and a separate two-toed foot is tucked under the chest between the front legs, so the four legs cannot attach to coherent shoulders and hips as drawn.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ground area beneath the creature\", \"evidence\": \"A soft cast shadow/grounding blob is visible under the body and feet, while the spec requires a plain light grey background with no ground plane and no cast shadow.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "left side of head and underside of chest",
+   "evidence": "One stout leg emerges from beneath the head's cheek plate at eye level, and a separate two-toed foot is tucked under the chest between the front legs, so the four legs cannot attach to coherent shoulders and hips as drawn."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ground area beneath the creature",
+   "evidence": "A soft cast shadow/grounding blob is visible under the body and feet, while the spec requires a plain light grey background with no ground plane and no cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_stalker",
+ "run": 1
+}

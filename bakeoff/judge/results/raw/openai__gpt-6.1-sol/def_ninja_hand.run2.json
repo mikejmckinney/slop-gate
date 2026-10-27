@@ -1,0 +1,24 @@
+{
+ "seconds": 7.1,
+ "cost": 0.0018449,
+ "raw": "{\"findings\":[{\"category\":\"hands-limbs\",\"severity\":\"blocking\",\"where\":\"Raised open hand at the upper left\",\"evidence\":\"The open hand has six digits\u2014five extended fingers plus a thumb\u2014instead of exactly five.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Lower edge of the image\",\"evidence\":\"The character is cropped at the waist, leaving the legs and feet absent despite the full-body requirement.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "Raised open hand at the upper left",
+   "evidence": "The open hand has six digits\u2014five extended fingers plus a thumb\u2014instead of exactly five."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Lower edge of the image",
+   "evidence": "The character is cropped at the waist, leaving the legs and feet absent despite the full-body requirement."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_ninja_hand",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 6.1,
+ "cost": 0.0007857,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"shoulder area on the viewer's right, beside the backpack\", \"evidence\": \"A rounded tan pocket patch sits on the right shoulder with no counterpart on the left shoulder, which slightly breaks the symmetric framing the spec asks for.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "shoulder area on the viewer's right, beside the backpack",
+   "evidence": "A rounded tan pocket patch sits on the right shoulder with no counterpart on the left shoulder, which slightly breaks the symmetric framing the spec asks for."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_mochi",
+ "run": 2
+}

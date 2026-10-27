@@ -1,0 +1,30 @@
+{
+ "seconds": 10.7,
+ "cost": 0.024908,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"rabbit ears\", \"evidence\": \"The spec calls for two short thick upright ears, but the ears are long, tall, slender rabbit ears that rise well above the head and change the defining silhouette.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall body orientation\", \"evidence\": \"The character is turned roughly 20\u201325 degrees toward the viewer's right, more than the requested 10-degree near-front three-quarter view.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms\", \"evidence\": \"The arms hang fairly close to the torso, under the requested 25-degree A-pose spread, which reduces separation between arms and body.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "rabbit ears",
+   "evidence": "The spec calls for two short thick upright ears, but the ears are long, tall, slender rabbit ears that rise well above the head and change the defining silhouette."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall body orientation",
+   "evidence": "The character is turned roughly 20\u201325 degrees toward the viewer's right, more than the requested 10-degree near-front three-quarter view."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms",
+   "evidence": "The arms hang fairly close to the torso, under the requested 25-degree A-pose spread, which reduces separation between arms and body."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_mochi",
+ "run": 2
+}

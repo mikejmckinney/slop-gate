@@ -1,0 +1,18 @@
+{
+ "seconds": 217.0,
+ "cost": 0.00106683,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body / overall framing\", \"evidence\": \"The ninja is shown only from the waist up; the legs and feet are not visible, so the image is not full body as required by the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body / overall framing",
+   "evidence": "The ninja is shown only from the waist up; the legs and feet are not visible, so the image is not full body as required by the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "base_ninja",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 8.6,
+ "cost": 0.000542425,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"arms\",\"evidence\":\"Both arms angle outward roughly 40\u201345 degrees from the torso, wider than the specified 25-degree A pose.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms",
+   "evidence": "Both arms angle outward roughly 40\u201345 degrees from the torso, wider than the specified 25-degree A pose."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_bud",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 11.1,
+ "cost": 0.007806,
+ "raw": "{\"findings\":[{\"category\":\"construction\",\"severity\":\"blocking\",\"where\":\"Copper belt buckle at the center of the apron\",\"evidence\":\"The buckle has two opposing inward-facing prong stubs, neither of which reaches or engages a belt hole to fasten the belt.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "Copper belt buckle at the center of the apron",
+   "evidence": "The buckle has two opposing inward-facing prong stubs, neither of which reaches or engages a belt hole to fasten the belt."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "real_cinder",
+ "run": 2
+}

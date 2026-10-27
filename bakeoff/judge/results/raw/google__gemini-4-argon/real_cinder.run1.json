@@ -1,0 +1,18 @@
+{
+ "seconds": 18.6,
+ "cost": 0.004974,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"apron belt buckle\", \"evidence\": \"The copper buckle has two opposing inward-facing prongs on both left and right sides of the frame instead of a functional single-hinged prong.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "apron belt buckle",
+   "evidence": "The copper buckle has two opposing inward-facing prongs on both left and right sides of the frame instead of a functional single-hinged prong."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_cinder",
+ "run": 1
+}

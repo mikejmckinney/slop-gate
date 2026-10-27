@@ -1,0 +1,18 @@
+{
+ "seconds": 9.1,
+ "cost": 0.0071635,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Both rabbit ears\",\"evidence\":\"The ears are long and elongated relative to the rounded head rather than the short, thick upright ears requested.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Both rabbit ears",
+   "evidence": "The ears are long and elongated relative to the rounded head rather than the short, thick upright ears requested."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-sol",
+ "image": "real_mochi",
+ "run": 1
+}

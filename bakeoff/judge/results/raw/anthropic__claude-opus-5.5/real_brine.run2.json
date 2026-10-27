@@ -1,0 +1,24 @@
+{
+ "seconds": 9.1,
+ "cost": 0.025916,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"cream mittens and their cuffs\", \"evidence\": \"The mittens show a fuzzy felt-like surface and the cuffs show knit ribbing, which reads as fabric fuzz rather than the requested smooth sculpted vinyl.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground beneath both boots\", \"evidence\": \"The contact shadow under the boot soles is extremely faint, so the figure reads as barely grounded instead of having the requested soft contact shadow.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "cream mittens and their cuffs",
+   "evidence": "The mittens show a fuzzy felt-like surface and the cuffs show knit ribbing, which reads as fabric fuzz rather than the requested smooth sculpted vinyl."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground beneath both boots",
+   "evidence": "The contact shadow under the boot soles is extremely faint, so the figure reads as barely grounded instead of having the requested soft contact shadow."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_brine",
+ "run": 2
+}

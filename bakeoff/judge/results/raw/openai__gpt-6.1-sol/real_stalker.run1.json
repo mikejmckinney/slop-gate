@@ -1,0 +1,18 @@
+{
+ "seconds": 6.2,
+ "cost": 0.001742,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"Beneath the belly and around the feet\",\"evidence\":\"Soft cast shadows establish a ground surface beneath the creature, despite the explicit requirement for no ground plane and no cast shadow.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the belly and around the feet",
+   "evidence": "Soft cast shadows establish a ground surface beneath the creature, despite the explicit requirement for no ground plane and no cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "real_stalker",
+ "run": 1
+}

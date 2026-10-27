@@ -1,0 +1,11 @@
+{
+ "seconds": 8.4,
+ "cost": 0.00069,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

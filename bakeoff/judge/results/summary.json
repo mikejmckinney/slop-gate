@@ -1,0 +1,112 @@
+{
+ "anthropic/claude-haiku-5.5": {
+  "planted_recall": 0.5,
+  "natural_recall": 0.0,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.87,
+  "invalid_rate": 0.058,
+  "cost_per_image_usd": 0.00056,
+  "median_seconds": 5.2,
+  "calls": 52
+ },
+ "anthropic/claude-opus-5.5": {
+  "planted_recall": 0.7,
+  "natural_recall": 0.688,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.962,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.02145,
+  "median_seconds": 9.8,
+  "calls": 52
+ },
+ "anthropic/claude-sonnet-5.5": {
+  "planted_recall": 0.6,
+  "natural_recall": 0.125,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.962,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.01056,
+  "median_seconds": 8.1,
+  "calls": 52
+ },
+ "google/gemini-4-argon": {
+  "planted_recall": 0.95,
+  "natural_recall": 0.25,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.92,
+  "invalid_rate": 0.019,
+  "cost_per_image_usd": 0.00568,
+  "median_seconds": 16.4,
+  "calls": 52
+ },
+ "nvidia/nemotron-3.5-super-vl": {
+  "planted_recall": 0.3,
+  "natural_recall": 0.125,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 1.0,
+  "invalid_rate": 0.423,
+  "cost_per_image_usd": 0.00093,
+  "median_seconds": 89.3,
+  "calls": 52
+ },
+ "openai/gpt-6-luna": {
+  "planted_recall": 0.45,
+  "natural_recall": 0.312,
+  "precision": 0.952,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.923,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.00032,
+  "median_seconds": 6.5,
+  "calls": 52
+ },
+ "openai/gpt-6.1-sol": {
+  "planted_recall": 0.85,
+  "natural_recall": 0.25,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.885,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.00372,
+  "median_seconds": 6.9,
+  "calls": 52
+ },
+ "openai/gpt-6.1-terra": {
+  "planted_recall": 0.8,
+  "natural_recall": 0.375,
+  "precision": 1.0,
+  "false_alarm_rate": 0.0,
+  "consistency": 0.923,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.00229,
+  "median_seconds": 4.9,
+  "calls": 52
+ },
+ "qwen/qwen3.8-omni-flash": {
+  "planted_recall": 0.7,
+  "natural_recall": 0.25,
+  "precision": 0.938,
+  "false_alarm_rate": 0.05,
+  "consistency": 0.808,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.00188,
+  "median_seconds": 42.5,
+  "calls": 52
+ },
+ "x-ai/grok-4.7": {
+  "planted_recall": 0.6,
+  "natural_recall": 0.312,
+  "precision": 0.903,
+  "false_alarm_rate": 0.1,
+  "consistency": 0.885,
+  "invalid_rate": 0.0,
+  "cost_per_image_usd": 0.03106,
+  "median_seconds": 56.7,
+  "calls": 52
+ }
+}

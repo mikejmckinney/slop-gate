@@ -1,0 +1,30 @@
+{
+ "seconds": 8.3,
+ "cost": 0.0029249,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Lower edge of the image\",\"evidence\":\"The character is cropped at the waist, leaving the legs and feet out of view despite the full-body requirement.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Raised hand and staff-holding hand\",\"evidence\":\"The character's right hand is raised and the left hand holds the staff, reversing the specified hand assignments.\"},{\"category\":\"face\",\"severity\":\"advisory\",\"where\":\"Eyes beneath the hood\",\"evidence\":\"The eye on the viewer's left is large and round while the other is much narrower, making the eyes appear mismatched in scale.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Lower edge of the image",
+   "evidence": "The character is cropped at the waist, leaving the legs and feet out of view despite the full-body requirement."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Raised hand and staff-holding hand",
+   "evidence": "The character's right hand is raised and the left hand holds the staff, reversing the specified hand assignments."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "Eyes beneath the hood",
+   "evidence": "The eye on the viewer's left is large and round while the other is much narrower, making the eyes appear mismatched in scale."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

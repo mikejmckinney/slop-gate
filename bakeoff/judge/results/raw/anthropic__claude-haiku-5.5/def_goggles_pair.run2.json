@@ -1,0 +1,18 @@
+{
+ "seconds": 2.7,
+ "cost": 0.0003494,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"lenses on the right-hand goggle versus the left-hand goggle\", \"evidence\": \"The left lens is a round brass-rimmed glass, but the right lens is a square brass-framed glass, although the spec requires two matching round lenses.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "lenses on the right-hand goggle versus the left-hand goggle",
+   "evidence": "The left lens is a round brass-rimmed glass, but the right lens is a square brass-framed glass, although the spec requires two matching round lenses."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_goggles_pair",
+ "run": 2
+}

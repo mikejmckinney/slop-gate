@@ -1,0 +1,24 @@
+{
+ "seconds": 84.0,
+ "cost": 0.00296725,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"middle finger of the gripping hand\", \"evidence\": \"The spec calls for fingers wrapped around the handle, but the middle finger extends straight out horizontally across the front of the mug body instead of gripping the handle.\"}, {\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"junction of the extended middle finger with the palm\", \"evidence\": \"The extended finger emerges at an odd height and angle between the curled index and ring fingers, and reads as disproportionately long compared with the other digits.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "middle finger of the gripping hand",
+   "evidence": "The spec calls for fingers wrapped around the handle, but the middle finger extends straight out horizontally across the front of the mug body instead of gripping the handle."
+  },
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "junction of the extended middle finger with the palm",
+   "evidence": "The extended finger emerges at an odd height and angle between the curled index and ring fingers, and reads as disproportionately long compared with the other digits."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_mug_grip",
+ "run": 1
+}

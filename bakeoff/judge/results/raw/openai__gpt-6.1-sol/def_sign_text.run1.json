@@ -1,0 +1,18 @@
+{
+ "seconds": 3.3,
+ "cost": 0.0007642,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"blocking\",\"where\":\"Wooden sign in the left foreground\",\"evidence\":\"The sign bears large dark pseudo-lettering instead of being blank, violating both the blank-sign requirement and the prohibition on text.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "Wooden sign in the left foreground",
+   "evidence": "The sign bears large dark pseudo-lettering instead of being blank, violating both the blank-sign requirement and the prohibition on text."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_sign_text",
+ "run": 1
+}

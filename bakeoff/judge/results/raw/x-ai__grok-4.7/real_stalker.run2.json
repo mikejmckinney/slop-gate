@@ -1,0 +1,18 @@
+{
+ "seconds": 234.8,
+ "cost": 0.095912,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"ivory mandibles under the snout\", \"evidence\": \"The two mandibles are not a matched pair: the image-left one is longer and hooks outward, while the image-right one is shorter and hangs nearly straight.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "ivory mandibles under the snout",
+   "evidence": "The two mandibles are not a matched pair: the image-left one is longer and hooks outward, while the image-right one is shorter and hangs nearly straight."
+  }
+ ],
+ "verdict": "pass",
+ "model": "x-ai/grok-4.7",
+ "image": "real_stalker",
+ "run": 2
+}

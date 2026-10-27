@@ -1,0 +1,24 @@
+{
+ "seconds": 7.7,
+ "cost": 0.016944,
+ "raw": "{\"findings\": [{\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"front face, left and right of the central latch\", \"evidence\": \"Two extra hinge-style iron straps with knuckle barrels sit on the front, so the chest has four hinges instead of the two back-edge hinges and one latch the spec calls for.\"}, {\"category\": \"construction\", \"severity\": \"blocking\", \"where\": \"front left and front right hinge straps across the lid seam\", \"evidence\": \"Knuckled hinges bridge the lid and body on the front while hinges also sit on the back edge, so a lid hinged on both front and back could not open.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "front face, left and right of the central latch",
+   "evidence": "Two extra hinge-style iron straps with knuckle barrels sit on the front, so the chest has four hinges instead of the two back-edge hinges and one latch the spec calls for."
+  },
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "front left and front right hinge straps across the lid seam",
+   "evidence": "Knuckled hinges bridge the lid and body on the front while hinges also sit on the back edge, so a lid hinged on both front and back could not open."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_chest_hinges",
+ "run": 2
+}

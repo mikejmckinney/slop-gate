@@ -1,0 +1,18 @@
+{
+ "seconds": 9.0,
+ "cost": 0.01652,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"robot's two hands gripping the bomb\", \"evidence\": \"The left hand (viewer's left) shows a thumb plus about three fingers, while the right hand appears to stack about four fingers under the thumb, so the finger counts may not match between hands.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "robot's two hands gripping the bomb",
+   "evidence": "The left hand (viewer's left) shows a thumb plus about three fingers, while the right hand appears to stack about four fingers under the thumb, so the finger counts may not match between hands."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_robot",
+ "run": 1
+}

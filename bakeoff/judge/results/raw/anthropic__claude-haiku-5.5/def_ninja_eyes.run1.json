@@ -1,0 +1,18 @@
+{
+ "seconds": 4.8,
+ "cost": 0.000463,
+ "raw": "{\"findings\": [{\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"eyes in the hood opening\", \"evidence\": \"The left eye is drawn as a large round white with a pupil turned to the side, while the right eye is a narrow slit, so the two eyes look like they are at different scales and may not share a gaze.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes in the hood opening",
+   "evidence": "The left eye is drawn as a large round white with a pupil turned to the side, while the right eye is a narrow slit, so the two eyes look like they are at different scales and may not share a gaze."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

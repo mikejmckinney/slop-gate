@@ -1,0 +1,18 @@
+{
+ "seconds": 20.2,
+ "cost": 0.007426,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"front face of the blank wooden sign and interior arena walls through the gate\", \"evidence\": \"The front face of the sign has a bright warm hotspot even though the lantern hangs above and slightly behind that plane, and the distant interior walls through the archway show warm orange light from unseen sources inside the arena.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "front face of the blank wooden sign and interior arena walls through the gate",
+   "evidence": "The front face of the sign has a bright warm hotspot even though the lantern hangs above and slightly behind that plane, and the distant interior walls through the archway show warm orange light from unseen sources inside the arena."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "base_sign",
+ "run": 2
+}

@@ -1,0 +1,11 @@
+{
+ "seconds": 10.0,
+ "cost": 0.0049,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "base_goggles",
+ "run": 1
+}

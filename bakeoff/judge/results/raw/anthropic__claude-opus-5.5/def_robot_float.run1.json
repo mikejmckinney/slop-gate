@@ -1,0 +1,24 @@
+{
+ "seconds": 10.9,
+ "cost": 0.02048,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"robot's right hand (viewer's left) on the bomb\", \"evidence\": \"This hand shows only three fingers plus a thumb, while the other hand shows four stacked fingers plus a thumb, so the finger count may be inconsistent between hands (or one finger is hidden, despite the spec asking for all fingers clearly visible).\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"left tread (viewer's left) where it meets the floor\", \"evidence\": \"The front of the tread appears slightly lifted, and its contact shadow is faint compared to the right tread's, so it reads as partly floating.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "robot's right hand (viewer's left) on the bomb",
+   "evidence": "This hand shows only three fingers plus a thumb, while the other hand shows four stacked fingers plus a thumb, so the finger count may be inconsistent between hands (or one finger is hidden, despite the spec asking for all fingers clearly visible)."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "left tread (viewer's left) where it meets the floor",
+   "evidence": "The front of the tread appears slightly lifted, and its contact shadow is faint compared to the right tread's, so it reads as partly floating."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_robot_float",
+ "run": 1
+}

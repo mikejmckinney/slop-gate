@@ -1,0 +1,30 @@
+{
+ "seconds": 28.2,
+ "cost": 0.010368,
+ "raw": "{\"findings\": [{\"category\": \"face\", \"severity\": \"blocking\", \"where\": \"character's eyes\", \"evidence\": \"The viewer's left eye is a large bulging circle looking up and left while the right eye is narrow and looking right, mismatching both scale and gaze.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing\", \"evidence\": \"The character is cropped at the waist instead of showing the full body requested by the spec.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"left and right arms\", \"evidence\": \"The character raises their anatomical right hand and holds the staff in their left hand, reversing the left/right assignment in the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "face",
+   "severity": "blocking",
+   "where": "character's eyes",
+   "evidence": "The viewer's left eye is a large bulging circle looking up and left while the right eye is narrow and looking right, mismatching both scale and gaze."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing",
+   "evidence": "The character is cropped at the waist instead of showing the full body requested by the spec."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "left and right arms",
+   "evidence": "The character raises their anatomical right hand and holds the staff in their left hand, reversing the left/right assignment in the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

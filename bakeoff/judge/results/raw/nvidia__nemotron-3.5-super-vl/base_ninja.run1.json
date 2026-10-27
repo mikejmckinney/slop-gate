@@ -1,0 +1,18 @@
+{
+ "seconds": 88.6,
+ "cost": 0.00035843,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body framing\", \"evidence\": \"The image is cropped at the waist and does not show the character's full body as required by the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body framing",
+   "evidence": "The image is cropped at the waist and does not show the character's full body as required by the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "base_ninja",
+ "run": 1
+}

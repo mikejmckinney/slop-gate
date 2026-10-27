@@ -1,0 +1,24 @@
+{
+ "seconds": 23.7,
+ "cost": 0.013108,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left post\", \"evidence\": \"The sign carries garbled invented lettering ('Nor\\u00ebdsnd') even though the spec requires a blank sign with nothing written and no text anywhere.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"background inside the gate\", \"evidence\": \"A separate warm orange glow is visible deep in the arena beyond the entrance, contradicting the spec's single lantern as the only light source.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left post",
+   "evidence": "The sign carries garbled invented lettering ('Nor\u00ebdsnd') even though the spec requires a blank sign with nothing written and no text anywhere."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "background inside the gate",
+   "evidence": "A separate warm orange glow is visible deep in the arena beyond the entrance, contradicting the spec's single lantern as the only light source."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_sign_text",
+ "run": 1
+}

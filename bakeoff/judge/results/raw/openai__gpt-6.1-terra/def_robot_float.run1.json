@@ -1,0 +1,18 @@
+{
+ "seconds": 8.2,
+ "cost": 0.00225255,
+ "raw": "{\"findings\":[{\"category\":\"contact-weight\",\"severity\":\"blocking\",\"where\":\"Bottom of the robot\u2019s tracks\",\"evidence\":\"Both tracks appear suspended above the ground, with the main shadow detached beneath and to the left.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "Bottom of the robot\u2019s tracks",
+   "evidence": "Both tracks appear suspended above the ground, with the main shadow detached beneath and to the left."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_robot_float",
+ "run": 1
+}

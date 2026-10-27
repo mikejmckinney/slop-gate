@@ -1,0 +1,18 @@
+{
+ "seconds": 56.6,
+ "cost": 0.0022264,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail, left side of image behind the character's right hip\", \"evidence\": \"The tail swings out laterally and curves down beside the leg to mid-shin height, instead of being a short thick tail kept directly behind the body as the spec requires.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail, left side of image behind the character's right hip",
+   "evidence": "The tail swings out laterally and curves down beside the leg to mid-shin height, instead of being a short thick tail kept directly behind the body as the spec requires."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_riff",
+ "run": 1
+}

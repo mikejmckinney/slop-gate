@@ -1,0 +1,36 @@
+{
+ "seconds": 12.3,
+ "cost": 0.029204,
+ "raw": "```json\n{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall camera angle\", \"evidence\": \"The creature is shown almost straight-on from the front at near eye level, not the requested front three-quarter view from slightly above, which gives the 3D reconstruction less side information.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ear fins on top-left and top-right\", \"evidence\": \"The fins are upward-pointing, inward-hooking horns rather than short backward-curving ear fins.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"left vs right ear fin\", \"evidence\": \"The left fin sits lower, flares further outward and has its segment band higher than the right fin, which breaks the requested bilateral symmetry in this near-frontal view.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"body silhouette\", \"evidence\": \"The shell is about as tall as it is wide, not clearly wider than tall as specified.\"}], \"verdict\": \"pass\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall camera angle",
+   "evidence": "The creature is shown almost straight-on from the front at near eye level, not the requested front three-quarter view from slightly above, which gives the 3D reconstruction less side information."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ear fins on top-left and top-right",
+   "evidence": "The fins are upward-pointing, inward-hooking horns rather than short backward-curving ear fins."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "left vs right ear fin",
+   "evidence": "The left fin sits lower, flares further outward and has its segment band higher than the right fin, which breaks the requested bilateral symmetry in this near-frontal view."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "body silhouette",
+   "evidence": "The shell is about as tall as it is wide, not clearly wider than tall as specified."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_drifter",
+ "run": 1
+}

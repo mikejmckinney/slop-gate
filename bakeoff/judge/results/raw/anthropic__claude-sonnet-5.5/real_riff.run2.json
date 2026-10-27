@@ -1,0 +1,24 @@
+{
+ "seconds": 11.3,
+ "cost": 0.015808,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"tail at lower left, behind the shorts\", \"evidence\": \"The tail tip sweeps out to the left and hangs well above the floor with no support or contact shadow, so it reads as floating.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail and body orientation\", \"evidence\": \"The spec asks for the tail directly behind the body and a pose turned only 10 degrees, but the body is turned noticeably more and the tail juts out to one side.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "tail at lower left, behind the shorts",
+   "evidence": "The tail tip sweeps out to the left and hangs well above the floor with no support or contact shadow, so it reads as floating."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail and body orientation",
+   "evidence": "The spec asks for the tail directly behind the body and a pose turned only 10 degrees, but the body is turned noticeably more and the tail juts out to one side."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_riff",
+ "run": 2
+}

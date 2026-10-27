@@ -1,0 +1,11 @@
+{
+ "seconds": 4.9,
+ "cost": 0.0005405,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"where\": \"raised left hand (image left), open palm\", \"evidence\": \"The palm shows only about three long fingers plus a thumb, not the exactly five fingers the spec requires, with the thumb reading as a digit on the right side of the hand.\"}], \"verdict\": \"fail\"}",
+ "error": "bad finding: {'category': 'hands-limbs', 'where': 'raised left hand (image left), open palm', 'evidence': 'The palm shows only about three long fingers plus a thumb, not the exactly five fingers the spec requires, with the thumb reading as a digit on the right side of the hand.'}",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "base_ninja",
+ "run": 2
+}

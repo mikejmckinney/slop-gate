@@ -1,0 +1,30 @@
+{
+ "seconds": 10.2,
+ "cost": 0.026276,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"boots\", \"evidence\": \"The boots are plain smooth rubber-boot shapes with faint texture and no recognizable root-like forms, so they do not match the requested sturdy root-like boots.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs\", \"evidence\": \"Only a short stretch of leg shows between the tunic hem and the boot tops, about a fifth of the figure's height, which reads shorter than the requested moderately long legs suited to a believable walk/run.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"head proportion\", \"evidence\": \"With the sprout included, the head runs from about y=55 to y=510 of a roughly 900px figure, closer to 50% of total height than the requested 40%.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "boots",
+   "evidence": "The boots are plain smooth rubber-boot shapes with faint texture and no recognizable root-like forms, so they do not match the requested sturdy root-like boots."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs",
+   "evidence": "Only a short stretch of leg shows between the tunic hem and the boot tops, about a fifth of the figure's height, which reads shorter than the requested moderately long legs suited to a believable walk/run."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "head proportion",
+   "evidence": "With the sprout included, the head runs from about y=55 to y=510 of a roughly 900px figure, closer to 50% of total height than the requested 40%."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_bud",
+ "run": 2
+}

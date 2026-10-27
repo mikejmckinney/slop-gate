@@ -1,0 +1,18 @@
+{
+ "seconds": 8.4,
+ "cost": 0.00392925,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Hand holding the mug\",\"evidence\":\"The visible palm and thumb placement show a left hand rather than the specified right hand.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Hand holding the mug",
+   "evidence": "The visible palm and thumb placement show a left hand rather than the specified right hand."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_mug_grip",
+ "run": 1
+}

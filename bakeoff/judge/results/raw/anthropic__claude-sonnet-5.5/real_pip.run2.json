@@ -1,0 +1,24 @@
+{
+ "seconds": 9.6,
+ "cost": 0.014292,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"legs between shorts and socks\",\"evidence\":\"The orange lower legs are very short, narrow stubs with no readable knees, which is closer to the 'tiny pegs' the spec rules out than to stout, believable walking legs.\"},{\"category\":\"lettering\",\"severity\":\"advisory\",\"where\":\"sneaker sides, especially the viewer-left shoe\",\"evidence\":\"An embossed swoosh-like mark on the shoe side reads as a brand logo, and the spec says no logos.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs between shorts and socks",
+   "evidence": "The orange lower legs are very short, narrow stubs with no readable knees, which is closer to the 'tiny pegs' the spec rules out than to stout, believable walking legs."
+  },
+  {
+   "category": "lettering",
+   "severity": "advisory",
+   "where": "sneaker sides, especially the viewer-left shoe",
+   "evidence": "An embossed swoosh-like mark on the shoe side reads as a brand logo, and the spec says no logos."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_pip",
+ "run": 2
+}

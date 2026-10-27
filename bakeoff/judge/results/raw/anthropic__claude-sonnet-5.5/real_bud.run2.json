@@ -1,0 +1,18 @@
+{
+ "seconds": 7.9,
+ "cost": 0.012718,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs between tunic hem and boots\", \"evidence\": \"Only a short stretch of leg shows below the tunic and above the boot cuffs, so the legs read shorter and stubbier than the 'moderately long stout legs' the spec asks for.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs between tunic hem and boots",
+   "evidence": "Only a short stretch of leg shows below the tunic and above the boot cuffs, so the legs read shorter and stubbier than the 'moderately long stout legs' the spec asks for."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_bud",
+ "run": 2
+}

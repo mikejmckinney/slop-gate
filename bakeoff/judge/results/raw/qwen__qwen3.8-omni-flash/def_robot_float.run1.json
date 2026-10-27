@@ -1,0 +1,11 @@
+{
+ "seconds": 87.3,
+ "cost": 0.00321557,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_robot_float",
+ "run": 1
+}

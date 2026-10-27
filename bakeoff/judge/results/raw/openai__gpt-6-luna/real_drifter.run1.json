@@ -1,0 +1,18 @@
+{
+ "seconds": 10.9,
+ "cost": 0.00067005,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"advisory\",\"where\":\"beneath the feet\",\"evidence\":\"A soft dark shadow is visible under the creature despite the spec calling for no cast shadow.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "beneath the feet",
+   "evidence": "A soft dark shadow is visible under the creature despite the spec calling for no cast shadow."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_drifter",
+ "run": 1
+}

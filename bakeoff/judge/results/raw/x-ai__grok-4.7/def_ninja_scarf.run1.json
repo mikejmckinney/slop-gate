@@ -1,0 +1,18 @@
+{
+ "seconds": 51.1,
+ "cost": 0.024456,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body / framing\", \"evidence\": \"The ninja is cut off around the waist and sash, with no legs or feet shown, so the art is waist-up rather than the full body the spec requires.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body / framing",
+   "evidence": "The ninja is cut off around the waist and sash, with no legs or feet shown, so the art is waist-up rather than the full body the spec requires."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

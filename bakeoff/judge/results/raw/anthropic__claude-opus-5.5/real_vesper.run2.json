@@ -1,0 +1,30 @@
+{
+ "seconds": 8.2,
+ "cost": 0.02318,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground beneath both boots\", \"evidence\": \"There is almost no visible contact shadow under the boots, so the figure reads as slightly detached from the floor instead of having the soft contact shadow the spec requests.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"plum coat\", \"evidence\": \"The coat is a straight, boxy short jacket rather than the bell-shaped coat the spec relies on for a distinct silhouette.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms and mittens\", \"evidence\": \"The arms hang fairly close to the torso, with the mittens near the hips, so they look narrower than the requested 25-degree A pose.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground beneath both boots",
+   "evidence": "There is almost no visible contact shadow under the boots, so the figure reads as slightly detached from the floor instead of having the soft contact shadow the spec requests."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "plum coat",
+   "evidence": "The coat is a straight, boxy short jacket rather than the bell-shaped coat the spec relies on for a distinct silhouette."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms and mittens",
+   "evidence": "The arms hang fairly close to the torso, with the mittens near the hips, so they look narrower than the requested 25-degree A pose."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_vesper",
+ "run": 2
+}

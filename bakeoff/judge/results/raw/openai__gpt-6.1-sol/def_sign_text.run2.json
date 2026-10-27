@@ -1,0 +1,18 @@
+{
+ "seconds": 3.1,
+ "cost": 0.003841,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"blocking\",\"where\":\"Wooden sign in the left foreground\",\"evidence\":\"The sign has large dark, near-readable lettering across its face, despite the requirement that it be blank with no text anywhere.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "Wooden sign in the left foreground",
+   "evidence": "The sign has large dark, near-readable lettering across its face, despite the requirement that it be blank with no text anywhere."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_sign_text",
+ "run": 2
+}

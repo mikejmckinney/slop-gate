@@ -1,0 +1,18 @@
+{
+ "seconds": 45.4,
+ "cost": 0.00174204,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"brown shoulder straps of the air-cylinder harness\", \"evidence\": \"The viewer-left strap carries a rectangular brass buckle on the chest while the viewer-right strap is plain with no buckle, so the paired harness straps do not match.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "brown shoulder straps of the air-cylinder harness",
+   "evidence": "The viewer-left strap carries a rectangular brass buckle on the chest while the viewer-right strap is plain with no buckle, so the paired harness straps do not match."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_brine",
+ "run": 2
+}

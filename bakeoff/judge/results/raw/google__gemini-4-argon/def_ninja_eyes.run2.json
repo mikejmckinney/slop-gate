@@ -1,0 +1,24 @@
+{
+ "seconds": 22.3,
+ "cost": 0.005138,
+ "raw": "{\"findings\": [{\"category\": \"face\", \"severity\": \"blocking\", \"where\": \"ninja's eyes\", \"evidence\": \"The right eye is an oversized white circle with a tiny pupil while the left eye is squinting at a normal scale, with mismatched gaze directions.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing and arms\", \"evidence\": \"The character is cropped at the waist instead of full body, and the raised open palm is on the character's right arm while the staff is in the left hand, opposite to the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "face",
+   "severity": "blocking",
+   "where": "ninja's eyes",
+   "evidence": "The right eye is an oversized white circle with a tiny pupil while the left eye is squinting at a normal scale, with mismatched gaze directions."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing and arms",
+   "evidence": "The character is cropped at the waist instead of full body, and the raised open palm is on the character's right arm while the staff is in the left hand, opposite to the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

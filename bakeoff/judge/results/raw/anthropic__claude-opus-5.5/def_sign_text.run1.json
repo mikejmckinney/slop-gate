@@ -1,0 +1,18 @@
+{
+ "seconds": 5.8,
+ "cost": 0.012676,
+ "raw": "```json\n{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the post, lower left\", \"evidence\": \"The sign that the spec requires to be blank has garbled near-readable text painted on it, something like 'Nor\u00e9dsnd'.\"}], \"verdict\": \"fail\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the post, lower left",
+   "evidence": "The sign that the spec requires to be blank has garbled near-readable text painted on it, something like 'Nor\u00e9dsnd'."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_sign_text",
+ "run": 1
+}

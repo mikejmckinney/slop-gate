@@ -1,0 +1,18 @@
+{
+ "seconds": 31.4,
+ "cost": 0.004364,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower body\", \"evidence\": \"The robot has tank treads instead of legs, which may contradict 'standing'.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower body",
+   "evidence": "The robot has tank treads instead of legs, which may contradict 'standing'."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "base_robot",
+ "run": 2
+}

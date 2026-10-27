@@ -1,0 +1,18 @@
+{
+ "seconds": 10.3,
+ "cost": 0.000646175,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"rabbit ears\",\"evidence\":\"The ears are long and prominent rather than the specified short, thick upright ears.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "rabbit ears",
+   "evidence": "The ears are long and prominent rather than the specified short, thick upright ears."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_mochi",
+ "run": 1
+}

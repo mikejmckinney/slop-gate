@@ -1,0 +1,18 @@
+{
+ "seconds": 41.0,
+ "cost": 0.00171813,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower legs, between shorts hems and socks\", \"evidence\": \"The exposed leg segments are smooth, featureless cylinders with no sculpted knee definition, while the spec asks for stout legs with recognizable knees.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower legs, between shorts hems and socks",
+   "evidence": "The exposed leg segments are smooth, featureless cylinders with no sculpted knee definition, while the spec asks for stout legs with recognizable knees."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_pip",
+ "run": 2
+}

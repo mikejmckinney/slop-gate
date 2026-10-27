@@ -1,0 +1,24 @@
+{
+ "seconds": 55.6,
+ "cost": 0.00195744,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"blocking\", \"where\": \"front face of the chest, left and right of the central latch\", \"evidence\": \"Two iron straps with horizontal hinge barrels are mounted mid-height on the front face, but a lid pivots at the back edge, so hinges drawn here could never work.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"front face hardware\", \"evidence\": \"The spec calls for exactly two hinges on the back edge and one latch at the front center, yet the render shows four hinge-like fittings, adding an extra pair of hinges flanking the front latch.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "front face of the chest, left and right of the central latch",
+   "evidence": "Two iron straps with horizontal hinge barrels are mounted mid-height on the front face, but a lid pivots at the back edge, so hinges drawn here could never work."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "front face hardware",
+   "evidence": "The spec calls for exactly two hinges on the back edge and one latch at the front center, yet the render shows four hinge-like fittings, adding an extra pair of hinges flanking the front latch."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_chest_hinges",
+ "run": 2
+}

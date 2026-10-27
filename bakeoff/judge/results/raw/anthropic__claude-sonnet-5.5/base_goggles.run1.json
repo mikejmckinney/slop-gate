@@ -1,0 +1,24 @@
+{
+ "seconds": 7.7,
+ "cost": 0.010078,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"right end of the goggles and the left strap end\", \"evidence\": \"The strap attaches only on the left lens, with just a small nub on the right side, and the left end of the strap stops abruptly, so it could not form a working loop around a head.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"thin brass bar across the top between the two lenses\", \"evidence\": \"A flat rod runs from the left lens rim to the right lens rim above the leather bridge without a clear mount, so it reads as floating or unattached.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "right end of the goggles and the left strap end",
+   "evidence": "The strap attaches only on the left lens, with just a small nub on the right side, and the left end of the strap stops abruptly, so it could not form a working loop around a head."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "thin brass bar across the top between the two lenses",
+   "evidence": "A flat rod runs from the left lens rim to the right lens rim above the leather bridge without a clear mount, so it reads as floating or unattached."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_goggles",
+ "run": 1
+}

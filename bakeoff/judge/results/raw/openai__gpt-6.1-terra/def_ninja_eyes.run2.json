@@ -1,0 +1,24 @@
+{
+ "seconds": 9.5,
+ "cost": 0.00243745,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Lower body\",\"evidence\":\"The character is cropped at the waist rather than shown full-body.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Hands and arms\",\"evidence\":\"The raised open palm is the character's right hand, while the staff is held on the character's left side, reversing the specified hands.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Lower body",
+   "evidence": "The character is cropped at the waist rather than shown full-body."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Hands and arms",
+   "evidence": "The raised open palm is the character's right hand, while the staff is held on the character's left side, reversing the specified hands."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

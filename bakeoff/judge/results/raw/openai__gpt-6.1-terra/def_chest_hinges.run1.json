@@ -1,0 +1,18 @@
+{
+ "seconds": 9.2,
+ "cost": 0.00171215,
+ "raw": "{\"findings\":[{\"category\":\"construction\",\"severity\":\"blocking\",\"where\":\"Front of the chest, on either side of the latch\",\"evidence\":\"Two additional hinges connect the lid to the body at the front, preventing it from opening on the back hinges.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "Front of the chest, on either side of the latch",
+   "evidence": "Two additional hinges connect the lid to the body at the front, preventing it from opening on the back hinges."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_chest_hinges",
+ "run": 1
+}

@@ -1,0 +1,24 @@
+{
+ "seconds": 10.5,
+ "cost": 0.025736,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"cream mittens on both hands\", \"evidence\": \"The mittens have a visible felted, fuzzy fabric texture with surface speckling, which contradicts the spec's 'no fabric fuzz' and restrained matte vinyl material direction.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground beneath both boots\", \"evidence\": \"There is only a barely perceptible shadow under the boot soles, weaker than the soft contact shadow the spec calls for, so the figure reads as slightly ungrounded.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "cream mittens on both hands",
+   "evidence": "The mittens have a visible felted, fuzzy fabric texture with surface speckling, which contradicts the spec's 'no fabric fuzz' and restrained matte vinyl material direction."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground beneath both boots",
+   "evidence": "There is only a barely perceptible shadow under the boot soles, weaker than the soft contact shadow the spec calls for, so the figure reads as slightly ungrounded."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_brine",
+ "run": 1
+}

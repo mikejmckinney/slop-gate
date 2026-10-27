@@ -1,0 +1,18 @@
+{
+ "seconds": 10.7,
+ "cost": 0.0007168,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The image is cropped at the waist/hips and does not show the character's legs or feet, so it is not full body as required by the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The image is cropped at the waist/hips and does not show the character's legs or feet, so it is not full body as required by the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_ninja_hand",
+ "run": 1
+}
