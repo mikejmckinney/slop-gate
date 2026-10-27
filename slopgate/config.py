@@ -37,6 +37,7 @@ class Config:
     commit_trailers: str = "warning"
     vale_config: Path = PACKAGE_ROOT / ".vale.ini"
     ruff_format: str = "error"
+    ruff_format_scope: str = "added"
     ruff_select: str = "slop-gate"
     biome_config: Path = PACKAGE_ROOT / "configs" / "biome.json"
     media: dict = field(default_factory=dict)
@@ -66,6 +67,9 @@ def load(repo: Path) -> Config:
         cfg.vale_config = repo / prose["vale_config"]
     code = data.get("code") or {}
     cfg.ruff_format = code.get("ruff_format", cfg.ruff_format)
+    cfg.ruff_format_scope = code.get("ruff_format_scope", cfg.ruff_format_scope)
+    if cfg.ruff_format_scope not in ("added", "changed"):
+        raise ValueError(f"{CONFIG_NAME}: code.ruff_format_scope must be added or changed")
     cfg.ruff_select = code.get("ruff_select", cfg.ruff_select)
     if cfg.ruff_select not in ("slop-gate", "repo"):
         raise ValueError(f"{CONFIG_NAME}: code.ruff_select must be slop-gate or repo")

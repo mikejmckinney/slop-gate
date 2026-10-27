@@ -43,3 +43,12 @@ jobs:
     uses: ./.github/workflows/slop-gate.yml
     with:
       slop-gate-ref: ${{ github.event.pull_request.head.sha }}
+
+  # Exercises the reusable audit workflow on every change, against this repo.
+  audit:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/slop-audit.yml
+    with:
+      slop-gate-ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      fail-on-errors: true

@@ -29,7 +29,7 @@ consumers when `v1` moves; pin a commit SHA instead to control that yourself.
 | `pr-text` (PR title, body, commits) | The prose rules above on the PR body; tool attribution footers | Attribution trailers in commits (level set by `commit_trailers`) |
 | `unicode` (every changed text file) | Bidi controls, zero-width and tag characters, variation-selector runs, Latin look-alikes mixed into words, non-ASCII spaces in source code | Non-ASCII spaces in prose, markup, and data files |
 | `residue` (source files) | Truncation markers (`... rest of the code`), placeholder secrets, AI banners, pasted assistant text, stub admissions | "In a real application you would…" comments |
-| `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds | Formatting in existing files the PR edits |
+| `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
 | `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots |
 
@@ -94,6 +94,28 @@ the stream, and the padding plays as a gap at the loop point.
 - **Review.** Require one approving review from an account other than the
   PR author, dismiss stale approvals on new pushes, and require the
   `slop-gate` check.
+
+## Audit a whole repo
+
+The PR gate only looks at changed lines. To map the debt a repo already has,
+copy [`examples/.github/workflows/slop-audit.yml`](examples/.github/workflows/slop-audit.yml)
+into the repo and run it from the Actions tab. It checks every tracked file,
+puts the report in the job summary, saves the full list as the
+`slop-audit-findings` artifact (JSON and Markdown), and doesn't fail unless
+you set `fail-on-errors`.
+
+To fix what it finds:
+
+1. Mechanical fixes, run locally and reviewed like any other diff:
+   `ruff check --fix --select F401,F841,F541 .`, `ruff format .`, and
+   `npx @biomejs/biome@2.6.3 lint --write --config-path <slop-gate>/configs/biome.json .`.
+2. Everything else needs a person or an agent: give it `slop-audit.json`,
+   one file at a time, and have it rewrite the flagged passages. Each finding
+   carries the rule and the fix.
+3. Re-run the audit, then turn on the PR gate so the debt doesn't come back.
+
+Split a large cleanup into several PRs by check family (`only: prose`, then
+`code`, then `media`) so each one is reviewable.
 
 ## Run it locally
 

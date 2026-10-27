@@ -22,7 +22,11 @@ overrides:
 commit_trailers: warning
 
 code:
-  ruff_format: error # applies to files the PR adds; edits to old files only warn
+  ruff_format: error
+  # added: the level applies to files the PR adds; edits to old files only warn.
+  # changed: the level applies to every changed line, so editing an unformatted
+  # file means formatting it in the same PR.
+  ruff_format_scope: added
   ruff_select: slop-gate # or `repo` to add the repo's own Ruff rule selection
 
 # Media manifest. Rules match by glob; later rules override earlier ones.

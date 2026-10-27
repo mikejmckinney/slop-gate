@@ -1,0 +1,22 @@
+# Copy to .github/workflows/slop-audit.yml in a consumer repo, then run it from
+# the Actions tab ("Run workflow"). It reports existing debt across the whole
+# repo without blocking anything.
+name: slop-audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Check families to run: prose,code,media (blank = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    uses: mikejmckinney/slop-gate/.github/workflows/slop-audit.yml@v1
+    with:
+      slop-gate-ref: v1
+      only: ${{ inputs.only }}
