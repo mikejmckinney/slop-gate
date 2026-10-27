@@ -29,6 +29,7 @@ jobs:
   slop-gate:
     name: slop-gate
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     if: github.event_name == 'pull_request'
     permissions:
       contents: read
@@ -54,7 +55,17 @@ jobs:
           python-version: "3.13"
 
       - name: Install tools
-        run: .slop-gate/scripts/install-tools.sh
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # ffmpeg costs a minute or more to install; skip it when no audio changed.
+          if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+            export NEED_FFMPEG=1
+          else
+            export NEED_FFMPEG=0
+          fi
+          .slop-gate/scripts/install-tools.sh
 
       - name: Run checks
         id: check
