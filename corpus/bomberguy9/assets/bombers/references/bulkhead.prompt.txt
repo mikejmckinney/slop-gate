@@ -1,0 +1,10 @@
+Use case: stylized-concept
+Asset type: single-character image-to-3D reference for Detonarium, a small 3D arena game.
+Style: polished stylized 3D toy robot, chunky moulded armour, broad bevelled seams, matte coloured shell over charcoal rubber joints, appealing compact proportions and simple luminous eyes. Roughly three heads tall. Real articulated elbows, knees, ankles and shoulders; this is a biped that must accept humanoid skeletal animation.
+Composition: exactly ONE complete character, centred on the BODY axis at the exact horizontal centre of a square image. Orthographic front view with only a very slight elevated angle to show the top. Face directly forward. Neutral symmetrical relaxed A-pose: both arms point diagonally down and out, hands well clear of hips, both legs straight and slightly apart, both soles level. Empty hands. Entire body plus all attached accessories visible with comfortable margin.
+Lighting: soft even neutral studio lighting on a plain pale grey background; no cast shadow, floor plane, pedestal, vignette or dramatic lighting. The coloured surfaces remain clearly coloured.
+Constraints: one view only, no turnaround sheet, no panels, no labels, no text, no logos, no bomb, no scenery, no extra props or character. Keep all accessories connected. Avoid hair-thin parts and ambiguous merged limbs.
+
+Character identity: Bulkhead.
+Primary palette: blue.
+Design: A cobalt-blue deep-sea salvage robot with a large circular brass-edged porthole face and two pale yellow eyes behind a dark solid faceplate. A broad riveted diving collar surrounds its small round helmet; very wide shoulders and a tapering pear-shaped blue torso. Heavy short diving boots, compact forearms and separate rounded mitten hands. Solid brass clasps and a compact twin-cylinder air pack attached flush to the back. No dangling hoses, handheld tools or transparent surfaces. Its silhouette is broad at the collar, unlike the other cast.

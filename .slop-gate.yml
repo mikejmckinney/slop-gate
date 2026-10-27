@@ -1,3 +1,25 @@
 # slop-gate checks itself. Fixtures are deliberate slop.
 exclude:
   - "tests/fixtures/**"
+
+# Manifest for the test corpus (corpus/** exists only on the test-corpus branch).
+media:
+  rules:
+    - glob: "corpus/planted/assets/sprites/*.png"
+      size: "32x32"
+      pixel_art: true
+      max_colors: 4
+      alpha: required
+    - glob: "corpus/planted/assets/sprites/hero_walk.png"
+      size: "128x32"
+      frame: "32x32"
+    - glob: "corpus/planted/assets/sprites/photo.png"
+      alpha: any
+    - glob: "corpus/planted/assets/tiles/*.png"
+      tileable: true
+    - glob: "corpus/planted/audio/music/*"
+      loop: true
+    - glob: "corpus/planted/audio/sfx/*"
+      max_leading_silence_ms: 20
+    - glob: "corpus/bomberguy9/public/icons/apple-touch-icon.png"
+      alpha: forbidden # iOS fills transparent pixels with black
