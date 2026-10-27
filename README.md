@@ -17,8 +17,9 @@ reads the report, fixes the findings, pushes, and the check runs again.
 3. In the branch ruleset for `main`, require the `slop-gate / slop-gate` status
    check.
 
-Consumer repos call the workflow at a tag (`@v1`), so a rule change here
-reaches them only when they move the tag.
+Consumer repos call the workflow at `@v1`, a release branch that moves
+forward only to a commit whose CI passed on `main`. A rule change here reaches
+consumers when `v1` moves; pin a commit SHA instead to control that yourself.
 
 ## What it checks
 
