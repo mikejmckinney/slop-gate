@@ -1,0 +1,16 @@
+# Stock scene-setting openers and hooks.
+extends: existence
+message: "'%s' is a stock opener. Start with a fact, a number, the reader's problem, or the claim."
+level: error
+ignorecase: true
+tokens:
+  - 'in today[''’]?s (?:[\w-]+ ){0,3}(?:world|age|landscape|era|environment|market)'
+  - 'in (?:a|an|the) (?:rapidly|ever)[- ](?:evolving|changing) (?:landscape|world|field|industry)'
+  - '(?:an )?increasingly interconnected world'
+  - 'in the (?:ever-evolving|ever-changing) (?:world|landscape|realm) of'
+  - 'most people don[''’]?t realize'
+  - 'here[''’]?s the thing'
+  - 'imagine a world where'
+  - 'it[''’]?s no secret that'
+  - 'let[''’]?s dive in'
+  - 'buckle up'

@@ -1,0 +1,104 @@
+# Reusable workflow. Consumer repos call it from a pull_request workflow:
+#
+#   jobs:
+#     slop-gate:
+#       uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1
+#
+# It checks only what the PR changed, posts one report comment that it updates
+# on every push, and fails the job when any finding is an error. It never
+# commits to the PR branch: the PR author stays the only writer.
+name: slop-gate
+
+on:
+  workflow_call:
+    inputs:
+      slop-gate-ref:
+        description: slop-gate version to run. Keep it equal to the tag in your `uses:` line.
+        type: string
+        default: v1
+      comment:
+        description: Post or update the report as a PR comment (needs pull-requests write).
+        type: boolean
+        default: true
+
+env:
+  VALE_VERSION: "3.25.1"
+  BIOME_VERSION: "2.6.3"
+
+jobs:
+  slop-gate:
+    name: slop-gate
+    runs-on: ubuntu-24.04
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out the PR head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check out slop-gate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: mikejmckinney/slop-gate
+          ref: ${{ inputs.slop-gate-ref }}
+          path: .slop-gate
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Install tools
+        run: .slop-gate/scripts/install-tools.sh
+
+      - name: Run checks
+        id: check
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
+          set +e
+          PYTHONPATH=.slop-gate python -m slopgate check \
+            --repo . --base "$BASE_SHA" --head "$HEAD_SHA" \
+            --pr-title "$PR_TITLE" --pr-body-file "$RUNNER_TEMP/pr-body.md" \
+            --report-md "$RUNNER_TEMP/slop-gate.md" --report-json "$RUNNER_TEMP/slop-gate.json" \
+            --github
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          if [ -f "$RUNNER_TEMP/slop-gate.md" ]; then
+            cat "$RUNNER_TEMP/slop-gate.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Post report comment
+        if: inputs.comment && always() && steps.check.outputs.code != '' && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          CODE: ${{ steps.check.outputs.code }}
+        run: .slop-gate/scripts/post-comment.sh "$RUNNER_TEMP/slop-gate.md"
+
+      - name: Upload findings
+        if: always() && steps.check.outputs.code != ''
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: slop-gate-findings
+          path: ${{ runner.temp }}/slop-gate.json
+          if-no-files-found: ignore
+
+      - name: Gate
+        env:
+          CODE: ${{ steps.check.outputs.code }}
+        run: |
+          case "$CODE" in
+            0) echo "No blocking findings." ;;
+            1) echo "::error::slop-gate found blocking issues. The report comment and job summary list each one with a fix."; exit 1 ;;
+            *) echo "::error::slop-gate could not run (exit $CODE). See the 'Run checks' step."; exit 1 ;;
+          esac

@@ -1,0 +1,13 @@
+# Dodging is/has.
+extends: substitution
+message: "Write '%s' instead of '%s' unless the verb adds meaning."
+level: warning
+ignorecase: true
+swap:
+  serves as: is
+  stands as: is
+  functions as a: is a
+  functions as an: is an
+  functions as the: is the
+  acts as a: is a
+  boasts: has

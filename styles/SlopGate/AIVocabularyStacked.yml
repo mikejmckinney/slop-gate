@@ -1,0 +1,8 @@
+# Two or more inflated words in one paragraph.
+extends: occurrence
+message: "This paragraph stacks inflated words. Keep one at most, or none."
+level: error
+scope: paragraph
+max: 1
+ignorecase: true
+token: '\b(?:delv(?:e|es|ed|ing)|tapestry|meticulous(?:ly)?|showcas(?:e|es|ed|ing)|pivotal|intricate(?:ly)?|testament|vibrant|realm|multifaceted|bustling|unwavering)\b'

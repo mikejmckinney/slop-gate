@@ -1,0 +1,8 @@
+# Three or more hedges in one sentence.
+extends: occurrence
+message: "This sentence stacks hedges. Commit to the claim, then name the real exception once."
+level: warning
+scope: sentence
+max: 2
+ignorecase: true
+token: '\b(?:may|might|could|potentially|possibly|relatively|somewhat|arguably|perhaps|likely|various|generally|typically)\b'

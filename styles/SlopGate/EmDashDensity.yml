@@ -1,0 +1,7 @@
+# More than two dashes used as bridges in one paragraph.
+extends: occurrence
+message: "This paragraph leans on dashes. Use periods, commas, colons, or parentheses for most of them; two per paragraph is the working limit."
+level: error
+scope: paragraph
+max: 2
+token: '(?:—| – )'

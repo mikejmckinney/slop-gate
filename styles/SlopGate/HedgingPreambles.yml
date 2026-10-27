@@ -1,0 +1,14 @@
+# Throat-clearing before the claim.
+extends: existence
+message: "'%s' is a hedging preamble. Delete it and state the claim; keep only uncertainty that is real."
+level: error
+ignorecase: true
+tokens:
+  - 'it[''’]?s important to (?:note|remember|understand) that'
+  - 'it is important to (?:note|remember|understand) that'
+  - 'it[''’]?s worth (?:noting|mentioning|pointing out) that'
+  - 'it is worth (?:noting|mentioning|pointing out) that'
+  - 'it should be noted that'
+  - 'generally speaking'
+  - 'from a broader perspective'
+  - 'one (?:might|could) argue'

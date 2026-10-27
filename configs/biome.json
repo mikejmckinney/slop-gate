@@ -1,0 +1,14 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "correctness": { "noUnusedVariables": "error", "noUnusedImports": "error", "noUnreachable": "error" },
+      "suspicious": { "noEmptyBlockStatements": "error", "noDebugger": "error", "noConsole": "off" },
+      "complexity": { "noUselessCatch": "error" }
+    }
+  },
+  "formatter": { "enabled": false },
+  "assist": { "enabled": false }
+}

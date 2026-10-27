@@ -1,0 +1,11 @@
+# "It's not X, it's Y" and "not just X, but Y" constructions.
+extends: existence
+message: "'%s' is a contrast formula. State the true claim once. Keep a contrast only when both sides are concrete, competing explanations."
+level: error
+ignorecase: true
+nonword: true
+tokens:
+  - '\b(?:isn[''’]t|is not|wasn[''’]t|was not|aren[''’]t|are not|weren[''’]t) (?:just|merely|only|simply|really) [^.;:!?]{1,60}?(?:[,;—–]| -- | - ) ?(?:it|this|that|they|we|he|she)(?:[''’]s|[''’]re| is| was| are| were)\b'
+  - '\b(?:it|this|that)(?:[''’]s| is| was) not (?:about )?[^.;:!?]{1,40}?(?:[,;—–]| -- | - ) ?(?:it|this|that)(?:[''’]s| is| was)\b'
+  - '\b(?:it|this|that) (?:isn[''’]t|wasn[''’]t) (?:about )?[^.;:!?]{1,40}?(?:[,;—–]| -- | - ) ?(?:it|this|that)(?:[''’]s| is| was)\b'
+  - '\bnot (?:just|merely|only|simply) (?:a |an |the )?[^.;:!?]{1,50}?(?:,|—|–| -- ) ?but (?:a |an |the |also )'

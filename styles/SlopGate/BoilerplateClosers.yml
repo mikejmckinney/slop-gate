@@ -1,0 +1,13 @@
+# Recap endings and empty forward-looking closers.
+extends: existence
+message: "'%s' is a boilerplate closer. End on a decision, a limit, a next step, or an open question."
+level: error
+ignorecase: true
+tokens:
+  - 'in conclusion'
+  - 'to sum (?:it )?up'
+  - 'in summary,'
+  - 'one thing is (?:clear|certain)'
+  - 'the future of [\w\s-]{1,30} is bright'
+  - 'only time will tell'
+  - 'as [\w\s-]{1,30} continues? to evolve'

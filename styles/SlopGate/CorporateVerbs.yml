@@ -1,0 +1,16 @@
+# Verbs that name no tool, person, or constraint.
+extends: existence
+message: "'%s' names no concrete action. Say what was done to what, or cut the sentence."
+level: warning
+ignorecase: true
+tokens:
+  - 'leverag(?:es|ed|ing)'
+  - 'leverage (?:the|our|your|its|their|this|these|existing|AI|data)'
+  - 'unlock(?:s|ed|ing)? (?:the|new|your|its|their)'
+  - 'harness(?:es|ed|ing)? (?:the|its|their)'
+  - 'facilitat(?:e|es|ed|ing)'
+  - 'foster(?:s|ed|ing)?'
+  - 'empower(?:s|ed|ing)?'
+  - 'navigat(?:e|es|ed|ing) the complexit(?:y|ies)'
+  - 'synerg(?:y|ies|istic)'
+  - 'streamlin(?:e|es|ed|ing)'

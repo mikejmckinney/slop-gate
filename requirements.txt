@@ -1,0 +1,6 @@
+# Runtime dependencies for the slop-gate workflow. Pinned so a dependency
+# release can't change what blocks a PR.
+PyYAML==6.0.3
+pillow==12.3.0
+numpy==2.5.3
+ruff==0.16.9

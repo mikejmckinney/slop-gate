@@ -1,0 +1,17 @@
+# Quality labels with no stated capability.
+extends: existence
+message: "'%s' is a prestige label. Describe the capability, its operating conditions, and its limits."
+level: warning
+ignorecase: true
+tokens:
+  - 'robust'
+  - 'seamless(?:ly)?'
+  - 'enterprise-grade'
+  - 'cutting-edge'
+  - 'state-of-the-art'
+  - 'world-class'
+  - 'best-in-class'
+  - 'next-generation'
+  - 'comprehensive'
+  - 'powerful'
+  - 'holistic'

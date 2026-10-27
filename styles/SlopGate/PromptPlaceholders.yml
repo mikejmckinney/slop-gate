@@ -1,0 +1,10 @@
+# Unfilled template slots and generation leftovers.
+extends: existence
+message: "'%s' is an unfilled placeholder. Replace it with the real content or remove it."
+level: error
+ignorecase: true
+nonword: true
+tokens:
+  - '\[(?:insert|add|your|placeholder)[^\]]{0,40}\]'
+  - '\blorem ipsum\b'
+  - '\b(?:TODO|TBD|FIXME): ?(?:add|fill|write|insert) (?:content|details|description|here)\b'

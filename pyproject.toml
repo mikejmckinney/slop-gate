@@ -1,0 +1,13 @@
+[project]
+name = "slop-gate"
+version = "0.1.0"
+description = "PR checks that block AI-slop patterns in prose, code, images, and audio"
+requires-python = ">=3.13"
+dependencies = ["PyYAML", "pillow", "numpy"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]

@@ -1,0 +1,17 @@
+# Copy to .github/workflows/slop-gate.yml in a consumer repo.
+name: slop-gate
+
+on:
+  pull_request:
+    # `edited` re-runs the check when the PR title or description changes.
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write # the report comment
+
+jobs:
+  slop-gate:
+    uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1
+    with:
+      slop-gate-ref: v1 # keep equal to the tag above

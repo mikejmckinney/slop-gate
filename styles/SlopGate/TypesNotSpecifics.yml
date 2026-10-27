@@ -1,0 +1,9 @@
+extends: existence
+message: "'%s' points at a type instead of a specific. Put the proper noun, number, or example back."
+level: warning
+ignorecase: true
+tokens:
+  - 'a recent study'
+  - '(?:many|numerous|countless) (?:companies|organizations|studies|experts|users|teams)'
+  - '(?:various|a variety of) (?:tools|methods|approaches|techniques|factors)'
+  - 'a leading expert'

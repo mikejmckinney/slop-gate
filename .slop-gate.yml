@@ -1,0 +1,3 @@
+# slop-gate checks itself. Fixtures are deliberate slop.
+exclude:
+  - "tests/fixtures/**"

@@ -1,0 +1,6 @@
+extends: existence
+message: "'%s' sets up symmetric both-sides. Say which side the evidence favors and name the strongest objection once."
+level: warning
+ignorecase: true
+tokens:
+  - 'on (?:the )?one hand'

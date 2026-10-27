@@ -1,0 +1,8 @@
+# ", highlighting its commitment to..." tags after a fact.
+extends: existence
+message: "'%s' adds an interpretive tag. Keep the fact; cut the tag unless it adds a checkable claim."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - ', (?:highlighting|underscoring|reflecting|showcasing|emphasizing|demonstrating|signaling|signalling|illustrating|cementing|reinforcing) (?:its|the|their|his|her|a|an|how|our)\b'

@@ -1,0 +1,21 @@
+# Inflated vocabulary common in model output.
+extends: existence
+message: "'%s' is inflated vocabulary. Use the word you'd say out loud."
+level: warning
+ignorecase: true
+tokens:
+  - 'delv(?:e|es|ed|ing)'
+  - 'tapestry'
+  - 'underscor(?:es|ed|ing) (?:the|its|their|how|that|a|an|our|this|why)'
+  - 'meticulous(?:ly)?'
+  - 'showcas(?:e|es|ed|ing)'
+  - 'pivotal'
+  - 'intricate(?:ly)?'
+  - 'testament'
+  - 'vibrant'
+  - 'realm'
+  - 'multifaceted'
+  - 'embark(?:s|ed|ing)? on'
+  - 'bustling'
+  - 'unwavering'
+  - '(?:digital|ever-evolving|evolving|ever-changing|tech|technology|ai) landscape'

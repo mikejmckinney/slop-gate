@@ -1,0 +1,8 @@
+# Connectives used as furniture at sentence start.
+extends: existence
+message: "'%s' is a filler transition. Delete it, or write the real link: because, so, except, then."
+level: warning
+ignorecase: false
+nonword: true
+tokens:
+  - '(?:^|[.!?]\s+)(?:Furthermore|Moreover|Additionally|In addition|As such|That said|Notably|Importantly),'

@@ -1,0 +1,13 @@
+# Unnamed authorities.
+extends: existence
+message: "'%s' is vague attribution. Name the person, paper, or dataset and the date, or drop the claim."
+level: error
+ignorecase: true
+tokens:
+  - 'experts (?:argue|say|agree|believe|suggest|warn|note)'
+  - '(?:observers|analysts|critics|commentators) have (?:noted|argued|suggested|pointed out)'
+  - 'some critics (?:say|argue)'
+  - '(?:studies|research) (?:shows?|suggests?|has shown|have shown|indicates?)'
+  - 'industry reports (?:suggest|show|indicate)'
+  - 'many (?:believe|argue|say)'
+  - 'it is widely (?:believed|accepted|known|recognized)'

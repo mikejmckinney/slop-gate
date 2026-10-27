@@ -1,0 +1,15 @@
+# Claims of importance with no supporting fact.
+extends: existence
+message: "'%s' inflates significance. State the fact and stop, or add the evidence that supports it."
+level: error
+ignorecase: true
+tokens:
+  - 'plays? an? (?:crucial|pivotal|vital|key|critical|essential) role'
+  - 'stands? as a testament'
+  - '(?:is|as) a testament to'
+  - '(?:leaves?|left) an indelible mark'
+  - 'marks? a pivotal (?:moment|shift|step)'
+  - 'setting the stage for'
+  - 'paving the way for'
+  - 'game[- ]changer'
+  - 'revolutioniz(?:e|es|ed|ing) the way'

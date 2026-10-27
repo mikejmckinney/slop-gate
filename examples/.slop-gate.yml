@@ -1,0 +1,48 @@
+# Copy to the root of a consumer repo as .slop-gate.yml. Every key is optional.
+
+# Paths to skip, on top of the defaults (node_modules, vendor, dist, build,
+# lockfiles, minified files). Use globs; ** matches any depth.
+exclude:
+  - "**/.agents/skills/**" # vendored agent skills
+  - "public/vendor/**"
+
+# Turn whole check families off.
+checks:
+  prose: true
+  pr_text: true
+  code: true
+  media: true
+
+# Re-level or silence single rules: error | warning | off.
+overrides:
+  SlopGate.PrestigeLabels: "off"
+  format: warning
+
+# Attribution trailers in commit messages: error | warning | off.
+commit_trailers: warning
+
+code:
+  ruff_format: error # applies to files the PR adds; edits to old files only warn
+  ruff_select: slop-gate # or `repo` to add the repo's own Ruff rule selection
+
+# Media manifest. Rules match by glob; later rules override earlier ones.
+# Run `python -m slopgate media-init` to draft this from your current assets.
+media:
+  max_file_mb: 10
+  rules:
+    - glob: "assets/sprites/**/*.png"
+      frame: "32x32" # sheet must be a whole number of frames
+      pixel_art: true # no semi-transparent pixels
+      max_colors: 16
+      alpha: required
+    - glob: "assets/tiles/**/*.png"
+      tileable: true
+    - glob: "assets/music/**"
+      loop: true # no gap, click, or level jump at the wrap point
+      loudness_lufs: -16
+    - glob: "assets/sfx/**"
+      max_leading_silence_ms: 20
+      loudness_lufs: -18
+      loudness_tolerance: 3
+    - glob: "assets/concept/**"
+      skip: true

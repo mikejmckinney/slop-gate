@@ -1,0 +1,17 @@
+# Chat-assistant wrapper text left inside a deliverable.
+extends: existence
+message: "'%s' is assistant residue. Delete the wrapper; start at the first real sentence."
+level: error
+ignorecase: true
+tokens:
+  - 'certainly!'
+  - 'absolutely!'
+  - 'great question'
+  - 'I''d be happy to'
+  - 'I would be happy to'
+  - 'I hope this helps'
+  - 'let me know if you (?:have|need|want|would like)'
+  - 'feel free to (?:ask|reach out)'
+  - 'as an AI(?: language model)?'  # slop-gate: ignore (pattern definition)
+  - 'here[''’]?s a (?:comprehensive|detailed|complete|quick) (?:overview|breakdown|guide|summary|look)'
+  - 'here is (?:the|a) (?:revised|updated|improved|complete) (?:version|code|draft)'

@@ -1,0 +1,8 @@
+# Two or more prestige labels or empty corporate verbs in one paragraph.
+extends: occurrence
+message: "This paragraph stacks prestige labels and corporate verbs. Name the capability and the action instead."
+level: error
+scope: paragraph
+max: 1
+ignorecase: true
+token: '\b(?:robust|seamless(?:ly)?|enterprise-grade|cutting-edge|state-of-the-art|world-class|best-in-class|next-generation|holistic|empower(?:s|ed|ing)?|leverag(?:es|ed|ing)|synerg(?:y|ies|istic)|unlock(?:s|ed|ing)?|foster(?:s|ed|ing)?)\b'
