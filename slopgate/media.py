@@ -51,7 +51,7 @@ AUDIO_KEYS = {
     "min_duration_s",
     "max_duration_s",
 }
-COMMON_KEYS = {"glob", "skip", "max_file_mb", "note"}
+COMMON_KEYS = {"glob", "skip", "max_file_mb", "note", "spec"}
 
 
 def rules_for(path: str, media_cfg: dict) -> dict:

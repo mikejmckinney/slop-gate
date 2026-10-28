@@ -24,7 +24,7 @@ DEFAULT_EXCLUDE = [
     ".slop-gate/**",
 ]
 
-KNOWN_KEYS = {"exclude", "checks", "overrides", "commit_trailers", "prose", "code", "media"}
+KNOWN_KEYS = {"exclude", "checks", "overrides", "commit_trailers", "prose", "code", "media", "judge"}
 
 
 @dataclass
@@ -40,6 +40,7 @@ class Config:
     ruff_select: str = "slop-gate"
     biome_config: Path = PACKAGE_ROOT / "configs" / "biome.json"
     media: dict = field(default_factory=dict)
+    judge: dict = field(default_factory=dict)
 
     def excluded(self, path: str) -> bool:
         p = PurePosixPath(path)
@@ -72,6 +73,10 @@ def load(repo: Path) -> Config:
     if "biome_config" in code:
         cfg.biome_config = repo / code["biome_config"]
     cfg.media = data.get("media") or {}
+    cfg.judge = data.get("judge") or {}
+    unknown_judge = set(cfg.judge) - {"models", "max_images"}
+    if unknown_judge:
+        raise ValueError(f"{CONFIG_NAME}: unknown judge keys {sorted(unknown_judge)}")
     for name, level in [("commit_trailers", cfg.commit_trailers), ("code.ruff_format", cfg.ruff_format)]:
         if level not in ("error", "warning", "off"):
             raise ValueError(f"{CONFIG_NAME}: {name} must be error, warning, or off (got {level!r})")

@@ -44,5 +44,12 @@ media:
       max_leading_silence_ms: 20
       loudness_lufs: -18
       loudness_tolerance: 3
+    - glob: "assets/tiles/**/*.png"
+      spec: "Seamless 64x64 stone floor tile, top-down, no text" # read by slop-judge
     - glob: "assets/concept/**"
       skip: true
+
+# Advisory vision review (the slop-judge job). Both keys are optional.
+judge:
+  models: [anthropic/claude-opus-5.5, google/gemini-4-argon]
+  max_images: 20

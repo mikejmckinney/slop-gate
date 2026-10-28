@@ -15,6 +15,8 @@ import re
 import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path, PurePosixPath
 
 from PIL import Image
 
@@ -147,3 +149,134 @@ def review(model: str, image_path: str, spec: str, timeout: int = 180) -> dict:
     except (ValueError, json.JSONDecodeError) as exc:
         result.update({"findings": [], "verdict": "invalid", "error": str(exc)})
     return result
+
+
+# ------------------------------------------------------------------ PR job
+
+# Chosen by the 2026-10-27 bakeoff (bakeoff/judge/README.md): Gemini covers
+# anatomy, contact, and counting; Opus covers conformance to the spec.
+DEFAULT_MODELS = ["anthropic/claude-opus-5.5", "google/gemini-4-argon"]
+DEFAULT_MAX_IMAGES = 20
+NO_SPEC = (
+    "No spec was provided. Judge only defects that are wrong in any style: contradictions "
+    "within the image itself."
+)
+
+
+def find_spec(repo, rel: str, rule: dict) -> tuple[str, str]:
+    """The text the image was generated from, and where it came from.
+
+    A sidecar `<name>.prompt.txt` next to the image wins (the Bomberguy9
+    convention), then a `spec` on the matching media manifest rule.
+    """
+    p = PurePosixPath(rel)
+    for sidecar in (p.with_suffix(".prompt.txt"), p.with_suffix(p.suffix + ".prompt.txt")):
+        path = Path(repo) / sidecar
+        if path.is_file():
+            return path.read_text(encoding="utf-8").strip(), str(sidecar)
+    if rule.get("spec"):
+        return str(rule["spec"]).strip(), "manifest"
+    return NO_SPEC, "none"
+
+
+def merge(results: dict[str, dict]) -> list[dict]:
+    """Combine per-model findings. Same category from several models is one row."""
+    rows: dict[tuple[str, str], dict] = {}
+    for model, r in results.items():
+        for f in r.get("findings", []):
+            key = (f["category"], f["severity"])
+            row = rows.setdefault(
+                key,
+                {
+                    "category": f["category"],
+                    "severity": f["severity"],
+                    "models": [],
+                    "where": f.get("where", ""),
+                    "evidence": f.get("evidence", ""),
+                },
+            )
+            if model not in row["models"]:
+                row["models"].append(model)
+    order = {"blocking": 0, "advisory": 1}
+    return sorted(rows.values(), key=lambda r: (order[r["severity"]], -len(r["models"]), r["category"]))
+
+
+def run(repo, images: list[tuple[str, str, str]], models: list[str], review_fn=None) -> list[dict]:
+    """Review each (path, spec, spec_source) with every model in parallel."""
+    review_fn = review_fn or review
+    jobs = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for rel, spec, _ in images:
+            for m in models:
+                jobs[(rel, m)] = pool.submit(review_fn, m, str(Path(repo) / rel), spec)
+    out = []
+    for rel, _, source in images:
+        per_model, errors, cost = {}, [], 0.0
+        for m in models:
+            try:
+                r = jobs[(rel, m)].result()
+            except Exception as exc:  # noqa: BLE001 - one model's outage is reported, not fatal
+                errors.append(f"{m}: {exc}")
+                continue
+            if r.get("error"):
+                errors.append(f"{m}: {r['error']}")
+                continue
+            per_model[m] = r
+            cost += r.get("cost") or 0
+        out.append(
+            {
+                "path": rel,
+                "spec_source": source,
+                "rows": merge(per_model),
+                "errors": errors,
+                "cost": cost,
+                "models_ok": list(per_model),
+            }
+        )
+    return out
+
+
+def _short(model: str) -> str:
+    return model.split("/", 1)[-1]
+
+
+def report(results: list[dict], models: list[str], skipped: int) -> str:
+    marker = "<!-- slop-judge-report -->"
+    flagged = [r for r in results if any(row["severity"] == "blocking" for row in r["rows"])]
+    cost = sum(r["cost"] for r in results)
+    lines = [
+        marker,
+        "## slop-judge: vision review (advisory)",
+        "",
+        f"Reviewed {len(results)} changed image(s) with {', '.join(f'`{_short(m)}`' for m in models)}; "
+        f"{len(flagged)} have likely defects. Cost ${cost:.3f}."
+        + (f" {skipped} more image(s) were skipped by the `max_images` limit." if skipped else ""),
+        "",
+        "This review never blocks the merge. Models disagree with each other and with themselves "
+        "between runs, so treat a finding from one model as a pointer to look, and one both models "
+        "raise as likely real.",
+    ]
+    for r in results:
+        if not r["rows"] and not r["errors"]:
+            continue
+        lines += ["", f"### `{r['path']}`", ""]
+        if r["spec_source"] == "none":
+            lines.append(
+                "_No spec found (add a `.prompt.txt` sidecar or a manifest `spec`), so only "
+                "internal contradictions were checked._\n"
+            )
+        if r["rows"]:
+            lines += ["| | Category | Raised by | What the model saw |", "|---|---|---|---|"]
+            for row in r["rows"]:
+                icon = "🔶" if row["severity"] == "blocking" else "▫️"
+                who = (
+                    "both" if len(row["models"]) == len(models) > 1 else ", ".join(map(_short, row["models"]))
+                )
+                text = f"{row['where']}: {row['evidence']}".replace("|", "\\|").replace("\n", " ")
+                lines.append(f"| {icon} | `{row['category']}` | {who} | {text} |")
+        for e in r["errors"]:
+            lines.append(f"\n⚠️ Review failed: {e[:300]}")
+    clean = len([r for r in results if not r["rows"] and not r["errors"]])
+    if clean:
+        lines += ["", f"{clean} image(s) had no findings."]
+    return "\n".join(lines) + "\n"
