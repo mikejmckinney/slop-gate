@@ -15,7 +15,8 @@ def call(model: str, prompt: str, image: Path | None = None, out: Path | None = 
     content = [{"type": "text", "text": prompt}]
     if image:
         b64 = base64.b64encode(image.read_bytes()).decode()
-        content.append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}})
+        mime = "image/jpeg" if image.suffix.lower() in (".jpg", ".jpeg") else "image/png"
+        content.append({"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}})
     body = {
         "model": model,
         "messages": [{"role": "user", "content": content}],
