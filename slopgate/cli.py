@@ -75,7 +75,11 @@ def run_judge(args: argparse.Namespace) -> int:
         raise RuntimeError("OPENROUTER_API_KEY is not set; add it as a repository secret")
     changed = gitdiff.changed_lines(repo, args.base, args.head)
     models = args.models.split(",") if args.models else cfg.judge.get("models", judge.DEFAULT_MODELS)
-    limit = args.max_images or cfg.judge.get("max_images", judge.DEFAULT_MAX_IMAGES)
+    limit = (
+        args.max_images
+        if args.max_images is not None
+        else cfg.judge.get("max_images", judge.DEFAULT_MAX_IMAGES)
+    )
     images = []
     for rel in sorted(changed):
         if PurePosixPath(rel).suffix.lower() not in media.IMAGE_EXTS or cfg.excluded(rel):

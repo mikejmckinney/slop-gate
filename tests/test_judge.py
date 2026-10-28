@@ -28,10 +28,6 @@ class ParseTests(unittest.TestCase):
             self.assertIn(f"- {key}:", text)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class PrJobTests(unittest.TestCase):
     def setUp(self):
         import shutil
@@ -84,3 +80,7 @@ class PrJobTests(unittest.TestCase):
         (self.repo / ".slop-gate.yml").write_text("judge:\n  model: x\n")
         with self.assertRaises(ValueError):
             load(self.repo)
+
+
+if __name__ == "__main__":
+    unittest.main()
