@@ -87,8 +87,8 @@ Deterministic checks can't see six fingers, a floating character, or text on
 a sign that should be blank. The optional `slop-judge` job sends each changed
 image to two vision models, `anthropic/claude-opus-5.5` and
 `google/gemini-4-argon`, chosen by the [bakeoff](bakeoff/judge/README.md):
-together they found 33 of 36 known defects with no false claims, at about
-$0.03 per image.
+together they caught 18 known defects in 33 of 36 defect-runs (two runs each)
+with no false claims, at about $0.03 per image.
 
 To use it, add an `OPENROUTER_API_KEY` repository secret, add the
 `slop-judge` job from the [example workflow](examples/.github/workflows/slop-gate.yml),
