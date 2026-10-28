@@ -112,6 +112,12 @@ re-runs the review on the images the PR changed and updates one comment.
   commit trailer and PR footer
   ([example](examples/.claude/settings.json)). Some Claude Code versions have
   ignored the setting, so the PR check stays as the backstop.
+- **Footers you can't turn off.** Some agent tooling adds a footer to the PR
+  description each time it opens or edits a PR, and no repo setting stops it.
+  Pass `strip-attribution-footer: true` to the workflow and it deletes footer
+  lines (and the rule above them) from the description before the check
+  reads it. A footer quoted inside a code fence stays, and fork PRs are
+  skipped, since their token can't edit the PR.
 - **Squash merges.** Set the repository's default squash message to "pull
   request title and description" so commit bodies, trailers included, don't
   reach the default branch.
