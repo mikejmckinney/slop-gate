@@ -20,6 +20,13 @@ on:
         description: Post or update the report as a PR comment (needs pull-requests write).
         type: boolean
         default: true
+      strip-attribution-footer:
+        description: >-
+          Delete tool attribution footers from the PR description before checking
+          it (needs pull-requests write). For agents that add a footer you can't
+          turn off. Skipped on fork PRs.
+        type: boolean
+        default: false
 
 env:
   VALE_VERSION: "3.25.1"
@@ -67,6 +74,14 @@ jobs:
           fi
           .slop-gate/scripts/install-tools.sh
 
+      - name: Strip attribution footer
+        if: inputs.strip-attribution-footer && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: .slop-gate/scripts/strip-footer.sh "$RUNNER_TEMP/pr-body.md"
+
       - name: Run checks
         id: check
         env:
@@ -75,7 +90,8 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
+          # The strip step leaves the current description here; otherwise use the event's.
+          [ -f "$RUNNER_TEMP/pr-body.md" ] || printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
           set +e
           PYTHONPATH=.slop-gate python -m slopgate check \
             --repo . --base "$BASE_SHA" --head "$HEAD_SHA" \

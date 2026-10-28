@@ -43,6 +43,7 @@ jobs:
     uses: ./.github/workflows/slop-gate.yml
     with:
       slop-gate-ref: ${{ github.event.pull_request.head.sha }}
+      strip-attribution-footer: true
 
   # Exercises the reusable audit workflow on every change, against this repo.
   audit:

@@ -22,6 +22,7 @@ PR_FOOTER = re.compile(
     re.I | re.M,
 )
 _FENCE = re.compile(r"```.*?```", re.S)
+_RULE_LINE = re.compile(r"\s*(?:-{3,}|\*{3,}|_{3,})\s*")
 
 TRAILER_FIX = (
     "Turn attribution off at the source (Claude Code: `attribution.commit` in "
@@ -51,6 +52,31 @@ def check_pr(vale_ini: Path, title: str, body: str) -> list[Finding]:
             )
         )
     return findings
+
+
+def strip_footers(body: str) -> tuple[str, int]:
+    """Remove tool attribution footer lines from a PR description.
+
+    Returns the new body and the number of lines removed. Lines inside code
+    fences stay, so a description that quotes a footer is left for a person.
+    When a footer is removed, the horizontal rules and blank lines left at the
+    end of the body go too.
+    """
+    kept: list[str] = []
+    in_fence = False
+    for line in body.splitlines():
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+        if not in_fence and PR_FOOTER.fullmatch(line):
+            continue
+        kept.append(line)
+    removed = len(body.splitlines()) - len(kept)
+    if not removed:
+        return body, 0
+    while kept and (not kept[-1].strip() or _RULE_LINE.fullmatch(kept[-1])):
+        kept.pop()
+    newline = "\r\n" if "\r\n" in body else "\n"
+    return newline.join(kept) + (newline if kept else ""), removed
 
 
 def check_commits(vale_ini: Path, commits: list[tuple[str, str]], trailer_level: str) -> list[Finding]:
