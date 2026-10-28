@@ -288,7 +288,12 @@ def _ruff() -> str | None:
 
 
 def ruff_check(
-    repo: Path, changed: ChangedLines, excluded, format_level: str, select: str = "slop-gate"
+    repo: Path,
+    changed: ChangedLines,
+    excluded,
+    format_level: str,
+    select: str = "slop-gate",
+    format_scope: str = "added",
 ) -> tuple[list[Finding], int]:
     files = [
         p
@@ -330,11 +335,13 @@ def ruff_check(
                 )
             )
     if format_level != "off":
-        findings += _ruff_format(ruff, repo, changed, files, format_level)
+        findings += _ruff_format(ruff, repo, changed, files, format_level, format_scope)
     return findings, len(files)
 
 
-def _ruff_format(ruff: str, repo: Path, changed: ChangedLines, files: list[str], level: str) -> list[Finding]:
+def _ruff_format(
+    ruff: str, repo: Path, changed: ChangedLines, files: list[str], level: str, scope: str
+) -> list[Finding]:
     result = subprocess.run(
         [ruff, "format", "--diff", "--force-exclude", *files],
         cwd=repo,
@@ -356,10 +363,12 @@ def _ruff_format(ruff: str, repo: Path, changed: ChangedLines, files: list[str],
             hunk = range(start, start + max(count, 1))
             hit = next((n for n in hunk if in_scope(changed, rel, n)), None)
             if hit:
-                # Blocking on an old, never-formatted file would force a
-                # whole-file reformat into an unrelated PR, so only files the
-                # PR adds get the configured level; edits get advice.
-                severity = level if _is_new_file(repo, changed, rel) else "warning"
+                # With scope "added", blocking on an old, never-formatted file
+                # would force a whole-file reformat into an unrelated PR, so
+                # only files the PR adds get the configured level and edits
+                # get advice. Scope "changed" applies the level to edits too.
+                strict = scope == "changed" or _is_new_file(repo, changed, rel)
+                severity = level if strict else "warning"
                 findings.append(
                     Finding(
                         "ruff",
