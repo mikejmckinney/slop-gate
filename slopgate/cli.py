@@ -34,7 +34,7 @@ def run_check(args: argparse.Namespace) -> int:
         found, checked["text files for hidden characters"] = code.scan_files(repo, changed, cfg.excluded)
         findings += found
         found, checked["Python files"] = code.ruff_check(
-            repo, changed, cfg.excluded, cfg.ruff_format, cfg.ruff_select
+            repo, changed, cfg.excluded, cfg.ruff_format, cfg.ruff_select, cfg.ruff_format_scope
         )
         findings += found
         found, checked["JS/TS files"] = code.biome_check(repo, changed, cfg.excluded, cfg.biome_config)

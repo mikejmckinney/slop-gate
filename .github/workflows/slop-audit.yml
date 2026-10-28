@@ -1,0 +1,98 @@
+# Reusable whole-repo audit. Unlike the PR gate, it checks every tracked file
+# and every line, and by default it reports without failing, so it can map
+# existing debt before a cleanup. Consumers call it from a manual workflow:
+#
+#   on: workflow_dispatch
+#   jobs:
+#     audit:
+#       uses: mikejmckinney/slop-gate/.github/workflows/slop-audit.yml@v1
+name: slop-audit
+
+on:
+  workflow_call:
+    inputs:
+      slop-gate-ref:
+        description: slop-gate version to run. Keep it equal to the ref in your `uses:` line.
+        type: string
+        default: v1
+      only:
+        description: Comma list of check families to run (prose,code,media). Empty runs all.
+        type: string
+        default: ""
+      fail-on-errors:
+        description: Fail the job when any finding is an error.
+        type: boolean
+        default: false
+
+env:
+  VALE_VERSION: "3.25.1"
+  BIOME_VERSION: "2.6.3"
+
+jobs:
+  audit:
+    name: slop-audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check out slop-gate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: mikejmckinney/slop-gate
+          ref: ${{ inputs.slop-gate-ref }}
+          path: .slop-gate
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Install tools
+        run: |
+          # ffmpeg is only needed when the repo tracks audio.
+          if git ls-files | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+            export NEED_FFMPEG=1
+          else
+            export NEED_FFMPEG=0
+          fi
+          .slop-gate/scripts/install-tools.sh
+
+      - name: Audit every tracked file
+        id: audit
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          set +e
+          PYTHONPATH=.slop-gate python -m slopgate check --repo . --all ${ONLY:+--only "$ONLY"} \
+            --report-md "$RUNNER_TEMP/slop-audit.md" --report-json "$RUNNER_TEMP/slop-audit.json" >/dev/null
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          if [ -f "$RUNNER_TEMP/slop-audit.md" ]; then
+            head -c 900000 "$RUNNER_TEMP/slop-audit.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload findings
+        if: always() && steps.audit.outputs.code != ''
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: slop-audit-findings
+          path: |
+            ${{ runner.temp }}/slop-audit.json
+            ${{ runner.temp }}/slop-audit.md
+          if-no-files-found: ignore
+
+      - name: Result
+        env:
+          CODE: ${{ steps.audit.outputs.code }}
+          FAIL_ON_ERRORS: ${{ inputs.fail-on-errors }}
+        run: |
+          case "$CODE" in
+            0) echo "No blocking findings." ;;
+            1) if [ "$FAIL_ON_ERRORS" = "true" ]; then echo "::error::Audit found blocking issues."; exit 1; fi
+               echo "::notice::Audit found blocking issues; see the job summary and the slop-audit-findings artifact." ;;
+            *) echo "::error::slop-audit could not run (exit $CODE)."; exit 1 ;;
+          esac

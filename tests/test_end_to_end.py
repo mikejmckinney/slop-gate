@@ -163,5 +163,51 @@ class EndToEndTests(unittest.TestCase):
         self.assertNotIn("SlopGate.ContrastFormula", {f["rule"] for f in findings})
 
 
+@unittest.skipUnless(HAS_VALE, "vale not installed")
+class FormatScopeTests(unittest.TestCase):
+    """An edit inside an old, unformatted file only warns unless scope is `changed`."""
+
+    def setUp(self):
+        self.repo = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.repo)
+        git(self.repo, "init", "-q", "-b", "main")
+        git(self.repo, "config", "user.email", "t@example.com")
+        git(self.repo, "config", "user.name", "t")
+        (self.repo / "old.py").write_text("x = {'a':1}\ny = [1,2]\n")
+        git(self.repo, "add", ".")
+        git(self.repo, "commit", "-qm", "base")
+        git(self.repo, "checkout", "-qb", "feature")
+        (self.repo / "old.py").write_text("x = {'a':1}\ny = [1,2,3]\n")
+        git(self.repo, "commit", "-qam", "edit")
+
+    def format_severity(self, config=""):
+        if config:
+            (self.repo / ".slop-gate.yml").write_text(config)
+        report = self.repo / "r.json"
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            main(
+                [
+                    "check",
+                    "--repo",
+                    str(self.repo),
+                    "--base",
+                    "main",
+                    "--head",
+                    "feature",
+                    "--only",
+                    "code",
+                    "--report-json",
+                    str(report),
+                ]
+            )
+        return {f["severity"] for f in json.loads(report.read_text()) if f["rule"] == "format"}
+
+    def test_default_scope_warns_on_edits(self):
+        self.assertEqual(self.format_severity(), {"warning"})
+
+    def test_changed_scope_blocks_on_edits(self):
+        self.assertEqual(self.format_severity("code:\n  ruff_format_scope: changed\n"), {"error"})
+
+
 if __name__ == "__main__":
     unittest.main()

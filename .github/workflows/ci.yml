@@ -44,6 +44,15 @@ jobs:
     with:
       slop-gate-ref: ${{ github.event.pull_request.head.sha }}
 
+  # Exercises the reusable audit workflow on every change, against this repo.
+  audit:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/slop-audit.yml
+    with:
+      slop-gate-ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      fail-on-errors: true
+
   # Advisory vision review; runs only when the PR has the slop-judge label.
   judge:
     if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'slop-judge')
