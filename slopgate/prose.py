@@ -13,6 +13,7 @@ from .findings import Finding
 from .gitdiff import ChangedLines, in_scope
 
 _CHUNK = 200  # files per Vale invocation, to stay under argv limits
+UNREADABLE = "vale-unreadable"
 
 
 def vale_extensions(vale_ini: Path) -> set[str]:
@@ -61,11 +62,14 @@ def run_vale(repo: Path, vale_ini: Path, files: list[str], kind: str = "prose") 
         findings.append(
             Finding(
                 check=kind,
-                rule="vale-unreadable",
+                rule=UNREADABLE,
                 severity="warning",
                 path=chunk[0],
-                line=error.get("Line") or None,
-                message=f"Vale could not read this file, so its prose was not checked: {error['Text']}.",
+                line=None,
+                message=(
+                    f"Vale could not read this file (line {error.get('Line') or '?'}: {error['Text']}), "
+                    "so none of its prose was checked."
+                ),
                 fix="Fix the front matter (quote values that contain ': ') or exclude the file.",
             )
         )
@@ -119,7 +123,10 @@ def check(repo: Path, changed: ChangedLines, vale_ini: Path, excluded) -> tuple[
         if PurePosixPath(p).suffix.lower() in exts and not excluded(p) and (repo / p).is_file()
     ]
     found = run_vale(repo, vale_ini, files)
-    return [f for f in found if in_scope(changed, f.path, f.line)], len(files)
+    # An unreadable file means none of its changed lines were checked, so that
+    # warning applies to the whole file whatever line Vale blamed.
+    kept = [f for f in found if f.rule == UNREADABLE or in_scope(changed, f.path, f.line)]
+    return kept, len(files)
 
 
 def check_text(vale_ini: Path, label: str, text: str) -> list[Finding]:
