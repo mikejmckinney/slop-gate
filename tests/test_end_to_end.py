@@ -243,5 +243,34 @@ class FormatScopeTests(unittest.TestCase):
         self.assertEqual(self.format_severity("code:\n  ruff_format_scope: changed\n"), {"error"})
 
 
+@unittest.skipUnless(HAS_VALE, "vale not installed")
+class UnreadableFileTests(unittest.TestCase):
+    """A file Vale can't parse is reported; it must not stop the other files."""
+
+    def setUp(self):
+        self.repo = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.repo)
+        (self.repo / "bad.md").write_text("---\ndescription: Three forms: one, two\n---\n\nText.\n")
+        (self.repo / "slop.md").write_text("It's important to note that the cache is per-process.\n")
+
+    def test_bad_front_matter_is_a_warning_and_other_files_still_run(self):
+        from slopgate.prose import run_vale
+
+        found = {
+            (f.path, f.rule, f.severity)
+            for f in run_vale(self.repo, ROOT / ".vale.ini", ["bad.md", "slop.md"])
+        }
+        self.assertIn(("bad.md", "vale-unreadable", "warning"), found)
+        self.assertIn(("slop.md", "SlopGate.HedgingPreambles", "error"), found)
+
+    def test_broken_config_is_still_fatal(self):
+        from slopgate.prose import run_vale
+
+        ini = self.repo / "broken.ini"
+        ini.write_text("StylesPath = does-not-exist\n[*.md]\nBasedOnStyles = Nope\n")
+        with self.assertRaises(RuntimeError):
+            run_vale(self.repo, ini, ["slop.md"])
+
+
 if __name__ == "__main__":
     unittest.main()

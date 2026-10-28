@@ -36,8 +36,9 @@ def run_vale(repo: Path, vale_ini: Path, files: list[str], kind: str = "prose") 
     if vale is None:
         raise RuntimeError("vale is not installed; the workflow installs it, locally see README")
     findings: list[Finding] = []
-    for i in range(0, len(files), _CHUNK):
-        chunk = files[i : i + _CHUNK]
+    pending = [files[i : i + _CHUNK] for i in range(0, len(files), _CHUNK)]
+    while pending:
+        chunk = pending.pop(0)
         result = subprocess.run(
             [vale, f"--config={vale_ini}", "--output=JSON", "--no-exit", *chunk],
             cwd=repo,
@@ -45,25 +46,69 @@ def run_vale(repo: Path, vale_ini: Path, files: list[str], kind: str = "prose") 
             text=True,
             check=False,
         )
-        if result.returncode != 0 or not result.stdout.strip().startswith("{"):
+        if result.returncode == 0 and result.stdout.strip().startswith("{"):
+            findings += _alerts(json.loads(result.stdout), repo, kind)
+            continue
+        # One unparseable file (bad YAML front matter, say) makes Vale abort
+        # the whole batch. Retry the batch file by file so the rest still get
+        # checked; a file that fails on its own is reported, not fatal.
+        if len(chunk) > 1:
+            pending[:0] = [[f] for f in chunk]
+            continue
+        error = _file_error(result, chunk[0])
+        if error is None:
             raise RuntimeError(f"vale failed: {(result.stderr or result.stdout).strip()[:2000]}")
-        for path, alerts in json.loads(result.stdout).items():
-            rel = Path(path)
-            rel = rel.relative_to(repo) if rel.is_absolute() else rel
-            for a in alerts:
-                if a["Severity"] not in ("error", "warning"):
-                    continue
-                findings.append(
-                    Finding(
-                        check=kind,
-                        rule=a["Check"],
-                        severity=a["Severity"],
-                        path=PurePosixPath(rel).as_posix(),
-                        line=a["Line"],
-                        message=a["Message"],
-                    )
-                )
+        findings.append(
+            Finding(
+                check=kind,
+                rule="vale-unreadable",
+                severity="warning",
+                path=chunk[0],
+                line=error.get("Line") or None,
+                message=f"Vale could not read this file, so its prose was not checked: {error['Text']}.",
+                fix="Fix the front matter (quote values that contain ': ') or exclude the file.",
+            )
+        )
     return findings
+
+
+def _alerts(data: dict, repo: Path, kind: str) -> list[Finding]:
+    out = []
+    for path, alerts in data.items():
+        rel = Path(path)
+        rel = rel.relative_to(repo) if rel.is_absolute() else rel
+        for a in alerts:
+            if a["Severity"] not in ("error", "warning"):
+                continue
+            out.append(
+                Finding(
+                    check=kind,
+                    rule=a["Check"],
+                    severity=a["Severity"],
+                    path=PurePosixPath(rel).as_posix(),
+                    line=a["Line"],
+                    message=a["Message"],
+                )
+            )
+    return out
+
+
+def _file_error(result: subprocess.CompletedProcess, path: str) -> dict | None:
+    """Vale's error object when it blames this file's content; None otherwise.
+
+    Errors about the config or the styles name another path and stay fatal.
+    """
+    for stream in (result.stderr, result.stdout):
+        text = stream.strip()
+        if not text.startswith("{"):
+            continue
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict) and data.get("Text") and str(data.get("Path", "")).endswith(path):
+            return data
+    return None
 
 
 def check(repo: Path, changed: ChangedLines, vale_ini: Path, excluded) -> tuple[list[Finding], int]:
