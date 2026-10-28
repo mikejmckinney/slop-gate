@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
-from . import code, config, gitdiff, media, media_init, prose, prtext
+from . import code, config, gitdiff, judge, media, media_init, prose, prtext
 from .findings import Finding, annotations, apply_overrides, exit_code, markdown_report, to_json
 
 
@@ -66,6 +67,39 @@ def run_check(args: argparse.Namespace) -> int:
     return exit_code(findings)
 
 
+def run_judge(args: argparse.Namespace) -> int:
+    """Advisory vision review of changed images. Exits 0 unless it cannot run."""
+    repo = Path(args.repo).resolve()
+    cfg = config.load(repo)
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        raise RuntimeError("OPENROUTER_API_KEY is not set; add it as a repository secret")
+    changed = gitdiff.changed_lines(repo, args.base, args.head)
+    models = args.models.split(",") if args.models else cfg.judge.get("models", judge.DEFAULT_MODELS)
+    limit = (
+        args.max_images
+        if args.max_images is not None
+        else cfg.judge.get("max_images", judge.DEFAULT_MAX_IMAGES)
+    )
+    images = []
+    for rel in sorted(changed):
+        if PurePosixPath(rel).suffix.lower() not in media.IMAGE_EXTS or cfg.excluded(rel):
+            continue
+        if not (repo / rel).is_file():
+            continue
+        rule = media.rules_for(rel, cfg.media)
+        if rule.get("skip"):
+            continue
+        spec, source = judge.find_spec(repo, rel, rule)
+        images.append((rel, spec, source))
+    skipped = max(0, len(images) - limit)
+    results = judge.run(repo, images[:limit], models)
+    text = judge.report(results, models, skipped)
+    if args.report_md:
+        Path(args.report_md).write_text(text, encoding="utf-8")
+    print(text)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="slopgate", description=__doc__)
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -82,6 +116,15 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--report-json")
     c.add_argument("--github", action="store_true", help="print GitHub annotations instead of Markdown")
     c.set_defaults(func=run_check)
+
+    j = sub.add_parser("judge", help="advisory vision-model review of changed images")
+    j.add_argument("--repo", default=".")
+    j.add_argument("--base", required=True)
+    j.add_argument("--head", required=True)
+    j.add_argument("--models", help="comma list of OpenRouter model ids")
+    j.add_argument("--max-images", type=int)
+    j.add_argument("--report-md")
+    j.set_defaults(func=run_judge)
 
     m = sub.add_parser("media-init", help="print a draft media manifest from existing assets")
     m.add_argument("--repo", default=".")

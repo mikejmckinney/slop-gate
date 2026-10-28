@@ -81,6 +81,30 @@ fill in the commented hints, such as which tracks loop.
 For loops, prefer Ogg Vorbis or Opus. MP3 encoders pad the start and end of
 the stream, and the padding plays as a gap at the loop point.
 
+## Vision review (advisory)
+
+Deterministic checks can't see six fingers, a floating character, or text on
+a sign that should be blank. The optional `slop-judge` job sends each changed
+image to two vision models, `anthropic/claude-opus-5.5` and
+`google/gemini-4-argon`, chosen by the [bakeoff](bakeoff/judge/README.md):
+together they caught 18 known defects in 33 of 36 defect-runs (two runs each)
+with no false claims, at about $0.03 per image.
+
+To use it, add an `OPENROUTER_API_KEY` repository secret, add the
+`slop-judge` job from the [example workflow](examples/.github/workflows/slop-gate.yml),
+and put the `slop-judge` label on a PR. While the label is on, every push
+re-runs the review on the images the PR changed and updates one comment.
+
+- **It never blocks.** Models change their verdict on 4–12% of images between
+  identical runs, so the job reports and passes. A finding both models raise
+  is likely real; a finding from one model is a place to look.
+- **It judges against a spec when it has one.** A `<name>.prompt.txt` file next
+  to the image wins, then a `spec` on the matching media manifest rule.
+  Without a spec, only contradictions inside the image are checked.
+- **It caps cost.** At most 20 images per run by default; set `judge.max_images`
+  or `judge.models` in `.slop-gate.yml` to change that.
+- **Fork PRs are skipped**, because GitHub doesn't give them repository secrets.
+
 ## Settings to pair with it
 
 - **Attribution at the source.** In Claude Code, `attribution.commit` and
@@ -137,6 +161,5 @@ aren't on `PATH`.
 These checks are patterns, not authorship detection, and plenty of human
 writing trips them. They also miss what needs judgment: invented citations
 and statistics, paragraphs that repeat each other, comments that restate the
-code, and image defects such as malformed hands or garbled lettering. A
-vision-model review for images is planned as an advisory, label-triggered
-job.
+code. Image defects such as malformed hands or garbled lettering get the
+advisory vision review below, which is a second opinion, not a gate.

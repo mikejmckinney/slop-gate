@@ -4,7 +4,7 @@ name: slop-gate
 on:
   pull_request:
     # `edited` re-runs the check when the PR title or description changes.
-    types: [opened, synchronize, reopened, edited, ready_for_review]
+    types: [opened, synchronize, reopened, edited, ready_for_review, labeled]
 
 permissions:
   contents: read
@@ -15,3 +15,13 @@ jobs:
     uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1
     with:
       slop-gate-ref: v1 # keep equal to the tag above
+
+  # Optional advisory vision review of changed images. Add the `slop-judge`
+  # label to a PR to run it; it needs an OPENROUTER_API_KEY repository secret.
+  slop-judge:
+    if: contains(github.event.pull_request.labels.*.name, 'slop-judge')
+    uses: mikejmckinney/slop-gate/.github/workflows/slop-judge.yml@v1
+    with:
+      slop-gate-ref: v1
+    secrets:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

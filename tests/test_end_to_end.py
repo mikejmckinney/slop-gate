@@ -163,10 +163,6 @@ class EndToEndTests(unittest.TestCase):
         self.assertNotIn("SlopGate.ContrastFormula", {f["rule"] for f in findings})
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 @unittest.skipUnless(HAS_VALE, "vale not installed")
 class FormatScopeTests(unittest.TestCase):
     """An edit inside an old, unformatted file only warns unless scope is `changed`."""
@@ -211,3 +207,7 @@ class FormatScopeTests(unittest.TestCase):
 
     def test_changed_scope_blocks_on_edits(self):
         self.assertEqual(self.format_severity("code:\n  ruff_format_scope: changed\n"), {"error"})
+
+
+if __name__ == "__main__":
+    unittest.main()

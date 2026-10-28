@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Create or update the single slop-gate report comment on a PR.
 # Needs GH_TOKEN, REPO (owner/name), PR_NUMBER; $1 is the Markdown report.
+# MARKER picks which comment to update (default: the slop-gate report).
 set -euo pipefail
 
 report="$1"
-marker="<!-- slop-gate-report -->"
+marker="${MARKER:-<!-- slop-gate-report -->}"
 max=60000 # GitHub caps comment bodies at 65536 characters
 
 if [ ! -s "$report" ]; then
