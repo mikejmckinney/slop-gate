@@ -1,0 +1,24 @@
+{
+ "seconds": 20.1,
+ "cost": 0.004744,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"blocking\", \"where\": \"viewer-left tread\", \"evidence\": \"The left tank tread hovers above the ground plane instead of resting on it.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower body\", \"evidence\": \"The character uses tank treads rather than legs for standing.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "viewer-left tread",
+   "evidence": "The left tank tread hovers above the ground plane instead of resting on it."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower body",
+   "evidence": "The character uses tank treads rather than legs for standing."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_robot_float",
+ "run": 2
+}

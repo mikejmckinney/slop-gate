@@ -1,0 +1,36 @@
+{
+ "seconds": 8.9,
+ "cost": 0.02006,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing\", \"evidence\": \"The spec asks for a full-body character, but the figure is cropped at the waist with no legs or feet shown.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"raised hand and staff hand\", \"evidence\": \"The ninja faces the viewer, so the raised open palm on image-left is the character's right hand and the staff is in the left hand, the reverse of the spec.\"}, {\"category\": \"merged-objects\", \"severity\": \"blocking\", \"where\": \"upper end of the staff where it meets the red scarf tail (upper right)\", \"evidence\": \"The staff's upper end fades into the scarf tail with no boundary, so the fabric appears to grow out of the wood instead of being a separate object.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"wooden staff\", \"evidence\": \"The visible staff runs from below the frame to past the shoulder, which reads as longer than the 'short' staff the spec calls for.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing",
+   "evidence": "The spec asks for a full-body character, but the figure is cropped at the waist with no legs or feet shown."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "raised hand and staff hand",
+   "evidence": "The ninja faces the viewer, so the raised open palm on image-left is the character's right hand and the staff is in the left hand, the reverse of the spec."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "upper end of the staff where it meets the red scarf tail (upper right)",
+   "evidence": "The staff's upper end fades into the scarf tail with no boundary, so the fabric appears to grow out of the wood instead of being a separate object."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "wooden staff",
+   "evidence": "The visible staff runs from below the frame to past the shoulder, which reads as longer than the 'short' staff the spec calls for."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

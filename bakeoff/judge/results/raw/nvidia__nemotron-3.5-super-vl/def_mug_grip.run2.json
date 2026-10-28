@@ -1,0 +1,11 @@
+{
+ "seconds": 26.0,
+ "cost": 0.0017186,
+ "raw": "",
+ "error": "no JSON object in reply",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_mug_grip",
+ "run": 2
+}

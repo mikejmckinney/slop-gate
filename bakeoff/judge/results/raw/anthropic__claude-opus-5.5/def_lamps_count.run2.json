@@ -1,0 +1,24 @@
+{
+ "seconds": 4.9,
+ "cost": 0.011796,
+ "raw": "{\"findings\": [{\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"glowing floor lamps, center of the floor\", \"evidence\": \"There are five lamps, three in the top row and two in the bottom row, where the spec calls for exactly four.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lamp arrangement\", \"evidence\": \"The lamps form an uneven 3-over-2 layout offset to the left, not a 2 by 2 grid.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "glowing floor lamps, center of the floor",
+   "evidence": "There are five lamps, three in the top row and two in the bottom row, where the spec calls for exactly four."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lamp arrangement",
+   "evidence": "The lamps form an uneven 3-over-2 layout offset to the left, not a 2 by 2 grid."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_lamps_count",
+ "run": 2
+}

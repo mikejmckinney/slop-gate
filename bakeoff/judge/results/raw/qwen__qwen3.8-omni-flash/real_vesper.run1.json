@@ -1,0 +1,18 @@
+{
+ "seconds": 30.5,
+ "cost": 0.00121926,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"character's right ear (viewer's left side of head)\", \"evidence\": \"The spec requires all ears to be visible, but the viewer-left ear is completely covered by the wavy hair while the other ear is clearly shown.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "character's right ear (viewer's left side of head)",
+   "evidence": "The spec requires all ears to be visible, but the viewer-left ear is completely covered by the wavy hair while the other ear is clearly shown."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_vesper",
+ "run": 1
+}

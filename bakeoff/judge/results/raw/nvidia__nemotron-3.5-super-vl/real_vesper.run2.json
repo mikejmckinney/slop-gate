@@ -1,0 +1,11 @@
+{
+ "seconds": 13.6,
+ "cost": 0.00221485,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "real_vesper",
+ "run": 2
+}

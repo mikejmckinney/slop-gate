@@ -1,0 +1,18 @@
+{
+ "seconds": 4.2,
+ "cost": 0.00012819,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom of the character\",\"evidence\":\"The image cuts off at the waist, so the character is not shown full body.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom of the character",
+   "evidence": "The image cuts off at the waist, so the character is not shown full body."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "base_ninja",
+ "run": 2
+}

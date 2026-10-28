@@ -1,0 +1,11 @@
+{
+ "seconds": 16.8,
+ "cost": 0.0069885,
+ "raw": "{\"findings\":[],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_mug_grip",
+ "run": 1
+}

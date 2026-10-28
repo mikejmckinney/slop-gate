@@ -1,0 +1,18 @@
+{
+ "seconds": 73.6,
+ "cost": 0.028816,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"distant arena interior seen through the gate\", \"evidence\": \"Small warm orange point lights glow on the far arena wall inside the entrance, separate from the left lantern, so the lantern is not the only light source.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "distant arena interior seen through the gate",
+   "evidence": "Small warm orange point lights glow on the far arena wall inside the entrance, separate from the left lantern, so the lantern is not the only light source."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "base_sign",
+ "run": 2
+}

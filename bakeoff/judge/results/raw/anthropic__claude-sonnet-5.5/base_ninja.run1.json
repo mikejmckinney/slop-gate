@@ -1,0 +1,24 @@
+{
+ "seconds": 7.0,
+ "cost": 0.00955,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"bottom edge of the image\", \"evidence\": \"The spec asks for a full-body character, but the figure is cropped at the waist, with no legs or feet and the red sash cut off by the frame.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"raised hand and staff hand\", \"evidence\": \"The raised open palm is on the viewer's left, which is the ninja's right arm, and the staff is in the ninja's left hand, so the hands look swapped from the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image",
+   "evidence": "The spec asks for a full-body character, but the figure is cropped at the waist, with no legs or feet and the red sash cut off by the frame."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised hand and staff hand",
+   "evidence": "The raised open palm is on the viewer's left, which is the ninja's right arm, and the staff is in the ninja's left hand, so the hands look swapped from the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_ninja",
+ "run": 1
+}

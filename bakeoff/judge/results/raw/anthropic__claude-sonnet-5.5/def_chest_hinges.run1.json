@@ -1,0 +1,24 @@
+{
+ "seconds": 8.8,
+ "cost": 0.011042,
+ "raw": "{\"findings\":[{\"category\":\"count-repetition\",\"severity\":\"blocking\",\"where\":\"front face of the chest, left and right of the central latch\",\"evidence\":\"Two extra iron straps with barrel-knuckle hinge joints sit on the front, so the chest shows four hinge-like pieces plus the latch, where the spec asks for two hinges at the back and one latch at the front center.\"},{\"category\":\"construction\",\"severity\":\"advisory\",\"where\":\"front hinge-like straps and central latch\",\"evidence\":\"The knuckled straps at the front bridge the lid and body, so they would lock the lid shut or contradict the latch, and the hasp does not clearly connect to the lid.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "front face of the chest, left and right of the central latch",
+   "evidence": "Two extra iron straps with barrel-knuckle hinge joints sit on the front, so the chest shows four hinge-like pieces plus the latch, where the spec asks for two hinges at the back and one latch at the front center."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "front hinge-like straps and central latch",
+   "evidence": "The knuckled straps at the front bridge the lid and body, so they would lock the lid shut or contradict the latch, and the hasp does not clearly connect to the lid."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_chest_hinges",
+ "run": 1
+}

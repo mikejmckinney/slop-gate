@@ -1,0 +1,24 @@
+{
+ "seconds": 5.1,
+ "cost": 0.0007304,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"head and overall proportions\", \"evidence\": \"The head spans roughly half of the figure's visible height rather than the approximately 40 percent the spec requests.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs between tunic hem and boots\", \"evidence\": \"The legs are short stubs visible below the leaf skirt, less than the 'moderately long stout legs' the spec describes.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "head and overall proportions",
+   "evidence": "The head spans roughly half of the figure's visible height rather than the approximately 40 percent the spec requests."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs between tunic hem and boots",
+   "evidence": "The legs are short stubs visible below the leaf skirt, less than the 'moderately long stout legs' the spec describes."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_bud",
+ "run": 1
+}

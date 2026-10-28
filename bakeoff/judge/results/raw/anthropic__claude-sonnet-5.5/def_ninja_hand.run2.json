@@ -1,0 +1,24 @@
+{
+ "seconds": 7.1,
+ "cost": 0.0098,
+ "raw": "{\"findings\":[{\"category\":\"hands-limbs\",\"severity\":\"blocking\",\"where\":\"raised open hand at upper left\",\"evidence\":\"The palm shows five long fingers fanned upward plus a separate thumb pointing out to the right, which makes six digits where the spec asks for exactly five.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom edge of the image\",\"evidence\":\"The figure is cropped at the red sash around the waist, so there are no legs or feet, although the spec asks for a full-body character.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "raised open hand at upper left",
+   "evidence": "The palm shows five long fingers fanned upward plus a separate thumb pointing out to the right, which makes six digits where the spec asks for exactly five."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image",
+   "evidence": "The figure is cropped at the red sash around the waist, so there are no legs or feet, although the spec asks for a full-body character."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_ninja_hand",
+ "run": 2
+}

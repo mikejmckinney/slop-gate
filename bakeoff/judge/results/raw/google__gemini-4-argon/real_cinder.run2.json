@@ -1,0 +1,18 @@
+{
+ "seconds": 18.5,
+ "cost": 0.004964,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"apron belt buckle\", \"evidence\": \"The copper buckle has two opposing prongs projecting inward from both the left and right sides of the frame, neither of which engages a belt hole.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "apron belt buckle",
+   "evidence": "The copper buckle has two opposing prongs projecting inward from both the left and right sides of the frame, neither of which engages a belt hole."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_cinder",
+ "run": 2
+}

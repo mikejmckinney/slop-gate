@@ -1,0 +1,18 @@
+{
+ "seconds": 7.9,
+ "cost": 0.009978,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"Right side of the goggles, near the small stub at the right lens edge, and the left strap's open end\", \"evidence\": \"The strap attaches only on the left through a hinge and rivet. The right side has just a tiny nub, and the strap's far end stops abruptly, so it is unclear how the strap would loop around and fasten.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "Right side of the goggles, near the small stub at the right lens edge, and the left strap's open end",
+   "evidence": "The strap attaches only on the left through a hinge and rivet. The right side has just a tiny nub, and the strap's far end stops abruptly, so it is unclear how the strap would loop around and fasten."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_goggles",
+ "run": 2
+}

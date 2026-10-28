@@ -1,0 +1,18 @@
+{
+ "seconds": 10.1,
+ "cost": 0.005918,
+ "raw": "{\"findings\":[{\"category\":\"construction\",\"severity\":\"blocking\",\"where\":\"Copper belt buckle\",\"evidence\":\"Two short prongs project inward from opposite sides of the buckle, but neither reaches or engages the visible belt hole.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "Copper belt buckle",
+   "evidence": "Two short prongs project inward from opposite sides of the buckle, but neither reaches or engages the visible belt hole."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "real_cinder",
+ "run": 1
+}

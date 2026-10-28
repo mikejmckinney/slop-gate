@@ -1,0 +1,18 @@
+{
+ "seconds": 5.1,
+ "cost": 0.000493,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"tracks at the base of the legs\", \"evidence\": \"The tracks have only a faint contact shadow on the light-gray floor, so they read as slightly hovering rather than firmly planted.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "tracks at the base of the legs",
+   "evidence": "The tracks have only a faint contact shadow on the light-gray floor, so they read as slightly hovering rather than firmly planted."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "base_robot",
+ "run": 1
+}

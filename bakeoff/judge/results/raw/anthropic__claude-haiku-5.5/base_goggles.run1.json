@@ -1,0 +1,18 @@
+{
+ "seconds": 3.7,
+ "cost": 0.0004269,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"the two round lenses and their brass rims\", \"evidence\": \"The right lens and rim look noticeably smaller and narrower than the left, and the goggles' angle does not fully explain the size gap, so the pair may not match as the spec requires.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "the two round lenses and their brass rims",
+   "evidence": "The right lens and rim look noticeably smaller and narrower than the left, and the goggles' angle does not fully explain the size gap, so the pair may not match as the spec requires."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "base_goggles",
+ "run": 1
+}

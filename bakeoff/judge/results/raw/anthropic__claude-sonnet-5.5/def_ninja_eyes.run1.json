@@ -1,0 +1,30 @@
+{
+ "seconds": 8.1,
+ "cost": 0.01194,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"bottom edge of the image\",\"evidence\":\"The spec asks for a full-body character, but the figure is cropped at the red sash and there are no legs or feet.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"raised hand at upper left\",\"evidence\":\"The raised hand is on the viewer's left with the thumb pointing toward the body, so it reads as the character's right hand, but the spec asks for the left hand raised and the right hand holding the staff.\"},{\"category\":\"face\",\"severity\":\"advisory\",\"where\":\"eyes above the mask\",\"evidence\":\"The two eyes differ in shape, one wide and round and the other narrowed, and their pupils point up and to the side, so the gaze looks slightly uncoordinated.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "bottom edge of the image",
+   "evidence": "The spec asks for a full-body character, but the figure is cropped at the red sash and there are no legs or feet."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "raised hand at upper left",
+   "evidence": "The raised hand is on the viewer's left with the thumb pointing toward the body, so it reads as the character's right hand, but the spec asks for the left hand raised and the right hand holding the staff."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes above the mask",
+   "evidence": "The two eyes differ in shape, one wide and round and the other narrowed, and their pupils point up and to the side, so the gaze looks slightly uncoordinated."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

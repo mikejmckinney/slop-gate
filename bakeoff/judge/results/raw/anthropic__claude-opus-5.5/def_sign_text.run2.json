@@ -1,0 +1,18 @@
+{
+ "seconds": 8.6,
+ "cost": 0.012716,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the post, left foreground\", \"evidence\": \"The sign shows invented near-readable text 'Nor\u00f0snd' where the spec requires a blank sign and no text anywhere.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the post, left foreground",
+   "evidence": "The sign shows invented near-readable text 'Nor\u00f0snd' where the spec requires a blank sign and no text anywhere."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_sign_text",
+ "run": 2
+}

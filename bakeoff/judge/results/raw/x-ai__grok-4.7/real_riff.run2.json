@@ -1,0 +1,18 @@
+{
+ "seconds": 112.3,
+ "cost": 0.048702,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"tail at the lower left hip\", \"evidence\": \"The short thick tail curves out beside the left leg and breaks the silhouette, instead of staying directly behind the body.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail at the lower left hip",
+   "evidence": "The short thick tail curves out beside the left leg and breaks the silhouette, instead of staying directly behind the body."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "real_riff",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 6.5,
+ "cost": 0.0006935,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"where\": \"head, viewer's left side under the hat brim\", \"evidence\": \"The spec asks for entire ears visible, but only the right ear shows; the left ear is hidden by the hair and brim, so the head is asymmetric in a way the symmetric front view does not call for.\", \"severity\": \"advisory\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "where": "head, viewer's left side under the hat brim",
+   "evidence": "The spec asks for entire ears visible, but only the right ear shows; the left ear is hidden by the hair and brim, so the head is asymmetric in a way the symmetric front view does not call for.",
+   "severity": "advisory"
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_vesper",
+ "run": 1
+}

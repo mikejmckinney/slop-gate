@@ -1,0 +1,18 @@
+{
+ "seconds": 81.8,
+ "cost": 0.03527,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"blocking\", \"where\": \"index finger across the mug\", \"evidence\": \"The extended index finger runs straight from the handle grip and its nail tip sits on the front face of the mug well left of the handle, so the finger reads as passing through the solid ceramic instead of wrapping the handle.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "index finger across the mug",
+   "evidence": "The extended index finger runs straight from the handle grip and its nail tip sits on the front face of the mug well left of the handle, so the finger reads as passing through the solid ceramic instead of wrapping the handle."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_mug_grip",
+ "run": 1
+}

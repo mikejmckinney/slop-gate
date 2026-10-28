@@ -1,0 +1,18 @@
+{
+ "seconds": 6.5,
+ "cost": 0.0003073,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"street and market stalls\",\"evidence\":\"Long, pronounced shadows stretch across the foreground instead of the short shadows specified for noon.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "street and market stalls",
+   "evidence": "Long, pronounced shadows stretch across the foreground instead of the short shadows specified for noon."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_street_light",
+ "run": 1
+}

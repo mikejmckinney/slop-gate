@@ -1,0 +1,18 @@
+{
+ "seconds": 20.6,
+ "cost": 0.004714,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sky at top-left and street shadows\", \"evidence\": \"The sun is visible in front of the viewer in the upper-left sky rather than behind the viewer's left shoulder, and the main street shadow falls from right to left across the cobblestones, contradicting both the visible sun and the requested lighting direction.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sky at top-left and street shadows",
+   "evidence": "The sun is visible in front of the viewer in the upper-left sky rather than behind the viewer's left shoulder, and the main street shadow falls from right to left across the cobblestones, contradicting both the visible sun and the requested lighting direction."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_street_light",
+ "run": 1
+}

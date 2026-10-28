@@ -1,0 +1,18 @@
+{
+ "seconds": 6.2,
+ "cost": 0.00329175,
+ "raw": "{\"findings\":[{\"category\":\"contact-weight\",\"severity\":\"blocking\",\"where\":\"Treads and ground\",\"evidence\":\"Both treads appear suspended above the ground, with the main cast shadow separated from their undersides.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "Treads and ground",
+   "evidence": "Both treads appear suspended above the ground, with the main cast shadow separated from their undersides."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_robot_float",
+ "run": 2
+}

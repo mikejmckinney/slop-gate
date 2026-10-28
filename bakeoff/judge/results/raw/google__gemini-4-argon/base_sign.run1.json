@@ -1,0 +1,24 @@
+{
+ "seconds": 10.6,
+ "cost": 0.004954,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"interior arena walls seen through the archway\", \"evidence\": \"Warm orange illumination appears on the background pillars inside the arena despite the foreground lantern being the only specified light source.\"}, {\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"top of the lantern's wooden arm\", \"evidence\": \"The top edge of the horizontal beam holding the lantern is brightly lit, though the lantern hangs below it.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "interior arena walls seen through the archway",
+   "evidence": "Warm orange illumination appears on the background pillars inside the arena despite the foreground lantern being the only specified light source."
+  },
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "top of the lantern's wooden arm",
+   "evidence": "The top edge of the horizontal beam holding the lantern is brightly lit, though the lantern hangs below it."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "base_sign",
+ "run": 1
+}

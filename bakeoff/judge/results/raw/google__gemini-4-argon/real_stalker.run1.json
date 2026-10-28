@@ -1,0 +1,18 @@
+{
+ "seconds": 12.1,
+ "cost": 0.006258,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"beneath the four feet\", \"evidence\": \"Soft contact shadows appear under the feet despite the spec requesting no ground plane and no cast shadow.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "beneath the four feet",
+   "evidence": "Soft contact shadows appear under the feet despite the spec requesting no ground plane and no cast shadow."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_stalker",
+ "run": 1
+}

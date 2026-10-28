@@ -1,0 +1,18 @@
+{
+ "seconds": 11.0,
+ "cost": 0.021496,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"cobblestone path and right-side fence and wall\", \"evidence\": \"The path and right-side structures far from the lantern are evenly and fairly brightly lit, which is only loosely explained by dusk sky ambient when the lantern is meant to be the only light source.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "cobblestone path and right-side fence and wall",
+   "evidence": "The path and right-side structures far from the lantern are evenly and fairly brightly lit, which is only loosely explained by dusk sky ambient when the lantern is meant to be the only light source."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_sign",
+ "run": 2
+}

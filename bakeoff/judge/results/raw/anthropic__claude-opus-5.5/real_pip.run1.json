@@ -1,0 +1,36 @@
+{
+ "seconds": 13.9,
+ "cost": 0.027344,
+ "raw": "```json\n{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"outer sides of both yellow sneakers\", \"evidence\": \"Each sneaker has a sculpted swoosh-style brand mark resembling a real-world logo, and the spec forbids any logo.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"fox ears\", \"evidence\": \"The ears are tall, pointed, and fairly slender rather than the short, thick triangular ears the spec asks for.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms\", \"evidence\": \"The arms hang close to the torso with the hands near the hips, noticeably less than the requested 25-degree A-pose spread.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower legs between the shorts and the socks\", \"evidence\": \"The legs are short plain orange cylinders with no recognizable knees, which falls short of the requested athletic legs with readable knees.\"}], \"verdict\": \"fail\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "outer sides of both yellow sneakers",
+   "evidence": "Each sneaker has a sculpted swoosh-style brand mark resembling a real-world logo, and the spec forbids any logo."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "fox ears",
+   "evidence": "The ears are tall, pointed, and fairly slender rather than the short, thick triangular ears the spec asks for."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms",
+   "evidence": "The arms hang close to the torso with the hands near the hips, noticeably less than the requested 25-degree A-pose spread."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower legs between the shorts and the socks",
+   "evidence": "The legs are short plain orange cylinders with no recognizable knees, which falls short of the requested athletic legs with readable knees."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_pip",
+ "run": 1
+}

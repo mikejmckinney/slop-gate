@@ -1,0 +1,24 @@
+{
+ "seconds": 49.3,
+ "cost": 0.023844,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The figure is cropped at the waist and sash with no legs or feet shown, but the spec requires a full-body character.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"hands\", \"evidence\": \"The raised open palm is the character's right hand (image left) and the staff is in the character's left hand (image right), reversed from the spec's left-hand-raised, right-hand-staff assignment under an anatomical reading.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The figure is cropped at the waist and sash with no legs or feet shown, but the spec requires a full-body character."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "hands",
+   "evidence": "The raised open palm is the character's right hand (image left) and the staff is in the character's left hand (image right), reversed from the spec's left-hand-raised, right-hand-staff assignment under an anatomical reading."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

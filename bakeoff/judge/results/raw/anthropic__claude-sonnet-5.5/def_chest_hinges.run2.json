@@ -1,0 +1,24 @@
+{
+ "seconds": 6.9,
+ "cost": 0.010322,
+ "raw": "{\"findings\":[{\"category\":\"count-repetition\",\"severity\":\"blocking\",\"where\":\"front face, left and right of the central latch\",\"evidence\":\"Two extra iron brackets with barrel knuckles, like hinges, sit on the front face, so the chest shows four hinge-like pieces plus the latch where the spec calls for two back hinges and one front latch.\"},{\"category\":\"construction\",\"severity\":\"advisory\",\"where\":\"top back edge hinges\",\"evidence\":\"The hinge plates lie on the sloped lid top and don't clearly connect to a matching leaf on the chest body, so their pivot placement is ambiguous.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "front face, left and right of the central latch",
+   "evidence": "Two extra iron brackets with barrel knuckles, like hinges, sit on the front face, so the chest shows four hinge-like pieces plus the latch where the spec calls for two back hinges and one front latch."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "top back edge hinges",
+   "evidence": "The hinge plates lie on the sloped lid top and don't clearly connect to a matching leaf on the chest body, so their pivot placement is ambiguous."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_chest_hinges",
+ "run": 2
+}

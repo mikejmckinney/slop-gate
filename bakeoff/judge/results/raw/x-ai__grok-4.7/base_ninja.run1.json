@@ -1,0 +1,24 @@
+{
+ "seconds": 56.5,
+ "cost": 0.026808,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The figure is cropped around the waist and red belt, with no legs or feet visible, but the spec requires a full-body view.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"raised hand and staff hand\", \"evidence\": \"The open palm is on the viewer's left with the thumb on that side, so it is the character's right hand, while the staff is gripped on the viewer's right in the character's left hand; the spec calls for the left hand raised and the right hand holding the staff.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The figure is cropped around the waist and red belt, with no legs or feet visible, but the spec requires a full-body view."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "raised hand and staff hand",
+   "evidence": "The open palm is on the viewer's left with the thumb on that side, so it is the character's right hand, while the staff is gripped on the viewer's right in the character's left hand; the spec calls for the left hand raised and the right hand holding the staff."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "base_ninja",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 5.9,
+ "cost": 0.0007032,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"feet and studio floor beneath the boots\", \"evidence\": \"The spec asks for a soft contact shadow, but the shadow under the boots is very faint, so the feet read as only lightly grounded.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "feet and studio floor beneath the boots",
+   "evidence": "The spec asks for a soft contact shadow, but the shadow under the boots is very faint, so the feet read as only lightly grounded."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_mochi",
+ "run": 1
+}

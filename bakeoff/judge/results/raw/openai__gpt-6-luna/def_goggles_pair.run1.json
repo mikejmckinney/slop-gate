@@ -1,0 +1,18 @@
+{
+ "seconds": 3.3,
+ "cost": 0.0002383,
+ "raw": "{\"findings\":[{\"category\":\"mismatched-pair\",\"severity\":\"blocking\",\"where\":\"Right goggle lens and frame\",\"evidence\":\"The right lens is square-shaped, while the other lens is round; the spec calls for two matching round glass lenses.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "Right goggle lens and frame",
+   "evidence": "The right lens is square-shaped, while the other lens is round; the spec calls for two matching round glass lenses."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_goggles_pair",
+ "run": 1
+}

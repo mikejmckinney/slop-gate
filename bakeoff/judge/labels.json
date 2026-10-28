@@ -1,0 +1,216 @@
+[
+ {
+  "id": "base_robot",
+  "file": "images/base_robot.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Stylized 3D game character render: a chunky cartoon robot bomber standing, holding a round black bomb in front of it with both hands, all fingers clearly visible, full body, centered on a plain light-gray background, soft studio lighting, no text.",
+  "expected": []
+ },
+ {
+  "id": "base_ninja",
+  "file": "images/base_ninja.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Illustrated 2D game character art: a ninja with a red scarf, left hand raised with an open palm facing the viewer showing exactly five fingers, right hand holding a short wooden staff, full body, plain off-white background, no text.",
+  "expected": []
+ },
+ {
+  "id": "base_chest",
+  "file": "images/base_chest.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Stylized 3D game prop render: a closed wooden treasure chest with two iron hinges along the back edge and one iron latch at the front center, sitting on a stone floor, three-quarter view, no text.",
+  "expected": []
+ },
+ {
+  "id": "base_goggles",
+  "file": "images/base_goggles.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Product photo: a pair of brass aviator goggles with two matching round glass lenses and a leather strap, resting on a wooden table, soft window light from the left, no text.",
+  "expected": []
+ },
+ {
+  "id": "base_sign",
+  "file": "images/base_sign.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Stylized game environment: the entrance to an arena at dusk, a blank wooden sign on a post with nothing written on it, a single lantern hanging on the left as the only light source, no text anywhere.",
+  "expected": []
+ },
+ {
+  "id": "base_lamps",
+  "file": "images/base_lamps.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Top-down view of a game arena floor made of square metal tiles, with exactly four identical glowing floor lamps arranged in a 2 by 2 grid, no text.",
+  "expected": []
+ },
+ {
+  "id": "base_mug",
+  "file": "images/base_mug.jpg",
+  "kind": "synthetic-clean",
+  "spec": "Close-up photo: a person's right hand holding a white ceramic coffee mug by its handle, fingers wrapped around the handle, natural light, plain background.",
+  "expected": []
+ },
+ {
+  "id": "def_ninja_hand",
+  "file": "images/def_ninja_hand.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Illustrated 2D game character art: a ninja with a red scarf, left hand raised with an open palm facing the viewer showing exactly five fingers, right hand holding a short wooden staff, full body, plain off-white background, no text.",
+  "expected": [
+   "hands-limbs"
+  ],
+  "note": "Six digits (thumb plus five fingers) on the raised hand."
+ },
+ {
+  "id": "def_mug_grip",
+  "file": "images/def_mug_grip.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Close-up photo: a person's right hand holding a white ceramic coffee mug by its handle, fingers wrapped around the handle, natural light, plain background.",
+  "expected": [
+   "contact-weight",
+   "hands-limbs"
+  ],
+  "note": "Index finger passes through the solid handle."
+ },
+ {
+  "id": "def_goggles_pair",
+  "file": "images/def_goggles_pair.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Product photo: a pair of brass aviator goggles with two matching round glass lenses and a leather strap, resting on a wooden table, soft window light from the left, no text.",
+  "expected": [
+   "mismatched-pair"
+  ],
+  "note": "One lens round, the other square with a different frame."
+ },
+ {
+  "id": "def_chest_hinges",
+  "file": "images/def_chest_hinges.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Stylized 3D game prop render: a closed wooden treasure chest with two iron hinges along the back edge and one iron latch at the front center, sitting on a stone floor, three-quarter view, no text.",
+  "expected": [
+   "construction"
+  ],
+  "note": "Hinges on the front edge beside the latch as well as the back."
+ },
+ {
+  "id": "def_sign_text",
+  "file": "images/def_sign_text.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Stylized game environment: the entrance to an arena at dusk, a blank wooden sign on a post with nothing written on it, a single lantern hanging on the left as the only light source, no text anywhere.",
+  "expected": [
+   "lettering"
+  ],
+  "note": "Garbled pseudo-word painted on a sign the spec says is blank."
+ },
+ {
+  "id": "def_lamps_count",
+  "file": "images/def_lamps_count.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Top-down view of a game arena floor made of square metal tiles, with exactly four identical glowing floor lamps arranged in a 2 by 2 grid, no text.",
+  "expected": [
+   "count-repetition"
+  ],
+  "note": "Five lamps in an uneven layout; spec says four in a 2x2 grid."
+ },
+ {
+  "id": "def_ninja_scarf",
+  "file": "images/def_ninja_scarf.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Illustrated 2D game character art: a ninja with a red scarf, left hand raised with an open palm facing the viewer showing exactly five fingers, right hand holding a short wooden staff, full body, plain off-white background, no text.",
+  "expected": [
+   "merged-objects"
+  ],
+  "note": "Scarf end melts into the staff with no boundary."
+ },
+ {
+  "id": "def_robot_float",
+  "file": "images/def_robot_float.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Stylized 3D game character render: a chunky cartoon robot bomber standing, holding a round black bomb in front of it with both hands, all fingers clearly visible, full body, centered on a plain light-gray background, soft studio lighting, no text.",
+  "expected": [
+   "contact-weight"
+  ],
+  "note": "Treads hover above the floor; shadow detached."
+ },
+ {
+  "id": "def_ninja_eyes",
+  "file": "images/def_ninja_eyes.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Illustrated 2D game character art: a ninja with a red scarf, left hand raised with an open palm facing the viewer showing exactly five fingers, right hand holding a short wooden staff, full body, plain off-white background, no text.",
+  "expected": [
+   "face"
+  ],
+  "note": "One eye larger and higher; pupils look different ways."
+ },
+ {
+  "id": "def_street_light",
+  "file": "images/def_street_light.jpg",
+  "kind": "synthetic-defect",
+  "spec": "Stylized game environment: a market street at noon, the sun high behind the viewer's left shoulder, short shadows falling forward and to the right, stalls with fruit, no text.",
+  "expected": [
+   "lighting",
+   "spec-mismatch"
+  ],
+  "note": "Sun is in front of the viewer and shadows fall toward the camera; spec puts the sun behind the left shoulder."
+ },
+ {
+  "id": "real_brine",
+  "file": "images/real_brine.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant blue, retain this player's unmistakable color identity.\nSubject: A plucky little human coastal salvage adventurer with a round warm tan face, broad expressive dark painted eyes, tiny rounded nose, and a tuft of curly dark hair. Wears a cobalt-blue soft fisherman diving hood folded back around the head, large amber-lens goggles pushed up on the forehead so the face is fully visible, a thick blue waterproof jacket with brass toggles, cream mittens, navy trousers and oversized blue rubber boots. Short compact air cylinder on the back with no long tubes. The rounded blue hood and chunky boots define a friendly nautical silhouette, no metal globe helmet and no face screen.",
+  "expected": null
+ },
+ {
+  "id": "real_bud",
+  "file": "images/real_bud.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant green, retain this player's unmistakable color identity.\nSubject: A small lively green woodland seedling sprite. Large pale sage-green rounded head shaped like a plump seed with a tiny sprout of two thick broad leaves at the crown, a friendly expressive face with sculpted cream eyes and dark pupils, stubby leafy ear tips. Wears an emerald-green overlapping leaf tunic and a simple ochre belt pouch, rounded moss-green mitten hands and sturdy dark green root-like boots. Clear distinct arms and two moderately long stout legs. Smooth simple botanical shapes with a few sculpted leaf veins, not a plant inside a pot or a robot gardener.",
+  "expected": null
+ },
+ {
+  "id": "real_cinder",
+  "file": "images/real_cinder.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant black, retain this player's unmistakable color identity.\nSubject: A mischievous charcoal-black soot imp who tends a forge. Broad soft square head with two short rounded swept-back horns, sculpted warm cream eyes under thick brows, small crooked grin, deep charcoal skin. Wears a dark brown leather smith apron with a broad copper buckle and a folded rusty-orange neck cloth, chunky soot-grey work gloves and boots. Stocky pear-shaped torso, substantial clearly separated legs. The imp is a living fantasy creature made as a vinyl toy, with NO furnace body, chimney, vents or mechanical parts.",
+  "expected": null
+ },
+ {
+  "id": "real_mochi",
+  "file": "images/real_mochi.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant white, retain this player's unmistakable color identity.\nSubject: A brave small white rabbit moon explorer. Oversized rounded rabbit head with two short thick upright ears, sculpted black oval eyes and a tiny pink nose, visible ivory face without a helmet or visor. Pearl-white padded exploration suit with a burnt-orange neckerchief, rounded white mittens, chunky off-white moon boots, small smooth backpack. Rabbit ears and enormous moon boots define the silhouette. The suit reads as sewn clothing represented in molded vinyl, not armor. Cheerful determined expression.",
+  "expected": null
+ },
+ {
+  "id": "real_pip",
+  "file": "images/real_pip.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant yellow, retain this player's unmistakable color identity.\nSubject: A daring little fox messenger in a bright sunflower-yellow cropped courier jacket. Big expressive fox head with warm golden-orange fur represented as smooth molded vinyl, cream cheek patches and muzzle, short thick triangular ears, dark sculpted eyes and black button nose. Wears a soft mustard-yellow cap backwards between the ears, brown shorts, cream mittens and oversized yellow sneakers; a small canvas satchel snugly against the hip. One short thick fox tail kept close behind the body. A clear athletic biped silhouette with stout legs and recognizable knees; jaunty determined smile, no skinny mechanical joints.",
+  "expected": null
+ },
+ {
+  "id": "real_riff",
+  "file": "images/real_riff.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant teal, retain this player's unmistakable color identity.\nSubject: An upbeat little teal axolotl music fan. Broad rounded aqua head with three short thick coral-pink gill lobes on each side, friendly widely spaced sculpted black eyes, tiny curved smile, pale cream throat. Wears a turquoise sleeveless puffer vest over a pale mint shirt, simple charcoal shorts, rounded teal mitten hands and oversized mint-and-teal high-top sneakers. Chunky coral-orange headphones rest around the neck; they are a simple accessory, never the head or face. Short thick tail kept directly behind the body. Sturdy biped legs clear of vest and arms, playful aquatic creature, no speaker torso or boombox face.",
+  "expected": null
+ },
+ {
+  "id": "real_vesper",
+  "file": "images/real_vesper.jpg",
+  "kind": "real",
+  "spec": "Use case: stylized-concept\nAsset type: review reference for one playable character in Detonarium, before image-to-3D modeling.\nPrimary request: One original costumed adventurer or creature with the collectible painted-vinyl toy appearance of the game's chunky ninja and monster toys. The character is NOT a robot.\nScene/backdrop: plain very light warm grey seamless studio background with only a soft contact shadow.\nStyle/medium: polished 3D toy product render, matte painted vinyl, softly beveled sculpted shapes, restrained material detail, delightful expressive character design.\nComposition/framing: a single full-body character, centered, near-front three-quarter view turned only 10 degrees; camera level at mid torso, very little perspective; entire ears/hat and boots visible with generous margin. Relaxed symmetric A pose, arms 25 degrees away from torso, empty hands, feet flat with a clear gap, all four limbs clearly readable. Head approximately 40 percent of total height, legs substantial enough for a believable walk/run, not tiny pegs.\nLighting/mood: soft broad studio key, gentle fill, clean readable silhouette.\nMaterials/textures: sculpted toy skin, costume folds and painted surfaces; no realistic fur, pores, fabric fuzz, exposed ball joints, hinges or machine hardware.\nConstraints: one character only, one view only, no companion props, no text, lettering, logo, watermark, labels, border or base. No robot, mech, digital face, glowing visor, armor plating, exposed mechanical joints, wires, floating accessories, skinny limbs or weapons.\nColor palette: dominant purple, retain this player's unmistakable color identity.\nSubject: A little human night magician with a rounded warm brown face, short wavy dark hair, curious large sculpted eyes and a subtle smile. Wears an oversized deep violet soft pointed wizard hat with a thick brim and a bent tip, a plum-purple short coat with a lilac folded collar and two large cream buttons, simple dark purple trousers, rounded pale lilac mittens and chunky violet ankle boots. Short broad cape ends above the knees and stays behind the arms. One small gold crescent stitched onto the hat. Face fully visible, no mask or screen, no wand held in the hands. The floppy hat and bell-shaped coat create a distinct silhouette.",
+  "expected": null
+ },
+ {
+  "id": "real_drifter",
+  "file": "images/real_drifter.jpg",
+  "kind": "real",
+  "spec": "Create ONE new enemy creature reference image for the mobile 3D arena game Detonarium. Use the attached bomber image ONLY as a material and art-style guide: chunky moulded vinyl toy, soft bevels, clear recessed panel seams, dark charcoal joints, appealing dangerous little creature, readable at 30 pixels. Do not copy the humanoid bomber and do not include it. Asset: DRIFTER. A compact round rose-crimson mechanical puff beetle, wider than tall, rounded segmented shell with a dark horizontal face recess and TWO large warm ivory eyes, mischievous heavy eyelids, two short backward-curving ear fins, tiny charcoal lower body and two broad stubby dark feet. A little raised dorsal shell ridge, no long fragile appendages, no arms, no weapons, no letters. Its outline should say a bouncing round creature rather than a plain sphere. Dominant muted rose-red shell, charcoal face and feet, warm ivory eyes. One coherent bilateral creature, front three-quarter view from slightly above, full object centred occupying about 80% of a square frame. Pose symmetrical and neutral so a 3D reconstruction can infer its other side. Plain solid light grey background, no ground plane, no cast shadow, even diffuse studio lighting without dramatic highlights or baked glow. Only ONE view and ONE creature, no layout panels, no text, no watermark. This image will be the single image-to-3D reconstruction input.",
+  "expected": null
+ },
+ {
+  "id": "real_stalker",
+  "file": "images/real_stalker.jpg",
+  "kind": "real",
+  "spec": "Create ONE new enemy creature reference for Detonarium, matching the attached bomber ONLY in art style: chunky moulded vinyl toy, matte armour with soft bevels, broad panel seams, dark charcoal joints. Do not include or copy the humanoid. Asset: STALKER, a little amber-orange predatory mechanical beetle-hound. Low forward-crouching wedge silhouette, oversized pointed angular amber head with a dark inset face, two narrow ivory eyes angled inward, short split ivory mandibles like a determined insect, two thick swept-back triangular ear fins, tapered segmented orange carapace, FOUR short stout charcoal legs with broad orange toe armour. Strong readable front, no humanoid torso or hands, no weapons, no delicate antennae. Head is the broadest part; compact body and hindquarters slope down behind it. Threatening but charming toy enemy, not realistic animal. Dominant golden amber-orange, charcoal underbody, small warm ivory accents. Single coherent bilateral creature in a neutral four-legged stance, front three-quarter view slightly from above, full creature centred occupying 80% of a square image, feet visibly separated, uncropped. Plain light grey background with no ground plane, no cast shadow, no other objects. Soft even diffuse illumination without baked glow. ONE view only, no panels, no text, no logos. Purpose: single image-to-3D input with clearly readable depth and silhouette.",
+  "expected": null
+ }
+]

@@ -1,0 +1,24 @@
+{
+ "seconds": 9.8,
+ "cost": 0.013732,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"advisory\",\"where\":\"Side panels of both yellow sneakers\",\"evidence\":\"An embossed swoosh-like mark sits on each shoe, which reads as a brand logo when the spec forbids logos.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Legs between the shorts hem and socks\",\"evidence\":\"The visible orange legs are short and thin, with no readable knees, so they are less stout than the spec's 'stout legs and recognizable knees' for a walk/run.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "advisory",
+   "where": "Side panels of both yellow sneakers",
+   "evidence": "An embossed swoosh-like mark sits on each shoe, which reads as a brand logo when the spec forbids logos."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Legs between the shorts hem and socks",
+   "evidence": "The visible orange legs are short and thin, with no readable knees, so they are less stout than the spec's 'stout legs and recognizable knees' for a walk/run."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_pip",
+ "run": 1
+}

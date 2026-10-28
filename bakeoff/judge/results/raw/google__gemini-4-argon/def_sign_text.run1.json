@@ -1,0 +1,24 @@
+{
+ "seconds": 20.0,
+ "cost": 0.007386,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left foreground post\", \"evidence\": \"The wooden sign has garbled text reading 'NoR\u00ebdsnd' written across it despite the spec requiring a blank sign and no text anywhere.\"}, {\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"interior arena wall visible through the archway\", \"evidence\": \"Warm orange glows appear on the far interior wall inside the arena, suggesting additional light sources despite the spec calling for the hanging lantern to be the only light source.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left foreground post",
+   "evidence": "The wooden sign has garbled text reading 'NoR\u00ebdsnd' written across it despite the spec requiring a blank sign and no text anywhere."
+  },
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "interior arena wall visible through the archway",
+   "evidence": "Warm orange glows appear on the far interior wall inside the arena, suggesting additional light sources despite the spec calling for the hanging lantern to be the only light source."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_sign_text",
+ "run": 1
+}

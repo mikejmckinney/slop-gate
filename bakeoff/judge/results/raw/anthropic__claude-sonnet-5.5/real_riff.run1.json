@@ -1,0 +1,18 @@
+{
+ "seconds": 9.4,
+ "cost": 0.012668,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail, lower left behind the shorts\", \"evidence\": \"The tail juts out to the viewer's left past the body outline, where the spec asks for it to stay directly behind the body, though the 10-degree turn may partly explain it.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail, lower left behind the shorts",
+   "evidence": "The tail juts out to the viewer's left past the body outline, where the spec asks for it to stay directly behind the body, though the 10-degree turn may partly explain it."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_riff",
+ "run": 1
+}

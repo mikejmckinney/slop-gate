@@ -1,0 +1,18 @@
+{
+ "seconds": 3.1,
+ "cost": 0.0002879,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left post\", \"evidence\": \"The sign that the spec requires to be blank has garbled, near-readable letters carved or painted on it (something like 'NORcdsnd'), which violates the no-text requirement.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left post",
+   "evidence": "The sign that the spec requires to be blank has garbled, near-readable letters carved or painted on it (something like 'NORcdsnd'), which violates the no-text requirement."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_sign_text",
+ "run": 2
+}

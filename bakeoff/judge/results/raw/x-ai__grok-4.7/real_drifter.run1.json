@@ -1,0 +1,30 @@
+{
+ "seconds": 63.0,
+ "cost": 0.028696,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"ear fins\", \"evidence\": \"The image-left fin is thicker, lower-set, and split by a deep longitudinal groove, while the image-right fin is a higher, smoother, thinner spike with no matching groove.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"feet\", \"evidence\": \"The image-left foot has distinct separated toe pads, while the image-right foot is a smoother cluster of lobes with different segmentation.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall view\", \"evidence\": \"The creature is shown nearly straight-on from the front rather than in the requested front three-quarter view.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "ear fins",
+   "evidence": "The image-left fin is thicker, lower-set, and split by a deep longitudinal groove, while the image-right fin is a higher, smoother, thinner spike with no matching groove."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "feet",
+   "evidence": "The image-left foot has distinct separated toe pads, while the image-right foot is a smoother cluster of lobes with different segmentation."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall view",
+   "evidence": "The creature is shown nearly straight-on from the front rather than in the requested front three-quarter view."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "real_drifter",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 16.4,
+ "cost": 0.0006748,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left post\", \"evidence\": \"The sign displays the readable text 'N\u00f8r\u00f8dsnd' although the spec requires a blank sign with no text anywhere.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left post",
+   "evidence": "The sign displays the readable text 'N\u00f8r\u00f8dsnd' although the spec requires a blank sign with no text anywhere."
+  }
+ ],
+ "verdict": "fail",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_sign_text",
+ "run": 2
+}

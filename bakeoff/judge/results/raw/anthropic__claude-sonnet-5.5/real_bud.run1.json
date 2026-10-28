@@ -1,0 +1,24 @@
+{
+ "seconds": 3.9,
+ "cost": 0.007808,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs and boots\", \"evidence\": \"The legs are short and the boots are chunky, so the legs read shorter than the 'moderately long stout legs' the spec asks for. The head is also well over 40% of the height.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"eyes\", \"evidence\": \"The two eyes differ slightly in size and angle, and the right eye (viewer's right) sits lower and larger than the left. This may be partly due to the three-quarter turn.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs and boots",
+   "evidence": "The legs are short and the boots are chunky, so the legs read shorter than the 'moderately long stout legs' the spec asks for. The head is also well over 40% of the height."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "eyes",
+   "evidence": "The two eyes differ slightly in size and angle, and the right eye (viewer's right) sits lower and larger than the left. This may be partly due to the three-quarter turn."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_bud",
+ "run": 1
+}

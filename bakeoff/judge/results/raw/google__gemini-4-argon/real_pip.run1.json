@@ -1,0 +1,30 @@
+{
+ "seconds": 19.9,
+ "cost": 0.005956,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"hands\", \"evidence\": \"The character has separated fingers instead of the requested cream mittens.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs\", \"evidence\": \"The short legs between the shorts and socks lack the requested recognizable knees.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"satchel strap\", \"evidence\": \"The brown crossbody strap ends underneath the left jacket collar rather than looping over the shoulder.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "hands",
+   "evidence": "The character has separated fingers instead of the requested cream mittens."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs",
+   "evidence": "The short legs between the shorts and socks lack the requested recognizable knees."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "satchel strap",
+   "evidence": "The brown crossbody strap ends underneath the left jacket collar rather than looping over the shoulder."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_pip",
+ "run": 1
+}

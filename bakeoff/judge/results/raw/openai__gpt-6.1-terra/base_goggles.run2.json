@@ -1,0 +1,18 @@
+{
+ "seconds": 5.9,
+ "cost": 0.0010118,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"advisory\",\"where\":\"Table and shadows beneath the goggles\",\"evidence\":\"Strong, sharply defined shadows make the window light look harsher than the specified soft light.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "Table and shadows beneath the goggles",
+   "evidence": "Strong, sharply defined shadows make the window light look harsher than the specified soft light."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-terra",
+ "image": "base_goggles",
+ "run": 2
+}

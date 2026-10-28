@@ -1,0 +1,18 @@
+{
+ "seconds": 7.6,
+ "cost": 0.010602,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ground beneath the creature and between its legs\", \"evidence\": \"A soft grey contact/cast shadow sits under the body and feet, though the spec asks for no cast shadow and no ground plane.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ground beneath the creature and between its legs",
+   "evidence": "A soft grey contact/cast shadow sits under the body and feet, though the spec asks for no cast shadow and no ground plane."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_stalker",
+ "run": 2
+}

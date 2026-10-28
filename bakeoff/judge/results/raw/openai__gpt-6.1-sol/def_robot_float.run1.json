@@ -1,0 +1,18 @@
+{
+ "seconds": 9.1,
+ "cost": 0.0021151,
+ "raw": "{\"findings\":[{\"category\":\"contact-weight\",\"severity\":\"blocking\",\"where\":\"Tank treads beneath the robot\",\"evidence\":\"The treads appear suspended above the floor, with a visible gap between the left tread and its ground shadow rather than a grounded contact point.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "Tank treads beneath the robot",
+   "evidence": "The treads appear suspended above the floor, with a visible gap between the left tread and its ground shadow rather than a grounded contact point."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_robot_float",
+ "run": 1
+}

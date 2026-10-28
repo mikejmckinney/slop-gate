@@ -1,0 +1,11 @@
+{
+ "seconds": 5.7,
+ "cost": 0.0007532,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_cinder",
+ "run": 1
+}

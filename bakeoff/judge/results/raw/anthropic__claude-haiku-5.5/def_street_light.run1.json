@@ -1,0 +1,18 @@
+{
+ "seconds": 5.1,
+ "cost": 0.0005366,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sun and sky, upper center-left of frame; cobblestone street shadows\", \"evidence\": \"The sun sits visibly in the far background ahead of the scene, backlighting the buildings and figures, rather than behind the viewer's left shoulder as the spec requires, so the cast shadows do not fall forward and to the right as specified.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sun and sky, upper center-left of frame; cobblestone street shadows",
+   "evidence": "The sun sits visibly in the far background ahead of the scene, backlighting the buildings and figures, rather than behind the viewer's left shoulder as the spec requires, so the cast shadows do not fall forward and to the right as specified."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_street_light",
+ "run": 1
+}

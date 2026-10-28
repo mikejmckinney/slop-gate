@@ -1,0 +1,18 @@
+{
+ "seconds": 8.9,
+ "cost": 0.00035929,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the foreground post\", \"evidence\": \"The sign is supposed to be blank per the spec, but it shows invented/garbled text reading 'NOR\u00cbDSND'.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the foreground post",
+   "evidence": "The sign is supposed to be blank per the spec, but it shows invented/garbled text reading 'NOR\u00cbDSND'."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_sign_text",
+ "run": 1
+}

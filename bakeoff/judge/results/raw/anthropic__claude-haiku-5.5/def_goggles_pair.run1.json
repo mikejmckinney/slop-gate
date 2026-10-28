@@ -1,0 +1,18 @@
+{
+ "seconds": 2.3,
+ "cost": 0.0003009,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"right lens of the goggles, the frame on the right side of the image\", \"evidence\": \"The spec calls for two matching round glass lenses, but the right lens is a square frame with rounded corners while the left lens is round.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "right lens of the goggles, the frame on the right side of the image",
+   "evidence": "The spec calls for two matching round glass lenses, but the right lens is a square frame with rounded corners while the left lens is round."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_goggles_pair",
+ "run": 1
+}

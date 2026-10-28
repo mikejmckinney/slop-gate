@@ -1,0 +1,24 @@
+{
+ "seconds": 5.9,
+ "cost": 0.0007994,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail, viewer's left at hip level\", \"evidence\": \"The spec asks for a short thick tail kept directly behind the body, but the tail sweeps out sideways to the left past the vest and hip, not hidden behind the torso.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"feet\", \"evidence\": \"The spec asks for oversized high-top sneakers, but both shoes read as mid-height low-cut sneakers rather than high-tops.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail, viewer's left at hip level",
+   "evidence": "The spec asks for a short thick tail kept directly behind the body, but the tail sweeps out sideways to the left past the vest and hip, not hidden behind the torso."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "feet",
+   "evidence": "The spec asks for oversized high-top sneakers, but both shoes read as mid-height low-cut sneakers rather than high-tops."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_riff",
+ "run": 2
+}

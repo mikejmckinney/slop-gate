@@ -1,0 +1,30 @@
+{
+ "seconds": 10.2,
+ "cost": 0.005378,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"raised hand (viewer's left)\", \"evidence\": \"The raised hand has six digits (five fingers and a thumb) instead of five.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"character framing\", \"evidence\": \"The character is cropped at the waist instead of showing the full body.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"character's left and right hands\", \"evidence\": \"The character's right hand is raised with an open palm and the left hand holds the staff, which reverses the handedness specified.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "raised hand (viewer's left)",
+   "evidence": "The raised hand has six digits (five fingers and a thumb) instead of five."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "character framing",
+   "evidence": "The character is cropped at the waist instead of showing the full body."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "character's left and right hands",
+   "evidence": "The character's right hand is raised with an open palm and the left hand holds the staff, which reverses the handedness specified."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_ninja_hand",
+ "run": 2
+}

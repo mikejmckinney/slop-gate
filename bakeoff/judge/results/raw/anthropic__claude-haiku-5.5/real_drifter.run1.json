@@ -1,0 +1,24 @@
+{
+ "seconds": 5.0,
+ "cost": 0.0006641,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"lower body, left and right feet\", \"evidence\": \"The left charcoal foot is flatter and sits lower and further out than the taller, rounder right foot, so the pair does not read as symmetrical as the spec requests.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower body and feet\", \"evidence\": \"The spec asks for a tiny charcoal lower body and broad stubby feet, but the feet are large and fill much of the bottom of the silhouette.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "lower body, left and right feet",
+   "evidence": "The left charcoal foot is flatter and sits lower and further out than the taller, rounder right foot, so the pair does not read as symmetrical as the spec requests."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower body and feet",
+   "evidence": "The spec asks for a tiny charcoal lower body and broad stubby feet, but the feet are large and fill much of the bottom of the silhouette."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_drifter",
+ "run": 1
+}

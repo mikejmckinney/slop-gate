@@ -1,0 +1,30 @@
+{
+ "seconds": 10.0,
+ "cost": 0.02234,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"whole figure, lower edge\", \"evidence\": \"The spec asks for full body, but the figure is cropped at the waist and the red sash is cut off by the bottom frame edge, so the legs and feet are missing.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"raised hand and staff hand\", \"evidence\": \"The raised open palm is on the character's right side (thumb pointing toward the body midline) and the staff is in the character's left hand, which is the reverse of the spec's left-hand-raised, right-hand-staff.\"}, {\"category\": \"merged-objects\", \"severity\": \"blocking\", \"where\": \"upper end of the staff at right\", \"evidence\": \"The red scarf tail sweeps around and blends into the top of the wooden staff with no boundary, so cloth and wood become one continuous shape.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "whole figure, lower edge",
+   "evidence": "The spec asks for full body, but the figure is cropped at the waist and the red sash is cut off by the bottom frame edge, so the legs and feet are missing."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "raised hand and staff hand",
+   "evidence": "The raised open palm is on the character's right side (thumb pointing toward the body midline) and the staff is in the character's left hand, which is the reverse of the spec's left-hand-raised, right-hand-staff."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "upper end of the staff at right",
+   "evidence": "The red scarf tail sweeps around and blends into the top of the wooden staff with no boundary, so cloth and wood become one continuous shape."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_ninja_scarf",
+ "run": 2
+}

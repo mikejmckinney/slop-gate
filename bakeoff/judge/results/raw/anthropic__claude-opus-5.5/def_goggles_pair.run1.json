@@ -1,0 +1,30 @@
+{
+ "seconds": 6.7,
+ "cost": 0.014236,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"goggle lenses\", \"evidence\": \"The left lens is round in a cylindrical brass cup, but the right lens is square in a flat bolted frame, so the pair does not match.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"right lens\", \"evidence\": \"The spec calls for two round glass lenses, but the right lens is rectangular.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"right side of goggles\", \"evidence\": \"The strap attaches to the left eyecup only, and no strap or attachment point is visible on the square right frame.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "goggle lenses",
+   "evidence": "The left lens is round in a cylindrical brass cup, but the right lens is square in a flat bolted frame, so the pair does not match."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "right lens",
+   "evidence": "The spec calls for two round glass lenses, but the right lens is rectangular."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "right side of goggles",
+   "evidence": "The strap attaches to the left eyecup only, and no strap or attachment point is visible on the square right frame."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_goggles_pair",
+ "run": 1
+}

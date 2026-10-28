@@ -1,0 +1,30 @@
+{
+ "seconds": 22.8,
+ "cost": 0.043304,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"middle finger extended across the mug body, at handle height\", \"evidence\": \"One finger runs straight out over the front of the mug while the fingers above and below it curl, and its base meets the handle's outer arm with no clear path through or around the loop, so the grip could not be formed this way.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"fingers inside the handle loop\", \"evidence\": \"Three fingers are stacked inside a loop that looks too small to hold them, and the handle shows no clear overlap or occlusion where it should pass behind or in front of them.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"whole hand\", \"evidence\": \"The back of the hand faces the viewer with the fingers pointing left and the thumb on top, which is a left hand, but the spec asks for a right hand.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "middle finger extended across the mug body, at handle height",
+   "evidence": "One finger runs straight out over the front of the mug while the fingers above and below it curl, and its base meets the handle's outer arm with no clear path through or around the loop, so the grip could not be formed this way."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "fingers inside the handle loop",
+   "evidence": "Three fingers are stacked inside a loop that looks too small to hold them, and the handle shows no clear overlap or occlusion where it should pass behind or in front of them."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "whole hand",
+   "evidence": "The back of the hand faces the viewer with the fingers pointing left and the thumb on top, which is a left hand, but the spec asks for a right hand."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_mug_grip",
+ "run": 1
+}

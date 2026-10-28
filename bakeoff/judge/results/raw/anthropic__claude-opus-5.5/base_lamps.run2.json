@@ -1,0 +1,11 @@
+{
+ "seconds": 7.0,
+ "cost": 0.010996,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_lamps",
+ "run": 2
+}

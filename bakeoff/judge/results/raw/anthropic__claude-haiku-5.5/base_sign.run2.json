@@ -1,0 +1,18 @@
+{
+ "seconds": 5.5,
+ "cost": 0.0005044,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"distant arena area, center-right background near the far wall\", \"evidence\": \"A small warm orange glow appears in the background, which could read as a second light source even though the spec calls for the lantern to be the only light.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "distant arena area, center-right background near the far wall",
+   "evidence": "A small warm orange glow appears in the background, which could read as a second light source even though the spec calls for the lantern to be the only light."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "base_sign",
+ "run": 2
+}

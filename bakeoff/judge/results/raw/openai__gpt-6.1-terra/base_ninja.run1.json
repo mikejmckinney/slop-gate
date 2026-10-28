@@ -1,0 +1,24 @@
+{
+ "seconds": 7.4,
+ "cost": 0.00141245,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Lower body\",\"evidence\":\"The character is cropped at the waist rather than shown full body.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Hands and arms\",\"evidence\":\"The character's right hand is raised, while the left hand holds the staff, reversing the specified pose.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Lower body",
+   "evidence": "The character is cropped at the waist rather than shown full body."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Hands and arms",
+   "evidence": "The character's right hand is raised, while the left hand holds the staff, reversing the specified pose."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "base_ninja",
+ "run": 1
+}

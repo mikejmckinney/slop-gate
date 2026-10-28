@@ -1,0 +1,36 @@
+{
+ "seconds": 7.5,
+ "cost": 0.010642,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"sky, upper left, and the overall scene lighting\",\"evidence\":\"The sun is a visible glaring disc in front of the viewer, so the scene is backlit with strong rim light and long shadows. The spec asks for a high sun behind the viewer's left shoulder with short shadows falling forward and right.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"overall time of day and sun position\",\"evidence\":\"The sun sits low in the upper-left sky, with a golden-hour glow and lens flare, instead of the high noon overhead light the spec describes.\"},{\"category\":\"contact-weight\",\"severity\":\"advisory\",\"where\":\"man in the center-left street near the barrels\",\"evidence\":\"His legs and feet overlap the barrels and the grass edge, with little contact shadow and no clear ground contact.\"},{\"category\":\"merged-objects\",\"severity\":\"advisory\",\"where\":\"vendor at the right behind the fruit stall\",\"evidence\":\"His torso and arm blend into the counter and crate edge, with no clear boundary and no visible legs or support.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sky, upper left, and the overall scene lighting",
+   "evidence": "The sun is a visible glaring disc in front of the viewer, so the scene is backlit with strong rim light and long shadows. The spec asks for a high sun behind the viewer's left shoulder with short shadows falling forward and right."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall time of day and sun position",
+   "evidence": "The sun sits low in the upper-left sky, with a golden-hour glow and lens flare, instead of the high noon overhead light the spec describes."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "man in the center-left street near the barrels",
+   "evidence": "His legs and feet overlap the barrels and the grass edge, with little contact shadow and no clear ground contact."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "advisory",
+   "where": "vendor at the right behind the fruit stall",
+   "evidence": "His torso and arm blend into the counter and crate edge, with no clear boundary and no visible legs or support."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_street_light",
+ "run": 2
+}

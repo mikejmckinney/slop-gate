@@ -1,0 +1,24 @@
+{
+ "seconds": 12.5,
+ "cost": 0.02434,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"robot's right hand (viewer's left) on the bomb\", \"evidence\": \"The hand wraps around the far side of the bomb, so the thumb and fingers are partly hidden, which falls short of the spec's 'all fingers clearly visible'.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"front of the left tank track (viewer's left)\", \"evidence\": \"The track is tilted and its front end looks slightly lifted, and the contact shadow under it is weak, so it may not read as resting on the floor.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "robot's right hand (viewer's left) on the bomb",
+   "evidence": "The hand wraps around the far side of the bomb, so the thumb and fingers are partly hidden, which falls short of the spec's 'all fingers clearly visible'."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "front of the left tank track (viewer's left)",
+   "evidence": "The track is tilted and its front end looks slightly lifted, and the contact shadow under it is weak, so it may not read as resting on the floor."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_robot_float",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 2.5,
+ "cost": 0.004418,
+ "raw": "{\"findings\": [{\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"central floor area, lamp cluster\", \"evidence\": \"The spec asks for exactly four lamps in a 2x2 grid, but the image shows five lamps: three in the top row and two in the bottom row, which breaks the grid.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "central floor area, lamp cluster",
+   "evidence": "The spec asks for exactly four lamps in a 2x2 grid, but the image shows five lamps: three in the top row and two in the bottom row, which breaks the grid."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_lamps_count",
+ "run": 2
+}

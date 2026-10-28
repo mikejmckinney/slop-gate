@@ -1,0 +1,11 @@
+{
+ "seconds": 5.5,
+ "cost": 0.0006936,
+ "raw": "{\"findings\":[],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-sol",
+ "image": "base_goggles",
+ "run": 2
+}

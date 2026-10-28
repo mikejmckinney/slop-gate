@@ -1,0 +1,11 @@
+{
+ "seconds": 27.9,
+ "cost": 0.0010259,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "base_chest",
+ "run": 1
+}

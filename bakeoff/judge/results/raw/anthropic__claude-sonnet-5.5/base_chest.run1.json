@@ -1,0 +1,18 @@
+{
+ "seconds": 6.7,
+ "cost": 0.008262,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"left end of the lid, near the left corner post\", \"evidence\": \"The lid's end boards curl and layer oddly and don't clearly sit on the body, so the lid-to-body junction on that side is ambiguous.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "left end of the lid, near the left corner post",
+   "evidence": "The lid's end boards curl and layer oddly and don't clearly sit on the body, so the lid-to-body junction on that side is ambiguous."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_chest",
+ "run": 1
+}

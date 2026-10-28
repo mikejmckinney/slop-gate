@@ -1,0 +1,24 @@
+{
+ "seconds": 6.4,
+ "cost": 0.0008006,
+ "raw": "{\"findings\": [{\"category\": \"merged-objects\", \"where\": \"right hand and tail, viewer's right side of the figure\", \"evidence\": \"The tail tip sits directly behind the cream mitten with no clear separation, so the two forms blend at the edge where they overlap.\", \"severity\": \"advisory\"}, {\"category\": \"merged-objects\", \"where\": \"cap strap at the back of the cap, above the head\", \"evidence\": \"Orange fur-like tufts appear to emerge from the cap's back opening and merge into the strap, which blurs the boundary between cap and fur.\", \"severity\": \"advisory\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "merged-objects",
+   "where": "right hand and tail, viewer's right side of the figure",
+   "evidence": "The tail tip sits directly behind the cream mitten with no clear separation, so the two forms blend at the edge where they overlap.",
+   "severity": "advisory"
+  },
+  {
+   "category": "merged-objects",
+   "where": "cap strap at the back of the cap, above the head",
+   "evidence": "Orange fur-like tufts appear to emerge from the cap's back opening and merge into the strap, which blurs the boundary between cap and fur.",
+   "severity": "advisory"
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_pip",
+ "run": 2
+}

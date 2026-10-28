@@ -1,0 +1,24 @@
+{
+ "seconds": 19.4,
+ "cost": 0.004834,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"blocking\", \"where\": \"left tread (viewer's left)\", \"evidence\": \"The left tread is floating above the ground plane without making contact.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"lower body\", \"evidence\": \"The character uses tank treads instead of legs, whereas the spec asks for it to be standing.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "left tread (viewer's left)",
+   "evidence": "The left tread is floating above the ground plane without making contact."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower body",
+   "evidence": "The character uses tank treads instead of legs, whereas the spec asks for it to be standing."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_robot_float",
+ "run": 1
+}

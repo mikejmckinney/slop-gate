@@ -1,0 +1,24 @@
+{
+ "seconds": 7.2,
+ "cost": 0.00410425,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Bottom of the image\",\"evidence\":\"The character is cropped at the waist, so the requested full body is not shown.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Character's hands\",\"evidence\":\"The character's right hand is raised and the left hand holds the staff, reversing the specified hands.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Bottom of the image",
+   "evidence": "The character is cropped at the waist, so the requested full body is not shown."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Character's hands",
+   "evidence": "The character's right hand is raised and the left hand holds the staff, reversing the specified hands."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

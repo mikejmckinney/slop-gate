@@ -1,0 +1,18 @@
+{
+ "seconds": 9.8,
+ "cost": 0.000582925,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"Tail behind the character\u2019s left leg\",\"evidence\":\"The tail protrudes noticeably out to the character\u2019s left instead of being kept directly behind the body.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "Tail behind the character\u2019s left leg",
+   "evidence": "The tail protrudes noticeably out to the character\u2019s left instead of being kept directly behind the body."
+  }
+ ],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "real_riff",
+ "run": 1
+}

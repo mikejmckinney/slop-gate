@@ -1,0 +1,36 @@
+{
+ "seconds": 13.8,
+ "cost": 0.029844,
+ "raw": "```json\n{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"ground area beneath the body and around all four feet\", \"evidence\": \"A soft grey cast shadow pools under the creature and darkens around each foot, although the spec asks for no cast shadow and no ground plane.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall silhouette, head versus carapace\", \"evidence\": \"The segmented carapace rises higher and reads about as broad as the head, so the head is not clearly the broadest part and the body does not slope down behind it in a low wedge.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"mouth area below the dark face inset\", \"evidence\": \"The ivory parts are two long downward-pointing saber fangs rather than short split insect mandibles.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"two ear fins on top of the head\", \"evidence\": \"The triangular fins stand nearly vertical instead of sweeping back.\"}], \"verdict\": \"fail\"}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "ground area beneath the body and around all four feet",
+   "evidence": "A soft grey cast shadow pools under the creature and darkens around each foot, although the spec asks for no cast shadow and no ground plane."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall silhouette, head versus carapace",
+   "evidence": "The segmented carapace rises higher and reads about as broad as the head, so the head is not clearly the broadest part and the body does not slope down behind it in a low wedge."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "mouth area below the dark face inset",
+   "evidence": "The ivory parts are two long downward-pointing saber fangs rather than short split insect mandibles."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "two ear fins on top of the head",
+   "evidence": "The triangular fins stand nearly vertical instead of sweeping back."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_stalker",
+ "run": 1
+}

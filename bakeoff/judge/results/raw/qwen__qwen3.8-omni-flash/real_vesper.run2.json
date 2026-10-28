@@ -1,0 +1,18 @@
+{
+ "seconds": 37.0,
+ "cost": 0.001220242,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"viewer-left side of the head\", \"evidence\": \"The ear on the viewer's left is entirely buried under the hair curls while the opposite ear is fully sculpted and visible, contradicting the spec's requirement that entire ears be visible in this near-front view.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "viewer-left side of the head",
+   "evidence": "The ear on the viewer's left is entirely buried under the hair curls while the opposite ear is fully sculpted and visible, contradicting the spec's requirement that entire ears be visible in this near-front view."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_vesper",
+ "run": 2
+}

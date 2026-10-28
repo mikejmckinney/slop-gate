@@ -1,0 +1,24 @@
+{
+ "seconds": 11.7,
+ "cost": 0.022924,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"finger passing through the mug handle at mid-height\", \"evidence\": \"This finger reaches from the knuckles past the handle and well onto the mug body, roughly twice the visible length of the fingers above and below it.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"fingers inside the handle loop\", \"evidence\": \"Two fingers appear stacked inside a handle opening too small to hold them, and the handle's outer edge is drawn over the long finger in a way that doesn't clearly read as the finger threading through it.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "finger passing through the mug handle at mid-height",
+   "evidence": "This finger reaches from the knuckles past the handle and well onto the mug body, roughly twice the visible length of the fingers above and below it."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "fingers inside the handle loop",
+   "evidence": "Two fingers appear stacked inside a handle opening too small to hold them, and the handle's outer edge is drawn over the long finger in a way that doesn't clearly read as the finger threading through it."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_mug_grip",
+ "run": 2
+}

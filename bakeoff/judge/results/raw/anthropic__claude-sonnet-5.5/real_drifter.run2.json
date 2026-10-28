@@ -1,0 +1,30 @@
+{
+ "seconds": 10.4,
+ "cost": 0.015372,
+ "raw": "{\"findings\":[{\"category\":\"mismatched-pair\",\"severity\":\"advisory\",\"where\":\"eyes\",\"evidence\":\"The left eye is narrower and sits farther from the face centre than the right eye, and the two eyelids tilt differently, so the pair reads as unequal rather than symmetrical.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"ear fins\",\"evidence\":\"The ear fins are ridged, pointed devil-horn shapes that stand upright, not short backward-curving fins, and the right one curves differently from the left.\"},{\"category\":\"spec-mismatch\",\"severity\":\"advisory\",\"where\":\"lower body and feet\",\"evidence\":\"There is no visible tiny charcoal lower body, and the feet are offset unevenly (the left foot is partly hidden behind the chin plate), which weakens the symmetric pose a 3D reconstruction needs.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "eyes",
+   "evidence": "The left eye is narrower and sits farther from the face centre than the right eye, and the two eyelids tilt differently, so the pair reads as unequal rather than symmetrical."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ear fins",
+   "evidence": "The ear fins are ridged, pointed devil-horn shapes that stand upright, not short backward-curving fins, and the right one curves differently from the left."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "lower body and feet",
+   "evidence": "There is no visible tiny charcoal lower body, and the feet are offset unevenly (the left foot is partly hidden behind the chin plate), which weakens the symmetric pose a 3D reconstruction needs."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "real_drifter",
+ "run": 2
+}

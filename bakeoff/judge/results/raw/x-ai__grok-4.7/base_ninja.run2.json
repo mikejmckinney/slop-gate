@@ -1,0 +1,24 @@
+{
+ "seconds": 60.3,
+ "cost": 0.026808,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The figure is cropped around the waist and sash, with no legs or feet shown, but the spec requires a full-body character.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"hands\", \"evidence\": \"The raised palm is the character's right hand (viewer-left, thumb on the outer left) and the staff is in the character's left hand, which reverses a character-anatomical reading of the spec's left-hand-raised, right-hand-staff assignment.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The figure is cropped around the waist and sash, with no legs or feet shown, but the spec requires a full-body character."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "hands",
+   "evidence": "The raised palm is the character's right hand (viewer-left, thumb on the outer left) and the staff is in the character's left hand, which reverses a character-anatomical reading of the spec's left-hand-raised, right-hand-staff assignment."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "base_ninja",
+ "run": 2
+}

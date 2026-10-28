@@ -1,0 +1,24 @@
+{
+ "seconds": 21.4,
+ "cost": 0.005652,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"hands/mittens\", \"evidence\": \"The character's right hand is a smooth mitten while the left hand has sculpted finger grooves.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"backpack straps\", \"evidence\": \"The left backpack strap terminates abruptly at the belt pouch while the right strap disappears into the sleeve seam.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "hands/mittens",
+   "evidence": "The character's right hand is a smooth mitten while the left hand has sculpted finger grooves."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "backpack straps",
+   "evidence": "The left backpack strap terminates abruptly at the belt pouch while the right strap disappears into the sleeve seam."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_mochi",
+ "run": 2
+}

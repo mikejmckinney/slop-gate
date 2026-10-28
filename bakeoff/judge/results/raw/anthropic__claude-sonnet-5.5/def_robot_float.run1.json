@@ -1,0 +1,24 @@
+{
+ "seconds": 8.5,
+ "cost": 0.0107,
+ "raw": "{\"findings\":[{\"category\":\"contact-weight\",\"severity\":\"advisory\",\"where\":\"bottom of both tank treads\",\"evidence\":\"The treads hover over the gray floor with only a faint, offset shadow and no tight contact shadow where they should touch the ground.\"},{\"category\":\"perspective\",\"severity\":\"advisory\",\"where\":\"left and right tread units\",\"evidence\":\"The two treads tilt in opposite directions and show different viewing angles, so the lower body looks slightly inconsistent in perspective.\"}],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "bottom of both tank treads",
+   "evidence": "The treads hover over the gray floor with only a faint, offset shadow and no tight contact shadow where they should touch the ground."
+  },
+  {
+   "category": "perspective",
+   "severity": "advisory",
+   "where": "left and right tread units",
+   "evidence": "The two treads tilt in opposite directions and show different viewing angles, so the lower body looks slightly inconsistent in perspective."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_robot_float",
+ "run": 1
+}

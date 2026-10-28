@@ -1,0 +1,24 @@
+{
+ "seconds": 6.0,
+ "cost": 0.00282925,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Bottom of image\",\"evidence\":\"The ninja is cropped at the waist, so the lower body is missing despite the full-body requirement.\"},{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Hands and arms\",\"evidence\":\"The ninja raises the right hand and holds the staff in the left, opposite to the specified hand assignments.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Bottom of image",
+   "evidence": "The ninja is cropped at the waist, so the lower body is missing despite the full-body requirement."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Hands and arms",
+   "evidence": "The ninja raises the right hand and holds the staff in the left, opposite to the specified hand assignments."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "base_ninja",
+ "run": 2
+}

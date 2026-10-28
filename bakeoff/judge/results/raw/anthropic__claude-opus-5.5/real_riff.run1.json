@@ -1,0 +1,30 @@
+{
+ "seconds": 10.5,
+ "cost": 0.026756,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"tail, lower left of figure behind the left leg\", \"evidence\": \"The tail sweeps out sideways past the body silhouette to the viewer's left, but the spec requires it to be kept directly behind the body.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"both hands\", \"evidence\": \"The hands are sculpted with separated, splayed fingers rather than the rounded mitten hands the spec asks for.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"head-to-body proportion\", \"evidence\": \"The head, chin to crown, reads closer to a third of total height than the requested approximately 40 percent.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail, lower left of figure behind the left leg",
+   "evidence": "The tail sweeps out sideways past the body silhouette to the viewer's left, but the spec requires it to be kept directly behind the body."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "both hands",
+   "evidence": "The hands are sculpted with separated, splayed fingers rather than the rounded mitten hands the spec asks for."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "head-to-body proportion",
+   "evidence": "The head, chin to crown, reads closer to a third of total height than the requested approximately 40 percent."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_riff",
+ "run": 1
+}

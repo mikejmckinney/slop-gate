@@ -1,0 +1,18 @@
+{
+ "seconds": 20.1,
+ "cost": 0.004424,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"blocking\", \"where\": \"fingers on the mug handle\", \"evidence\": \"The hand has six digits in total, and the middle finger extends leftward in the opposite direction of its own knuckle.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "fingers on the mug handle",
+   "evidence": "The hand has six digits in total, and the middle finger extends leftward in the opposite direction of its own knuckle."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_mug_grip",
+ "run": 1
+}

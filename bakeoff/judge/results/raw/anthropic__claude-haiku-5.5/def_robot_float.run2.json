@@ -1,0 +1,18 @@
+{
+ "seconds": 5.5,
+ "cost": 0.0005845,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"both hands gripping the bomb\", \"evidence\": \"The viewer-left hand shows gray robotic fingers emerging from a brown sleeve, while the viewer-right hand is a brown leather glove with gray fingertips, so the paired hands read as differently constructed.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "both hands gripping the bomb",
+   "evidence": "The viewer-left hand shows gray robotic fingers emerging from a brown sleeve, while the viewer-right hand is a brown leather glove with gray fingertips, so the paired hands read as differently constructed."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_robot_float",
+ "run": 2
+}

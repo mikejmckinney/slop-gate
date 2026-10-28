@@ -1,0 +1,24 @@
+{
+ "seconds": 6.9,
+ "cost": 0.014704,
+ "raw": "{\"findings\": [{\"category\": \"construction\", \"severity\": \"blocking\", \"where\": \"front face of the chest, left and right of the central latch\", \"evidence\": \"Two hinge-style straps with knuckle barrels cross the lid/body seam on the front, so with the back hinges the lid is hinged on both sides and could not open.\"}, {\"category\": \"count-repetition\", \"severity\": \"blocking\", \"where\": \"chest hardware overall\", \"evidence\": \"The spec calls for two hinges along the back edge, but the image shows four hinge pieces: two at the back and two extra on the front face.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "construction",
+   "severity": "blocking",
+   "where": "front face of the chest, left and right of the central latch",
+   "evidence": "Two hinge-style straps with knuckle barrels cross the lid/body seam on the front, so with the back hinges the lid is hinged on both sides and could not open."
+  },
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "chest hardware overall",
+   "evidence": "The spec calls for two hinges along the back edge, but the image shows four hinge pieces: two at the back and two extra on the front face."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_chest_hinges",
+ "run": 1
+}

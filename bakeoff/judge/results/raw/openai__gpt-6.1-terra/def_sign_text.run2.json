@@ -1,0 +1,18 @@
+{
+ "seconds": 3.5,
+ "cost": 0.0021255,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"blocking\",\"where\":\"Wooden sign at the left of the entrance\",\"evidence\":\"The sign has large dark lettering despite the spec requiring it to be blank and prohibiting text.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "Wooden sign at the left of the entrance",
+   "evidence": "The sign has large dark lettering despite the spec requiring it to be blank and prohibiting text."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_sign_text",
+ "run": 2
+}

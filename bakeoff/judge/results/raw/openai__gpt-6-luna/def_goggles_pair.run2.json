@@ -1,0 +1,18 @@
+{
+ "seconds": 4.0,
+ "cost": 9.556e-05,
+ "raw": "{\"findings\":[{\"category\":\"mismatched-pair\",\"severity\":\"blocking\",\"where\":\"Goggle lenses\",\"evidence\":\"The left lens is round while the right lens is square, despite the spec requiring two matching round glass lenses.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "Goggle lenses",
+   "evidence": "The left lens is round while the right lens is square, despite the spec requiring two matching round glass lenses."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_goggles_pair",
+ "run": 2
+}

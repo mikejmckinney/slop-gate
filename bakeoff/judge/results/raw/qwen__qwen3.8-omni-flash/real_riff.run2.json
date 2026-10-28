@@ -1,0 +1,18 @@
+{
+ "seconds": 67.3,
+ "cost": 0.00245576,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail / lower left of body\", \"evidence\": \"The short tail protrudes prominently to the viewer's left of an otherwise dead-frontal body rather than being kept directly behind it as the spec requires.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail / lower left of body",
+   "evidence": "The short tail protrudes prominently to the viewer's left of an otherwise dead-frontal body rather than being kept directly behind it as the spec requires."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_riff",
+ "run": 2
+}

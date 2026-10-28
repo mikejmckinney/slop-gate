@@ -1,0 +1,18 @@
+{
+ "seconds": 33.4,
+ "cost": 0.00138849,
+ "raw": "```json\n{\n  \"findings\": [\n    {\n      \"category\": \"spec-mismatch\",\n      \"severity\": \"blocking\",\n      \"where\": \"background beneath the creature\",\n      \"evidence\": \"A distinct cast shadow is visible on the ground, violating the explicit instruction for 'no ground plane, no cast shadow'.\"\n    }\n  ],\n  \"verdict\": \"fail\"\n}\n```",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "background beneath the creature",
+   "evidence": "A distinct cast shadow is visible on the ground, violating the explicit instruction for 'no ground plane, no cast shadow'."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_stalker",
+ "run": 2
+}

@@ -1,0 +1,30 @@
+{
+ "seconds": 7.9,
+ "cost": 0.016644,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sky, upper left-center\", \"evidence\": \"The sun is visible in the frame ahead of the viewer, upper left and fairly low, so the scene is backlit, not lit from high behind the viewer's left shoulder as the spec requires.\"}, {\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"cobblestone street beneath the central walking figures\", \"evidence\": \"Shadows fall back toward the viewer and to the left and are moderately long, not short and falling forward and to the right as noon light from behind-left would produce.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall sky and color grading\", \"evidence\": \"The warm, hazy, low-angle glow reads as late afternoon or golden hour rather than noon.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sky, upper left-center",
+   "evidence": "The sun is visible in the frame ahead of the viewer, upper left and fairly low, so the scene is backlit, not lit from high behind the viewer's left shoulder as the spec requires."
+  },
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "cobblestone street beneath the central walking figures",
+   "evidence": "Shadows fall back toward the viewer and to the left and are moderately long, not short and falling forward and to the right as noon light from behind-left would produce."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall sky and color grading",
+   "evidence": "The warm, hazy, low-angle glow reads as late afternoon or golden hour rather than noon."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_street_light",
+ "run": 1
+}

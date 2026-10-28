@@ -1,0 +1,18 @@
+{
+ "seconds": 5.3,
+ "cost": 0.0007436,
+ "raw": "{\"findings\":[{\"category\":\"mismatched-pair\",\"severity\":\"blocking\",\"where\":\"The two lens assemblies\",\"evidence\":\"The left lens and brass rim are round, while the right lens and frame are rectangular rather than matching and round.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "The two lens assemblies",
+   "evidence": "The left lens and brass rim are round, while the right lens and frame are rectangular rather than matching and round."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_goggles_pair",
+ "run": 2
+}

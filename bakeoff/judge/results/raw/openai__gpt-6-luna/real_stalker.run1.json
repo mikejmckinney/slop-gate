@@ -1,0 +1,18 @@
+{
+ "seconds": 6.1,
+ "cost": 0.0004678,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"beneath the creature and around its feet\",\"evidence\":\"Visible cast and contact shadows on a floor-like surface contradict the spec's requirement for no ground plane and no cast shadow.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "beneath the creature and around its feet",
+   "evidence": "Visible cast and contact shadows on a floor-like surface contradict the spec's requirement for no ground plane and no cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "real_stalker",
+ "run": 1
+}

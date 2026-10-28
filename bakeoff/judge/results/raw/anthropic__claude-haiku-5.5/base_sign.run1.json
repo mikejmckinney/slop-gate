@@ -1,0 +1,18 @@
+{
+ "seconds": 5.2,
+ "cost": 0.0005419,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"advisory\", \"where\": \"background arena and the inner edge of the gate posts (around x=490 and x=620, y=290 to 380)\", \"evidence\": \"Small warm orange highlights appear on the distant arena structures and the inner gate post, which suggests a second light source despite the spec calling the lantern the only one.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "advisory",
+   "where": "background arena and the inner edge of the gate posts (around x=490 and x=620, y=290 to 380)",
+   "evidence": "Small warm orange highlights appear on the distant arena structures and the inner gate post, which suggests a second light source despite the spec calling the lantern the only one."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "base_sign",
+ "run": 1
+}

@@ -1,0 +1,30 @@
+{
+ "seconds": 9.0,
+ "cost": 0.02148,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing\", \"evidence\": \"The spec asks for full body, but the figure is cropped at the waist with the red sash cut off at the bottom edge, so the legs and feet are missing.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"arms\", \"evidence\": \"The raised open palm is on the image-left arm, which is the character's right hand as he faces the viewer (the thumb sits medially, consistent with a right hand), and the staff is in his left hand, the reverse of the spec.\"}, {\"category\": \"face\", \"severity\": \"advisory\", \"where\": \"eyes\", \"evidence\": \"The image-left eye is wide open with its pupil rolled up and to the side, while the other eye is a narrowed squint looking forward, so the gaze directions disagree.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing",
+   "evidence": "The spec asks for full body, but the figure is cropped at the waist with the red sash cut off at the bottom edge, so the legs and feet are missing."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "arms",
+   "evidence": "The raised open palm is on the image-left arm, which is the character's right hand as he faces the viewer (the thumb sits medially, consistent with a right hand), and the staff is in his left hand, the reverse of the spec."
+  },
+  {
+   "category": "face",
+   "severity": "advisory",
+   "where": "eyes",
+   "evidence": "The image-left eye is wide open with its pupil rolled up and to the side, while the other eye is a narrowed squint looking forward, so the gaze directions disagree."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "def_ninja_eyes",
+ "run": 2
+}

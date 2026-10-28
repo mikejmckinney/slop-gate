@@ -1,0 +1,18 @@
+{
+ "seconds": 2.0,
+ "cost": 0.004228,
+ "raw": "{\"findings\": [{\"category\": \"lettering\", \"severity\": \"blocking\", \"where\": \"wooden sign on the left post\", \"evidence\": \"The sign must be blank with no text, but it carries painted near-readable lettering that looks like 'Nor\u00f6dsnd'.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign on the left post",
+   "evidence": "The sign must be blank with no text, but it carries painted near-readable lettering that looks like 'Nor\u00f6dsnd'."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_sign_text",
+ "run": 2
+}

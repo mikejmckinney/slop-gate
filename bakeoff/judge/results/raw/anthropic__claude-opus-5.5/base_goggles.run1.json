@@ -1,0 +1,24 @@
+{
+ "seconds": 8.0,
+ "cost": 0.017516,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"right lens vs. left lens\", \"evidence\": \"The left eyecup has a deep, thick cylindrical brass rim, while the right one reads as a thinner, shallower oval rim, more than the change in viewing angle explains.\"}, {\"category\": \"construction\", \"severity\": \"advisory\", \"where\": \"right side of goggles at the small knob near the right lens\", \"evidence\": \"The leather strap attaches visibly on the left lens but no strap end or attachment is visible on the right, so it is unclear how the strap completes the loop.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "right lens vs. left lens",
+   "evidence": "The left eyecup has a deep, thick cylindrical brass rim, while the right one reads as a thinner, shallower oval rim, more than the change in viewing angle explains."
+  },
+  {
+   "category": "construction",
+   "severity": "advisory",
+   "where": "right side of goggles at the small knob near the right lens",
+   "evidence": "The leather strap attaches visibly on the left lens but no strap end or attachment is visible on the right, so it is unclear how the strap completes the loop."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_goggles",
+ "run": 1
+}

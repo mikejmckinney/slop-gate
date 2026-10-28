@@ -1,0 +1,270 @@
+{
+ "real_mochi": [
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "rabbit ears",
+   "evidence": "The spec calls for two short thick upright ears, but the ears are long, tall, slender rabbit ears that rise well above the head and change the defining silhouette."
+  },
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "rabbit ears",
+   "evidence": "The spec calls for two short thick upright ears, but the ears are tall, long, tapered classic bunny ears that rise well above the head and dominate the silhouette."
+  },
+  {
+   "model": "google/gemini-4-argon",
+   "run": 1,
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "hands",
+   "evidence": "The character's right hand is a smooth mitten while the left hand has separated fingers, also contradicting the spec's request for mittens."
+  },
+  {
+   "model": "qwen/qwen3.8-omni-flash",
+   "run": 1,
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "Small belt pouch on the character's left hip (viewer's right)",
+   "evidence": "A distinct letter 'S' or logo mark is visible on the flap of the pouch, violating the strict constraint against any text, lettering, or logos."
+  }
+ ],
+ "real_stalker": [
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "ground area beneath the body and around all four feet",
+   "evidence": "A soft grey cast shadow pools under the creature and darkens around each foot, although the spec asks for no cast shadow and no ground plane."
+  },
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall silhouette, head vs. carapace",
+   "evidence": "The segmented carapace behind the head is taller and bulkier than the head and rises into a hump, so the head is not the broadest part and the hindquarters do not slope down into a forward wedge."
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "run": 1,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "beneath the creature and around its feet",
+   "evidence": "Visible cast and contact shadows on a floor-like surface contradict the spec's requirement for no ground plane and no cast shadow."
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "run": 2,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "beneath the creature\u2019s feet",
+   "evidence": "Visible cast and contact shadows fall across the grey surface despite the spec requiring no cast shadow."
+  },
+  {
+   "model": "openai/gpt-6.1-sol",
+   "run": 1,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the belly and around the feet",
+   "evidence": "Soft cast shadows establish a ground surface beneath the creature, despite the explicit requirement for no ground plane and no cast shadow."
+  },
+  {
+   "model": "openai/gpt-6.1-sol",
+   "run": 2,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the torso and around all four feet",
+   "evidence": "A visible soft cast shadow anchors the creature to a ground plane, contrary to the explicit requirement for no ground plane and no cast shadow."
+  },
+  {
+   "model": "openai/gpt-6.1-terra",
+   "run": 1,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the creature and its feet",
+   "evidence": "Diffuse cast shadows create a visible ground surface despite the spec requiring no ground plane or cast shadow."
+  },
+  {
+   "model": "openai/gpt-6.1-terra",
+   "run": 2,
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Background beneath the creature",
+   "evidence": "A broad cast shadow and contact shadows form a ground plane, contrary to the specified shadow-free background."
+  },
+  {
+   "model": "qwen/qwen3.8-omni-flash",
+   "run": 1,
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "left side of head and underside of chest",
+   "evidence": "One stout leg emerges from beneath the head's cheek plate at eye level, and a separate two-toed foot is tucked under the chest between the front legs, so the four legs cannot attach to coherent shoulders and hips as drawn."
+  },
+  {
+   "model": "qwen/qwen3.8-omni-flash",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "background beneath the creature",
+   "evidence": "A distinct cast shadow is visible on the ground, violating the explicit instruction for 'no ground plane, no cast shadow'."
+  },
+  {
+   "model": "x-ai/grok-4.7",
+   "run": 1,
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "front legs",
+   "evidence": "The far front leg is orange-armored from shoulder to paw, while the near front leg is a charcoal limb with orange toes only."
+  }
+ ],
+ "real_riff": [
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail, lower left of figure behind the left leg",
+   "evidence": "The tail sweeps out sideways past the body silhouette to the viewer's left, but the spec requires it to be kept directly behind the body."
+  },
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail, lower left of the figure",
+   "evidence": "The tail sweeps out sideways past the left leg and breaks the silhouette, instead of staying short and directly behind the body as the spec requires."
+  },
+  {
+   "model": "google/gemini-4-argon",
+   "run": 1,
+   "category": "hands-limbs",
+   "severity": "blocking",
+   "where": "hands",
+   "evidence": "The character's right hand has four separate digits while the left hand has only a thumb and two fused digits, and neither matches the requested mitten hands."
+  },
+  {
+   "model": "openai/gpt-6.1-terra",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Tail behind the legs",
+   "evidence": "The tail projects prominently to the character's left instead of staying directly behind the body."
+  },
+  {
+   "model": "openai/gpt-6.1-terra",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Behind the legs, on the image's left",
+   "evidence": "The tail curves conspicuously out to the side instead of staying directly behind the body."
+  },
+  {
+   "model": "x-ai/grok-4.7",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "tail at the lower left hip",
+   "evidence": "The short thick tail curves out beside the left leg and breaks the silhouette, instead of staying directly behind the body."
+  }
+ ],
+ "real_pip": [
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 1,
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "outer sides of both yellow sneakers",
+   "evidence": "Each sneaker has a sculpted swoosh-style brand mark resembling a real-world logo, and the spec forbids any logo."
+  },
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 2,
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "outer sides of both yellow sneakers",
+   "evidence": "Each sneaker carries an embossed swoosh-style brand mark, and the spec forbids any logo."
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "run": 1,
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "outer sides of the yellow sneakers",
+   "evidence": "Both sneakers have prominent swoosh-shaped marks that read as logos, despite the spec forbidding logos."
+  },
+  {
+   "model": "qwen/qwen3.8-omni-flash",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Yellow sneakers",
+   "evidence": "The sides of the shoes display a distinct swoosh-like brand logo, violating the explicit constraint against logos."
+  },
+  {
+   "model": "x-ai/grok-4.7",
+   "run": 1,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "outer side of both yellow sneakers",
+   "evidence": "Each sneaker carries a cream swoosh-shaped side emblem that reads as a logo, which the spec explicitly forbids."
+  },
+  {
+   "model": "x-ai/grok-4.7",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "both yellow sneakers",
+   "evidence": "Each sneaker has a curved side swoosh that reads as a brand logo, which the spec forbids along with all lettering and labels."
+  }
+ ],
+ "real_drifter": [
+  {
+   "model": "anthropic/claude-opus-5.5",
+   "run": 2,
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall camera view",
+   "evidence": "The creature is shown in a straight-on frontal view with the face recess and eyes centred, not the front three-quarter view from slightly above that the spec requires for the 3D reconstruction input."
+  },
+  {
+   "model": "x-ai/grok-4.7",
+   "run": 1,
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "ear fins",
+   "evidence": "The image-left fin is thicker, lower-set, and split by a deep longitudinal groove, while the image-right fin is a higher, smoother, thinner spike with no matching groove."
+  }
+ ],
+ "real_cinder": [
+  {
+   "model": "openai/gpt-6.1-sol",
+   "run": 2,
+   "category": "construction",
+   "severity": "blocking",
+   "where": "Copper belt buckle at the center of the apron",
+   "evidence": "The buckle has two opposing inward-facing prong stubs, neither of which reaches or engages a belt hole to fasten the belt."
+  },
+  {
+   "model": "openai/gpt-6.1-terra",
+   "run": 1,
+   "category": "construction",
+   "severity": "blocking",
+   "where": "Copper belt buckle",
+   "evidence": "Two short prongs project inward from opposite sides of the buckle, but neither reaches or engages the visible belt hole."
+  },
+  {
+   "model": "qwen/qwen3.8-omni-flash",
+   "run": 2,
+   "category": "construction",
+   "severity": "blocking",
+   "where": "belt buckle",
+   "evidence": "The buckle's prong points to the left, but the adjustment holes are located on the right strap, making it physically impossible to fasten as drawn."
+  }
+ ]
+}

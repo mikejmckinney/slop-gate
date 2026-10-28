@@ -1,0 +1,24 @@
+{
+ "seconds": 16.4,
+ "cost": 0.0006863,
+ "raw": "{\n  \"findings\": [\n    {\n      \"category\": \"mismatched-pair\",\n      \"severity\": \"blocking\",\n      \"where\": \"the two goggle lenses\",\n      \"evidence\": \"The near lens is circular while the far lens is square with four corner screws, so the paired lenses do not match.\"\n    },\n    {\n      \"category\": \"spec-mismatch\",\n      \"severity\": \"blocking\",\n      \"where\": \"the right-hand lens assembly\",\n      \"evidence\": \"The spec calls for two matching round glass lenses, but the right lens is rendered as a square/rectangular frame rather than round.\"\n    }\n  ],\n  \"verdict\": \"fail\"\n}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "the two goggle lenses",
+   "evidence": "The near lens is circular while the far lens is square with four corner screws, so the paired lenses do not match."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "the right-hand lens assembly",
+   "evidence": "The spec calls for two matching round glass lenses, but the right lens is rendered as a square/rectangular frame rather than round."
+  }
+ ],
+ "verdict": "fail",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "def_goggles_pair",
+ "run": 1
+}

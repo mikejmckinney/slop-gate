@@ -1,0 +1,18 @@
+{
+ "seconds": 4.9,
+ "cost": 0.0007199,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail, viewer's left at hip level\", \"evidence\": \"The tail sweeps out past the left side of the body silhouette rather than sitting directly behind the torso as the spec requires.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail, viewer's left at hip level",
+   "evidence": "The tail sweeps out past the left side of the body silhouette rather than sitting directly behind the torso as the spec requires."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_riff",
+ "run": 1
+}

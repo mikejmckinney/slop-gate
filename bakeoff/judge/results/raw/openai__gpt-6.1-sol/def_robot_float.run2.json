@@ -1,0 +1,18 @@
+{
+ "seconds": 12.2,
+ "cost": 0.0063635,
+ "raw": "{\"findings\":[{\"category\":\"contact-weight\",\"severity\":\"blocking\",\"where\":\"Tracks and floor beneath the robot\",\"evidence\":\"The tracks appear suspended above the floor, most clearly beneath the left track where a visible gap separates it from the ground shadow.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "Tracks and floor beneath the robot",
+   "evidence": "The tracks appear suspended above the floor, most clearly beneath the left track where a visible gap separates it from the ground shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_robot_float",
+ "run": 2
+}

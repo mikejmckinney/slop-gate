@@ -1,0 +1,11 @@
+{
+ "seconds": 400.3,
+ "cost": 0.00151424,
+ "raw": "",
+ "error": "no JSON object in reply",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "real_stalker",
+ "run": 2
+}

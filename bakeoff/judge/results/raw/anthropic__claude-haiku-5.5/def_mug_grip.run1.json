@@ -1,0 +1,18 @@
+{
+ "seconds": 6.4,
+ "cost": 0.0006051,
+ "raw": "{\"findings\": [{\"category\": \"hands-limbs\", \"severity\": \"advisory\", \"where\": \"middle finger reaching left across the mug body, below the top finger and above the lower fingers\", \"evidence\": \"A finger extends horizontally from the handle grip across the front face of the mug, which does not match a natural grip on the handle and reads as a finger passing through or over the mug body.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "hands-limbs",
+   "severity": "advisory",
+   "where": "middle finger reaching left across the mug body, below the top finger and above the lower fingers",
+   "evidence": "A finger extends horizontally from the handle grip across the front face of the mug, which does not match a natural grip on the handle and reads as a finger passing through or over the mug body."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_mug_grip",
+ "run": 1
+}

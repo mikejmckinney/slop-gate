@@ -1,0 +1,18 @@
+{
+ "seconds": 4.1,
+ "cost": 0.003643,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"Beneath the creature and its feet\",\"evidence\":\"Diffuse cast shadows create a visible ground surface despite the spec requiring no ground plane or cast shadow.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Beneath the creature and its feet",
+   "evidence": "Diffuse cast shadows create a visible ground surface despite the spec requiring no ground plane or cast shadow."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "real_stalker",
+ "run": 1
+}

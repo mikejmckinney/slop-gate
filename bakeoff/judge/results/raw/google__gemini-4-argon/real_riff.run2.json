@@ -1,0 +1,24 @@
+{
+ "seconds": 14.7,
+ "cost": 0.008016,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"hands\", \"evidence\": \"The character has three-digit cartoon hands rather than the rounded mitten hands described in the spec.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"tail behind viewer-left leg\", \"evidence\": \"The tail curves out to the side behind the right leg rather than staying directly behind the body.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "hands",
+   "evidence": "The character has three-digit cartoon hands rather than the rounded mitten hands described in the spec."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "tail behind viewer-left leg",
+   "evidence": "The tail curves out to the side behind the right leg rather than staying directly behind the body."
+  }
+ ],
+ "verdict": "pass",
+ "model": "google/gemini-4-argon",
+ "image": "real_riff",
+ "run": 2
+}

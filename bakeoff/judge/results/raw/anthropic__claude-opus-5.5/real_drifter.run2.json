@@ -1,0 +1,36 @@
+{
+ "seconds": 9.6,
+ "cost": 0.026664,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall camera view\", \"evidence\": \"The creature is shown in a straight-on frontal view with the face recess and eyes centred, not the front three-quarter view from slightly above that the spec requires for the 3D reconstruction input.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"ear fins / horns at upper left and upper right\", \"evidence\": \"The left fin is more upright and rounded while the right fin leans outward at a sharper angle with a different taper, which breaks the requested bilateral symmetry.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"ear fins\", \"evidence\": \"The fins curve upward and inward like devil horns rather than sweeping backward as short backward-curving ear fins.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"overall silhouette\", \"evidence\": \"The body including feet is roughly as tall as it is wide, so it does not clearly read as wider than tall.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall camera view",
+   "evidence": "The creature is shown in a straight-on frontal view with the face recess and eyes centred, not the front three-quarter view from slightly above that the spec requires for the 3D reconstruction input."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "ear fins / horns at upper left and upper right",
+   "evidence": "The left fin is more upright and rounded while the right fin leans outward at a sharper angle with a different taper, which breaks the requested bilateral symmetry."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "ear fins",
+   "evidence": "The fins curve upward and inward like devil horns rather than sweeping backward as short backward-curving ear fins."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "overall silhouette",
+   "evidence": "The body including feet is roughly as tall as it is wide, so it does not clearly read as wider than tall."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_drifter",
+ "run": 2
+}

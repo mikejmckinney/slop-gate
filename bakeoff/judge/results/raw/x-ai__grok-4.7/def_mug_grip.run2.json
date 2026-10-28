@@ -1,0 +1,18 @@
+{
+ "seconds": 31.9,
+ "cost": 0.013298,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"blocking\", \"where\": \"finger across the mug body\", \"evidence\": \"A finger with a visible nail stretches from the gripping hand across the cup, with its tip on the far side of the mug while the shaft crosses the solid ceramic body as if passing through it.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "blocking",
+   "where": "finger across the mug body",
+   "evidence": "A finger with a visible nail stretches from the gripping hand across the cup, with its tip on the far side of the mug while the shaft crosses the solid ceramic body as if passing through it."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_mug_grip",
+ "run": 2
+}

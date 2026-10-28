@@ -1,0 +1,36 @@
+{
+ "seconds": 11.2,
+ "cost": 0.029908,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"horns on top of head\", \"evidence\": \"The horns are fairly tall, ridged, and curve upward and inward like a devil's horns, rather than short, rounded, and swept back as specified.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"top of head between horns\", \"evidence\": \"A sculpted spiky hair tuft is added that the spec does not call for, breaking up the requested broad soft square head shape.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms and gloves\", \"evidence\": \"The arms hang close to the torso at well under the requested 25 degrees, and the hands are half-curled rather than open, which hurts limb readability.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"gloves and boots surfaces\", \"evidence\": \"The gloves and boots carry a gritty, mottled, realistic leather texture that goes beyond the requested restrained matte vinyl detail.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "horns on top of head",
+   "evidence": "The horns are fairly tall, ridged, and curve upward and inward like a devil's horns, rather than short, rounded, and swept back as specified."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "top of head between horns",
+   "evidence": "A sculpted spiky hair tuft is added that the spec does not call for, breaking up the requested broad soft square head shape."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms and gloves",
+   "evidence": "The arms hang close to the torso at well under the requested 25 degrees, and the hands are half-curled rather than open, which hurts limb readability."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "gloves and boots surfaces",
+   "evidence": "The gloves and boots carry a gritty, mottled, realistic leather texture that goes beyond the requested restrained matte vinyl detail."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_cinder",
+ "run": 2
+}

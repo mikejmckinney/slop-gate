@@ -1,0 +1,24 @@
+{
+ "seconds": 7.1,
+ "cost": 0.0007649,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs, between leaf tunic hem and boots\", \"evidence\": \"The legs are short and stubby, closer to the 'substantial but moderately long' legs the spec asks for than to the chunky proportions shown, and they read as short relative to the large head and torso.\"}, {\"category\": \"mismatched-pair\", \"severity\": \"advisory\", \"where\": \"left and right leaf ears\", \"evidence\": \"The two ear leaves differ slightly in size and vertical position, with the viewer's right ear sitting lower and appearing a little larger, which may be partly due to the 10-degree turn.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs, between leaf tunic hem and boots",
+   "evidence": "The legs are short and stubby, closer to the 'substantial but moderately long' legs the spec asks for than to the chunky proportions shown, and they read as short relative to the large head and torso."
+  },
+  {
+   "category": "mismatched-pair",
+   "severity": "advisory",
+   "where": "left and right leaf ears",
+   "evidence": "The two ear leaves differ slightly in size and vertical position, with the viewer's right ear sitting lower and appearing a little larger, which may be partly due to the 10-degree turn."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "real_bud",
+ "run": 2
+}

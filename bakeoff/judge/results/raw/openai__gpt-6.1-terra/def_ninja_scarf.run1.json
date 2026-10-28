@@ -1,0 +1,24 @@
+{
+ "seconds": 6.7,
+ "cost": 0.00267925,
+ "raw": "{\"findings\":[{\"category\":\"spec-mismatch\",\"severity\":\"blocking\",\"where\":\"Bottom of image\",\"evidence\":\"The ninja is cropped at the waist instead of being shown full-body.\"},{\"category\":\"merged-objects\",\"severity\":\"blocking\",\"where\":\"Upper end of the staff, at the right side\",\"evidence\":\"The wooden staff blends into the flowing red scarf without a clear boundary or endpoint.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "Bottom of image",
+   "evidence": "The ninja is cropped at the waist instead of being shown full-body."
+  },
+  {
+   "category": "merged-objects",
+   "severity": "blocking",
+   "where": "Upper end of the staff, at the right side",
+   "evidence": "The wooden staff blends into the flowing red scarf without a clear boundary or endpoint."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_ninja_scarf",
+ "run": 1
+}

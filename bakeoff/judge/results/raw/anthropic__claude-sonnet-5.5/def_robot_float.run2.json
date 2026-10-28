@@ -1,0 +1,24 @@
+{
+ "seconds": 8.9,
+ "cost": 0.01132,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"Both track units at the bottom\", \"evidence\": \"The tracks have only a faint, offset shadow and no tight contact shadow, so the robot looks like it hovers slightly above the floor.\"}, {\"category\": \"perspective\", \"severity\": \"advisory\", \"where\": \"Left and right track legs\", \"evidence\": \"The two tracks are angled differently, with the left one skewed one way and the right one tilted another, which implies slightly different viewpoints for matching parts.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "Both track units at the bottom",
+   "evidence": "The tracks have only a faint, offset shadow and no tight contact shadow, so the robot looks like it hovers slightly above the floor."
+  },
+  {
+   "category": "perspective",
+   "severity": "advisory",
+   "where": "Left and right track legs",
+   "evidence": "The two tracks are angled differently, with the left one skewed one way and the right one tilted another, which implies slightly different viewpoints for matching parts."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "def_robot_float",
+ "run": 2
+}

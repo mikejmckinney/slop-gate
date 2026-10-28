@@ -1,0 +1,11 @@
+{
+ "seconds": 7.7,
+ "cost": 0.008342,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_chest",
+ "run": 2
+}

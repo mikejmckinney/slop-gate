@@ -1,0 +1,18 @@
+{
+ "seconds": 11.4,
+ "cost": 0.014152,
+ "raw": "{\"findings\": [{\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"mug handle and curled fingers\", \"evidence\": \"The handle opening is small next to the four stacked fingers, and the fingers look pressed in front of it rather than clearly passing through, so it is hard to see how the grip bears the mug's weight.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "mug handle and curled fingers",
+   "evidence": "The handle opening is small next to the four stacked fingers, and the fingers look pressed in front of it rather than clearly passing through, so it is hard to see how the grip bears the mug's weight."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-sonnet-5.5",
+ "image": "base_mug",
+ "run": 1
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 4.0,
+ "cost": 0.0011918,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"Sky above the left-hand stalls\",\"evidence\":\"The sun is visible ahead of the viewer, rather than behind the viewer's left shoulder as specified.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Sky above the left-hand stalls",
+   "evidence": "The sun is visible ahead of the viewer, rather than behind the viewer's left shoulder as specified."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-terra",
+ "image": "def_street_light",
+ "run": 2
+}

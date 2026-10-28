@@ -1,0 +1,36 @@
+{
+ "seconds": 12.2,
+ "cost": 0.028688,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"horns on top of head\", \"evidence\": \"The horns curl upward and inward like crescents rather than sweeping back as the spec asks.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"legs and feet\", \"evidence\": \"The stance is staggered, with the viewer-left boot set forward of the other, instead of the relaxed symmetric A pose the spec requests.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"arms\", \"evidence\": \"The arms hang close to the torso at roughly 15-20 degrees, short of the specified 25 degrees, which reduces silhouette separation.\"}, {\"category\": \"contact-weight\", \"severity\": \"advisory\", \"where\": \"ground under boots\", \"evidence\": \"The contact shadow beneath the boots is very faint, so ground contact is weakly anchored.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "horns on top of head",
+   "evidence": "The horns curl upward and inward like crescents rather than sweeping back as the spec asks."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "legs and feet",
+   "evidence": "The stance is staggered, with the viewer-left boot set forward of the other, instead of the relaxed symmetric A pose the spec requests."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "arms",
+   "evidence": "The arms hang close to the torso at roughly 15-20 degrees, short of the specified 25 degrees, which reduces silhouette separation."
+  },
+  {
+   "category": "contact-weight",
+   "severity": "advisory",
+   "where": "ground under boots",
+   "evidence": "The contact shadow beneath the boots is very faint, so ground contact is weakly anchored."
+  }
+ ],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "real_cinder",
+ "run": 1
+}

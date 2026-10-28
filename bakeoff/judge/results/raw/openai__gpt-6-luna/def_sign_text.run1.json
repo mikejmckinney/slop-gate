@@ -1,0 +1,24 @@
+{
+ "seconds": 8.0,
+ "cost": 0.00045205,
+ "raw": "{\"findings\":[{\"category\":\"lettering\",\"severity\":\"blocking\",\"where\":\"wooden sign in the lower left\",\"evidence\":\"The sign has large invented lettering despite the spec requiring it to be blank and forbidding text.\"},{\"category\":\"count-repetition\",\"severity\":\"blocking\",\"where\":\"left post above the hanging lantern\",\"evidence\":\"A second glowing fixture is mounted above the hanging lantern, contradicting the spec's single lantern as the only light source.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lettering",
+   "severity": "blocking",
+   "where": "wooden sign in the lower left",
+   "evidence": "The sign has large invented lettering despite the spec requiring it to be blank and forbidding text."
+  },
+  {
+   "category": "count-repetition",
+   "severity": "blocking",
+   "where": "left post above the hanging lantern",
+   "evidence": "A second glowing fixture is mounted above the hanging lantern, contradicting the spec's single lantern as the only light source."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6-luna",
+ "image": "def_sign_text",
+ "run": 1
+}

@@ -1,0 +1,11 @@
+{
+ "seconds": 8.5,
+ "cost": 0.000439675,
+ "raw": "{\"findings\":[],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "openai/gpt-6-luna",
+ "image": "def_robot_float",
+ "run": 1
+}

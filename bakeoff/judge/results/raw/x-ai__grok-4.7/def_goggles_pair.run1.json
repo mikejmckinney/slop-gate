@@ -1,0 +1,24 @@
+{
+ "seconds": 21.0,
+ "cost": 0.010552,
+ "raw": "{\"findings\": [{\"category\": \"mismatched-pair\", \"severity\": \"blocking\", \"where\": \"the two lens housings\", \"evidence\": \"The left lens is round in a circular brass rim, while the right lens is rectangular with a squared frame and corner screws, so the paired lenses do not match.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"right lens\", \"evidence\": \"The spec calls for two matching round glass lenses, but the right lens is a rectangle rather than a round lens.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "mismatched-pair",
+   "severity": "blocking",
+   "where": "the two lens housings",
+   "evidence": "The left lens is round in a circular brass rim, while the right lens is rectangular with a squared frame and corner screws, so the paired lenses do not match."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "right lens",
+   "evidence": "The spec calls for two matching round glass lenses, but the right lens is a rectangle rather than a round lens."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_goggles_pair",
+ "run": 1
+}

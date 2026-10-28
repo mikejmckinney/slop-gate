@@ -1,0 +1,18 @@
+{
+ "seconds": 6.8,
+ "cost": 0.004736,
+ "raw": "{\"findings\":[{\"category\":\"lighting\",\"severity\":\"blocking\",\"where\":\"Upper-left sky and street foreground\",\"evidence\":\"The sun is visible ahead above the left rooftops rather than high behind the viewer\u2019s left shoulder, and the stalls cast long shadows across the foreground instead of the specified short shadows.\"}],\"verdict\":\"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "Upper-left sky and street foreground",
+   "evidence": "The sun is visible ahead above the left rooftops rather than high behind the viewer\u2019s left shoulder, and the stalls cast long shadows across the foreground instead of the specified short shadows."
+  }
+ ],
+ "verdict": "fail",
+ "model": "openai/gpt-6.1-sol",
+ "image": "def_street_light",
+ "run": 1
+}

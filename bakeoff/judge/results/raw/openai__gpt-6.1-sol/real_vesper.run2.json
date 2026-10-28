@@ -1,0 +1,11 @@
+{
+ "seconds": 6.6,
+ "cost": 0.0013636,
+ "raw": "{\"findings\":[],\"verdict\":\"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "openai/gpt-6.1-sol",
+ "image": "real_vesper",
+ "run": 2
+}

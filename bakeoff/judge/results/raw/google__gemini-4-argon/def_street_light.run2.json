@@ -1,0 +1,24 @@
+{
+ "seconds": 20.8,
+ "cost": 0.005354,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"upper-left sky and street shadows\", \"evidence\": \"The sun is visible in front of the viewer in the upper-left sky rather than behind the viewer's left shoulder, and the main street shadow falls from right to left across the cobblestones instead of forward and to the right.\"}, {\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"shadows on the cobblestone street\", \"evidence\": \"The characters on the left cast shadows backward and to the left toward the stalls while the right-side buildings cast a massive shadow leftward across the street, directly contradicting the sun disk visible in the upper-left sky.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "upper-left sky and street shadows",
+   "evidence": "The sun is visible in front of the viewer in the upper-left sky rather than behind the viewer's left shoulder, and the main street shadow falls from right to left across the cobblestones instead of forward and to the right."
+  },
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "shadows on the cobblestone street",
+   "evidence": "The characters on the left cast shadows backward and to the left toward the stalls while the right-side buildings cast a massive shadow leftward across the street, directly contradicting the sun disk visible in the upper-left sky."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "def_street_light",
+ "run": 2
+}

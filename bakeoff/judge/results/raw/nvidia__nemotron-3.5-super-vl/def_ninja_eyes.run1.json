@@ -1,0 +1,11 @@
+{
+ "seconds": 336.8,
+ "cost": 0.00147248,
+ "raw": "",
+ "error": "no JSON object in reply",
+ "findings": [],
+ "verdict": "invalid",
+ "model": "nvidia/nemotron-3.5-super-vl",
+ "image": "def_ninja_eyes",
+ "run": 1
+}

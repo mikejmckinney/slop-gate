@@ -1,0 +1,18 @@
+{
+ "seconds": 40.2,
+ "cost": 0.001268352,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"advisory\", \"where\": \"character's left shoulder / back (image right)\", \"evidence\": \"The 'small smooth backpack' reads as a single-strap side satchel with a flap pocket protruding only on one side, with no matching strap or volume on the opposite shoulder despite the near-frontal pose.\"}], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "advisory",
+   "where": "character's left shoulder / back (image right)",
+   "evidence": "The 'small smooth backpack' reads as a single-strap side satchel with a flap pocket protruding only on one side, with no matching strap or volume on the opposite shoulder despite the near-frontal pose."
+  }
+ ],
+ "verdict": "pass",
+ "model": "qwen/qwen3.8-omni-flash",
+ "image": "real_mochi",
+ "run": 2
+}

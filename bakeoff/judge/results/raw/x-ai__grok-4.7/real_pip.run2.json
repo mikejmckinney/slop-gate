@@ -1,0 +1,18 @@
+{
+ "seconds": 78.1,
+ "cost": 0.0348,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"both yellow sneakers\", \"evidence\": \"Each sneaker has a curved side swoosh that reads as a brand logo, which the spec forbids along with all lettering and labels.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "both yellow sneakers",
+   "evidence": "Each sneaker has a curved side swoosh that reads as a brand logo, which the spec forbids along with all lettering and labels."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "real_pip",
+ "run": 2
+}

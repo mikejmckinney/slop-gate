@@ -1,0 +1,24 @@
+{
+ "seconds": 8.2,
+ "cost": 0.004958,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"arms and hands\", \"evidence\": \"The character's right hand is raised with an open palm and the left hand holds the staff, which reverses the left/right hand assignments in the spec.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"lower body\", \"evidence\": \"The character is cropped at the waist instead of showing the full body requested in the spec.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "arms and hands",
+   "evidence": "The character's right hand is raised with an open palm and the left hand holds the staff, which reverses the left/right hand assignments in the spec."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "lower body",
+   "evidence": "The character is cropped at the waist instead of showing the full body requested in the spec."
+  }
+ ],
+ "verdict": "fail",
+ "model": "google/gemini-4-argon",
+ "image": "base_ninja",
+ "run": 2
+}

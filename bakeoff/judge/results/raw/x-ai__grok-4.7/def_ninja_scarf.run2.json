@@ -1,0 +1,24 @@
+{
+ "seconds": 26.4,
+ "cost": 0.012366,
+ "raw": "{\"findings\": [{\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"overall framing\", \"evidence\": \"The figure is cropped around the waist with no legs or feet, so it is not the full-body character the spec requires.\"}, {\"category\": \"spec-mismatch\", \"severity\": \"blocking\", \"where\": \"hands and pose\", \"evidence\": \"The open palm facing the viewer is on the character's right (thumb on the viewer's left of that palm), while the staff is held in the character's left hand, reversing the specified left-hand raise and right-hand staff.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "overall framing",
+   "evidence": "The figure is cropped around the waist with no legs or feet, so it is not the full-body character the spec requires."
+  },
+  {
+   "category": "spec-mismatch",
+   "severity": "blocking",
+   "where": "hands and pose",
+   "evidence": "The open palm facing the viewer is on the character's right (thumb on the viewer's left of that palm), while the staff is held in the character's left hand, reversing the specified left-hand raise and right-hand staff."
+  }
+ ],
+ "verdict": "fail",
+ "model": "x-ai/grok-4.7",
+ "image": "def_ninja_scarf",
+ "run": 2
+}

@@ -1,0 +1,18 @@
+{
+ "seconds": 4.7,
+ "cost": 0.0005081,
+ "raw": "{\"findings\": [{\"category\": \"lighting\", \"severity\": \"blocking\", \"where\": \"sky and sun, upper center-left; overall scene lighting\", \"evidence\": \"The sun sits in the far background ahead of the street rather than behind the viewer's left shoulder, and the sunlit faces of the stall fronts and figures indicate light coming toward the camera, contradicting the specified backlight direction and forward-right shadows.\"}], \"verdict\": \"fail\"}",
+ "error": null,
+ "findings": [
+  {
+   "category": "lighting",
+   "severity": "blocking",
+   "where": "sky and sun, upper center-left; overall scene lighting",
+   "evidence": "The sun sits in the far background ahead of the street rather than behind the viewer's left shoulder, and the sunlit faces of the stall fronts and figures indicate light coming toward the camera, contradicting the specified backlight direction and forward-right shadows."
+  }
+ ],
+ "verdict": "fail",
+ "model": "anthropic/claude-haiku-5.5",
+ "image": "def_street_light",
+ "run": 2
+}

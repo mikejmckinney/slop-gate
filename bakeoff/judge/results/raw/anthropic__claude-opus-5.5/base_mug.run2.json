@@ -1,0 +1,11 @@
+{
+ "seconds": 11.2,
+ "cost": 0.021044,
+ "raw": "{\"findings\": [], \"verdict\": \"pass\"}",
+ "error": null,
+ "findings": [],
+ "verdict": "pass",
+ "model": "anthropic/claude-opus-5.5",
+ "image": "base_mug",
+ "run": 2
+}
