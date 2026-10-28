@@ -8,3 +8,5 @@ Berlin team now posts blockers in the shared doc before 10:00.
 
 Use this for weekly team notes. Don't use it for a grant abstract until a
 person has checked every citation.
+
+Configure Azure API Management as an AI Gateway for the model endpoints.

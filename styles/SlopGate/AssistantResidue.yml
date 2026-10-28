@@ -12,6 +12,7 @@ tokens:
   - 'I hope this helps'
   - 'let me know if you (?:have|need|want|would like)'
   - 'feel free to (?:ask|reach out)'
-  - 'as an AI(?: language model)?'  # slop-gate: ignore (pattern definition)
+  - 'as an AI (?:language model|assistant)'  # slop-gate: ignore (pattern definition)
+  - 'as an AI, I'  # slop-gate: ignore (pattern definition)
   - 'here[''’]?s a (?:comprehensive|detailed|complete|quick) (?:overview|breakdown|guide|summary|look)'
   - 'here is (?:the|a) (?:revised|updated|improved|complete) (?:version|code|draft)'

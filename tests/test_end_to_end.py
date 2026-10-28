@@ -243,5 +243,68 @@ class FormatScopeTests(unittest.TestCase):
         self.assertEqual(self.format_severity("code:\n  ruff_format_scope: changed\n"), {"error"})
 
 
+@unittest.skipUnless(HAS_VALE, "vale not installed")
+class UnreadableFileTests(unittest.TestCase):
+    """A file Vale can't parse is reported; it must not stop the other files."""
+
+    def setUp(self):
+        self.repo = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.repo)
+        (self.repo / "bad.md").write_text("---\ndescription: Three forms: one, two\n---\n\nText.\n")
+        (self.repo / "slop.md").write_text("It's important to note that the cache is per-process.\n")
+
+    def test_bad_front_matter_is_a_warning_and_other_files_still_run(self):
+        from slopgate.prose import run_vale
+
+        found = {
+            (f.path, f.rule, f.severity)
+            for f in run_vale(self.repo, ROOT / ".vale.ini", ["bad.md", "slop.md"])
+        }
+        self.assertIn(("bad.md", "vale-unreadable", "warning"), found)
+        self.assertIn(("slop.md", "SlopGate.HedgingPreambles", "error"), found)
+
+    def test_broken_config_is_still_fatal(self):
+        from slopgate.prose import run_vale
+
+        ini = self.repo / "broken.ini"
+        ini.write_text("StylesPath = does-not-exist\n[*.md]\nBasedOnStyles = Nope\n")
+        with self.assertRaises(RuntimeError):
+            run_vale(self.repo, ini, ["slop.md"])
+
+    def test_pr_mode_keeps_the_warning_when_only_the_body_changed(self):
+        # The parse error is on line 1, which the PR doesn't touch; the warning
+        # must survive changed-line filtering or the PR passes unchecked prose.
+        git(self.repo, "init", "-q", "-b", "main")
+        git(self.repo, "config", "user.email", "t@example.com")
+        git(self.repo, "config", "user.name", "t")
+        git(self.repo, "add", "bad.md")
+        git(self.repo, "commit", "-qm", "base")
+        git(self.repo, "checkout", "-qb", "feature")
+        with (self.repo / "bad.md").open("a") as f:
+            f.write("\nIt's important to note that the cache is per-process.\n")
+        git(self.repo, "commit", "-qam", "edit body")
+        report = self.repo / "r.json"
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            main(
+                [
+                    "check",
+                    "--repo",
+                    str(self.repo),
+                    "--base",
+                    "main",
+                    "--head",
+                    "feature",
+                    "--only",
+                    "prose",
+                    "--report-json",
+                    str(report),
+                ]
+            )
+        findings = json.loads(report.read_text())
+        self.assertEqual(
+            [(f["path"], f["rule"], f["line"]) for f in findings], [("bad.md", "vale-unreadable", None)]
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
