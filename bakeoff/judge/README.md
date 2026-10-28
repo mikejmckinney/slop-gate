@@ -16,9 +16,9 @@ from.
   sides of a chest lid, garbled text on a blank sign, five lamps where the spec
   says four, a scarf melting into a staff, a floating robot, mismatched eyes.
   The tenth is a natural miss: the generator put the sun in front of the camera
-  when the spec put it behind the viewer. Three edits that didn't take (a
-  six-finger robot hand, a shadow cast toward the lantern, the first mug attempt)
-  were discarded.
+  when the spec put it behind the viewer. Four edit attempts that didn't take
+  (a six-finger robot hand, two tries at a shadow cast toward the lantern, the
+  first mug attempt) were discarded.
 - **Synthetic bases (7)** that were meant to be clean.
 - **Real assets (9):** the seven 2026-09-07 bomber redesigns and two enemy
   references from Bomberguy9, each with its original generation prompt as the
@@ -45,7 +45,7 @@ came from a Gemini image model, which may favor the Gemini judge.
 Both runs pooled. Recall counts a defect as found when the run raised a
 blocking finding in one of its categories. Precision excludes disputed pairs.
 
-| Model | Planted recall (20) | Unplanted recall (16) | Precision | False alarms on clean images | Same verdict both runs | Unusable replies | Cost / image | Median seconds |
+| Model | Planted recall (20 defect-runs) | Unplanted recall (16 defect-runs) | Precision | False alarms on clean images | Same verdict both runs | Unusable replies | Cost / image | Median seconds |
 |---|---|---|---|---|---|---|---|---|
 | `google/gemini-4-argon` | **0.95** | 0.25 | 1.00 | 0% | 92% | 2% | $0.0057 | 16 |
 | `openai/gpt-6.1-sol` | 0.85 | 0.25 | 1.00 | 0% | 88% | 0% | $0.0037 | 7 |
@@ -80,7 +80,7 @@ What the numbers say:
 Running two judges and keeping both sets of findings covers each model's blind
 spots ([`results/analysis.json`](results/analysis.json)):
 
-| Pair | Recall (36) | False claims | Cost / image |
+| Pair | Recall (36 defect-runs) | False claims | Cost / image |
 |---|---|---|---|
 | Opus 5.5 + Gemini 4 Argon | **0.92** | 0 | $0.027 |
 | Opus 5.5 + GPT-6.1 Sol | 0.83 | 0 | $0.025 |
@@ -101,7 +101,7 @@ verdict on 4–12% of images between identical runs.
 
 ## Limits
 
-- 26 images and 36 defect instances is small. With 20 planted-defect runs, the
+- 26 images and 18 confirmed defects (36 defect-runs) is small. With 20 planted-defect runs, the
   gap between 0.95 and 0.80 is three runs, inside the noise.
 - The categories are coarse. A `spec-mismatch` finding on a ninja image counts
   as finding the waist crop whether or not the model meant that.
