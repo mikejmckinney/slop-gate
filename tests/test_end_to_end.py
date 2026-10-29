@@ -369,11 +369,11 @@ class ValeFollowUpTests(unittest.TestCase):
         from slopgate.prose import run_vale
 
         should = [
-            "As an AI language model, I cannot browse.",
-            "As an AI model, I lack access.",
-            "As an AI chatbot, I suggest retrying.",
-            "As an AI developed by a lab, I cannot say.",
-            "As an AI, I recommend a retry.",
+            "As an AI language model, I cannot browse.",  # slop-gate: ignore
+            "As an AI model, I lack access.",  # slop-gate: ignore
+            "As an AI chatbot, I suggest retrying.",  # slop-gate: ignore
+            "As an AI developed by a lab, I cannot say.",  # slop-gate: ignore
+            "As an AI, I recommend a retry.",  # slop-gate: ignore
         ]
         should_not = [
             "Configure API Management as an AI Gateway.",
