@@ -12,7 +12,10 @@ tokens:
   - 'I hope this helps'
   - 'let me know if you (?:have|need|want|would like)'
   - 'feel free to (?:ask|reach out)'
-  - 'as an AI (?:language model|assistant)'  # slop-gate: ignore (pattern definition)
+  # "as an AI" alone is a phrase people use ("as an AI gateway"), so only the
+  # chatbot self-descriptions match.
+  - 'as an AI (?:language model|model|assistant|chatbot|system)'  # slop-gate: ignore (pattern definition)
+  - 'as an AI (?:developed|created|trained|built|made) by'  # slop-gate: ignore (pattern definition)
   - 'as an AI, I'  # slop-gate: ignore (pattern definition)
   - 'here[''’]?s a (?:comprehensive|detailed|complete|quick) (?:overview|breakdown|guide|summary|look)'
   - 'here is (?:the|a) (?:revised|updated|improved|complete) (?:version|code|draft)'

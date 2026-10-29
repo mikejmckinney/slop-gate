@@ -168,4 +168,4 @@ These checks are patterns, not authorship detection, and plenty of human
 writing trips them. They also miss what needs judgment: invented citations
 and statistics, paragraphs that repeat each other, comments that restate the
 code. Image defects such as malformed hands or garbled lettering get the
-advisory vision review below, which is a second opinion, not a gate.
+advisory vision review described above, which is a second opinion, not a gate.

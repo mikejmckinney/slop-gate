@@ -56,6 +56,35 @@ class ResidueTests(unittest.TestCase):
         "# Configure API Management as an AI gateway",
     ]
 
+    # The assistant-residue rule targets chatbot self-descriptions only; "as an
+    # AI" is otherwise a normal phrase ("as an AI gateway").
+    ai_matches = [
+        "# As an AI language model, I can't verify this",  # slop-gate: ignore
+        "# As an AI assistant, here is the fix",  # slop-gate: ignore
+        "# As an AI model I don't have access",  # slop-gate: ignore
+        "# As an AI chatbot, I suggest",  # slop-gate: ignore
+        "# as an AI system, this is my best guess",  # slop-gate: ignore
+        "# As an AI developed by a lab, I can't",  # slop-gate: ignore
+        "# As an AI trained by researchers",  # slop-gate: ignore
+        "# As an AI, I recommend retrying",  # slop-gate: ignore
+    ]
+    ai_non_matches = [
+        "# Configure API Management as an AI gateway",
+        "# Deploy the cluster as an AI platform for the team",
+        "# Register the service as an AI endpoint",
+        "# Treat it as an AI-first workflow",
+    ]
+
+    def test_ai_self_description_matches(self):
+        for line in self.ai_matches:
+            with self.subTest(line=line):
+                self.assertIn("assistant-residue", self.matched(line))
+
+    def test_ordinary_as_an_ai_phrases_do_not_match(self):
+        for line in self.ai_non_matches:
+            with self.subTest(line=line):
+                self.assertNotIn("assistant-residue", self.matched(line))
+
     def matched(self, line):
         return {rule for rule, _, pat, _ in RESIDUE_RULES if pat.search(line)}
 

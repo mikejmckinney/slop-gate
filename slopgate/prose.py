@@ -51,28 +51,17 @@ def run_vale(repo: Path, vale_ini: Path, files: list[str], kind: str = "prose") 
             findings += _alerts(json.loads(result.stdout), repo, kind)
             continue
         # One unparseable file (bad YAML front matter, say) makes Vale abort
-        # the whole batch. Retry the batch file by file so the rest still get
-        # checked; a file that fails on its own is reported, not fatal.
+        # the whole batch. Split the batch in half and retry each half, so
+        # isolating one bad file costs about log2(batch) extra runs; a file
+        # that fails on its own is reported, not fatal.
         if len(chunk) > 1:
-            pending[:0] = [[f] for f in chunk]
+            mid = len(chunk) // 2
+            pending[:0] = [chunk[:mid], chunk[mid:]]
             continue
-        error = _file_error(result, chunk[0])
+        error = _file_error(result, repo, chunk[0])
         if error is None:
             raise RuntimeError(f"vale failed: {(result.stderr or result.stdout).strip()[:2000]}")
-        findings.append(
-            Finding(
-                check=kind,
-                rule=UNREADABLE,
-                severity="warning",
-                path=chunk[0],
-                line=None,
-                message=(
-                    f"Vale could not read this file (line {error.get('Line') or '?'}: {error['Text']}), "
-                    "so none of its prose was checked."
-                ),
-                fix="Fix the front matter (quote values that contain ': ') or exclude the file.",
-            )
-        )
+        findings.append(_unreadable(kind, chunk[0], error))
     return findings
 
 
@@ -97,11 +86,13 @@ def _alerts(data: dict, repo: Path, kind: str) -> list[Finding]:
     return out
 
 
-def _file_error(result: subprocess.CompletedProcess, path: str) -> dict | None:
+def _file_error(result: subprocess.CompletedProcess, repo: Path, path: str) -> dict | None:
     """Vale's error object when it blames this file's content; None otherwise.
 
     Errors about the config or the styles name another path and stay fatal.
+    Paths are compared resolved, so `a.md` never claims an error in `data.md`.
     """
+    target = (repo / path).resolve()
     for stream in (result.stderr, result.stdout):
         text = stream.strip()
         if not text.startswith("{"):
@@ -110,9 +101,38 @@ def _file_error(result: subprocess.CompletedProcess, path: str) -> dict | None:
             data = json.loads(text)
         except json.JSONDecodeError:
             continue
-        if isinstance(data, dict) and data.get("Text") and str(data.get("Path", "")).endswith(path):
+        if not (isinstance(data, dict) and data.get("Text") and data.get("Path")):
+            continue
+        blamed = Path(data["Path"])
+        if (blamed if blamed.is_absolute() else repo / blamed).resolve() == target:
             return data
     return None
+
+
+_MAX_ERROR_TEXT = 160
+
+
+def _unreadable(kind: str, path: str, error: dict) -> Finding:
+    text = str(error["Text"]).strip()
+    if len(text) > _MAX_ERROR_TEXT:
+        text = text[: _MAX_ERROR_TEXT - 1].rstrip() + "…"
+    # Vale reports front-matter problems from its YAML parser.
+    if text.lower().startswith("yaml"):
+        fix = "Fix the front matter (quote values that contain ': ') or exclude the file."
+    else:
+        fix = "Fix the syntax error Vale reports, or exclude the file."
+    return Finding(
+        check=kind,
+        rule=UNREADABLE,
+        severity="warning",
+        path=path,
+        line=None,
+        message=(
+            f"Vale could not read this file (line {error.get('Line') or '?'}: {text}), "
+            "so none of its prose was checked."
+        ),
+        fix=fix,
+    )
 
 
 def check(repo: Path, changed: ChangedLines, vale_ini: Path, excluded) -> tuple[list[Finding], int]:
