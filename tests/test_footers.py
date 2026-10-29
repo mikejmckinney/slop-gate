@@ -63,6 +63,19 @@ class DecideTests(unittest.TestCase):
     def test_empty_body(self):
         self.assertEqual(footers.decide(item(None)), (None, "no footer"))
 
+    def test_issue_8_keeps_its_opening_paragraph(self):
+        # Issue #8's real opening quotes the footer in inline code; only the
+        # trailing footer may go.
+        opening = (
+            f"Claude Code cloud sessions append `{FOOTER}` (sometimes with a session URL) "
+            "to every PR description, issue body and comment they write through GitHub, "
+            "edits included. No repo setting turns it off."
+        )
+        body = f"{opening}\n\n- The strip step runs inside the `pull_request` job.\n\n---\n{FOOTER}\n"
+        new, reason = footers.decide(item(body))
+        self.assertEqual(reason, "1 footer line(s)")
+        self.assertEqual(new, f"{opening}\n\n- The strip step runs inside the `pull_request` job.\n")
+
 
 class EventTests(unittest.TestCase):
     def test_event_paths(self):
