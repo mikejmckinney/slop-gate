@@ -182,7 +182,8 @@ RESIDUE_RULES: list[tuple[str, str, re.Pattern[str], str]] = [
         "assistant-residue",
         "error",
         re.compile(
-            r"\bas an ai (?:language model|assistant)\b|\bas an ai, i\b|"
+            r"\bas an ai (?:language model|model|assistant|chatbot|system)\b|"
+            r"\bas an ai (?:developed|created|trained|built|made) by\b|\bas an ai, i\b|"
             r"^\s*(?:#|//|/\*|\*)\s*(?:here'?s|here is) "
             r"(?:the|an?|your) (?:updated|complete|full|revised|fixed|modified)",
             re.I,

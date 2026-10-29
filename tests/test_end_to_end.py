@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import unittest.mock
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
@@ -294,6 +295,86 @@ class UnreadableFileTests(unittest.TestCase):
         self.assertEqual(
             [(f["path"], f["rule"], f["line"]) for f in findings], [("bad.md", "vale-unreadable", None)]
         )
+
+
+@unittest.skipUnless(HAS_VALE, "vale not installed")
+class ValeFollowUpTests(unittest.TestCase):
+    """Issue #7: path matching, bisecting, the AI rule in prose, and the hint."""
+
+    def setUp(self):
+        self.repo = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.repo)
+
+    def test_error_is_attributed_only_to_the_exact_file(self):
+        import subprocess as sp
+
+        from slopgate.prose import _file_error
+
+        error = json.dumps({"Path": "docs/data.md", "Line": 2, "Text": "yaml: bad"})
+        result = sp.CompletedProcess([], 2, stdout="{}", stderr=error)
+        self.assertIsNone(_file_error(result, self.repo, "a.md"))
+        self.assertIsNone(_file_error(result, self.repo, "data.md"))
+        self.assertEqual(_file_error(result, self.repo, "docs/data.md")["Line"], 2)
+
+    def test_failed_batch_is_bisected(self):
+        import slopgate.prose as prose_mod
+
+        names = [f"f{i:02d}.md" for i in range(64)]
+        for n in names:
+            (self.repo / n).write_text("Plain text.\n")
+        (self.repo / "f37.md").write_text("---\ndescription: Three forms: one, two\n---\n\nText.\n")
+        (self.repo / "f05.md").write_text("It's important to note that the cache is per-process.\n")
+        calls = []
+        real_run = prose_mod.subprocess.run
+
+        def counting_run(*a, **kw):
+            calls.append(1)
+            return real_run(*a, **kw)
+
+        with unittest.mock.patch.object(prose_mod.subprocess, "run", counting_run):
+            found = prose_mod.run_vale(self.repo, ROOT / ".vale.ini", names)
+        rules = {(f.path, f.rule) for f in found}
+        self.assertIn(("f37.md", "vale-unreadable"), rules)
+        self.assertIn(("f05.md", "SlopGate.HedgingPreambles"), rules)
+        # One full run plus two runs per halving step: 1 + 2 * log2(64) = 13.
+        self.assertLessEqual(len(calls), 13)
+
+    def test_front_matter_hint_only_for_yaml_errors(self):
+        from slopgate.prose import _unreadable
+
+        yaml_fix = _unreadable("prose", "a.md", {"Line": 2, "Text": "yaml: line 2: mapping values"}).fix
+        other = _unreadable("prose", "a.md", {"Line": 9, "Text": "unexpected token " + "x" * 400})
+        self.assertIn("front matter", yaml_fix)
+        self.assertNotIn("front matter", other.fix)
+        self.assertLess(len(other.message), 300)
+
+    def test_pr_body_with_broken_front_matter_warns_instead_of_failing(self):
+        body = "---\ntitle: Fix: retries\n---\n\nAdds retry.\n"
+        found = check_pr(ROOT / ".vale.ini", "Add retry", body)
+        self.assertIn(
+            ("PR description", "vale-unreadable", "warning"), {(f.path, f.rule, f.severity) for f in found}
+        )
+
+    def test_ai_rule_in_prose(self):
+        from slopgate.prose import run_vale
+
+        should = [
+            "As an AI language model, I cannot browse.",  # slop-gate: ignore
+            "As an AI model, I lack access.",  # slop-gate: ignore
+            "As an AI chatbot, I suggest retrying.",  # slop-gate: ignore
+            "As an AI developed by a lab, I cannot say.",  # slop-gate: ignore
+            "As an AI, I recommend a retry.",  # slop-gate: ignore
+        ]
+        should_not = [
+            "Configure API Management as an AI Gateway.",
+            "We run the cluster as an AI platform for the team.",
+            "Register the service as an AI endpoint.",
+        ]
+        for i, line in enumerate(should + should_not):
+            (self.repo / f"t{i}.md").write_text(line + "\n")
+        found = run_vale(self.repo, ROOT / ".vale.ini", [f"t{i}.md" for i in range(len(should + should_not))])
+        hit = {f.path for f in found if f.rule == "SlopGate.AssistantResidue"}
+        self.assertEqual(hit, {f"t{i}.md" for i in range(len(should))})
 
 
 if __name__ == "__main__":
