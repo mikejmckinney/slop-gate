@@ -1,0 +1,79 @@
+# Reusable workflow that removes tool attribution footers from comments and
+# issue bodies as they're posted or edited, and from everything already in the
+# repo on demand. PR descriptions on open PRs are handled by the
+# `strip-attribution-footer` input of slop-gate.yml.
+#
+# Only text by owners, members and collaborators is edited, slop-gate's own
+# report comments are skipped, and a footer quoted inside a code fence stays.
+# Edits made with the workflow token don't start new runs, so this can't loop.
+#
+# Consumers call it from the events they want covered (see
+# examples/.github/workflows/slop-footer.yml):
+#
+#   on:
+#     issue_comment: { types: [created, edited] }
+#     pull_request_review_comment: { types: [created, edited] }
+#     issues: { types: [opened, edited] }
+#     workflow_dispatch:
+#       inputs:
+#         apply: { type: boolean, default: false }
+#   jobs:
+#     footer:
+#       uses: mikejmckinney/slop-gate/.github/workflows/slop-footer.yml@v1
+#       with:
+#         apply: ${{ inputs.apply || false }}
+name: slop-footer
+
+on:
+  workflow_call:
+    inputs:
+      slop-gate-ref:
+        description: slop-gate version to run. Keep it equal to the ref in your `uses:` line.
+        type: string
+        default: v1
+      apply:
+        description: >-
+          Backfill only (workflow_dispatch). false counts what would change;
+          true edits every PR description, issue body and comment that has a
+          footer.
+        type: boolean
+        default: false
+
+jobs:
+  footer:
+    name: slop-footer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Check out slop-gate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: mikejmckinney/slop-gate
+          ref: ${{ inputs.slop-gate-ref }}
+          path: .slop-gate
+          persist-credentials: false
+
+      # Python 3.12+ is on the runner image already and the helpers use only
+      # the standard library and gh, so there is nothing to install.
+      - name: Strip the footer from the new or edited text
+        if: github.event_name != 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: PYTHONPATH=.slop-gate python3 -m slopgate.footers strip --repo "$REPO" --event
+
+      - name: Backfill
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          APPLY: ${{ inputs.apply }}
+        run: |
+          args=(--repo "$REPO" --summary-md "$RUNNER_TEMP/footer-backfill.md")
+          if [ "$APPLY" = "true" ]; then args+=(--apply); fi
+          PYTHONPATH=.slop-gate python3 -m slopgate.footers backfill "${args[@]}"
+          cat "$RUNNER_TEMP/footer-backfill.md" >> "$GITHUB_STEP_SUMMARY"
