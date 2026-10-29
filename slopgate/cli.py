@@ -1,4 +1,8 @@
-"""Command line entry point: `python -m slopgate check|media-init`."""
+"""Command line entry point: `python -m slopgate check|judge|media-init`.
+
+Footer stripping has its own entry point, `python -m slopgate.footers`, so it
+runs without the image and audio dependencies.
+"""
 
 from __future__ import annotations
 
@@ -100,16 +104,6 @@ def run_judge(args: argparse.Namespace) -> int:
     return 0
 
 
-def run_strip_footer(args: argparse.Namespace) -> int:
-    """Rewrite the body file without its footer; print how many lines went."""
-    path = Path(args.body_file)
-    body, removed = prtext.strip_footers(path.read_text(encoding="utf-8"))
-    if removed:
-        path.write_text(body, encoding="utf-8")
-    print(removed)
-    return 0
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="slopgate", description=__doc__)
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -135,10 +129,6 @@ def main(argv: list[str] | None = None) -> int:
     j.add_argument("--max-images", type=int)
     j.add_argument("--report-md")
     j.set_defaults(func=run_judge)
-
-    s = sub.add_parser("strip-footer", help="remove tool attribution footers from a PR description file")
-    s.add_argument("--body-file", required=True, help="rewritten in place")
-    s.set_defaults(func=run_strip_footer)
 
     m = sub.add_parser("media-init", help="print a draft media manifest from existing assets")
     m.add_argument("--repo", default=".")

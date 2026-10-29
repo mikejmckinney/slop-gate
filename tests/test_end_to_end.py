@@ -102,16 +102,6 @@ class StripFooterTests(unittest.TestCase):
         body = f"The footer looks like:\n\n```\n{self.footer}\n```\n"
         self.assertEqual(strip_footers(body), (body, 0))
 
-    def test_cli_rewrites_the_file_and_prints_the_count(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp, "body.md")
-            path.write_text(f"Adds retry.\n\n---\n{self.footer}\n", encoding="utf-8")
-            out = io.StringIO()
-            with redirect_stdout(out):
-                code = main(["strip-footer", "--body-file", str(path)])
-            self.assertEqual((code, out.getvalue().strip()), (0, "1"))
-            self.assertEqual(path.read_text(encoding="utf-8"), "Adds retry.\n")
-
 
 @unittest.skipUnless(HAS_VALE, "vale not installed")
 class ProseFixtureTests(unittest.TestCase):

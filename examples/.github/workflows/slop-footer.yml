@@ -1,0 +1,31 @@
+# Copy to .github/workflows/slop-footer.yml in a consumer repo. It removes tool
+# attribution footers from comments and issue bodies as they're posted or
+# edited. Run it from the Actions tab ("Run workflow") to clean up everything
+# already in the repo: leave "apply" off first to see the counts.
+name: slop-footer
+
+on:
+  issue_comment:
+    types: [created, edited]
+  pull_request_review_comment:
+    types: [created, edited]
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Edit every PR description, issue body and comment with a footer (off: count only)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  footer:
+    uses: mikejmckinney/slop-gate/.github/workflows/slop-footer.yml@v1
+    with:
+      slop-gate-ref: v1
+      apply: ${{ inputs.apply || false }}
