@@ -18,7 +18,7 @@ import sys
 from collections import Counter
 from dataclasses import dataclass, field
 
-from .prtext import strip_footers
+from .prtext import footer_lines, strip_footers
 
 # Only text written by people with write access is edited; anyone else's
 # words are theirs to keep.
@@ -83,6 +83,7 @@ class Result:
     new_body: str | None  # None when the text stays as it is
     reason: str
     body: str = ""  # the text after this run, edited or not
+    removed: list[str] = field(default_factory=list)  # the footer lines taken out
 
 
 def strip_one(client: GhClient, path: str, label: str = "item", apply: bool = True) -> Result:
@@ -90,8 +91,10 @@ def strip_one(client: GhClient, path: str, label: str = "item", apply: bool = Tr
     new, reason = decide(item)
     if new is not None and apply:
         client.set_body(path, new)
-    final = new if new is not None and apply else (item.get("body") or "")
-    return Result(path, label, item.get("html_url", path), new, reason, final)
+    body = item.get("body") or ""
+    final = new if new is not None and apply else body
+    removed = footer_lines(body) if new is not None else []
+    return Result(path, label, item.get("html_url", path), new, reason, final, removed)
 
 
 @dataclass
@@ -128,7 +131,18 @@ class Backfill:
         lines += ["", f"{verb} {total} item(s) in total."]
         if not applied and total:
             lines.append("Run again with `apply` set to edit them.")
+        changed = [r for r in self.results if r.new_body is not None]
+        if changed:
+            lines += ["", "Lines removed:", ""]
+            for r in changed:
+                shown = "; ".join(f"`{_short(line)}`" for line in r.removed)
+                lines.append(f"- [{r.label}]({r.url}): {shown}")
         return "\n".join(lines) + "\n"
+
+
+def _short(line: str, limit: int = 100) -> str:
+    line = line.strip().replace("`", "'")
+    return line if len(line) <= limit else line[: limit - 3] + "..."
 
 
 def backfill(client: GhClient, apply: bool) -> Backfill:
@@ -141,8 +155,12 @@ def backfill(client: GhClient, apply: bool) -> Backfill:
             path = one.format(number=item.get("number"), id=item.get("id"))
             new, reason = decide(item)
             if new is not None and apply:
-                client.set_body(path, new)
-            out.results.append(Result(path, label, item.get("html_url", path), new, reason))
+                # Fetch again before editing so an edit made since the listing
+                # isn't overwritten with the listed text.
+                out.results.append(strip_one(client, path, label, apply=True))
+                continue
+            removed = footer_lines(item.get("body") or "") if new is not None else []
+            out.results.append(Result(path, label, item.get("html_url", path), new, reason, removed=removed))
     return out
 
 

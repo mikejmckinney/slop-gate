@@ -118,21 +118,23 @@ re-runs the review on the images the PR changed and updates one comment.
   - *PR descriptions:* pass `strip-attribution-footer: true` to the gate
     workflow and it deletes footer lines (and the rule above them) before
     the check reads the description. Fork PRs are skipped, since their token
-    can't edit the PR.
+    can't edit the PR, and so are descriptions by authors without write
+    access (earlier versions stripped those too).
   - *Comments and issue bodies:* copy
     [`examples/.github/workflows/slop-footer.yml`](examples/.github/workflows/slop-footer.yml).
     It strips the footer from issue and PR comments, review comments and
     issue bodies within a few seconds of each post or edit. The job installs
     nothing, so a run takes seconds.
   - *What's already there:* run the same workflow from the Actions tab. With
-    `apply` off it only counts, per kind, what it would change; with `apply`
-    on it edits every PR description (open or closed), issue body and comment
+    `apply` off it counts, per kind, what it would change and lists every
+    line it would remove, with a link to its item; with `apply` on it edits every PR description (open or closed), issue body and comment
     that has a footer. `python -m slopgate.footers backfill --repo owner/name`
     does the same locally through `gh`.
 
-  In every case only text by owners, members and collaborators is edited,
-  slop-gate's own report comments are skipped, and a footer quoted inside a
-  code fence stays. Edits made with the workflow token don't start new
+  In every case only a line that holds nothing but the footer is removed (a
+  sentence that mentions one stays), only text by owners, members and
+  collaborators is edited, slop-gate's own report comments are skipped, and a
+  footer quoted inside a code fence stays. Edits made with the workflow token don't start new
   workflow runs, so nothing loops. One gap: whether editing a closed PR's
   description triggers a gate run is untested, so such a footer may stay until
   the next backfill.

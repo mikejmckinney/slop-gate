@@ -169,6 +169,20 @@ class BackfillTests(unittest.TestCase):
         again = footers.backfill(self.client, apply=False)
         self.assertIn("Would edit 0 item(s) in total.", again.summary(applied=False))
 
+    def test_dry_run_lists_the_lines_it_would_remove(self):
+        summary = footers.backfill(self.client, apply=False).summary(applied=False)
+        self.assertIn("Lines removed:", summary)
+        self.assertIn(f"- [issue body](https://example/x): `{FOOTER}`", summary)
+
+    def test_apply_fetches_each_item_again_before_editing(self):
+        # Someone edits issue #5 after the listing; the stale listed text must not win.
+        stale = self.client.list
+        listed = {path: stale(path) for path in self.client.listings}
+        self.client.list = lambda path: listed[path]
+        self.client.items["issues/5"]["body"] = f"Edited since.\n\n---\n{FOOTER}\n"
+        footers.backfill(self.client, apply=True)
+        self.assertEqual(self.client.items["issues/5"]["body"], "Edited since.\n")
+
 
 if __name__ == "__main__":
     unittest.main()

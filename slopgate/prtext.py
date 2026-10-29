@@ -16,9 +16,14 @@ TRAILER = re.compile(
     r"opencode|codex|devin|\[bot\]).*|claude-session:\s*\S+|generated-by:\s*.+)\s*$",
     re.I | re.M,
 )
+# A footer line holds nothing but the footer: optional emphasis and robot
+# emoji, "Generated with/by", the tool name (plain or as a Markdown link). A
+# sentence that mentions a footer, in inline code or prose, is not one.
+_TOOLS = r"claude code|copilot|cursor|opencode|codex|chatgpt"
 PR_FOOTER = re.compile(
-    r"^.*(?:🤖\s*)?generated (?:with|by) \[?(?:claude code|copilot|cursor|opencode|codex|chatgpt)\]?"
-    r".*$|^https://claude\.ai/code/session_\w+\s*$",
+    rf"^[ \t]*[_*]*[ \t]*(?:🤖[ \t]*)?generated (?:with|by)[ \t]+"
+    rf"(?:\[(?:{_TOOLS})\]\([^)\s]*\)|(?:{_TOOLS}))[ \t]*[_*.]*[ \t]*$"
+    r"|^[ \t]*https://claude\.ai/code/session_\w+[ \t]*$",
     re.I | re.M,
 )
 _FENCE = re.compile(r"```.*?```", re.S)
@@ -54,29 +59,44 @@ def check_pr(vale_ini: Path, title: str, body: str) -> list[Finding]:
     return findings
 
 
-def strip_footers(body: str) -> tuple[str, int]:
-    """Remove tool attribution footer lines from a PR description.
+def _split_footers(body: str) -> tuple[list[str], list[str]]:
+    """The body's lines without footer lines, and the footer lines removed.
 
-    Returns the new body and the number of lines removed. Lines inside code
-    fences stay, so a description that quotes a footer is left for a person.
-    When a footer is removed, the horizontal rules and blank lines left at the
-    end of the body go too.
+    Lines inside code fences stay, so a body that quotes a footer is left for
+    a person.
     """
     kept: list[str] = []
+    removed: list[str] = []
     in_fence = False
     for line in body.splitlines():
         if line.lstrip().startswith("```"):
             in_fence = not in_fence
         if not in_fence and PR_FOOTER.fullmatch(line):
-            continue
-        kept.append(line)
-    removed = len(body.splitlines()) - len(kept)
+            removed.append(line)
+        else:
+            kept.append(line)
+    return kept, removed
+
+
+def footer_lines(body: str) -> list[str]:
+    """The lines strip_footers would remove."""
+    return _split_footers(body)[1]
+
+
+def strip_footers(body: str) -> tuple[str, int]:
+    """Remove tool attribution footer lines from a PR description or comment.
+
+    Returns the new body and the number of lines removed. When a footer is
+    removed, the horizontal rules and blank lines left at the end of the body
+    go too.
+    """
+    kept, removed = _split_footers(body)
     if not removed:
         return body, 0
     while kept and (not kept[-1].strip() or _RULE_LINE.fullmatch(kept[-1])):
         kept.pop()
     newline = "\r\n" if "\r\n" in body else "\n"
-    return newline.join(kept) + (newline if kept else ""), removed
+    return newline.join(kept) + (newline if kept else ""), len(removed)
 
 
 def check_commits(vale_ini: Path, commits: list[tuple[str, str]], trailer_level: str) -> list[Finding]:
