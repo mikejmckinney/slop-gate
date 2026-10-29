@@ -127,15 +127,16 @@ re-runs the review on the images the PR changed and updates one comment.
     nothing, so a run takes seconds.
   - *What's already there:* run the same workflow from the Actions tab. With
     `apply` off it counts, per kind, what it would change and lists every
-    line it would remove, with a link to its item; with `apply` on it edits every PR description (open or closed), issue body and comment
-    that has a footer. `python -m slopgate.footers backfill --repo owner/name`
+    line it would remove, with a link to its item; with `apply` on it edits
+    every PR description (open or closed), issue body and comment that has
+    a footer. `python -m slopgate.footers backfill --repo owner/name`
     does the same locally through `gh`.
 
   In every case only a line that holds nothing but the footer is removed (a
   sentence that mentions one stays), only text by owners, members and
   collaborators is edited, slop-gate's own report comments are skipped, and a
-  footer quoted inside a code fence stays. Edits made with the workflow token don't start new
-  workflow runs, so nothing loops. One gap: whether editing a closed PR's
+  footer quoted inside a code fence stays. Edits made with the workflow token
+  don't start new workflow runs, so nothing loops. One gap: whether editing a closed PR's
   description triggers a gate run is untested, so such a footer may stay until
   the next backfill.
 - **Squash merges.** Set the repository's default squash message to "pull
