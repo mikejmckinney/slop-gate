@@ -1,8 +1,7 @@
 # Troubleshooting
 
-In today's fast-paced development landscape, a failing check can feel overwhelming.
+Most failed runs come from the prose rules. Open the report comment, find the
+row for the line you changed, and rewrite the sentence it quotes.
 
-It's important to note that most failures come from the prose rules. This isn't
-just a linter, it's a conversation about quality.
-
-Experts agree that rewriting the flagged sentence is a game-changer.
+If a finding is wrong for your case, suppress it in the file as the README
+describes, so a reviewer sees the exception.
