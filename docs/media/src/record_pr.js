@@ -4,8 +4,8 @@
 //   node record_pr.js <scene> <outdir>    scenes: blocked, diff, fixed, footer
 //   env: PR (default 11), FIX_SHA (diff), COMMENT_TEXT (footer)
 const { chromium } = require('playwright');
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const REPO = 'https://github.com/mikejmckinney/slop-gate';
 const PR = Number(process.env.PR || 11);
@@ -16,7 +16,7 @@ const mark = name => { marks[name] = Date.now() / 1000; };
 async function smoothTo(page, y, ms = 1200) {
   await page.evaluate(([target, dur]) => new Promise(done => {
     const start = window.scrollY, t0 = performance.now();
-    const ease = t => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const ease = t => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
     function step(now) {
       const k = Math.min(1, (now - t0) / dur);
       window.scrollTo(0, start + (target - start) * ease(k));
@@ -89,13 +89,13 @@ const scenes = {
     };
     await page.goto(`${REPO}/pull/${PR}`, { waitUntil: 'load' });
     await show();
-    if (!(await comment().innerText()).includes(footer)) throw new Error('the footer was already gone');
+    if (!(await comment().textContent()).includes(footer)) throw new Error('the footer was already gone');
     mark('ready');
     await page.waitForTimeout(3000);
     for (let i = 0; i < 30 && !marks.stripped; i++) {
       await page.reload({ waitUntil: 'load' });
       await show();
-      if ((await comment().innerText()).includes(footer)) await page.waitForTimeout(1500);
+      if ((await comment().textContent()).includes(footer)) await page.waitForTimeout(1500);
       else mark('stripped');
     }
     if (!marks.stripped) throw new Error('the footer was still there after 30 reloads');
