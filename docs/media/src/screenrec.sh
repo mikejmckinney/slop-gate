@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 # Screen-record one browser scene: Xvfb display, ffmpeg x11grab, headed Chromium.
-#   screenrec.sh <scene> <outdir>     (env: PR, FIX_SHA)
+#   screenrec.sh <scene> <outdir>     (env: PR, FIX_SHA, COMMENT_TEXT, DISPLAY_NUM)
 set -euo pipefail
 scene=$1; out=$2; disp=:${DISPLAY_NUM:-77}
 mkdir -p "$out"
+
+xpid=""; fpid=""
+# Stop ffmpeg first, then Xvfb, whether the driver succeeded or not, so a
+# failed take doesn't leave a recorder running or the display taken. ffmpeg
+# gets TERM, which it handles by finishing the file; background jobs in a
+# script start with SIGINT ignored, so INT is less dependable. The script's
+# exit status is kept.
+cleanup() {
+  local status=$?
+  trap - EXIT INT TERM
+  if [ -n "$fpid" ] && kill -0 "$fpid" 2>/dev/null; then kill -TERM "$fpid"; wait "$fpid" || true; fi
+  if [ -n "$xpid" ] && kill -0 "$xpid" 2>/dev/null; then kill "$xpid"; wait "$xpid" || true; fi
+  exit "$status"
+}
+trap cleanup EXIT INT TERM
+
 Xvfb "$disp" -screen 0 1280x900x24 -nolisten tcp & xpid=$!
 sleep 1
 ffmpeg -v error -y -f x11grab -draw_mouse 0 -framerate 30 -video_size 1280x900 -i "$disp" \
@@ -11,8 +27,7 @@ ffmpeg -v error -y -f x11grab -draw_mouse 0 -framerate 30 -video_size 1280x900 -
 start=$(date +%s.%N)
 DISPLAY=$disp node "$(dirname "$0")/record_pr.js" "$scene" "$out"
 sleep 0.5
-kill -INT $fpid; wait $fpid || true
-kill $xpid || true
+# Turn the driver's epoch timestamps into offsets into the video.
 python3 - "$out/$scene.marks.json" "$start" <<'PY'
 import json, sys
 p, start = sys.argv[1], float(sys.argv[2])
