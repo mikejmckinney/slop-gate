@@ -1,6 +1,8 @@
 # slop-gate checks itself. Fixtures are deliberate slop.
 exclude:
   - "tests/fixtures/**"
+  # Builds the demo repos for the README recordings; its slop is deliberate.
+  - "docs/media/src/make_demos.py"
 
 # The bakeoff images are a fixed test set, not shipped art: skip the media
 # checks and the paid vision review for them.
@@ -8,3 +10,6 @@ media:
   rules:
     - glob: "bakeoff/**"
       skip: true
+    # README recordings: keep each one light enough for the README to load.
+    - glob: "docs/media/*.webp"
+      max_file_mb: 4
