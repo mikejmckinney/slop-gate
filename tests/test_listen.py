@@ -68,6 +68,16 @@ class TranscriptTests(unittest.TestCase):
         self.assertIn("expected “m”, heard “miles”", change)
         [change] = listen.word_diff(line, heard.replace("B12", "B20"))
         self.assertIn("expected “b 12”, heard “b20”", change)
+        self.assertEqual(listen.word_diff("speed 50 km/h", "speed 50 kilometers per hour"), [])
+
+    def test_a_moved_space_in_words_or_numbers_is_still_a_difference(self):
+        for expected, heard in (
+            ("Do it now here", "Do it nowhere"),
+            ("We need a therapist", "We need a the rapist"),
+            ("Gate 12 50 is open", "Gate 1250 is open"),
+        ):
+            with self.subTest(expected=expected):
+                self.assertEqual(len(listen.word_diff(expected, heard)), 1, (expected, heard))
 
     def test_scripts_without_spaces_compare_by_character(self):
         self.assertEqual(

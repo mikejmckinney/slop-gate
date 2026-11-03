@@ -83,10 +83,11 @@ code, a time and a percentage. Inkling transcribed each file twice
 
 All six transcripts match what was meant: no engine misread anything. The
 first version of the diff still reported two differences every time: "m"
-against "meters", and "B-12" against "B12". The diff now ignores differences
-that vanish when spaces are removed and expands a short list of unit
-abbreviations (`SPOKEN_UNITS` in `slopgate/listen.py`), so all six come back
-clean while "m" heard as "miles" is still reported.
+against "meters", and "B-12" against "B12". The diff now treats a code that
+mixes letters and digits as the same with or without a separator, and expands
+a short list of unit abbreviations (`SPOKEN_UNITS` in `slopgate/listen.py`).
+All six come back clean, while "m" heard as "miles", "now here" heard as
+"nowhere" and "12 50" heard as "1250" are still reported.
 
 ## Limits
 
