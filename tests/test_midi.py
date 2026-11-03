@@ -104,6 +104,20 @@ class MidiTests(unittest.TestCase):
                 [f] = [f for f in check_midi(path, "meter.mid") if f.rule == "zero-length-note"]
                 self.assertIn(f"in bars {bar};", f.message)
 
+    def test_a_zero_numerator_meter_still_reports_findings(self):
+        # mido reads a time signature of 0/4; bar numbers fall back to 4/4 instead of
+        # dividing by zero and aborting the media check.
+        t = track((0, 120, 60))
+        t.insert(0, mido.MetaMessage("time_signature", numerator=0, denominator=4, time=0))
+        t.append(mido.Message("note_on", note=62, velocity=90, time=TPB * 4))
+        t.append(mido.Message("note_off", note=62, velocity=0, time=0))
+        mf = mido.MidiFile(ticks_per_beat=TPB)
+        mf.tracks.append(t)
+        path = self.dir / "zero-meter.mid"
+        mf.save(path)
+        [f] = [f for f in check_midi(path, "zero-meter.mid") if f.rule == "zero-length-note"]
+        self.assertIn("in bars 2;", f.message)
+
     def test_unreadable_file(self):
         path = self.dir / "broken.mid"
         path.write_bytes(b"MThd\x00\x00\x00\x06\x00\x01\x00\x02\x01\xe0MTrk\x00\x00\xff\xff")

@@ -111,6 +111,8 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
         ((m.numerator, m.denominator) for t in mf.tracks for m in t if m.type == "time_signature"), (4, 4)
     )
     bar_ticks = tpb * 4 * num / den
+    if bar_ticks <= 0:  # a malformed meter (numerator 0) or division: count bars as 4/4
+        bar_ticks = max(tpb, 1) * 4
     notes, hanging, tempos = read_notes(mf)
 
     if hanging:
