@@ -178,7 +178,8 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   audio. `thinkingmachines/inkling` transcribes the audio and the comparison is
   done in code, so "expected 1250, heard 12050" or a dropped word shows up as a
   plain diff. Chinese, Japanese and Thai, which don't put spaces between
-  words, are compared character by character. A file longer than five minutes
+  words, are compared character by character. Write the file as text: "1,250 m"
+  and "B-12" match a narrator saying "1,250 meters" and "B12". A file longer than five minutes
   gets no diff, and the report says so, since only its start is transcribed.
 - **It reads the brief.** A `<name>.prompt.txt` file or a manifest `spec`
   tells the models what the file is meant to be, so a deliberate distortion or

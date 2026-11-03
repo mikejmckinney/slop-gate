@@ -59,6 +59,16 @@ class TranscriptTests(unittest.TestCase):
         heard = "wave seven begins in 1250 meters tap and hold to charge then release to fire"
         self.assertEqual(listen.word_diff(SCRIPT, heard), [])
 
+    def test_written_forms_read_aloud_are_not_differences(self):
+        # Three TTS engines read this line correctly; Inkling wrote "meters" and "B12".
+        line = "Wave 7 begins in 1,250 m. Reach checkpoint B-12 before 3:45."
+        heard = "Wave 7 begins in 1,250 meters. Reach checkpoint B12 before 3:45."
+        self.assertEqual(listen.word_diff(line, heard), [])
+        [change] = listen.word_diff(line, heard.replace("meters", "miles"))
+        self.assertIn("expected “m”, heard “miles”", change)
+        [change] = listen.word_diff(line, heard.replace("B12", "B20"))
+        self.assertIn("expected “b 12”, heard “b20”", change)
+
     def test_scripts_without_spaces_compare_by_character(self):
         self.assertEqual(
             listen.word_diff("你好世界", "完全不同"), ["after “”: expected “你好世界”, heard “完全不同”"]

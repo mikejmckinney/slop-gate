@@ -247,12 +247,37 @@ def _join(words: list[str]) -> str:
     return out
 
 
+# Unit abbreviations a narrator reads out in full. A script that says "1,250 m" is
+# spoken as "meters"; anything else heard there (say, "miles") is still a difference.
+SPOKEN_UNITS = {
+    "m": {"meter", "meters", "metre", "metres"},
+    "km": {"kilometer", "kilometers", "kilometre", "kilometres"},
+    "cm": {"centimeter", "centimeters", "centimetre", "centimetres"},
+    "mm": {"millimeter", "millimeters", "millimetre", "millimetres"},
+    "s": {"second", "seconds"},
+    "ms": {"millisecond", "milliseconds"},
+    "min": {"minute", "minutes"},
+    "kg": {"kilogram", "kilograms"},
+    "g": {"gram", "grams"},
+    "ft": {"foot", "feet"},
+    "mi": {"mile", "miles"},
+    "mph": {"miles per hour"},
+    "km/h": {"kilometers per hour", "kilometres per hour"},
+}
+
+
+def _same_spoken(want: list[str], got: list[str]) -> bool:
+    if "".join(want) == "".join(got):  # "b-12" read as "b12", "set up" as "setup"
+        return True
+    return len(want) == 1 and " ".join(got) in SPOKEN_UNITS.get(want[0], ())
+
+
 def word_diff(expected: str, heard: str) -> list[str]:
     """Human-readable differences, each with a few words of context."""
     a, b = _words(expected), _words(heard)
     out = []
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes():
-        if op == "equal":
+        if op == "equal" or _same_spoken(a[i1:i2], b[j1:j2]):
             continue
         context = _join(a[max(0, i1 - 3) : i1])
         want, got = _join(a[i1:i2]) or "(nothing)", _join(b[j1:j2]) or "(nothing)"

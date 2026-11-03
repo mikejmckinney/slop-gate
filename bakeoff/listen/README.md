@@ -73,6 +73,21 @@ What the table hides:
 Override both in `.slop-gate.yml` under `judge.audio_models` and
 `judge.transcribe_model`.
 
+## Follow-up: three TTS engines on a line with written forms
+
+On 2026-11-02 ElevenLabs `eleven_v4` (voice Sarah), `google/gemini-3.8-flash-tts`
+(Kore) and `heygen/heygen-voice-1` (nadine) each read
+[`tts/line.txt`](tts/line.txt), which has a unit abbreviation, a hyphenated
+code, a time and a percentage. Inkling transcribed each file twice
+([`tts/transcripts.json`](tts/transcripts.json)).
+
+All six transcripts match what was meant: no engine misread anything. The
+first version of the diff still reported two differences every time: "m"
+against "meters", and "B-12" against "B12". The diff now ignores differences
+that vanish when spaces are removed and expands a short list of unit
+abbreviations (`SPOKEN_UNITS` in `slopgate/listen.py`), so all six come back
+clean while "m" heard as "miles" is still reported.
+
 ## Limits
 
 Nine clips from one music track and one script is a small set. It shows which
