@@ -328,8 +328,8 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
                 kept = [f for f in r["findings"] if f["start_s"] < end]
                 if len(kept) < len(r["findings"]):
                     dropped = len(r["findings"]) - len(kept)
-                    errors.append(
-                        f"{m}: dropped {dropped} finding(s) timed after the end of the audio it heard"
+                    notes.append(
+                        f"{_short(m)} placed {dropped} finding(s) after the end of the audio; dropped."
                     )
                 rows += [{**f, "model": m, "end_s": min(f["end_s"], end)} for f in kept]
             diff = None

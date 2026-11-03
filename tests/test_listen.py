@@ -212,9 +212,11 @@ class RunTests(unittest.TestCase):
         ):
             [r] = listen.run(self.repo, [("vo/intro.mp3", "")], ["a/one"], "t/x")
         self.assertEqual([(f["start_s"], f["end_s"]) for f in r["rows"]], [(170, 176.3)])
-        self.assertEqual(
-            r["errors"], ["a/one: dropped 1 finding(s) timed after the end of the audio it heard"]
-        )
+        self.assertEqual(r["errors"], [])
+        self.assertEqual(r["notes"], ["one placed 1 finding(s) after the end of the audio; dropped."])
+        text = listen.report([r], ["a/one"], 0)
+        self.assertIn("Note: one placed 1 finding(s)", text)
+        self.assertNotIn("Review failed", text)
 
 
 class SidecarEscapeTests(unittest.TestCase):
