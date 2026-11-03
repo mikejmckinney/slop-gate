@@ -1,0 +1,1 @@
+Write a short 'Why sfxpack?' section (about 150 words, Markdown, may use one heading) for the README of sfxpack, an open-source command-line tool that converts a folder of WAV sound effects into the formats Unity and Godot expect, normalizes loudness to a target LUFS, and trims leading and trailing silence.
