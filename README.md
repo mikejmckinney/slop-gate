@@ -83,7 +83,7 @@ github-actions".
 | `residue` (source files) | Truncation markers (`... rest of the code`), placeholder secrets, AI banners, pasted assistant text, stub admissions | "In a real application you would…" comments |
 | `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
-| `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP, stereo that collapses in mono by more than 12 dB; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots, dropouts, cut-off endings, a click at the first sample, a WAV or FLAC decoded from an MP3, hiss in pauses, mono loss over 6 dB; and when the manifest declares a minimum: flat dynamics |
+| `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP, stereo that collapses in mono by more than 12 dB; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots, dropouts, cut-off endings, a click at the first sample, a WAV or FLAC that looks decoded from an MP3, hiss in pauses, mono loss over 6 dB; and when the manifest declares a minimum: flat dynamics |
 
 The prose rules come from a house style table of AI-writing patterns. Each
 rule in [`styles/SlopGate`](styles/SlopGate) has a fixture in
@@ -143,7 +143,7 @@ effects, and cover the defects a measurement can find:
 | `dropout` | 20 ms or more of digital silence with sound on both sides | Quiet passages and deliberate stops at a lower level |
 | `cut-off-ending` | Sound that stops within 12 dB of the file's average level, a severed tail | Loops, once the manifest says `loop: true` |
 | `starts-mid-waveform` | A first sample above 5% of full scale, which clicks on playback | |
-| `lossy-source` | A WAV or FLAC whose spectrum ends in a wall between 11 and 21 kHz: it was decoded from an MP3 or similar, so the conversion added size and no detail | Lossy files themselves, and sample rates under 32 kHz |
+| `lossy-source` | A WAV or FLAC whose spectrum ends in a wall between 11 and 21 kHz. Usually it was decoded from an MP3 or similar, so the conversion added size and no detail; a steep low-pass filter or upsampling leaves the same wall, so check before re-exporting | Lossy files themselves, and sample rates under 32 kHz |
 | `mono-collapse` | Stereo that loses more than 6 dB summed to mono (error above 12 dB), usually an inverted channel | Width that survives the mono sum |
 | `hiss` | Spectrally flat noise above −72 dBFS in at least 0.3 s of pauses | Reverb tails and decays, which aren't flat |
 | `flat-dynamics` | An EBU R128 loudness range under the manifest's `min_loudness_range_lu`, for tracks of 30 s or more | Anything, until you set the minimum: genres differ too much for a default |

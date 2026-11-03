@@ -223,6 +223,20 @@ class AudioDefectTests(unittest.TestCase):
         # The MP3 itself is what it says it is; only lossless containers are checked.
         self.assertNotIn("lossy-source", self.check_file(mp3))
 
+    def test_lossy_source_also_fires_on_a_steep_lowpass(self):
+        # Not every wall comes from a codec: a 16 kHz low-pass on a native WAV
+        # looks the same, which is why the finding is a warning that names both.
+        src = self.dir / "master.wav"
+        write_wav(src, self.music(6.0))
+        lowpassed = self.dir / "filtered.wav"
+        steep = ",".join(["lowpass=f=16000:poles=2"] * 4)
+        cmd = ["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", steep, str(lowpassed)]
+        subprocess.run(cmd, check=True)
+        found = check_audio(lowpassed, "filtered.wav", rules_for("filtered.wav", {}))
+        [f] = [f for f in found if f.rule == "lossy-source"]
+        self.assertEqual(f.severity, "warning")
+        self.assertIn("low-pass", f.message)
+
     def test_mono_collapse(self):
         left = self.music()
         self.assertIn("mono-collapse", self.check("flip.wav", np.stack([left, -left], axis=1)))

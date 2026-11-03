@@ -516,10 +516,11 @@ def _check_defects(ctx: _Ctx, pcm: np.ndarray, sr: int, ext: str, loud: np.ndarr
                 "lossy-source",
                 "warning",
                 f"The spectrum stops at {cutoff / 1000:.1f} kHz ({below - above:.0f} dB drop, nothing "
-                f"above it): this {ext} was decoded from a lossy file such as an MP3, so the conversion "
-                "added size and no detail. Measured on the long-term spectrum.",
+                f"above it). Most often this {ext} was decoded from a lossy file such as an MP3, so the "
+                "conversion added size and no detail; a steep low-pass filter or upsampling leaves the "
+                "same wall. Measured on the long-term spectrum.",
                 "Export the lossless master from the generator or session. If only the lossy file exists, "
-                "ship that format instead of a converted copy.",
+                "ship that format instead of a converted copy. If the low-pass is intended, ignore this.",
             )
 
     stereo = ad.mono_loss(pcm)
