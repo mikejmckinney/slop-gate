@@ -7,7 +7,8 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from slopgate import listen
+from slopgate import judge, listen
+from slopgate.paths import repo_file
 
 SCRIPT = "Wave seven begins in 1,250 meters. Tap and hold to charge, then release to fire."
 
@@ -57,6 +58,28 @@ class TranscriptTests(unittest.TestCase):
     def test_formatting_differences_are_not_reported(self):
         heard = "wave seven begins in 1250 meters tap and hold to charge then release to fire"
         self.assertEqual(listen.word_diff(SCRIPT, heard), [])
+
+    def test_scripts_without_spaces_compare_by_character(self):
+        self.assertEqual(
+            listen.word_diff("你好世界", "完全不同"), ["after “”: expected “你好世界”, heard “完全不同”"]
+        )
+        self.assertEqual(
+            listen.word_diff("你好世界", ""), ["after “”: expected “你好世界”, heard “(nothing)”"]
+        )
+        self.assertEqual(listen.word_diff("第七波开始。", "第七波开始"), [])
+        [change] = listen.word_diff("ボタンを押して", "ボタンを離して")
+        self.assertIn("expected “押”, heard “離”", change)
+
+    def test_other_scripts_keep_their_words(self):
+        [change] = listen.word_diff("Волна семь начинается", "Волна восемь начинается")
+        self.assertIn("expected “семь”, heard “восемь”", change)
+        [change] = listen.word_diff("اضغط مع الاستمرار", "اضغط الاستمرار")
+        self.assertIn("expected “مع”, heard “(nothing)”", change)
+        self.assertEqual(listen.word_diff("नमस्ते दुनिया", "नमस्ते दुनिया।"), [])
+
+    def test_a_sidecar_with_no_words_is_reported_not_passed(self):
+        result = listen.check_words("♪ ♪ ♪", "la la la", truncated=False)
+        self.assertIn("no words", result["skipped"])
 
 
 class RunTests(unittest.TestCase):
@@ -153,6 +176,66 @@ class RunTests(unittest.TestCase):
         ):
             [r] = listen.run(self.repo, [("vo/intro.mp3", "")], ["a/one", "b/two"], "t/x")
         self.assertEqual(r["errors"], ["b/two: HTTP 500"])
+
+    def test_a_file_longer_than_the_limit_is_not_diffed_against_the_whole_script(self):
+        def no_transcribe(m, p):
+            raise AssertionError("a truncated file must not be transcribed for the diff")
+
+        with (
+            mock.patch.object(listen, "review", lambda m, p, b: {"findings": [], "error": None, "cost": 0}),
+            mock.patch.object(listen, "transcribe", no_transcribe),
+            mock.patch.object(listen, "duration", lambda p: listen.MAX_SECONDS + 60),
+        ):
+            [r] = listen.run(self.repo, [("vo/intro.mp3", "")], ["a/one"], "t/x")
+        self.assertTrue(r["truncated"])
+        self.assertNotIn("changes", r["diff"])
+        text = listen.report([r], ["a/one"], 0)
+        self.assertIn("Only the first 5:00.0 was reviewed", text)
+        self.assertIn("Words not checked against `vo/intro.script.txt`: the file is longer than", text)
+        self.assertNotIn("had no findings", text)
+
+
+class SidecarEscapeTests(unittest.TestCase):
+    """A PR must not be able to make the judge read files outside the checkout:
+    the job holds OPENROUTER_API_KEY and sends sidecar text to a model."""
+
+    def setUp(self):
+        base = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, base)
+        self.secret = base / "environ"
+        self.secret.write_text("OPENROUTER_API_KEY=canary")
+        self.repo = base / "repo"
+        (self.repo / "vo").mkdir(parents=True)
+        (self.repo / "vo" / "intro.mp3").write_bytes(b"audio")
+        (self.repo / "art").mkdir()
+        (self.repo / "art" / "hero.png").write_bytes(b"png")
+
+    def test_symlinked_sidecars_are_ignored(self):
+        (self.repo / "vo" / "intro.prompt.txt").symlink_to(self.secret)
+        (self.repo / "vo" / "intro.script.txt").symlink_to(self.secret)
+        (self.repo / "art" / "hero.prompt.txt").symlink_to(self.secret)
+        self.assertEqual(
+            listen.find_brief(self.repo, "vo/intro.mp3", {"spec": "from manifest"}), "from manifest"
+        )
+        self.assertIsNone(listen.find_text(self.repo, "vo/intro.mp3"))
+        self.assertNotIn("canary", judge.find_spec(self.repo, "art/hero.png", {})[0])
+
+    def test_symlinked_parent_directory_is_ignored(self):
+        outside = self.secret.parent / "outside"
+        outside.mkdir()
+        (outside / "intro.mp3").write_bytes(b"audio")
+        (outside / "intro.lyrics.txt").write_text("canary")
+        (self.repo / "linked").symlink_to(outside)
+        self.assertIsNone(listen.find_text(self.repo, "linked/intro.mp3"))
+        self.assertIsNone(repo_file(self.repo, "linked/intro.mp3"))
+
+    def test_repo_file_rejects_escapes_and_accepts_plain_files(self):
+        (self.repo / "vo" / "alias.mp3").symlink_to(self.repo / "vo" / "intro.mp3")
+        self.assertEqual(repo_file(self.repo, "vo/intro.mp3"), (self.repo / "vo" / "intro.mp3").resolve())
+        self.assertIsNone(repo_file(self.repo, "vo/alias.mp3"))
+        self.assertIsNone(repo_file(self.repo, "../environ"))
+        self.assertIsNone(repo_file(self.repo, "vo"))
+        self.assertIsNone(repo_file(self.repo, "vo/missing.mp3"))
 
 
 if __name__ == "__main__":

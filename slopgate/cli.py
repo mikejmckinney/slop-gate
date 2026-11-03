@@ -13,6 +13,7 @@ from pathlib import Path, PurePosixPath
 
 from . import code, config, gitdiff, judge, listen, media, media_init, prose, prtext
 from .findings import Finding, annotations, apply_overrides, exit_code, markdown_report, to_json
+from .paths import repo_file
 
 
 def run_check(args: argparse.Namespace) -> int:
@@ -87,7 +88,7 @@ def run_judge(args: argparse.Namespace) -> int:
     images, audio = [], []
     for rel in sorted(changed):
         ext = PurePosixPath(rel).suffix.lower()
-        if ext not in media.IMAGE_EXTS | media.AUDIO_EXTS or cfg.excluded(rel) or not (repo / rel).is_file():
+        if ext not in media.IMAGE_EXTS | media.AUDIO_EXTS or cfg.excluded(rel) or not repo_file(repo, rel):
             continue
         rule = media.rules_for(rel, cfg.media)
         if rule.get("skip"):

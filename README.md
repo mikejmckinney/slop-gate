@@ -177,10 +177,15 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   lyrics in a `<name>.script.txt` or `<name>.lyrics.txt` file next to the
   audio. `thinkingmachines/inkling` transcribes the audio and the comparison is
   done in code, so "expected 1250, heard 12050" or a dropped word shows up as a
-  plain diff.
+  plain diff. Chinese, Japanese and Thai, which don't put spaces between
+  words, are compared character by character. A file longer than five minutes
+  gets no diff, and the report says so, since only its start is transcribed.
 - **It reads the brief.** A `<name>.prompt.txt` file or a manifest `spec`
   tells the models what the file is meant to be, so a deliberate distortion or
   a steady loop isn't reported as a defect.
+- **It reads only regular files in the checkout.** Sidecars, images and audio
+  reached through a symlink are ignored, so a PR can't point a sidecar at a
+  file outside the repo and have it sent to the model.
 - **It never blocks and it caps cost.** At most 10 audio files per run, the
   first five minutes of each. Set `judge.audio_models`,
   `judge.transcribe_model` or `judge.max_audio` in `.slop-gate.yml` to change

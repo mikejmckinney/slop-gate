@@ -24,10 +24,13 @@ import re
 import subprocess
 import tempfile
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path, PurePosixPath
+
+from .paths import repo_file
 
 API = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -188,9 +191,60 @@ def transcribe(model: str, path: Path) -> tuple[str, float | None]:
     return text, cost
 
 
+# Scripts written without spaces between words: compared character by character.
+_NO_SPACES = (
+    (0x0E00, 0x0EFF),  # Thai, Lao
+    (0x1000, 0x109F),  # Myanmar
+    (0x1780, 0x17FF),  # Khmer
+    (0x3040, 0x30FF),  # Hiragana, Katakana
+    (0x31F0, 0x31FF),
+    (0x3400, 0x4DBF),  # Han
+    (0x4E00, 0x9FFF),
+    (0xF900, 0xFAFF),
+    (0x20000, 0x3FFFF),
+)
+
+
+def _spaceless(ch: str) -> bool:
+    return any(lo <= ord(ch) <= hi for lo, hi in _NO_SPACES)
+
+
 def _words(text: str) -> list[str]:
-    text = re.sub(r"(?<=\d),(?=\d{3})", "", text.lower())  # 1,250 -> 1250
-    return re.findall(r"[a-z0-9']+", text)
+    """Words in any script: runs of letters, digits and combining marks, with
+    one token per character in scripts that don't put spaces between words."""
+    text = unicodedata.normalize("NFKC", text).casefold()
+    text = re.sub(r"(?<=\d),(?=\d{3})", "", text)  # 1,250 -> 1250
+    out: list[str] = []
+    cur = ""
+    for ch in text:
+        cat = unicodedata.category(ch)
+        if cat[0] == "M" and (cur or out):
+            if cur:
+                cur += ch
+            else:
+                out[-1] += ch  # a mark on the previous spaceless character
+        elif _spaceless(ch):
+            if cur:
+                out.append(cur)
+                cur = ""
+            out.append(ch)
+        elif cat[0] in "LN" or (ch in "'\u2019" and cur):
+            cur += ch
+        elif cur:
+            out.append(cur.rstrip("'\u2019"))
+            cur = ""
+    if cur:
+        out.append(cur.rstrip("'\u2019"))
+    return [w for w in out if w]
+
+
+def _join(words: list[str]) -> str:
+    out = ""
+    for w in words:
+        if out and not (_spaceless(out[-1]) and _spaceless(w[0])):
+            out += " "
+        out += w
+    return out
 
 
 def word_diff(expected: str, heard: str) -> list[str]:
@@ -200,8 +254,8 @@ def word_diff(expected: str, heard: str) -> list[str]:
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes():
         if op == "equal":
             continue
-        context = " ".join(a[max(0, i1 - 3) : i1])
-        want, got = " ".join(a[i1:i2]) or "(nothing)", " ".join(b[j1:j2]) or "(nothing)"
+        context = _join(a[max(0, i1 - 3) : i1])
+        want, got = _join(a[i1:i2]) or "(nothing)", _join(b[j1:j2]) or "(nothing)"
         out.append(f"after “{context}”: expected “{want}”, heard “{got}”")
     return out
 
@@ -211,17 +265,38 @@ def find_text(repo: Path, rel: str) -> tuple[str, str] | None:
     p = PurePosixPath(rel)
     for suffix in TEXT_SIDECARS:
         for side in (p.with_suffix(suffix), p.with_suffix(p.suffix + suffix)):
-            if (repo / side).is_file():
-                return (repo / side).read_text(encoding="utf-8").strip(), str(side)
+            if path := repo_file(repo, side):
+                return path.read_text(encoding="utf-8").strip(), str(side)
     return None
 
 
 def find_brief(repo: Path, rel: str, rule: dict) -> str:
     p = PurePosixPath(rel)
     for side in (p.with_suffix(".prompt.txt"), p.with_suffix(p.suffix + ".prompt.txt")):
-        if (repo / side).is_file():
-            return (repo / side).read_text(encoding="utf-8").strip()
+        if path := repo_file(repo, side):
+            return path.read_text(encoding="utf-8").strip()
     return str(rule.get("spec") or "").strip()
+
+
+def duration(path: Path) -> float | None:
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+        capture_output=True,
+        text=True,
+    )
+    try:
+        return float(r.stdout.strip())
+    except ValueError:
+        return None
+
+
+def check_words(expected: str, heard: str, truncated: bool) -> dict:
+    """The transcript diff, or the reason there isn't one."""
+    if truncated:
+        return {"skipped": f"the file is longer than {clock(MAX_SECONDS)} and only that much was transcribed"}
+    if not _words(expected):
+        return {"skipped": "the sidecar has no words this check can compare"}
+    return {"changes": word_diff(expected, heard)}
 
 
 def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_model: str) -> list[dict]:
@@ -230,9 +305,12 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
     with ThreadPoolExecutor(max_workers=8) as pool:
         jobs = {(rel, m): pool.submit(review, m, repo / rel, brief) for rel, brief in items for m in models}
         texts = {}
+        long = {rel for rel, _ in items if (duration(repo / rel) or 0) > MAX_SECONDS}
         for rel, _ in items:
             expected = find_text(repo, rel)
-            if expected:
+            if expected and rel in long:
+                texts[rel] = (expected, None)
+            elif expected:
                 texts[rel] = (expected, pool.submit(transcribe, transcribe_model, repo / rel))
         for rel, _ in items:
             rows, errors, cost = [], [], 0.0
@@ -250,13 +328,22 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
             if rel in texts:
                 (expected, source), fut = texts[rel]
                 try:
-                    heard, c = fut.result()
+                    heard, c = fut.result() if fut else ("", 0)
                     cost += c or 0
-                    diff = {"source": source, "changes": word_diff(expected, heard)}
+                    diff = {"source": source, **check_words(expected, heard, fut is None)}
                 except Exception as exc:  # noqa: BLE001
                     errors.append(f"{transcribe_model} transcript: {exc}")
             rows = merge(rows)
-            out.append({"path": rel, "rows": rows, "diff": diff, "errors": errors, "cost": cost})
+            out.append(
+                {
+                    "path": rel,
+                    "rows": rows,
+                    "diff": diff,
+                    "errors": errors,
+                    "cost": cost,
+                    "truncated": rel in long,
+                }
+            )
     return out
 
 
@@ -277,6 +364,10 @@ def merge(rows: list[dict]) -> list[dict]:
 
 
 CONFIDENCE = ["low", "medium", "high"]
+
+
+def _clean_diff(diff: dict) -> bool:
+    return not diff.get("skipped") and not diff.get("changes")
 
 
 def _short(model: str) -> str:
@@ -303,10 +394,17 @@ def report(results: list[dict], models: list[str], skipped: int) -> str:
         "listening check. Listen to each time range before acting on it; a range both models raise "
         "is more likely real.",
     ]
+
+    def quiet(r):
+        diff_says = r["diff"] and not _clean_diff(r["diff"])
+        return not (r["rows"] or r["errors"] or r.get("truncated") or diff_says)
+
     for r in results:
-        if not r["rows"] and not r["errors"] and not (r["diff"] and r["diff"]["changes"]):
+        if quiet(r):
             continue  # listed in the count of clean files below
         lines += ["", f"### `{r['path']}`", ""]
+        if r.get("truncated"):
+            lines += [f"Only the first {clock(MAX_SECONDS)} was reviewed; the file is longer.", ""]
         if r["rows"]:
             lines += [
                 "| Time | Pattern | What the model heard | Confidence and basis | Possible fix |",
@@ -322,19 +420,19 @@ def report(results: list[dict], models: list[str], skipped: int) -> str:
                 )
                 basis = f"{f['confidence']}, model listening ({who})"
                 lines.append(f"| {when} | {f['pattern']} | {text} | {basis} | {PATTERNS[f['pattern']]} |")
-        if r["diff"] and r["diff"]["changes"]:
+        d = r["diff"]
+        if d and d.get("skipped"):
+            lines += ["", f"Words not checked against `{d['source']}`: {d['skipped']}."]
+        elif d and d["changes"]:
             if r["rows"]:
                 lines.append("")
             lines += [
-                f"Words differ from `{r['diff']['source']}` (model transcript compared in code):",
+                f"Words differ from `{d['source']}` (model transcript compared in code):",
                 "",
             ]
-            lines += [f"- {c}" for c in r["diff"]["changes"][:15]]
+            lines += [f"- {c}" for c in d["changes"][:15]]
         for e in r["errors"]:
             lines.append(f"\n⚠️ Review failed: {e[:300]}")
-
-    def quiet(r):
-        return not r["rows"] and not r["errors"] and not (r["diff"] and r["diff"]["changes"])
 
     clean = [r for r in results if quiet(r)]
     if clean:
