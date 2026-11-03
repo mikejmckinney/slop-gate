@@ -206,6 +206,11 @@ class EndToEndTests(unittest.TestCase):
             main(["check", "--repo", str(self.repo), "--base", "main", "--head", "feature"])
         self.assertIn("run `git checkout feature` first", str(ctx.exception))
 
+    def test_unknown_head_says_so(self):
+        with self.assertRaises(SystemExit) as ctx, redirect_stdout(io.StringIO()):
+            main(["check", "--repo", str(self.repo), "--base", "main", "--head", "no-such-branch"])
+        self.assertIn("--head no-such-branch is not a commit", str(ctx.exception))
+
     def test_only_changed_lines_are_reported_and_errors_block(self):
         code, findings, report = self.run_cli()
         self.assertEqual(code, 1)

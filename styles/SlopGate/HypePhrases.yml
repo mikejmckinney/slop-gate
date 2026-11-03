@@ -6,7 +6,7 @@ ignorecase: true
 tokens:
   - 'an? (?:essential|invaluable|indispensable|must-have) (?:tool|addition|asset|resource|companion)'
   - '(?:takes?|taking) (?:your|it|things) to the next level'
-  - 'elevates? (?:your|the) \w+'
+  - 'elevates? your \w+'
   - 'embrace (?:efficiency|the power|the future)'
   - 'supercharges? your'
   - 'unleash(?:es)? (?:the|your)'

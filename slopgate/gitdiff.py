@@ -63,7 +63,12 @@ def require_checked_out(repo: Path, head: str) -> None:
     The checks read files from disk, so a run with another commit checked out
     would report on the wrong version of every changed file.
     """
-    want = _git(repo, "rev-parse", "--verify", "--quiet", f"{head}^{{commit}}").strip()
+    try:
+        want = _git(repo, "rev-parse", "--verify", "--quiet", f"{head}^{{commit}}").strip()
+    except RuntimeError:
+        raise SystemExit(
+            f"--head {head} is not a commit in {repo}. Fetch it, or pass a SHA or branch name."
+        ) from None
     have = _git(repo, "rev-parse", "HEAD").strip()
     if want != have:
         raise SystemExit(
