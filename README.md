@@ -83,7 +83,7 @@ github-actions".
 | `residue` (source files) | Truncation markers (`... rest of the code`), placeholder secrets, AI banners, pasted assistant text, stub admissions | "In a real application you would…" comments |
 | `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
-| `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots |
+| `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP, stereo that collapses in mono by more than 12 dB; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots, dropouts, cut-off endings, a click at the first sample, a WAV or FLAC that looks decoded from an MP3, hiss in pauses, mono loss over 6 dB; and when the manifest declares a minimum: flat dynamics |
 
 The prose rules come from a house style table of AI-writing patterns. Each
 rule in [`styles/SlopGate`](styles/SlopGate) has a fixture in
@@ -132,6 +132,40 @@ fill in the commented hints, such as which tracks loop.
 
 For loops, prefer Ogg Vorbis or Opus. MP3 encoders pad the start and end of
 the stream, and the padding plays as a gap at the loop point.
+
+### Audio defects
+
+The audio checks come from an antipattern list for generated music, speech and
+effects, and cover the defects a measurement can find:
+
+| Rule | Finds | Doesn't find |
+|---|---|---|
+| `dropout` | 20 ms or more of digital silence with sound on both sides | Quiet passages and deliberate stops at a lower level |
+| `cut-off-ending` | Sound that stops within 12 dB of the file's average level, a severed tail | Loops, once the manifest says `loop: true` |
+| `starts-mid-waveform` | A first sample above 5% of full scale, which clicks on playback | |
+| `lossy-source` | A WAV or FLAC whose spectrum ends in a wall between 11 and 21 kHz. Usually it was decoded from an MP3 or similar, so the conversion added size and no detail; a steep low-pass filter or upsampling leaves the same wall, so check before re-exporting | Lossy files themselves, and sample rates under 32 kHz |
+| `mono-collapse` | Stereo that loses more than 6 dB summed to mono (error above 12 dB), usually an inverted channel | Width that survives the mono sum |
+| `hiss` | Spectrally flat noise above −72 dBFS in at least 0.3 s of pauses | Reverb tails and decays, which aren't flat |
+| `flat-dynamics` | An EBU R128 loudness range under the manifest's `min_loudness_range_lu`, for tracks of 30 s or more | Anything, until you set the minimum: genres differ too much for a default |
+
+The thresholds were tuned on 206 shipped game assets (Mureka and ElevenLabs
+music and effects and a third-party effects pack). On that set the checks
+reported dropouts only in a glitch effect, no lossy sources, mono collapse or
+hiss, and cut-off endings on review excerpts, on a loop the manifest didn't
+declare, and on four short effects (two glitches, an error sound and a reflect sound)
+whose hard stops may be the design. A finding can still be intended: a glitch
+effect has dropouts on purpose. Skip such a file in the manifest, or turn a
+rule off for the repo under `overrides`.
+
+Clicks in the middle of a dense mix aren't checked. A detector tried on the
+same assets flagged 19 of 42 clean files and still missed most injected
+clicks, so it would have taught people to ignore the report.
+
+slop-gate doesn't try to tell whether audio, images or text were made by AI.
+Detectors such as Deezer's only scan streaming playlists, their research code
+is licensed for non-commercial use, and a project that generates its music on
+purpose would be flagged on every track. A detector score says nothing about
+what to fix; these checks do.
 
 ## Vision review (advisory)
 
