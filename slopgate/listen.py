@@ -266,10 +266,22 @@ SPOKEN_UNITS = {
 }
 
 
+# Keyed by the tokens _words() makes of the abbreviation, so "km/h" is "km h".
+_UNITS = {" ".join(_words(k)): v for k, v in SPOKEN_UNITS.items()}
+
+
+def _is_code(text: str) -> bool:
+    return any(c.isdigit() for c in text) and any(c.isalpha() for c in text)
+
+
 def _same_spoken(want: list[str], got: list[str]) -> bool:
-    if "".join(want) == "".join(got):  # "b-12" read as "b12", "set up" as "setup"
+    joined = "".join(want)
+    # A code written with or without a separator ("B-12" read as "B12"). Only codes that mix
+    # letters and digits: for ordinary words a moved space is a different word ("now here"
+    # vs "nowhere"), and for plain numbers it changes the number ("12 50" vs "1250").
+    if joined == "".join(got) and _is_code(joined):
         return True
-    return len(want) == 1 and " ".join(got) in SPOKEN_UNITS.get(want[0], ())
+    return " ".join(got) in _UNITS.get(" ".join(want), ())
 
 
 def word_diff(expected: str, heard: str) -> list[str]:
