@@ -3,6 +3,9 @@ exclude:
   - "tests/fixtures/**"
   # Builds the demo repos for the README recordings; its slop is deliberate.
   - "docs/media/src/make_demos.py"
+  # The README's before-and-after examples: model output and the reports about it.
+  - "docs/media/src/before-after/inputs/writing-before.md"
+  - "docs/media/src/before-after/reports/**"
 
 # The bakeoff images are a fixed test set, not shipped art: skip the media
 # checks and the paid vision review for them.
@@ -13,3 +16,11 @@ media:
     # README recordings: keep each one light enough for the README to load.
     - glob: "docs/media/*.webp"
       max_file_mb: 4
+    - glob: "docs/media/before-after/**"
+      max_file_mb: 2
+    # Deliberate "before" examples: the loop clip clips (+0.9 dBTP) and the
+    # MIDI is a raw transcription. The README shows the reports about them.
+    - glob: "docs/media/before-after/arena-before-wrap.ogg"
+      skip: true
+    - glob: "docs/media/src/before-after/inputs/midi-before.mid"
+      skip: true
