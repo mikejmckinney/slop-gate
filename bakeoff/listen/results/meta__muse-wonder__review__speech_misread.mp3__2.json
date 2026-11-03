@@ -1,0 +1,1 @@
+{"model": "meta/muse-wonder", "task": "review", "clip": "speech_misread.mp3", "run": 2, "text": "{\"findings\":", "cost": 0.032018, "secs": 15.5, "fmt": "wav"}

@@ -240,8 +240,11 @@ def _short(model: str) -> str:
     return model.split("/", 1)[-1]
 
 
+MARKER = "<!-- slop-judge-report -->"
+
+
 def report(results: list[dict], models: list[str], skipped: int) -> str:
-    marker = "<!-- slop-judge-report -->"
+    marker = MARKER
     flagged = [r for r in results if any(row["severity"] == "blocking" for row in r["rows"])]
     cost = sum(r["cost"] for r in results)
     lines = [

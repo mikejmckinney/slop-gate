@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.1-pro-preview", "task": "review", "clip": "speech_drift.mp3", "run": 1, "text": "```json\n{\"findings\": []}\n```", "cost": 0.009324, "secs": 7.1, "fmt": "mp3"}

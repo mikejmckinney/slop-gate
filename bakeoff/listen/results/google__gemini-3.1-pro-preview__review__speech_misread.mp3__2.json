@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.1-pro-preview", "task": "review", "clip": "speech_misread.mp3", "run": 2, "text": "```json\n{\"findings\": []}\n```", "cost": 0.009828, "secs": 7.5, "fmt": "mp3"}

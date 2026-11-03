@@ -1,0 +1,1 @@
+{"model": "openai/gpt-audio", "task": "review", "clip": "music_wash.mp3", "run": 1, "text": "I need the audio file to analyze it for defects. Please provide the audio so I can listen and report any findings.", "cost": 0.0105, "secs": 1.1, "fmt": "mp3"}

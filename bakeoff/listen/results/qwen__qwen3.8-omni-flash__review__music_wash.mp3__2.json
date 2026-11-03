@@ -1,0 +1,1 @@
+{"model": "qwen/qwen3.8-omni-flash", "task": "review", "clip": "music_wash.mp3", "run": 2, "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 30.0, \"pattern\": \"steady hiss\", \"evidence\": \"A consistent background hiss or noise floor is audible throughout the entire duration of the track.\", \"confidence\": \"medium\"}]}", "cost": 0.00221379, "secs": 48.2, "fmt": "mp3"}

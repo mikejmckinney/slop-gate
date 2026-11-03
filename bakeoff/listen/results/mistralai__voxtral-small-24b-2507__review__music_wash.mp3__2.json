@@ -1,0 +1,1 @@
+{"model": "mistralai/voxtral-small-24b-2507", "task": "review", "clip": "music_wash.mp3", "run": 2, "text": "{\"findings\": [{\"start_s\": 12.5, \"end_s\": 13.0, \"pattern\": \"clicks, gaps, severed tails\", \"evidence\": \"A sudden click occurs in the audio.\", \"confidence\": \"high\"}]}", "cost": 0.0030446, "secs": 1.6, "fmt": "mp3"}

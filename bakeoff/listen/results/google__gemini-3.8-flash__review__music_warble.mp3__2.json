@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.8-flash", "task": "review", "clip": "music_warble.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.001752, "secs": 7.8, "fmt": "mp3"}

@@ -11,7 +11,7 @@ import os
 import sys
 from pathlib import Path, PurePosixPath
 
-from . import code, config, gitdiff, judge, media, media_init, prose, prtext
+from . import code, config, gitdiff, judge, listen, media, media_init, prose, prtext
 from .findings import Finding, annotations, apply_overrides, exit_code, markdown_report, to_json
 
 
@@ -72,7 +72,7 @@ def run_check(args: argparse.Namespace) -> int:
 
 
 def run_judge(args: argparse.Namespace) -> int:
-    """Advisory vision review of changed images. Exits 0 unless it cannot run."""
+    """Advisory model review of changed images and audio. Exits 0 unless it cannot run."""
     repo = Path(args.repo).resolve()
     cfg = config.load(repo)
     if not os.environ.get("OPENROUTER_API_KEY"):
@@ -84,20 +84,33 @@ def run_judge(args: argparse.Namespace) -> int:
         if args.max_images is not None
         else cfg.judge.get("max_images", judge.DEFAULT_MAX_IMAGES)
     )
-    images = []
+    images, audio = [], []
     for rel in sorted(changed):
-        if PurePosixPath(rel).suffix.lower() not in media.IMAGE_EXTS or cfg.excluded(rel):
-            continue
-        if not (repo / rel).is_file():
+        ext = PurePosixPath(rel).suffix.lower()
+        if ext not in media.IMAGE_EXTS | media.AUDIO_EXTS or cfg.excluded(rel) or not (repo / rel).is_file():
             continue
         rule = media.rules_for(rel, cfg.media)
         if rule.get("skip"):
             continue
-        spec, source = judge.find_spec(repo, rel, rule)
-        images.append((rel, spec, source))
-    skipped = max(0, len(images) - limit)
-    results = judge.run(repo, images[:limit], models)
-    text = judge.report(results, models, skipped)
+        if ext in media.IMAGE_EXTS:
+            spec, source = judge.find_spec(repo, rel, rule)
+            images.append((rel, spec, source))
+        else:
+            audio.append((rel, listen.find_brief(repo, rel, rule)))
+
+    parts = []
+    if images or not audio:
+        skipped = max(0, len(images) - limit)
+        parts.append(judge.report(judge.run(repo, images[:limit], models), models, skipped))
+    if audio:
+        audio_models = cfg.judge.get("audio_models", listen.DEFAULT_MODELS)
+        max_audio = cfg.judge.get("max_audio", listen.DEFAULT_MAX_AUDIO)
+        transcriber = cfg.judge.get("transcribe_model", listen.DEFAULT_TRANSCRIBE_MODEL)
+        results = listen.run(repo, audio[:max_audio], audio_models, transcriber)
+        if not parts:
+            parts.append(judge.MARKER + "\n")
+        parts.append(listen.report(results, audio_models, max(0, len(audio) - max_audio)))
+    text = "\n".join(parts)
     if args.report_md:
         Path(args.report_md).write_text(text, encoding="utf-8")
     print(text)
@@ -121,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--github", action="store_true", help="print GitHub annotations instead of Markdown")
     c.set_defaults(func=run_check)
 
-    j = sub.add_parser("judge", help="advisory vision-model review of changed images")
+    j = sub.add_parser("judge", help="advisory model review of changed images and audio")
     j.add_argument("--repo", default=".")
     j.add_argument("--base", required=True)
     j.add_argument("--head", required=True)

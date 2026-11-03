@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.8-flash", "task": "review", "clip": "music_warble.mp3", "run": 1, "text": "```json\n{\"findings\": [{\"start_s\": 26.8, \"end_s\": 27.1, \"pattern\": \"clicks, gaps, severed tails\", \"evidence\": \"The cymbal crash and synth decay on the final downbeat are abruptly cut off into", "cost": 0.0063645, "secs": 13.8, "fmt": "mp3"}

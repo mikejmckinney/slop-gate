@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.8-flash", "task": "review", "clip": "music_splice.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.00207825, "secs": 4.9, "fmt": "mp3"}
