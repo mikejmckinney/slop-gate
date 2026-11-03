@@ -426,7 +426,10 @@ and made no medium or high finding on the clean clips, at about $0.014 per
 - **Attribution at the source.** In Claude Code, `attribution.commit` and
   `attribution.pr` set to `""` in `.claude/settings.json` turn off the
   commit trailer and PR footer
-  ([example](examples/.claude/settings.json)). Some Claude Code versions have
+  ([example](examples/.claude/settings.json)). Claude Code cloud sessions can
+  get their trailer and footer from the session instead, which the setting
+  doesn't reach; a line in the repo's `CLAUDE.md` saying not to add them
+  takes precedence ([this repo's](CLAUDE.md)). Some Claude Code versions have
   ignored the setting, so the PR check stays as the backstop.
 - **Footers you can't turn off.** Some agent tooling adds a footer to
   everything it writes through GitHub (PR descriptions, issue bodies,
