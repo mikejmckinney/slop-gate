@@ -16,6 +16,7 @@ from pathlib import Path, PurePosixPath
 import numpy as np
 from PIL import Image, UnidentifiedImageError
 
+from . import audio_defects as ad
 from .findings import Finding
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
@@ -50,6 +51,7 @@ AUDIO_KEYS = {
     "channels",
     "min_duration_s",
     "max_duration_s",
+    "min_loudness_range_lu",
 }
 COMMON_KEYS = {"glob", "skip", "max_file_mb", "note", "spec"}
 
@@ -263,6 +265,12 @@ def _decode(path: Path, sr: int, ch: int) -> np.ndarray:
 
 
 def _loudness(path: Path) -> tuple[float | None, float | None]:
+    lufs, peak, _ = _ebur128(path)
+    return lufs, peak
+
+
+def _ebur128(path: Path) -> tuple[float | None, float | None, float | None]:
+    """Integrated loudness (LUFS), true peak (dBTP) and loudness range (LU)."""
     out = subprocess.run(
         ["ffmpeg", "-nostats", "-v", "info", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"],
         capture_output=True,
@@ -272,13 +280,14 @@ def _loudness(path: Path) -> tuple[float | None, float | None]:
     summary = out.stderr.rsplit("Summary:", 1)[-1]
     lufs = re.search(r"I:\s+(-?[\d.]+|-inf) LUFS", summary)
     peak = re.search(r"True peak:\s+Peak:\s+(-?[\d.]+|-inf) dBFS", summary)
+    lra = re.search(r"LRA:\s+(-?[\d.]+) LU", summary)
 
     def num(m):
         if not m or m.group(1) == "-inf":
             return None
         return float(m.group(1))
 
-    return num(lufs), num(peak)
+    return num(lufs), num(peak), num(lra)
 
 
 def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
@@ -327,7 +336,7 @@ def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
             "Re-render with lower gain or a true-peak limiter; clipping can't be repaired after the fact.",
         )
 
-    lufs, true_peak = _loudness(abs_path)
+    lufs, true_peak, lra = _ebur128(abs_path)
     if true_peak is not None and true_peak > r["max_true_peak_dbtp"]:
         ctx.add(
             "true-peak",
@@ -348,11 +357,24 @@ def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
                 f"Normalize with `ffmpeg -i in -af loudnorm=I={r['loudness_lufs']}:TP=-1 out`.",
             )
 
+    floor_lu = r.get("min_loudness_range_lu")
+    if floor_lu is not None and lra is not None and duration >= 30 and lra < floor_lu:
+        ctx.add(
+            "flat-dynamics",
+            "warning",
+            f"Loudness range {lra:.1f} LU; the manifest asks for at least {floor_lu} LU. "
+            "Measured with EBU R128.",
+            "Add contrast in the arrangement or automation, or ease the limiter or compressor "
+            "that flattens it.",
+        )
+
     thr = 10 ** (r["silence_threshold_dbfs"] / 20)
     loud = np.flatnonzero(mono > thr)
     if len(loud) == 0:
         ctx.add("silent", "error", "The file is silent.")
         return ctx.findings
+
+    _check_defects(ctx, pcm, sr, PurePosixPath(rel).suffix.lower(), loud, r)
     lead_ms = loud[0] / sr * 1000
     tail_ms = (n - 1 - loud[-1]) / sr * 1000
 
@@ -444,3 +466,83 @@ def check(repo: Path, changed, excluded, media_cfg: dict) -> tuple[list[Finding]
                 raise RuntimeError("ffmpeg is required for audio checks")
             findings += check_audio(repo / rel, rel, r)
     return findings, checked
+
+
+LOSSLESS_EXTS = {".wav", ".flac"}
+
+
+def _check_defects(ctx: _Ctx, pcm: np.ndarray, sr: int, ext: str, loud: np.ndarray, r: dict) -> None:
+    """Checks from the audio-generation antipattern list; see audio_defects."""
+    mono = pcm.mean(axis=1)
+
+    gaps = ad.dropouts(mono, sr)
+    if gaps:
+        where = ", ".join(f"{ad.clock(t)} ({ms * 1000:.0f} ms)" for t, ms, _, _ in gaps[:3])
+        more = f" and {len(gaps) - 3} more" if len(gaps) > 3 else ""
+        ctx.add(
+            "dropout",
+            "warning",
+            f"Digital silence cuts into the sound at {where}{more}. Measured: the audio on both sides is "
+            f"above {ad.SOUND_AROUND_DBFS:.0f} dBFS.",
+            "Re-render, or patch the gap from the source and crossfade the joins. If the cut is a deliberate "
+            "effect, skip the file in the manifest.",
+        )
+
+    if not r.get("loop"):
+        gap = ad.cut_off_ending(mono, sr, int(loud[-1]))
+        if gap is not None:
+            ctx.add(
+                "cut-off-ending",
+                "warning",
+                f"The sound stops at {ad.clock(loud[-1] / sr)} with its last 20 ms only {max(gap, 0):.0f} dB "
+                "below the file's average level, so the tail is severed. Measured.",
+                "Let the note or effect decay, or add a short fade. If the file is a loop, declare "
+                "`loop: true` for it in the manifest so the loop checks apply instead.",
+            )
+        start = float(np.abs(pcm[0]).max())
+        if start > ad.START_JUMP:
+            ctx.add(
+                "starts-mid-waveform",
+                "warning",
+                f"The first sample is already at {start:.2f} of full scale, so playback starts with a click.",
+                "Trim to a zero crossing or add a fade-in of a few milliseconds.",
+            )
+
+    if ext in LOSSLESS_EXTS:
+        wall = ad.spectral_cutoff(mono, sr)
+        if wall:
+            cutoff, below, above = wall
+            ctx.add(
+                "lossy-source",
+                "warning",
+                f"The spectrum stops at {cutoff / 1000:.1f} kHz ({below - above:.0f} dB drop, nothing "
+                f"above it): this {ext} was decoded from a lossy file such as an MP3, so the conversion "
+                "added size and no detail. Measured on the long-term spectrum.",
+                "Export the lossless master from the generator or session. If only the lossy file exists, "
+                "ship that format instead of a converted copy.",
+            )
+
+    stereo = ad.mono_loss(pcm)
+    if stereo:
+        loss, corr = stereo
+        if loss > ad.MONO_WARN_DB:
+            ctx.add(
+                "mono-collapse",
+                "error" if loss > ad.MONO_ERROR_DB else "warning",
+                f"Summed to mono the file loses {loss:.1f} dB (left/right correlation {corr:+.2f}), so it "
+                "thins out or vanishes on phone speakers and mono devices. Measured.",
+                "Check for an inverted channel or an over-wide stereo effect and fix it on the stem; keep "
+                "intentional width that survives the mono sum.",
+            )
+
+    noise = ad.hiss(mono, sr)
+    if noise:
+        floor, seconds = noise
+        ctx.add(
+            "hiss",
+            "warning",
+            f"Steady broadband noise at {floor:.0f} dBFS fills {seconds:.1f} s of pauses. Measured: the "
+            "pauses are spectrally flat, which a decay or room tail is not.",
+            "Use gentle noise reduction with a noise-only profile from a pause and listen to what it "
+            "removes; regenerate if the noise is baked into the take. Leave intended noise alone.",
+        )

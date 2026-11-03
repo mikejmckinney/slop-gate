@@ -14,9 +14,11 @@ SR = 44100
 
 
 def write_wav(path: Path, samples: np.ndarray) -> None:
+    """Mono from a 1-D array, stereo from an (n, 2) array."""
+    channels = 1 if samples.ndim == 1 else samples.shape[1]
     pcm = (np.clip(samples, -1, 1) * 32767).astype("<i2")
     with wave.open(str(path), "wb") as w:
-        w.setnchannels(1)
+        w.setnchannels(channels)
         w.setsampwidth(2)
         w.setframerate(SR)
         w.writeframes(pcm.tobytes())
@@ -25,6 +27,17 @@ def write_wav(path: Path, samples: np.ndarray) -> None:
 def tone(seconds: float, freq: float = 441.0, amp: float = 0.3) -> np.ndarray:
     t = np.arange(int(SR * seconds)) / SR
     return amp * np.sin(2 * np.pi * freq * t)
+
+
+def decaying(seconds: float, freq: float = 441.0, amp: float = 0.3) -> np.ndarray:
+    """A tone with a natural exponential decay and a short fade-in."""
+    t = np.arange(int(SR * seconds)) / SR
+    env = np.exp(-6 * t / seconds) * np.minimum(1, t / 0.005)
+    return amp * env * np.sin(2 * np.pi * freq * t)
+
+
+def noise(seconds: float, amp: float, seed: int = 0) -> np.ndarray:
+    return amp * np.random.default_rng(seed).standard_normal(int(SR * seconds))
 
 
 def rule_ids(findings):
@@ -155,6 +168,79 @@ class AudioTests(unittest.TestCase):
         r = rules_for("loop.mp3", {"rules": [{"glob": "*.mp3", "loop": True}]})
         found = rule_ids(check_audio(mp3, "loop.mp3", r))
         self.assertTrue(found & {"loop-gap", "loop-click"}, found)
+
+
+@unittest.skipUnless(shutil.which("ffmpeg"), "ffmpeg not installed")
+class AudioDefectTests(unittest.TestCase):
+    """The checks from the audio-generation antipattern list, each with a clean twin."""
+
+    def setUp(self):
+        self.dir = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.dir)
+
+    def check(self, name, samples, **rule):
+        path = self.dir / name
+        write_wav(path, samples)
+        return self.check_file(path, **rule)
+
+    def check_file(self, path, **rule):
+        glob = "*" + path.suffix
+        r = rules_for(path.name, {"rules": [{"glob": glob, **rule}]} if rule else {})
+        return rule_ids(check_audio(path, path.name, r))
+
+    def music(self, seconds=4.0):
+        # Broadband and busy enough to stand in for a mix: noise shaped by a beat.
+        t = np.arange(int(SR * seconds)) / SR
+        beat = 0.4 + 0.6 * (np.sin(2 * np.pi * 2 * t) > 0)
+        return decaying(seconds, 220) + 0.15 * beat * noise(seconds, 1.0) * np.minimum(1, t / 0.005)
+
+    def test_dropout(self):
+        clean = self.music()
+        broken = clean.copy()
+        broken[SR * 2 : SR * 2 + SR // 20] = 0  # 50 ms of digital silence mid-sound
+        self.assertIn("dropout", self.check("drop.wav", broken))
+        self.assertNotIn("dropout", self.check("ok.wav", clean))
+
+    def test_cut_off_ending(self):
+        hit = decaying(1.0)
+        self.assertNotIn("cut-off-ending", self.check("hit.wav", hit))
+        self.assertIn("cut-off-ending", self.check("cut.wav", hit[: SR // 4]))
+        # A loop ends at full level on purpose; the loop checks cover it instead.
+        self.assertNotIn("cut-off-ending", self.check("loop.wav", tone(2.0), loop=True))
+
+    def test_starts_mid_waveform(self):
+        self.assertIn("starts-mid-waveform", self.check("late.wav", decaying(1.0)[SR // 100 :] + 0.2))
+        self.assertNotIn("starts-mid-waveform", self.check("hit.wav", decaying(1.0)))
+
+    def test_lossy_source(self):
+        src = self.dir / "master.wav"
+        write_wav(src, self.music(6.0))
+        self.assertNotIn("lossy-source", self.check_file(src))
+        mp3, back = self.dir / "gen.mp3", self.dir / "gen.wav"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-b:a", "128k", str(mp3)], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), str(back)], check=True)
+        self.assertIn("lossy-source", self.check_file(back))
+        # The MP3 itself is what it says it is; only lossless containers are checked.
+        self.assertNotIn("lossy-source", self.check_file(mp3))
+
+    def test_mono_collapse(self):
+        left = self.music()
+        self.assertIn("mono-collapse", self.check("flip.wav", np.stack([left, -left], axis=1)))
+        wide = np.stack([left, 0.8 * left + 0.2 * noise(4.0, 0.1, seed=3)], axis=1)
+        self.assertNotIn("mono-collapse", self.check("ok.wav", wide))
+
+    def test_hiss_in_pauses(self):
+        phrase = decaying(0.6, 300)
+        gap = np.zeros(SR // 2)
+        speech = np.concatenate([phrase, gap, phrase, gap, phrase])
+        self.assertNotIn("hiss", self.check("clean.wav", speech))
+        hissy = speech + 0.002 * np.random.default_rng(7).standard_normal(len(speech))  # about -54 dBFS
+        self.assertIn("hiss", self.check("hissy.wav", hissy))
+
+    def test_flat_dynamics_only_when_declared(self):
+        flat = self.music(40.0) * 0.5
+        self.assertNotIn("flat-dynamics", self.check("song.wav", flat))
+        self.assertIn("flat-dynamics", self.check("song.wav", flat, min_loudness_range_lu=8))
 
 
 if __name__ == "__main__":
