@@ -194,6 +194,28 @@ class RunTests(unittest.TestCase):
         self.assertIn("Words not checked against `vo/intro.script.txt`: the file is longer than", text)
         self.assertNotIn("had no findings", text)
 
+    def test_findings_timed_past_the_end_are_dropped_and_said(self):
+        ghost = {
+            "start_s": 255,
+            "end_s": 258,
+            "pattern": "disconnected sections",
+            "evidence": "x",
+            "confidence": "high",
+        }
+        real = {**ghost, "start_s": 170, "end_s": 190}
+        with (
+            mock.patch.object(
+                listen, "review", lambda m, p, b: {"findings": [ghost, real], "error": None, "cost": 0}
+            ),
+            mock.patch.object(listen, "transcribe", lambda m, p: (SCRIPT, 0.0)),
+            mock.patch.object(listen, "duration", lambda p: 176.3),
+        ):
+            [r] = listen.run(self.repo, [("vo/intro.mp3", "")], ["a/one"], "t/x")
+        self.assertEqual([(f["start_s"], f["end_s"]) for f in r["rows"]], [(170, 176.3)])
+        self.assertEqual(
+            r["errors"], ["a/one: dropped 1 finding(s) timed after the end of the audio it heard"]
+        )
+
 
 class SidecarEscapeTests(unittest.TestCase):
     """A PR must not be able to make the judge read files outside the checkout:

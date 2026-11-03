@@ -305,7 +305,8 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
     with ThreadPoolExecutor(max_workers=8) as pool:
         jobs = {(rel, m): pool.submit(review, m, repo / rel, brief) for rel, brief in items for m in models}
         texts = {}
-        long = {rel for rel, _ in items if (duration(repo / rel) or 0) > MAX_SECONDS}
+        lengths = {rel: duration(repo / rel) for rel, _ in items}
+        long = {rel for rel, n in lengths.items() if (n or 0) > MAX_SECONDS}
         for rel, _ in items:
             expected = find_text(repo, rel)
             if expected and rel in long:
@@ -313,7 +314,7 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
             elif expected:
                 texts[rel] = (expected, pool.submit(transcribe, transcribe_model, repo / rel))
         for rel, _ in items:
-            rows, errors, cost = [], [], 0.0
+            rows, errors, notes, cost = [], [], [], 0.0
             for m in models:
                 try:
                     r = jobs[(rel, m)].result()
@@ -323,7 +324,14 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
                 cost += r.get("cost") or 0
                 if r["error"]:
                     errors.append(f"{m}: {r['error']}")
-                rows += [{**f, "model": m} for f in r["findings"]]
+                end = min(lengths[rel] or float("inf"), MAX_SECONDS)
+                kept = [f for f in r["findings"] if f["start_s"] < end]
+                if len(kept) < len(r["findings"]):
+                    dropped = len(r["findings"]) - len(kept)
+                    errors.append(
+                        f"{m}: dropped {dropped} finding(s) timed after the end of the audio it heard"
+                    )
+                rows += [{**f, "model": m, "end_s": min(f["end_s"], end)} for f in kept]
             diff = None
             if rel in texts:
                 (expected, source), fut = texts[rel]
@@ -340,6 +348,7 @@ def run(repo: Path, items: list[tuple[str, str]], models: list[str], transcribe_
                     "rows": rows,
                     "diff": diff,
                     "errors": errors,
+                    "notes": notes,
                     "cost": cost,
                     "truncated": rel in long,
                 }
@@ -397,7 +406,7 @@ def report(results: list[dict], models: list[str], skipped: int) -> str:
 
     def quiet(r):
         diff_says = r["diff"] and not _clean_diff(r["diff"])
-        return not (r["rows"] or r["errors"] or r.get("truncated") or diff_says)
+        return not (r["rows"] or r["errors"] or r.get("notes") or r.get("truncated") or diff_says)
 
     for r in results:
         if quiet(r):
@@ -431,6 +440,8 @@ def report(results: list[dict], models: list[str], skipped: int) -> str:
                 "",
             ]
             lines += [f"- {c}" for c in d["changes"][:15]]
+        for n in r.get("notes", []):
+            lines.append(f"\nNote: {n}")
         for e in r["errors"]:
             lines.append(f"\n⚠️ Review failed: {e[:300]}")
 
