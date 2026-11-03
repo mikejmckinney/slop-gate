@@ -1,0 +1,1 @@
+{"model": "meta/muse-wonder", "task": "review", "clip": "music_clean.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.0170068, "secs": 9.9, "fmt": "mp3"}

@@ -212,6 +212,41 @@ re-runs the review on the images the PR changed and updates one comment.
   or `judge.models` in `.slop-gate.yml` to change that.
 - **Fork PRs are skipped**, because GitHub doesn't give them repository secrets.
 
+## Listening review (advisory)
+
+The same `slop-judge` job also listens to the audio a PR changes. Two audio
+models, `google/gemini-3.1-pro-preview` and `google/gemini-4-argon`, report
+defects by time range using the pattern names from the audio antipattern list:
+metallic shimmer, pitch wobble, reverb wash, voice drift, repetition without
+purpose, disconnected sections and the rest. In the
+[bakeoff](bakeoff/listen/README.md) the pair placed all six planted defects
+and made no medium or high finding on the clean clips, at about $0.014 per
+30-second clip.
+
+- **Each finding says how it was found.** The report lists time range,
+  pattern, what the model heard, its confidence with "model listening" as the
+  basis, and the fix from the antipattern list. It is inference, not
+  measurement and not a human listening check: listen to the range before
+  acting on it.
+- **It checks the words when you give it the words.** Put the script or
+  lyrics in a `<name>.script.txt` or `<name>.lyrics.txt` file next to the
+  audio. `thinkingmachines/inkling` transcribes the audio and the comparison is
+  done in code, so "expected 1250, heard 12050" or a dropped word shows up as a
+  plain diff. Chinese, Japanese and Thai, which don't put spaces between
+  words, are compared character by character. Write the file as text: "1,250 m"
+  and "B-12" match a narrator saying "1,250 meters" and "B12". A file longer than five minutes
+  gets no diff, and the report says so, since only its start is transcribed.
+- **It reads the brief.** A `<name>.prompt.txt` file or a manifest `spec`
+  tells the models what the file is meant to be, so a deliberate distortion or
+  a steady loop isn't reported as a defect.
+- **It reads only regular files in the checkout.** Sidecars, images and audio
+  reached through a symlink are ignored, so a PR can't point a sidecar at a
+  file outside the repo and have it sent to the model.
+- **It never blocks and it caps cost.** At most 10 audio files per run, the
+  first five minutes of each. Set `judge.audio_models`,
+  `judge.transcribe_model` or `judge.max_audio` in `.slop-gate.yml` to change
+  that.
+
 ## Settings to pair with it
 
 - **Attribution at the source.** In Claude Code, `attribution.commit` and

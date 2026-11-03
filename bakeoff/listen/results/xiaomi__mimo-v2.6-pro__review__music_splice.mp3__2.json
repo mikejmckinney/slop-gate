@@ -1,0 +1,1 @@
+{"model": "xiaomi/mimo-v2.6-pro", "task": "review", "clip": "music_splice.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.00036304668, "secs": 13.8, "fmt": "mp3"}

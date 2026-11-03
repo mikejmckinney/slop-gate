@@ -1,0 +1,43 @@
+{
+ "eleven-v4.mp3#1": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”",
+   "after “then reach checkpoint”: expected “b 12”, heard “b12”"
+  ]
+ },
+ "eleven-v4.mp3#2": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B-12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”"
+  ]
+ },
+ "gemini-3.8-flash-tts.wav#1": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”",
+   "after “then reach checkpoint”: expected “b 12”, heard “b12”"
+  ]
+ },
+ "gemini-3.8-flash-tts.wav#2": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”",
+   "after “then reach checkpoint”: expected “b 12”, heard “b12”"
+  ]
+ },
+ "heygen-voice-1.wav#1": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”",
+   "after “then reach checkpoint”: expected “b 12”, heard “b12”"
+  ]
+ },
+ "heygen-voice-1.wav#2": {
+  "heard": "Wave 7 begins in 1,250 meters. Hold LB and RB to dash, then reach checkpoint B12 before 3:45. Your shield recharges at 40% per second.",
+  "diff": [
+   "after “begins in 1250”: expected “m”, heard “meters”",
+   "after “then reach checkpoint”: expected “b 12”, heard “b12”"
+  ]
+ }
+}

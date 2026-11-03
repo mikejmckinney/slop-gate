@@ -1,0 +1,1 @@
+{"model": "google/gemini-4-argon", "task": "review", "clip": "speech_misread.mp3", "run": 1, "text": "{\"findings\": []}", "cost": 0.00154, "secs": 4.5, "fmt": "mp3"}

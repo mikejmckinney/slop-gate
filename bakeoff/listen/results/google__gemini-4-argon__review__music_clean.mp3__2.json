@@ -1,0 +1,1 @@
+{"model": "google/gemini-4-argon", "task": "review", "clip": "music_clean.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.002236, "secs": 6.9, "fmt": "mp3"}

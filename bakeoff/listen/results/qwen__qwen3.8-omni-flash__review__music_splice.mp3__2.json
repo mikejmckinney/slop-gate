@@ -1,0 +1,1 @@
+{"model": "qwen/qwen3.8-omni-flash", "task": "review", "clip": "music_splice.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.00059135, "secs": 12.4, "fmt": "mp3"}

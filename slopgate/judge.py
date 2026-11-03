@@ -20,6 +20,8 @@ from pathlib import Path, PurePosixPath
 
 from PIL import Image
 
+from .paths import repo_file
+
 API = "https://openrouter.ai/api/v1/chat/completions"
 
 CATEGORIES = {
@@ -171,8 +173,7 @@ def find_spec(repo, rel: str, rule: dict) -> tuple[str, str]:
     """
     p = PurePosixPath(rel)
     for sidecar in (p.with_suffix(".prompt.txt"), p.with_suffix(p.suffix + ".prompt.txt")):
-        path = Path(repo) / sidecar
-        if path.is_file():
+        if path := repo_file(Path(repo), sidecar):
             return path.read_text(encoding="utf-8").strip(), str(sidecar)
     if rule.get("spec"):
         return str(rule["spec"]).strip(), "manifest"
@@ -240,8 +241,11 @@ def _short(model: str) -> str:
     return model.split("/", 1)[-1]
 
 
+MARKER = "<!-- slop-judge-report -->"
+
+
 def report(results: list[dict], models: list[str], skipped: int) -> str:
-    marker = "<!-- slop-judge-report -->"
+    marker = MARKER
     flagged = [r for r in results if any(row["severity"] == "blocking" for row in r["rows"])]
     cost = sum(r["cost"] for r in results)
     lines = [

@@ -1,0 +1,1 @@
+{"model": "google/gemini-3.8-flash", "task": "review", "clip": "speech_misread.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.00191025, "secs": 9.9, "fmt": "mp3"}

@@ -54,7 +54,10 @@ media:
     - glob: "assets/concept/**"
       skip: true
 
-# Advisory vision review (the slop-judge job). Both keys are optional.
+# Advisory model review of images and audio (the slop-judge job). Every key is optional.
 judge:
   models: [anthropic/claude-opus-5.5, google/gemini-4-argon]
   max_images: 20
+  audio_models: [google/gemini-3.1-pro-preview, google/gemini-4-argon]
+  transcribe_model: thinkingmachines/inkling
+  max_audio: 10

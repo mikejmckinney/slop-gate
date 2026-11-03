@@ -1,0 +1,1 @@
+{"model": "openai/gpt-audio", "task": "review", "clip": "music_wash.mp3", "run": 2, "text": "I currently do not detect any defects in the audio. \n\nHere is the result:\n\n{\"findings\": []}", "cost": 0.01049, "secs": 1.1, "fmt": "mp3"}

@@ -1,0 +1,1 @@
+{"model": "google/gemini-4-argon", "task": "review", "clip": "music_wash.mp3", "run": 1, "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 28.0, \"pattern\": \"soft or smeared attacks\", \"evidence\": \"The snare drum hits have a dull, muffled, and overly compressed transient throughout the track.\", \"confidence\": \"low\"}]}", "cost": 0.002806, "secs": 3.9, "fmt": "mp3"}

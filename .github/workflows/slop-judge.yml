@@ -1,4 +1,4 @@
-# Reusable advisory vision review of the images a PR changes. It posts its own
+# Reusable advisory model review of the images and audio a PR changes. It posts its own
 # comment and never fails on findings; it fails only when it cannot run.
 # Consumers call it when a PR carries the `slop-judge` label:
 #
@@ -64,7 +64,16 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Review changed images
+      # The listening review converts audio with ffmpeg; skip the install when it is there.
+      - name: Install ffmpeg
+        if: steps.key.outputs.present == 'true'
+        run: |
+          if command -v ffmpeg >/dev/null; then exit 0; fi
+          apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
+          timeout 300 sudo apt-get "${apt_opts[@]}" update -q
+          timeout 420 sudo apt-get "${apt_opts[@]}" install -y -q --no-install-recommends ffmpeg
+
+      - name: Review changed images and audio
         if: steps.key.outputs.present == 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

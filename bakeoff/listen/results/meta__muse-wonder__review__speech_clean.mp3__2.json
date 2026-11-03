@@ -1,0 +1,1 @@
+{"model": "meta/muse-wonder", "task": "review", "clip": "speech_clean.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.02459, "secs": 13.7, "fmt": "mp3"}

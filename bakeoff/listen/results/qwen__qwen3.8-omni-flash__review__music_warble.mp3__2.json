@@ -1,0 +1,1 @@
+{"model": "qwen/qwen3.8-omni-flash", "task": "review", "clip": "music_warble.mp3", "run": 2, "text": "{\"findings\": []}", "cost": 0.00048419, "secs": 11.1, "fmt": "mp3"}

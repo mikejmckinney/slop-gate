@@ -78,7 +78,7 @@ def load(repo: Path) -> Config:
         cfg.biome_config = repo / code["biome_config"]
     cfg.media = data.get("media") or {}
     cfg.judge = data.get("judge") or {}
-    unknown_judge = set(cfg.judge) - {"models", "max_images"}
+    unknown_judge = set(cfg.judge) - {"models", "max_images", "audio_models", "transcribe_model", "max_audio"}
     if unknown_judge:
         raise ValueError(f"{CONFIG_NAME}: unknown judge keys {sorted(unknown_judge)}")
     for name, level in [("commit_trailers", cfg.commit_trailers), ("code.ruff_format", cfg.ruff_format)]:

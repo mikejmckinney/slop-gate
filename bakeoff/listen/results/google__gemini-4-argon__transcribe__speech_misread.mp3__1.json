@@ -1,0 +1,1 @@
+{"model": "google/gemini-4-argon", "task": "transcribe", "clip": "speech_misread.mp3", "run": 1, "text": "Welcome to NovaWing, pilot. Your ship has 3 shields and a charge cannon. Tap and hold to charge, release to fire. Wave 7 begins in 12,050 m. Watch for the tractor beam. If it catches you, your next ship can rescue the 1st 1.", "cost": 0.00169, "secs": 3.2, "fmt": "mp3"}
