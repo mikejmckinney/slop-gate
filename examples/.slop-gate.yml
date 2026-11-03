@@ -44,6 +44,7 @@ media:
     - glob: "assets/music/**"
       loop: true # no gap, click, or level jump at the wrap point
       loudness_lufs: -16
+      min_loudness_range_lu: 4 # warn when the mix is flatter than this (EBU R128 LRA)
     - glob: "assets/sfx/**"
       max_leading_silence_ms: 20
       loudness_lufs: -18

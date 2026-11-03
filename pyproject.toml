@@ -3,7 +3,7 @@ name = "slop-gate"
 version = "0.1.0"
 description = "PR checks that block AI-slop patterns in prose, code, images, and audio"
 requires-python = ">=3.13"
-dependencies = ["PyYAML", "pillow", "numpy"]
+dependencies = ["PyYAML", "pillow", "numpy", "mido"]
 
 [tool.ruff]
 line-length = 110
