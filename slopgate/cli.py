@@ -24,6 +24,7 @@ def run_check(args: argparse.Namespace) -> int:
     else:
         if not (args.base and args.head):
             raise SystemExit("--base and --head are required unless --all is given")
+        gitdiff.require_checked_out(repo, args.head)
         changed = gitdiff.changed_lines(repo, args.base, args.head)
     only = set(args.only.split(",")) if args.only else None
 
@@ -78,6 +79,7 @@ def run_judge(args: argparse.Namespace) -> int:
     cfg = config.load(repo)
     if not os.environ.get("OPENROUTER_API_KEY"):
         raise RuntimeError("OPENROUTER_API_KEY is not set; add it as a repository secret")
+    gitdiff.require_checked_out(repo, args.head)
     changed = gitdiff.changed_lines(repo, args.base, args.head)
     models = args.models.split(",") if args.models else cfg.judge.get("models", judge.DEFAULT_MODELS)
     limit = (

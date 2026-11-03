@@ -198,6 +198,14 @@ class EndToEndTests(unittest.TestCase):
             )
         return code, json.loads(report.read_text()), out.getvalue()
 
+    def test_head_must_be_the_checked_out_commit(self):
+        # The checks read files from disk; with main checked out they would report
+        # on main's README while claiming to check the feature branch.
+        git(self.repo, "checkout", "-q", "main")
+        with self.assertRaises(SystemExit) as ctx, redirect_stdout(io.StringIO()):
+            main(["check", "--repo", str(self.repo), "--base", "main", "--head", "feature"])
+        self.assertIn("run `git checkout feature` first", str(ctx.exception))
+
     def test_only_changed_lines_are_reported_and_errors_block(self):
         code, findings, report = self.run_cli()
         self.assertEqual(code, 1)

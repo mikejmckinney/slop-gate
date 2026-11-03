@@ -1,0 +1,11 @@
+# ", allowing you to focus on..." benefit clauses tacked onto a description.
+extends: existence
+message: "'%s' tacks a benefit onto the sentence. Say what the reader can do, with the specifics, in its own sentence, or cut it."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - ', (?:allowing|enabling|letting|empowering|helping) (?:you|your|users?|developers|teams?|them|us|players?|anyone|people)\b'
+  - ', allowing for\b'
+  - ', making it (?:easier|easy|simple|possible)\b'
+  - ', enhancing (?:the |your |overall )?(?:user|player|customer)'
