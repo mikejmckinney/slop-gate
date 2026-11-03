@@ -68,12 +68,12 @@ def read_notes(mf: mido.MidiFile) -> tuple[list[Note], int, list[tuple[int, int]
     return notes, hanging, tempos
 
 
-def _bar_of(tick: int, tpb: int, beats_per_bar: int) -> int:
-    return tick // (tpb * beats_per_bar) + 1
+def _bar_of(tick: int, bar_ticks: float) -> int:
+    return int(tick // bar_ticks) + 1
 
 
-def _bars(ticks: list[int], tpb: int, beats_per_bar: int) -> str:
-    bars = sorted({_bar_of(t, tpb, beats_per_bar) for t in ticks})
+def _bars(ticks: list[int], bar_ticks: float) -> str:
+    bars = sorted({_bar_of(t, bar_ticks) for t in ticks})
     spans: list[str] = []
     for b in bars:
         if spans and spans[-1].split("–")[-1] == str(b - 1):
@@ -104,9 +104,13 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
     if mf.type == 2:
         return out  # sequential-song files are rare and timed per track; nothing below applies cleanly
     tpb = mf.ticks_per_beat
-    beats_per_bar = next(
-        (m.numerator * 4 // m.denominator for t in mf.tracks for m in t if m.type == "time_signature"), 4
+    # Bar length in ticks from the first time signature, kept fractional: a
+    # 3/8 bar is 1.5 quarter notes and a 1/8 bar half of one. Bar numbers drift
+    # after a meter change; they are a pointer for listening, not a score.
+    num, den = next(
+        ((m.numerator, m.denominator) for t in mf.tracks for m in t if m.type == "time_signature"), (4, 4)
     )
+    bar_ticks = tpb * 4 * num / den
     notes, hanging, tempos = read_notes(mf)
 
     if hanging:
@@ -134,7 +138,7 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
             "overlapping-note",
             "warning",
             f"{len(overlaps)} note(s) start while the same pitch is still sounding on the same channel, "
-            f"in bars {_bars(overlaps, tpb, beats_per_bar)}. Players disagree about which note-off "
+            f"in bars {_bars(overlaps, bar_ticks)}. Players disagree about which note-off "
             "ends which.",
             "Shorten the earlier note so it ends before the next one starts.",
         )
@@ -142,7 +146,7 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
         add(
             "zero-length-note",
             "warning",
-            f"{len(zero)} note(s) end on the tick they start, in bars {_bars(zero, tpb, beats_per_bar)}; "
+            f"{len(zero)} note(s) end on the tick they start, in bars {_bars(zero, bar_ticks)}; "
             "most players drop them.",
             "Give them a length or delete them.",
         )
@@ -158,13 +162,13 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
             "duplicate-notes",
             "warning",
             f"{len(dupes)} notes are doubled on another track with the same channel and instrument, in bars "
-            f"{_bars(dupes, tpb, beats_per_bar)}. Combined, the part plays twice as loud and can phase.",
+            f"{_bars(dupes, bar_ticks)}. Combined, the part plays twice as loud and can phase.",
             "Delete the duplicate track or notes. Doubling with a different instrument or octave is not "
             "flagged; keep it when it is the arrangement.",
         )
 
     # A held note chopped into back-to-back fragments that don't sit on the grid.
-    grid = tpb // 4  # sixteenth notes
+    grid = max(1, tpb // 4)  # sixteenth notes
     slack = max(1, tpb // 32)
     restrikes = []
     for (_, channel, _), group in by_key.items():
@@ -183,7 +187,7 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
             "restruck-note",
             "warning",
             f"{len(restrikes)} held note(s) are split into back-to-back fragments off the sixteenth-note "
-            f"grid, in bars {_bars(restrikes, tpb, beats_per_bar)}: the pattern transcription leaves when a "
+            f"grid, in bars {_bars(restrikes, bar_ticks)}: the pattern transcription leaves when a "
             "sustained note wobbles.",
             "Merge each run into one note where the source audio confirms one attack. Keep deliberate "
             "retriggering.",
@@ -210,7 +214,7 @@ def check_midi(abs_path: Path, rel: str) -> list[Finding]:
             "semitone-clash",
             "warning",
             f"{len(clashes)} place(s) where two channels hold notes a semitone apart for a sixteenth or "
-            f"more, in bars {_bars(clashes, tpb, beats_per_bar)}. Often a wrong note; sometimes the "
+            f"more, in bars {_bars(clashes, bar_ticks)}. Often a wrong note; sometimes the "
             "intended color.",
             "Listen to those bars. Change one of the notes when it is wrong; keep deliberate dissonance.",
         )

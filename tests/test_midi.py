@@ -88,6 +88,22 @@ class MidiTests(unittest.TestCase):
         # A major seventh is a chord color, not a clash.
         self.assertNotIn("semitone-clash", self.rules(held, track((0, TPB * 2, 70), channel=1)))
 
+    def test_bar_numbers_in_compound_and_short_meters(self):
+        # Bars of 3/8 are 1.5 quarter notes; bars of 1/8 half of one. A zero-length
+        # note at tick 1440 is in bar 3 of 3/8 (720 ticks per bar).
+        for (num, den), tick, bar in (((3, 8), 1440, 3), ((1, 8), 240, 2)):
+            with self.subTest(meter=f"{num}/{den}"):
+                t = track((0, 120, 60))
+                t.insert(0, mido.MetaMessage("time_signature", numerator=num, denominator=den, time=0))
+                t.append(mido.Message("note_on", note=62, velocity=90, time=tick - 120))
+                t.append(mido.Message("note_off", note=62, velocity=0, time=0))
+                mf = mido.MidiFile(ticks_per_beat=TPB)
+                mf.tracks.append(t)
+                path = self.dir / "meter.mid"
+                mf.save(path)
+                [f] = [f for f in check_midi(path, "meter.mid") if f.rule == "zero-length-note"]
+                self.assertIn(f"in bars {bar};", f.message)
+
     def test_unreadable_file(self):
         path = self.dir / "broken.mid"
         path.write_bytes(b"MThd\x00\x00\x00\x06\x00\x01\x00\x02\x01\xe0MTrk\x00\x00\xff\xff")
