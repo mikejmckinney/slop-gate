@@ -423,11 +423,16 @@ and made no medium or high finding on the clean clips, at about $0.014 per
 
 ## Settings to pair with it
 
-- **Attribution at the source.** In Claude Code, `attribution.commit` and
-  `attribution.pr` set to `""` in `.claude/settings.json` turn off the
-  commit trailer and PR footer
-  ([example](examples/.claude/settings.json)). Some Claude Code versions have
-  ignored the setting, so the PR check stays as the backstop.
+- **Attribution at the source.** In Claude Code's `.claude/settings.json`,
+  `attribution.commit` and `attribution.pr` set to `""` remove the
+  `Co-Authored-By` trailer and the PR footer, and `attribution.sessionUrl`
+  set to `false` removes the `Claude-Session` link that cloud and Remote
+  Control sessions add ([example](examples/.claude/settings.json),
+  [reference](https://code.claude.com/docs/en/settings-reference#attribution-sessionurl)).
+  A cloud session that clones several repositories reads only the plugin
+  keys from each repo's settings file, so add a line to the repo's
+  `CLAUDE.md` as well ([this repo's](CLAUDE.md)). Some Claude Code versions
+  have ignored the setting, so the PR check stays as the backstop.
 - **Footers you can't turn off.** Some agent tooling adds a footer to
   everything it writes through GitHub (PR descriptions, issue bodies,
   comments) and puts it back on every edit. No repo setting stops it.
