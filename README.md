@@ -84,6 +84,7 @@ github-actions".
 | `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
 | `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP, stereo that collapses in mono by more than 12 dB; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots, dropouts, cut-off endings, a click at the first sample, a WAV or FLAC that looks decoded from an MP3, hiss in pauses, mono loss over 6 dB; and when the manifest declares a minimum: flat dynamics |
+| `midi` (`.mid`, `.midi`) | Files that don't parse | Notes that never end, overlap on one channel or have no length; a part doubled note for note on a second track with the same instrument; held notes chopped into off-grid fragments; tempo maps of many tiny changes; semitone clashes held for a sixteenth or longer |
 
 The prose rules come from a house style table of AI-writing patterns. Each
 rule in [`styles/SlopGate`](styles/SlopGate) has a fixture in
@@ -166,6 +167,26 @@ Detectors such as Deezer's only scan streaming playlists, their research code
 is licensed for non-commercial use, and a project that generates its music on
 purpose would be flagged on every track. A detector score says nothing about
 what to fix; these checks do.
+
+### MIDI
+
+MIDI files get structural checks, aimed at what audio-to-MIDI transcription
+and generators leave behind:
+
+| Rule | Finds | Leaves alone |
+|---|---|---|
+| `midi-unreadable` | A file that doesn't parse (error) | |
+| `hanging-note`, `overlapping-note`, `zero-length-note` | Notes with no end, a pitch restarted on its channel before it ends, notes that end on the tick they start | |
+| `duplicate-notes` | Four or more notes doubled on another track with the same channel and instrument | Doubling with another instrument or octave |
+| `restruck-note` | Three or more back-to-back fragments of one pitch, mostly off the sixteenth-note grid | Repeated notes on the grid, such as a pulsing bassline |
+| `tempo-jitter` | Eight or more tempo changes whose median step is under 2 BPM | A handful of real tempo changes |
+| `semitone-clash` | Two channels holding notes a minor second apart for a sixteenth or longer, listed by bar | Major sevenths, minor ninths, drums |
+
+On 4 code-generated song files the checks report only semitone clashes, which
+are worth a listen. On two Basic Pitch transcriptions of game tracks they
+report 77 and 170 chopped held notes. A clash can be the intended color:
+listen to the bars it names, and turn `semitone-clash` off under `overrides` if
+the repo leans on that sound.
 
 ## Vision review (advisory)
 

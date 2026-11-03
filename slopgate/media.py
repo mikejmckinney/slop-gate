@@ -18,6 +18,7 @@ from PIL import Image, UnidentifiedImageError
 
 from . import audio_defects as ad
 from .findings import Finding
+from .midi import MIDI_EXTS, check_midi
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
 AUDIO_EXTS = {".wav", ".mp3", ".ogg", ".oga", ".opus", ".flac", ".m4a", ".aac"}
@@ -440,7 +441,7 @@ def check(repo: Path, changed, excluded, media_cfg: dict) -> tuple[list[Finding]
     checked = 0
     for rel in sorted(changed):
         ext = PurePosixPath(rel).suffix.lower()
-        if ext not in IMAGE_EXTS | AUDIO_EXTS or excluded(rel) or not (repo / rel).is_file():
+        if ext not in IMAGE_EXTS | AUDIO_EXTS | MIDI_EXTS or excluded(rel) or not (repo / rel).is_file():
             continue
         r = rules_for(rel, media_cfg)
         if r.get("skip"):
@@ -461,6 +462,8 @@ def check(repo: Path, changed, excluded, media_cfg: dict) -> tuple[list[Finding]
             )
         if ext in IMAGE_EXTS:
             findings += check_image(repo / rel, rel, r)
+        elif ext in MIDI_EXTS:
+            findings += check_midi(repo / rel, rel)
         else:
             if shutil.which("ffmpeg") is None:
                 raise RuntimeError("ffmpeg is required for audio checks")

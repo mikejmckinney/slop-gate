@@ -21,12 +21,14 @@ SECTION_HELP = {
     "ruff": "Python lint (Ruff) on changed lines. Rule docs: https://docs.astral.sh/ruff/rules/",
     "biome": "JS/TS lint (Biome) on changed lines. Rule docs: https://biomejs.dev/linter/",
     "media": "Image and audio checks against the media manifest in .slop-gate.yml.",
+    "midi": "MIDI structure: notes that never end or overlap, duplicated parts, chopped held notes, "
+    "tempo-map jitter and semitone clashes.",
 }
 
 
 @dataclass(frozen=True)
 class Finding:
-    check: str  # family: prose, pr-text, unicode, residue, ruff, biome, media
+    check: str  # family: prose, pr-text, unicode, residue, ruff, biome, media, midi
     rule: str  # specific rule id, e.g. SlopGate.ContrastFormula or F401
     severity: str  # error blocks the PR; warning is reported only
     path: str
