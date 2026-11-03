@@ -57,6 +57,26 @@ def parse_unified_diff(diff: str) -> ChangedLines:
     return {p: ls for p, ls in changed.items() if ls is None or ls}
 
 
+def require_checked_out(repo: Path, head: str) -> None:
+    """Stop when `head` is not the commit in the working tree.
+
+    The checks read files from disk, so a run with another commit checked out
+    would report on the wrong version of every changed file.
+    """
+    try:
+        want = _git(repo, "rev-parse", "--verify", "--quiet", f"{head}^{{commit}}").strip()
+    except RuntimeError:
+        raise SystemExit(
+            f"--head {head} is not a commit in {repo}. Fetch it, or pass a SHA or branch name."
+        ) from None
+    have = _git(repo, "rev-parse", "HEAD").strip()
+    if want != have:
+        raise SystemExit(
+            f"--head {head} is {want[:7]}, but the working tree has {have[:7]} checked out. "
+            f"The checks read files from disk: run `git checkout {head}` first."
+        )
+
+
 def changed_lines(repo: Path, base: str, head: str) -> ChangedLines:
     merge_base = _git(repo, "merge-base", base, head).strip()
     diff = _git(

@@ -251,7 +251,7 @@ by ear.
 
 | Family | Blocks on | Warns on |
 |---|---|---|
-| `prose` (Markdown, text, and comments in code) | Stock openers and closers, "it's not X, it's Y", hedging preambles, unnamed experts, inflated significance, assistant residue, unfilled placeholders, stacked buzzwords, more than two dashes per paragraph | Single inflated words, prestige labels, corporate verbs, `serves as` for `is`, trailing "-ing" commentary, filler transitions, stacked hedges, both-sides framing |
+| `prose` (Markdown, text, and comments in code) | Stock openers and closers, "it's not X, it's Y", hedging preambles, unnamed experts, inflated significance, assistant residue, unfilled placeholders, stacked buzzwords, more than two dashes per paragraph | Single inflated words, prestige labels, corporate verbs, `serves as` for `is`, trailing "-ing" commentary, benefit tails (`, allowing you to…`), sales copy (`an essential tool`, `elevate your…`), filler transitions, stacked hedges, both-sides framing |
 | `pr-text` (PR title, body, commits) | The prose rules above on the PR body; tool attribution footers | Attribution trailers in commits (level set by `commit_trailers`) |
 | `unicode` (every changed text file) | Bidi controls, zero-width and tag characters, variation-selector runs, Latin look-alikes mixed into words, non-ASCII spaces in source code | Non-ASCII spaces in prose, markup, and data files |
 | `residue` (source files) | Truncation markers (`... rest of the code`), placeholder secrets, AI banners, pasted assistant text, stub admissions | "In a real application you would…" comments |

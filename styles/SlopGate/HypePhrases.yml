@@ -1,0 +1,13 @@
+# Sales copy in documentation: "an essential tool", "elevate your workflow".
+extends: existence
+message: "'%s' is sales copy. Say what the tool does and for whom, and let the reader judge its value."
+level: warning
+ignorecase: true
+tokens:
+  - 'an? (?:essential|invaluable|indispensable|must-have) (?:tool|addition|asset|resource|companion)'
+  - '(?:takes?|taking) (?:your|it|things) to the next level'
+  - 'elevates? your \w+'
+  - 'embrace (?:efficiency|the power|the future)'
+  - 'supercharges? your'
+  - 'unleash(?:es)? (?:the|your)'
+  - 'perfect for (?:developers|teams|anyone|beginners|creators)'
