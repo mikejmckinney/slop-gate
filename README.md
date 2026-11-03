@@ -160,10 +160,10 @@ The [vision review](#vision-review-advisory) asked for "exactly four identical
 glowing floor lamps arranged in a 2 by 2 grid". One image in the bakeoff was
 made with a fifth lamp; its twin has four.
 
-| Five lamps | Four lamps |
+| Image | What the review said |
 |---|---|
-| <img src="bakeoff/judge/images/def_lamps_count.jpg" width="420" alt="Top-down metal arena floor with five glowing lamps, three in the top row and two below."> | <img src="bakeoff/judge/images/base_lamps.jpg" width="420" alt="Top-down metal arena floor with four glowing lamps in a 2 by 2 grid."> |
-| Both review models fail it in every run that completed (one `gemini-4-argon` run errored). `claude-opus-5.5`: "There are five glowing lamps, three in the top row and two in the bottom row, but the spec requires exactly four." | Both models pass it with no findings, in both runs. |
+| <img src="bakeoff/judge/images/def_lamps_count.jpg" width="360" alt="Top-down metal arena floor with five glowing lamps, three in the top row and two below."> | Fail from both models in every run that completed (one `gemini-4-argon` run errored). `claude-opus-5.5`: "There are five glowing lamps, three in the top row and two in the bottom row, but the spec requires exactly four." |
+| <img src="bakeoff/judge/images/base_lamps.jpg" width="360" alt="Top-down metal arena floor with four glowing lamps in a 2 by 2 grid."> | Pass from both models with no findings, in both runs. |
 
 ### Game music loop
 
@@ -205,9 +205,9 @@ the game plays them:
 <img src="docs/media/before-after/loop-wrap.webp" width="880"
      alt="Two waveforms with a playhead. Before: loud music fades out and stays flat for almost a second before the loop point, then restarts. After: quieter, even music runs straight through the loop point.">
 
-Listen: [before](docs/media/before-after/arena-before-wrap.ogg),
-[after](docs/media/before-after/arena-after-wrap.ogg), or
-[both as video with sound](docs/media/before-after/loop-wrap.mp4).
+Listen (the files download): [before](docs/media/before-after/arena-before-wrap.ogg?raw=true),
+[after](docs/media/before-after/arena-after-wrap.ogg?raw=true), or
+[both as an MP4 with sound](docs/media/before-after/loop-wrap.mp4?raw=true).
 
 Played three times in a row through the listening review, the loop drew one
 finding from one model: "a brief gap" at the first join. The other model heard

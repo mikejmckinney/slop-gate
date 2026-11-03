@@ -39,7 +39,7 @@ def font(size):
 def sprites(raw: Path, out: Path):
     (out / "sprites").mkdir(parents=True, exist_ok=True)
     for p in sorted((raw / "sprites").glob("*.png")):
-        im = Image.open(p).convert("RGB")
+        im = Image.open(p).convert("RGBA")  # keep the one real alpha channel visible
         im.thumbnail((200, 200), Image.LANCZOS)
         im.save(out / "sprites" / f"{p.stem}.webp", quality=85)
     after = Image.open(raw / "sprite-after.png").convert("RGBA")
