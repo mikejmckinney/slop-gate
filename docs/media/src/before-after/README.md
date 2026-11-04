@@ -19,7 +19,10 @@ was made on 2026-11-02.
 [`build.py`](build.py) turns those files into the README media in
 [`docs/media/before-after`](../../before-after): the sprite previews, the
 looping waveform (`loop-wrap.webp`, and `loop-wrap.mp4` with sound), the
-12-second wrap clips and the piano roll.
+12-second wrap clips and the piano roll. GitHub plays video in a README only
+from its attachment store, so `loop-wrap.mp4` is also uploaded there through
+the description of the PR that embeds it; after re-recording, upload the new
+file the same way and update the URL in the README.
 
 The scripts need Python 3.13 with numpy, Pillow, mido, librosa 1.0 and
 soundfile, plus ffmpeg with libvorbis and libx264. `generate_music.py` reads
