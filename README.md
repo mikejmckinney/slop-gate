@@ -205,9 +205,13 @@ the game plays them:
 <img src="docs/media/before-after/loop-wrap.webp" width="880"
      alt="Two waveforms with a playhead. Before: loud music fades out and stays flat for almost a second before the loop point, then restarts. After: quieter, even music runs straight through the loop point.">
 
-Listen (the files download): [before](docs/media/before-after/arena-before-wrap.ogg?raw=true),
-[after](docs/media/before-after/arena-after-wrap.ogg?raw=true), or
-[both as an MP4 with sound](docs/media/before-after/loop-wrap.mp4?raw=true).
+To hear both joins, play the video (before, then after):
+
+https://github.com/user-attachments/assets/99f4eb7f-79e4-4232-bfa0-dd25189e560a
+
+The 12-second clips also download as Ogg:
+[before](docs/media/before-after/arena-before-wrap.ogg?raw=true),
+[after](docs/media/before-after/arena-after-wrap.ogg?raw=true).
 
 Played three times in a row through the listening review, the loop drew one
 finding from one model: "a brief gap" at the first join. The other model heard
