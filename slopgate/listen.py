@@ -292,8 +292,9 @@ def word_diff(expected: str, heard: str) -> list[str]:
         if op == "equal" or _same_spoken(a[i1:i2], b[j1:j2]):
             continue
         context = _join(a[max(0, i1 - 3) : i1])
+        where = f"after “{context}”" if context else "at the start"
         want, got = _join(a[i1:i2]) or "(nothing)", _join(b[j1:j2]) or "(nothing)"
-        out.append(f"after “{context}”: expected “{want}”, heard “{got}”")
+        out.append(f"{where}: expected “{want}”, heard “{got}”")
     return out
 
 

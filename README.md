@@ -258,6 +258,7 @@ by ear.
 | `prose` (Markdown, text, and comments in code) | Stock openers and closers, "it's not X, it's Y", hedging preambles, unnamed experts, inflated significance, assistant residue, unfilled placeholders, stacked buzzwords, more than two dashes per paragraph | Single inflated words, prestige labels, corporate verbs, `serves as` for `is`, trailing "-ing" commentary, benefit tails (`, allowing you to…`), sales copy (`an essential tool`, `elevate your…`), filler transitions, stacked hedges, both-sides framing |
 | `pr-text` (PR title, body, commits) | The prose rules above on the PR body; tool attribution footers | Attribution trailers in commits (level set by `commit_trailers`) |
 | `unicode` (every changed text file) | Bidi controls, zero-width and tag characters, variation-selector runs, Latin look-alikes mixed into words, non-ASCII spaces in source code | Non-ASCII spaces in prose, markup, and data files |
+| `secrets` (every commit the PR adds) | Credentials found by [gitleaks](https://github.com/gitleaks/gitleaks), including one a later commit deletes, since it stays in the branch history. Values are redacted in the log. Turn off with `scan-secrets: false`; tune with `.gitleaks.toml` or `.gitleaksignore` | |
 | `residue` (source files) | Truncation markers (`... rest of the code`), placeholder secrets, AI banners, pasted assistant text, stub admissions | "In a real application you would…" comments |
 | `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
@@ -464,6 +465,10 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   don't start new workflow runs, so nothing loops. One gap: whether editing a closed PR's
   description triggers a gate run is untested, so such a footer may stay until
   the next backfill.
+- **Rules for agent sessions.** Copy the "Credentials" and "Copying files
+  between repositories" sections of [this repo's `CLAUDE.md`](CLAUDE.md)
+  into yours. The secret scan only sees what reaches a commit; a key an
+  agent types into a shell command is already in the session transcript.
 - **Squash merges.** Set the repository's default squash message to "pull
   request title and description" so commit bodies, trailers included, don't
   reach the default branch.

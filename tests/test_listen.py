@@ -81,14 +81,20 @@ class TranscriptTests(unittest.TestCase):
 
     def test_scripts_without_spaces_compare_by_character(self):
         self.assertEqual(
-            listen.word_diff("你好世界", "完全不同"), ["after “”: expected “你好世界”, heard “完全不同”"]
+            listen.word_diff("你好世界", "完全不同"), ["at the start: expected “你好世界”, heard “完全不同”"]
         )
         self.assertEqual(
-            listen.word_diff("你好世界", ""), ["after “”: expected “你好世界”, heard “(nothing)”"]
+            listen.word_diff("你好世界", ""), ["at the start: expected “你好世界”, heard “(nothing)”"]
         )
         self.assertEqual(listen.word_diff("第七波开始。", "第七波开始"), [])
         [change] = listen.word_diff("ボタンを押して", "ボタンを離して")
         self.assertIn("expected “押”, heard “離”", change)
+
+    def test_a_change_in_the_first_word_says_at_the_start(self):
+        self.assertEqual(
+            listen.word_diff("Seven waves remain", "Eleven waves remain"),
+            ["at the start: expected “seven”, heard “eleven”"],
+        )
 
     def test_other_scripts_keep_their_words(self):
         [change] = listen.word_diff("Волна семь начинается", "Волна восемь начинается")
