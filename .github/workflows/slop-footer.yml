@@ -57,7 +57,9 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: mikejmckinney/slop-gate
-          ref: ${{ inputs.slop-gate-ref || 'v1' }}
+          # A fixed commit that has the resolver, so any slop-gate-ref works, even one
+          # from before the resolver existed. Move it when slopgate/resolve_ref.py changes.
+          ref: 155dfb1d9eac16ed68a355175127c9d3035c28d6
           path: .slop-gate
           sparse-checkout: slopgate/resolve_ref.py
           sparse-checkout-cone-mode: false

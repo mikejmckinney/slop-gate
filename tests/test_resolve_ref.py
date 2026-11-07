@@ -3,6 +3,7 @@
 import io
 import json
 import os
+import re
 import subprocess
 import tempfile
 import unittest
@@ -207,7 +208,40 @@ class MainTest(unittest.TestCase):
         self.assertIn("HTTP 403", warnings[0])
 
 
-WORKFLOWS = Path(__file__).resolve().parent.parent / ".github" / "workflows"
+ROOT = Path(__file__).resolve().parent.parent
+WORKFLOWS = ROOT / ".github" / "workflows"
+# The last commit before the resolver existed, the reviewer's example of an old override.
+BEFORE_RESOLVER = "1e22f61"
+OVERRIDE_EXPR = re.compile(r"\$\{\{\s*inputs\.slop-gate-ref(?:\s*\|\|\s*'([^']*)')?\s*\}\}")
+
+
+def git(*args):
+    return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
+
+
+def has_commit(ref):
+    return git("cat-file", "-e", f"{ref}^{{commit}}").returncode == 0
+
+
+def require_commit(case, ref):
+    if has_commit(ref):
+        return
+    if os.environ.get("CI"):
+        case.fail(f"commit {ref} is missing; CI's test job needs full history (fetch-depth: 0)")
+    case.skipTest(f"commit {ref} is not in this clone")
+
+
+def resolver_steps(wf):
+    """The ref job's checkout step and its resolve step."""
+    steps = wf["jobs"]["ref"]["steps"]
+    checkout = next(s for s in steps if (s.get("with") or {}).get("repository") == "mikejmckinney/slop-gate")
+    resolve = next(s for s in steps if s.get("id") == "resolve")
+    return checkout, resolve
+
+
+def checkout_ref(expr, override):
+    """What the checkout's `ref:` evaluates to for a given slop-gate-ref."""
+    return OVERRIDE_EXPR.sub(lambda m: override or (m.group(1) or ""), str(expr)).strip()
 
 
 class WorkflowWiringTest(unittest.TestCase):
@@ -254,6 +288,92 @@ class WorkflowWiringTest(unittest.TestCase):
                             with_.get("ref"), "${{ needs.ref.outputs.ref }}", f"{name}:{job_name}"
                         )
                         self.assertIn("ref", job.get("needs", []), f"{name}:{job_name}")
+
+    def test_resolver_checkout_does_not_follow_the_override(self):
+        pins = set()
+        for name, wf in self.reusable_workflows().items():
+            checkout, _ = resolver_steps(wf)
+            ref = str(checkout["with"]["ref"])
+            self.assertRegex(ref, r"^[0-9a-f]{40}$", f"{name}: the resolver must load from a fixed commit")
+            pins.add(ref)
+        self.assertEqual(len(pins), 1, f"the workflows pin different resolver commits: {sorted(pins)}")
+
+    def test_pinned_resolver_matches_this_tree(self):
+        for name, wf in self.reusable_workflows().items():
+            checkout, _ = resolver_steps(wf)
+            pin, path = checkout["with"]["ref"], checkout["with"]["sparse-checkout"]
+            require_commit(self, pin)
+            pinned = git("show", f"{pin}:{path}")
+            self.assertEqual(pinned.returncode, 0, f"{name}: {path} is not in {pin}")
+            self.assertEqual(
+                pinned.stdout,
+                (ROOT / path).read_text(),
+                f"{name}: {path} changed since {pin}; move the pin in all four workflows to a commit with it",
+            )
+
+
+class BootstrapTest(unittest.TestCase):
+    """Runs each workflow's ref job as written: a one-file checkout, then its run command."""
+
+    def run_ref_job(self, name, wf, override, gh_script):
+        checkout, resolve = resolver_steps(wf)
+        self.assertEqual(resolve["env"]["SLOP_GATE_REF"], "${{ inputs.slop-gate-ref }}", name)
+        ref = checkout_ref(checkout["with"]["ref"], override)
+        path, sparse = checkout["with"]["path"], checkout["with"]["sparse-checkout"]
+        if re.fullmatch(r"[0-9a-f]{40}", ref):
+            require_commit(self, ref)
+        with tempfile.TemporaryDirectory() as tmp:
+            work, bin_dir = Path(tmp, "work"), Path(tmp, "bin")
+            bin_dir.mkdir()
+            shown = git("show", f"{ref}:{sparse}")
+            if shown.returncode == 0:
+                target = work / path / sparse
+                target.parent.mkdir(parents=True)
+                target.write_text(shown.stdout)
+            else:
+                work.mkdir()
+            fake_gh = bin_dir / "gh"
+            fake_gh.write_text(gh_script)
+            fake_gh.chmod(0o755)
+            out = Path(tmp, "output")
+            env = {
+                "PATH": f"{bin_dir}{os.pathsep}{os.environ['PATH']}",
+                "GITHUB_REPOSITORY": CONSUMER,
+                "GITHUB_RUN_ID": "1",
+                "GITHUB_RUN_ATTEMPT": "1",
+                "GITHUB_OUTPUT": str(out),
+                "GH_TOKEN": "unused",
+                "SLOP_GATE_REF": override,
+            }
+            proc = subprocess.run(
+                ["bash", "-e", "-c", resolve["run"]], cwd=work, env=env, capture_output=True, text=True
+            )
+            output = out.read_text() if out.exists() else ""
+        return proc, output
+
+    def test_override_from_before_the_resolver_existed(self):
+        require_commit(self, BEFORE_RESOLVER)
+        listed = {
+            "referenced_workflows": [
+                {
+                    "path": f"mikejmckinney/slop-gate/.github/workflows/{n}@v1",
+                    "ref": "refs/heads/v1",
+                    "sha": SHA,
+                }
+                for n in ("slop-gate.yml", "slop-audit.yml", "slop-footer.yml", "slop-judge.yml")
+            ]
+        }
+        answers = {
+            "lookup works": f"#!/bin/sh\ncat <<'JSON'\n{json.dumps(listed)}\nJSON\n",
+            "HTTP 403": "#!/bin/sh\necho 'gh: Resource not accessible (HTTP 403)' >&2\nexit 1\n",
+        }
+        for name, wf in WorkflowWiringTest().reusable_workflows().items():
+            for case, gh_script in answers.items():
+                with self.subTest(workflow=name, gh=case):
+                    proc, output = self.run_ref_job(name, wf, BEFORE_RESOLVER, gh_script)
+                    self.assertEqual(proc.returncode, 0, proc.stderr)
+                    self.assertEqual(output, f"ref={BEFORE_RESOLVER}\n")
+                    self.assertEqual(proc.stdout.count("::warning"), 1, proc.stdout)
 
 
 if __name__ == "__main__":
