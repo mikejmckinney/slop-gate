@@ -1,6 +1,6 @@
 # slop-gate
 
-https://github.com/user-attachments/assets/333b384b-cb58-4007-afe3-de37497a4ead
+https://github.com/user-attachments/assets/30dbca3a-f3fc-464f-a058-2352f997d84b
 
 A 98-second tour of every check, recorded from real runs. Turn the sound on
 for the music loop at 1:01 and the spoken line at 1:13.
