@@ -1,4 +1,4 @@
-# slop-gate's own use of slop-footer.yml, at the commit being run, so changes
+# slop-gate's own use of the footer action, at the commit being run, so changes
 # here are exercised on this repo's own comments and issues.
 name: footer
 
@@ -20,11 +20,18 @@ permissions:
   contents: read
   issues: write
   pull-requests: write
-  actions: read
 
 jobs:
   footer:
-    uses: ./.github/workflows/slop-footer.yml
-    with:
-      slop-gate-ref: ${{ github.sha }}
-      apply: ${{ inputs.apply || false }}
+    name: footer / slop-footer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      # A local action needs the repo on disk; consumers calling
+      # mikejmckinney/slop-gate/footer@v1 skip this step.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./footer
+        with:
+          apply: ${{ inputs.apply || false }}

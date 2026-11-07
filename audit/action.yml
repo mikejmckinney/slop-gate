@@ -1,0 +1,93 @@
+# Whole-repo audit as a composite action. Unlike the PR gate, it checks every
+# tracked file and every line, and by default it reports without failing, so it
+# can map existing debt before a cleanup. Call it after checking out the repo
+# (any depth; it reads only the working tree):
+#
+#   - uses: actions/checkout@<sha>
+#     with:
+#       persist-credentials: false
+#   - uses: mikejmckinney/slop-gate/audit@v1
+name: slop-audit
+description: Audit every tracked file in the repo for AI-slop patterns and report the findings.
+author: mikejmckinney
+
+inputs:
+  only:
+    description: Comma list of check families to run (prose,code,media). Empty runs all.
+    required: false
+    default: ""
+  fail-on-errors:
+    description: Fail the step when any finding is an error.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    # The caller checks out its own repo: a checkout here would wipe this
+    # action's files whenever it runs from the same workspace (`uses: ./audit`).
+    - name: Check the checkout
+      shell: bash
+      env:
+        ACTION_DIR: ${{ github.action_path }}
+      run: |
+        echo "SLOPGATE_DIR=$(cd "$ACTION_DIR/.." && pwd)" >> "$GITHUB_ENV"
+        if ! git rev-parse --git-dir >/dev/null 2>&1; then
+          echo "::error::slop-audit found no git checkout in $PWD. Run actions/checkout before this step."
+          exit 1
+        fi
+
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      with:
+        python-version: "3.13"
+
+    - name: Install tools
+      shell: bash
+      env:
+        VALE_VERSION: "3.25.1"
+        BIOME_VERSION: "2.6.3"
+      run: |
+        # ffmpeg is only needed when the repo tracks audio.
+        if git ls-files | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+          export NEED_FFMPEG=1
+        else
+          export NEED_FFMPEG=0
+        fi
+        "$SLOPGATE_DIR/scripts/install-tools.sh"
+
+    - name: Audit every tracked file
+      id: audit
+      shell: bash
+      env:
+        ONLY: ${{ inputs.only }}
+      run: |
+        set +e
+        PYTHONPATH="$SLOPGATE_DIR" python -m slopgate check --repo . --all ${ONLY:+--only "$ONLY"} \
+          --report-md "$RUNNER_TEMP/slop-audit.md" --report-json "$RUNNER_TEMP/slop-audit.json" >/dev/null
+        echo "code=$?" >> "$GITHUB_OUTPUT"
+        if [ -f "$RUNNER_TEMP/slop-audit.md" ]; then
+          head -c 900000 "$RUNNER_TEMP/slop-audit.md" >> "$GITHUB_STEP_SUMMARY"
+        fi
+
+    - name: Upload findings
+      if: always() && steps.audit.outputs.code != ''
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+      with:
+        name: slop-audit-findings
+        path: |
+          ${{ runner.temp }}/slop-audit.json
+          ${{ runner.temp }}/slop-audit.md
+        if-no-files-found: ignore
+
+    - name: Result
+      shell: bash
+      env:
+        CODE: ${{ steps.audit.outputs.code }}
+        FAIL_ON_ERRORS: ${{ inputs.fail-on-errors }}
+      run: |
+        case "$CODE" in
+          0) echo "No blocking findings." ;;
+          1) if [ "$FAIL_ON_ERRORS" = "true" ]; then echo "::error::Audit found blocking issues."; exit 1; fi
+             echo "::notice::Audit found blocking issues; see the job summary and the slop-audit-findings artifact." ;;
+          *) echo "::error::slop-audit could not run (exit $CODE)."; exit 1 ;;
+        esac

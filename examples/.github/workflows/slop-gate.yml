@@ -6,19 +6,41 @@ on:
     # `edited` re-runs the check when the PR title or description changes.
     types: [opened, synchronize, reopened, edited, ready_for_review, labeled]
 
-permissions:
-  contents: read
-  pull-requests: write # the report comment
-  actions: read # lets slop-gate find the commit your `uses:` line resolved to
+permissions: {}
 
 jobs:
   slop-gate:
-    uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1
+    # Keeps the check name `slop-gate / slop-gate`, which branch rulesets require.
+    name: slop-gate / slop-gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write # the report comment
+    steps:
+      # The action reads the PR head and its history; it does not check out the repo itself.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: mikejmckinney/slop-gate@v1
 
   # Optional advisory vision review of changed images. Add the `slop-judge`
   # label to a PR to run it; it needs an OPENROUTER_API_KEY repository secret.
   slop-judge:
     if: contains(github.event.pull_request.labels.*.name, 'slop-judge')
-    uses: mikejmckinney/slop-gate/.github/workflows/slop-judge.yml@v1
-    secrets:
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write # the review comment
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: mikejmckinney/slop-gate/judge@v1
+        with:
+          openrouter-api-key: ${{ secrets.OPENROUTER_API_KEY }}
