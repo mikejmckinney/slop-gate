@@ -97,14 +97,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      # The listening review converts audio with ffmpeg; skip the install when it is there.
+      # The listening review converts audio with ffmpeg; the script skips the install when it is there.
       - name: Install ffmpeg
         if: steps.key.outputs.present == 'true'
-        run: |
-          if command -v ffmpeg >/dev/null; then exit 0; fi
-          apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
-          timeout 300 sudo apt-get "${apt_opts[@]}" update -q
-          timeout 420 sudo apt-get "${apt_opts[@]}" install -y -q --no-install-recommends ffmpeg
+        run: .slop-gate/scripts/install-ffmpeg.sh
 
       - name: Review changed images and audio
         if: steps.key.outputs.present == 'true'

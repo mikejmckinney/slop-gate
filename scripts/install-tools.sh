@@ -33,16 +33,10 @@ step "Biome ${BIOME_VERSION}"
 timeout 300 npm install --no-audit --no-fund --prefix "$tools/biome" "@biomejs/biome@${BIOME_VERSION}"
 end
 
-if [ "${NEED_FFMPEG:-1}" = "1" ] && ! command -v ffmpeg >/dev/null; then
-	step "ffmpeg"
-	export DEBIAN_FRONTEND=noninteractive
-	# A stalled Ubuntu mirror once hung this step for ten minutes; give each
-	# request its own timeout and retries instead of waiting on one download.
-	apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
-	timeout 300 sudo -E apt-get "${apt_opts[@]}" update -q
-	timeout 420 sudo -E apt-get "${apt_opts[@]}" install -y -q --no-install-recommends ffmpeg
-	end
+if [ "${NEED_FFMPEG:-1}" = "1" ]; then
+	"$here/scripts/install-ffmpeg.sh"
 fi
+export PATH="$tools/bin:$PATH"
 
 echo "$tools/bin" >>"${GITHUB_PATH:-/dev/null}"
 echo "SLOPGATE_BIOME=$tools/biome/node_modules/.bin/biome" >>"${GITHUB_ENV:-/dev/null}"
