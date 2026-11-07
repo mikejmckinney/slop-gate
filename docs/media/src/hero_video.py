@@ -457,20 +457,22 @@ def midi_scene():
 
 def end_card():
     img, d = canvas()
-    d.text((W // 2, 200), "Add it to a repo", font=font("Bold", 52), fill=FG, anchor="mm")
+    d.text((W // 2, 180), "Add it to a repo", font=font("Bold", 52), fill=FG, anchor="mm")
     code = [
-        "jobs:",
-        "  slop-gate:",
-        "    uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1",
+        "- uses: actions/checkout@v7",
+        "  with:",
+        "    ref: ${{ github.event.pull_request.head.sha }}",
+        "    fetch-depth: 0",
+        "- uses: mikejmckinney/slop-gate@v1",
     ]
-    d.rounded_rectangle((150, 270, W - 150, 410), radius=10, fill=PANEL, outline=LINE)
+    d.rounded_rectangle((150, 240, W - 150, 450), radius=10, fill=PANEL, outline=LINE)
     for k, line in enumerate(code):
-        d.text((180, 300 + k * 34), line, font=mono(22), fill=FG)
+        d.text((180, 262 + k * 34), line, font=mono(22), fill=FG)
     d.text(
-        (W // 2, 480), "github.com/mikejmckinney/slop-gate", font=font("SemiBold", 28), fill=BLUE, anchor="mm"
+        (W // 2, 510), "github.com/mikejmckinney/slop-gate", font=font("SemiBold", 28), fill=BLUE, anchor="mm"
     )
     d.text(
-        (W // 2, 530),
+        (W // 2, 560),
         "Checks only the lines a PR changes. Never commits to the branch.",
         font=font("Regular", 22),
         fill=MUTED,
