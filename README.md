@@ -1,9 +1,9 @@
 # slop-gate
 
-<p align="center">
-  <img src="docs/media/hero.webp" width="880"
-       alt="A pull request on this repo: the slop-gate report comment says Blocked and lists each finding with a fix; the author's next commit rewrites the flagged lines; the same comment then says Passed and the fix commit has a green check.">
-</p>
+https://github.com/user-attachments/assets/333b384b-cb58-4007-afe3-de37497a4ead
+
+A 98-second tour of every check, recorded from real runs. Turn the sound on
+for the music loop at 1:01 and the spoken line at 1:13.
 
 A reusable GitHub Actions workflow that blocks pull requests containing the
 patterns AI tools leave behind: stock phrasing in docs and PR text, swallowed
@@ -249,6 +249,10 @@ one number changed and one word dropped:
 > - after “hold to charge”: expected “then”, heard “(nothing)”
 > - after “seven begins in”: expected “1250”, heard “12050”
 <!-- vale on -->
+
+The middle two sentences of each take, where both changes are, download as
+Ogg: [before](docs/media/before-after/speech-before.ogg?raw=true),
+[after](docs/media/before-after/speech-after.ogg?raw=true).
 
 Read from the real script, the words match and the diff is empty. One review
 model added a low-confidence note that "each sentence rises and falls on nearly

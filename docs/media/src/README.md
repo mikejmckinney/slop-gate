@@ -6,7 +6,8 @@ when the report format or the UI changes.
 
 | File | Shows | Made with |
 |---|---|---|
-| `hero.webp` | PR #11 blocked, fixed and green, with captions | Screen recording of headed Chromium |
+| `hero-tour.mp4` | The README hero: a 98-second tour of every check, with the sound of the music loop and the spoken line | `hero_video.py`, from the files in this table and the before-after inputs and reports |
+| `hero.webp` | PR #11 blocked, fixed and green, with captions; the tour's second scene | Screen recording of headed Chromium |
 | `pr-blocked-then-fixed.webp` | The same PR, uncut | Screen recording of headed Chromium |
 | `residue.webp` | Hidden characters and generation residue, before and after | VHS terminal recording |
 | `scope.webp` | Changed lines only, then a whole-repo audit | VHS terminal recording |
@@ -79,3 +80,21 @@ Run everything from this folder.
 
 Judge the result in a browser. Reading these files back with Pillow showed
 ghosting and odd frame timings that Chromium didn't.
+
+## The hero tour
+
+`hero_video.py` lays the recordings above and the before-after examples into
+one 1280×720 MP4 at 30 fps. The music scene keeps loop-wrap.mp4's sound and the
+speech scene plays `speech-before.ogg` then `speech-after.ogg`; the rest is
+silent.
+
+```sh
+python hero_video.py ../hero-tour.mp4          # whole tour
+python hero_video.py /tmp/x.mp4 music speech   # only these scenes, to check them
+```
+
+GitHub plays a README video only from its attachment store, so after a
+rebuild, upload the new file in a comment on
+[issue #21](https://github.com/mikejmckinney/slop-gate/issues/21) and put the
+new URL at the top of the README.
+
