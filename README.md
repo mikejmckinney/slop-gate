@@ -60,16 +60,6 @@ The gate and the review stop with an error that names the fix when the
 checkout lacks the PR's base or head commit, or has another commit checked
 out. On events other than `pull_request` they skip with a warning.
 
-### Moving from the reusable workflows
-
-Earlier versions were reusable workflows
-(`uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1`). They
-still work, but they are deprecated and will be removed once consumer repos
-have moved to the actions. To move, replace the job with the one above, drop
-`actions: read` and `slop-gate-ref`, and pass the judge's key as
-`openrouter-api-key: ${{ secrets.OPENROUTER_API_KEY }}` instead of under
-`secrets:`. `slopgate/resolve_ref.py` goes with them.
-
 ## See it work
 
 Each clip below is a recording of slop-gate running, not a mock-up. The
