@@ -22,10 +22,10 @@ permissions:
   contents: read
   issues: write
   pull-requests: write
+  actions: read # lets slop-gate find the commit your `uses:` line resolved to
 
 jobs:
   footer:
     uses: mikejmckinney/slop-gate/.github/workflows/slop-footer.yml@v1
     with:
-      slop-gate-ref: v1
       apply: ${{ inputs.apply || false }}

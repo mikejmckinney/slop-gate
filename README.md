@@ -26,6 +26,24 @@ Consumer repos call the workflow at `@v1`, a release branch that moves
 forward only to a commit whose CI passed on `main`. A rule change here reaches
 consumers when `v1` moves; pin a commit SHA instead to control that yourself.
 
+### Which slop-gate commit runs
+
+The workflow YAML comes from your `uses:` line, but its scripts come from a
+second checkout of this repo. Each workflow finds the commit your `uses:` line
+resolved to and checks out the scripts at that commit, so a SHA pin pins both,
+and a `v1` that moves mid-run can't split them. To find it, the workflow reads
+your run's `referenced_workflows` from the GitHub API, which needs
+`actions: read` in the calling job's permissions, as in the examples.
+
+Without `actions: read`, or when the lookup fails, the scripts run at
+`slop-gate-ref` if you set it, or `v1` if you didn't, and the run shows one
+warning telling you to add the permission. Nothing fails.
+
+`slop-gate-ref` is now only an override; leave it unset. When you set it, it
+wins, and the run warns if it names a different commit from your `uses:` line.
+A value equal to the ref in your `uses:` line, such as `v1` next to `@v1`, counts
+as the same commit and runs at the SHA it resolved to.
+
 ## See it work
 
 Each clip below is a recording of slop-gate running, not a mock-up. The

@@ -13,10 +13,10 @@ on:
 
 permissions:
   contents: read
+  actions: read # lets slop-gate find the commit your `uses:` line resolved to
 
 jobs:
   audit:
     uses: mikejmckinney/slop-gate/.github/workflows/slop-audit.yml@v1
     with:
-      slop-gate-ref: v1
       only: ${{ inputs.only }}
