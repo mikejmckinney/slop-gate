@@ -16,10 +16,11 @@ Rules, in order:
   or `v1` without one, with one warning that says to grant `actions: read`.
 
 The workflow runs this file directly from a one-file checkout, so it uses only
-the standard library and runs on the runner's own python3. That checkout is at
-the override or `v1`, since the commit isn't known yet, so a workflow pinned to an
-older commit can run a newer copy of this file. Keep the interface stable: the
-path, the one argument, the environment below and the `ref` output.
+the standard library and runs on the runner's own python3. That checkout is
+pinned to a fixed commit in each workflow's `ref` job, not to the override or
+`v1`: an override can name a commit from before this file existed, and `v1` can
+lag behind. A change here reaches the workflows only when that pin moves to a
+commit that has it; tests/test_resolve_ref.py fails while the two differ.
 
 Usage: resolve_ref.py WORKFLOW_FILE
 Environment: GITHUB_REPOSITORY, GITHUB_RUN_ID, GITHUB_RUN_ATTEMPT, GH_TOKEN,
