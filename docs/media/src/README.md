@@ -6,7 +6,7 @@ when the report format or the UI changes.
 
 | File | Shows | Made with |
 |---|---|---|
-| `hero-tour.mp4` | The README hero: a 92-second tour of every check, with the music loop's sound | `hero_video.py`, from the files in this table and the before-after inputs and reports |
+| `hero-tour.mp4` | The README hero: a 98-second tour of every check, with the sound of the music loop and the spoken line | `hero_video.py`, from the files in this table and the before-after inputs and reports |
 | `hero.webp` | PR #11 blocked, fixed and green, with captions; the tour's second scene | Screen recording of headed Chromium |
 | `pr-blocked-then-fixed.webp` | The same PR, uncut | Screen recording of headed Chromium |
 | `residue.webp` | Hidden characters and generation residue, before and after | VHS terminal recording |
@@ -84,8 +84,9 @@ ghosting and odd frame timings that Chromium didn't.
 ## The hero tour
 
 `hero_video.py` lays the recordings above and the before-after examples into
-one 1280×720 MP4 at 30 fps. The music scene keeps loop-wrap.mp4's sound; the
-rest is silent.
+one 1280×720 MP4 at 30 fps. The music scene keeps loop-wrap.mp4's sound and the
+speech scene plays `speech-before.ogg` then `speech-after.ogg`; the rest is
+silent.
 
 ```sh
 python hero_video.py ../hero-tour.mp4          # whole tour

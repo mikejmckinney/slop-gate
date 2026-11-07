@@ -156,7 +156,7 @@ def title_card():
         y += 60
     d.text(
         (W // 2, 590),
-        "Recordings of slop-gate running. Turn the sound on for the music loop.",
+        "Recordings of slop-gate running. Turn the sound on for the music and speech examples.",
         font=font("Regular", 22),
         fill=MUTED,
         anchor="mm",
@@ -216,7 +216,7 @@ def writing_scene():
     d.text((60, HEAD + 22), "After following the fix text:", font=font("Medium", 20), fill=MUTED)
     y = text_block(d, [after], HEAD + 58, {})
     badge(d, (60, y + 10), "passes, 0 findings", GREEN)
-    yield from still(a, 6.5)
+    yield from still(a, 5.5)
     yield from blend(a, b)
     yield from still(b, 3.5)
 
@@ -262,12 +262,26 @@ def sprite_scene():
         anchor="mm",
     )
     badge_center(d, HEAD + 440, "passes, 0 findings", GREEN)
-    yield from still(a, 5.5)
+    yield from still(a, 4.5)
     yield from blend(a, b)
     yield from still(b, 3.0)
 
 
-MUSIC_CUTS = [(2.5, 9.5), (14.5, 21.5)]  # each 7 s window holds one loop point
+MUSIC_CUTS = [(3.0, 9.0), (15.0, 21.0)]  # each 6 s window holds one loop point, 3 s in
+SPEECH = MEDIA / "before-after"  # speech-before.ogg and speech-after.ogg, see before-after/README.md
+SPEECH_LEAD, SPEECH_GAP = 0.6, 0.8  # silence before the first take, and between the takes
+
+
+def duration(path: Path) -> float:
+    cmd = ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)]
+    return float(subprocess.run(cmd, check=True, capture_output=True, text=True).stdout)
+
+
+def probe_size(path: Path) -> tuple[int, int]:
+    cmd = ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height"]
+    out = subprocess.run([*cmd, "-of", "csv=p=0", str(path)], check=True, capture_output=True, text=True)
+    w, h = out.stdout.strip().split(",")
+    return int(w), int(h)
 
 
 def music_frames():
@@ -278,6 +292,7 @@ def music_frames():
         ("loudness", "−10.9 LUFS; the manifest targets −16 ±2."),
         ("loop-gap", "933 ms of silence at the end plays as a gap on every wrap."),
     ]
+    vw, vh = probe_size(src)
     for n, (t0, t1) in enumerate(MUSIC_CUTS):
         proc = subprocess.run(
             [
@@ -301,11 +316,12 @@ def music_frames():
             check=True,
             capture_output=True,
         )
-        size = 880 * 348 * 3
+        size = vw * vh * 3
         frames = [proc.stdout[k : k + size] for k in range(0, len(proc.stdout), size)]
         for raw in frames[: round((t1 - t0) * FPS)]:
             img, d = canvas("Game music: does the loop wrap cleanly? (sound on)")
-            wave = Image.frombytes("RGB", (880, 348), raw).resize((1100, 435), Image.LANCZOS)
+            wave = Image.frombytes("RGB", (vw, vh), raw)
+            wave = wave.resize((1100, round(vh * 1100 / vw)), Image.LANCZOS)
             paste_center(img, wave, HEAD + 10)
             y = HEAD + 460
             if n == 0:
@@ -374,20 +390,26 @@ def music_audio(out: Path) -> None:
     )
 
 
-def speech_scene():
-    img, d = canvas("Spoken line: the transcript check")
-    d.text((60, HEAD + 70 + 34), "audio/intro.script.txt says:", font=font("Medium", 20), fill=MUTED)
-    script = "… Tap and hold to charge, then release to fire. Wave seven begins in 1,250 meters."
-    d.rounded_rectangle((60, HEAD + 70 + 66, W - 60, HEAD + 70 + 126), radius=8, fill=PANEL)
-    d.text((80, HEAD + 70 + 96), script, font=font("Regular", 24), fill=FG, anchor="lm")
-    d.text(
-        (60, HEAD + 70 + 170),
-        "The TTS take read a different number and dropped a word:",
-        font=font("Medium", 20),
-        fill=MUTED,
+def speech_frame(after: bool) -> Image.Image:
+    img, d = canvas("Spoken line: the transcript check (sound on)")
+    y0 = HEAD + 40
+    color, label = (
+        (GREEN, "Playing: re-read from the script") if after else (RED, "Playing: the take as generated")
     )
+    d.ellipse((60, y0 + 4, 76, y0 + 20), fill=color)
+    d.text((88, y0 + 12), label, font=font("SemiBold", 22), fill=FG, anchor="lm")
+    d.text((60, y0 + 56), "audio/intro.script.txt says:", font=font("Medium", 20), fill=MUTED)
+    script = "… Tap and hold to charge, then release to fire. Wave seven begins in 1,250 meters."
+    d.rounded_rectangle((60, y0 + 88, W - 60, y0 + 148), radius=8, fill=PANEL)
+    d.text((80, y0 + 118), script, font=font("Regular", 24), fill=FG, anchor="lm")
+    y = y0 + 190
+    lead = "A model transcribes the take, and slop-gate compares its words with the script in code:"
+    d.text((60, y), lead, font=font("Medium", 20), fill=MUTED)
+    y += 40
+    if after:
+        badge(d, (60, y + 4), "no differences", GREEN)
+        return img
     rows = [("after “hold to charge”", "then", "(nothing)"), ("after “seven begins in”", "1250", "12050")]
-    y = HEAD + 70 + 210
     for where, want, got in rows:
         d.rounded_rectangle((60, y, W - 60, y + 52), radius=6, fill=PANEL)
         d.text((80, y + 26), where, font=font("Medium", 21), fill=FG, anchor="lm")
@@ -400,14 +422,21 @@ def speech_scene():
         x += 70
         d.text((x, y + 26), f"“{got}”", font=mono(21), fill=RED, anchor="lm")
         y += 64
-    d.text(
-        (60, y + 30),
-        "A model transcribes the audio; slop-gate compares the words in code. "
-        "Read from the real script, the diff is empty.",
-        font=font("Regular", 19),
-        fill=MUTED,
-    )
-    yield from still(img, 5.5)
+    return img
+
+
+def speech_cues() -> list[tuple[float, Path]]:
+    """Where each take starts, in seconds from the start of the speech scene."""
+    before, after = SPEECH / "speech-before.ogg", SPEECH / "speech-after.ogg"
+    return [(SPEECH_LEAD, before), (SPEECH_LEAD + duration(before) + SPEECH_GAP, after)]
+
+
+def speech_scene():
+    _, (at_after, after) = speech_cues()
+    a, b = speech_frame(False), speech_frame(True)
+    yield from still(a, at_after - 0.4)
+    yield from blend(a, b)
+    yield from still(b, duration(after) + 0.6)
 
 
 def midi_scene():
@@ -540,41 +569,29 @@ def main(out: Path, only: list[str]) -> None:
         ],
         check=True,
     )
-    # One audio track: silence, the music scene at its offset, silence.
-    offset = sum(length for name, length in timeline[: [n for n, _ in timeline].index("music")])
-    total = sum(length for _, length in timeline)
+    # One audio track: each scene's sound laid on at that scene's start.
+    starts, t = {}, 0.0
+    for name, length in timeline:
+        starts[name] = t
+        t += length
     music_audio(work / "music.wav")
+    cues = [(starts["music"], work / "music.wav")]
+    cues += [(starts["speech"] + at, path) for at, path in speech_cues()]
+    inputs, chains = [], []
+    for k, (at, path) in enumerate(cues, 1):
+        inputs += ["-i", str(path)]
+        chains.append(
+            f"[{k}]aresample=48000,aformat=channel_layouts=stereo,adelay={round(at * 1000)}:all=1[a{k}]"
+        )
+    mix = "".join(f"[a{k}]" for k in range(1, len(cues) + 1))
+    chains.append(f"{mix}amix=inputs={len(cues)}:normalize=0:duration=longest,apad,atrim=0:{t:.3f}[a]")
     tmp = out.with_name(out.stem + ".part.mp4")
-    subprocess.run(
-        [
-            "ffmpeg",
-            "-v",
-            "error",
-            "-y",
-            "-i",
-            str(work / "video.mp4"),
-            "-i",
-            str(work / "music.wav"),
-            "-filter_complex",
-            f"[1]adelay={round(offset * 1000)}:all=1,apad,atrim=0:{total:.3f}[a]",
-            "-map",
-            "0:v",
-            "-map",
-            "[a]",
-            "-c:v",
-            "copy",
-            "-c:a",
-            "aac",
-            "-b:a",
-            "160k",
-            "-movflags",
-            "+faststart",
-            str(tmp),
-        ],
-        check=True,
-    )
+    cmd = ["ffmpeg", "-v", "error", "-y", "-i", str(work / "video.mp4"), *inputs]
+    cmd += ["-filter_complex", ";".join(chains), "-map", "0:v", "-map", "[a]", "-c:v", "copy"]
+    cmd += ["-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(tmp)]
+    subprocess.run(cmd, check=True)
     tmp.rename(out)
-    json.dump({"scenes": timeline, "music_offset": offset}, sys.stdout)
+    json.dump({"scenes": timeline, "sound": [(round(at, 2), path.name) for at, path in cues]}, sys.stdout)
     print()
     shutil.rmtree(work)
 

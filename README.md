@@ -232,6 +232,10 @@ one number changed and one word dropped:
 > - after “seven begins in”: expected “1250”, heard “12050”
 <!-- vale on -->
 
+The middle two sentences of each take, where both changes are, download as
+Ogg: [before](docs/media/before-after/speech-before.ogg?raw=true),
+[after](docs/media/before-after/speech-after.ogg?raw=true).
+
 Read from the real script, the words match and the diff is empty. One review
 model added a low-confidence note that "each sentence rises and falls on nearly
 the same curve"; the other heard nothing. In a separate test, ElevenLabs,
