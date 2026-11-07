@@ -13,16 +13,49 @@ on:
   workflow_call:
     inputs:
       slop-gate-ref:
-        description: slop-gate version to run. Keep it equal to the ref in your `uses:` line.
+        description: >-
+          Override for the slop-gate commit whose scripts run. Leave it empty: with
+          `actions: read` granted, the workflow finds the commit your `uses:` line
+          resolved to.
         type: string
-        default: v1
+        default: ""
     secrets:
       OPENROUTER_API_KEY:
         required: false
 
 jobs:
+  # Finds the slop-gate commit this workflow was called at, for the checkout below.
+  # It has no permissions key on purpose: it gets the caller's grant, so it can read
+  # the run when the caller allows `actions: read`, and callers that don't still run.
+  ref:
+    name: slop-gate version
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    if: github.event_name == 'pull_request'
+    outputs:
+      ref: ${{ steps.resolve.outputs.ref }}
+    steps:
+      - name: Check out the resolver
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: mikejmckinney/slop-gate
+          # A fixed commit that has the resolver, so any slop-gate-ref works, even one
+          # from before the resolver existed. Move it when slopgate/resolve_ref.py changes.
+          ref: 155dfb1d9eac16ed68a355175127c9d3035c28d6
+          path: .slop-gate
+          sparse-checkout: slopgate/resolve_ref.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Resolve
+        id: resolve
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLOP_GATE_REF: ${{ inputs.slop-gate-ref }}
+        run: python3 -I .slop-gate/slopgate/resolve_ref.py slop-judge.yml
+
   judge:
     name: slop-judge
+    needs: ref
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     if: github.event_name == 'pull_request'
@@ -55,7 +88,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: mikejmckinney/slop-gate
-          ref: ${{ inputs.slop-gate-ref }}
+          ref: ${{ needs.ref.outputs.ref }}
           path: .slop-gate
           persist-credentials: false
 
@@ -64,14 +97,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      # The listening review converts audio with ffmpeg; skip the install when it is there.
+      # The listening review converts audio with ffmpeg; the script skips the install when it is there.
       - name: Install ffmpeg
         if: steps.key.outputs.present == 'true'
-        run: |
-          if command -v ffmpeg >/dev/null; then exit 0; fi
-          apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
-          timeout 300 sudo apt-get "${apt_opts[@]}" update -q
-          timeout 420 sudo apt-get "${apt_opts[@]}" install -y -q --no-install-recommends ffmpeg
+        run: .slop-gate/scripts/install-ffmpeg.sh
 
       - name: Review changed images and audio
         if: steps.key.outputs.present == 'true'
