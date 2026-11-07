@@ -10,13 +10,20 @@ off for local Claude Code; the gate reports any that slip through as
 
 ## Credentials
 
-Never write a credential's value into a command, file, commit, PR, issue,
-comment or log, including a scratch file outside the repository. Commands
-and their arguments are kept in session transcripts, so a value typed into
-one is exposed even if the output is redacted. Read credentials only by
-reference: an environment variable (`"$GH_PAT"`) or a file the value is
-already in. If a value does leak, stop and tell the user which credential it
-was and where it went, so they can rotate it.
+The owner accepts that API keys appear in the agent session's own transcript;
+that is what lets agents use them. Keep them out of everything other people
+can read:
+
+- Read a key from the owner's secrets doc only when a task needs it, and only
+  the keys that task needs.
+- Keep keys in one file outside every repository, readable only by you
+  (`chmod 600`), and load it per command with `set -a; . <file>; set +a`.
+  After that file is written, pass keys by reference (`"$ELEVENLABS_API_KEY"`),
+  not as literals.
+- Never print a key, and never put one in a repository file, commit, PR,
+  issue, comment, artifact or CI log.
+- If a key does reach one of those, stop and tell the user which key and
+  where, so they can rotate it.
 
 ## Copying files between repositories
 
