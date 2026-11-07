@@ -9,7 +9,8 @@ speech and MIDI scenes lay out the real inputs and report text from
 before-after/ (see before-after/README.md for how those were made).
 
 Each scene is encoded to its own file with the same settings, then joined with
-the concat demuxer; the only sound is the music scene's, laid on at its offset.
+the concat demuxer. The sound is the music scene's loop-wrap.mp4 audio and the speech
+scene's speech-before.ogg and speech-after.ogg, each laid on at its offset.
 """
 
 import json
