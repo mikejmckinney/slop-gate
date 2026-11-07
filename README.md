@@ -1,9 +1,9 @@
 # slop-gate
 
-<p align="center">
-  <img src="docs/media/hero.webp" width="880"
-       alt="A pull request on this repo: the slop-gate report comment says Blocked and lists each finding with a fix; the author's next commit rewrites the flagged lines; the same comment then says Passed and the fix commit has a green check.">
-</p>
+https://github.com/user-attachments/assets/333b384b-cb58-4007-afe3-de37497a4ead
+
+A 98-second tour of every check, recorded from real runs. Turn the sound on
+for the music loop at 1:01 and the spoken line at 1:13.
 
 A reusable GitHub Actions workflow that blocks pull requests containing the
 patterns AI tools leave behind: stock phrasing in docs and PR text, swallowed
