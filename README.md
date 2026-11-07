@@ -483,10 +483,8 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   don't start new workflow runs, so nothing loops. One gap: whether editing a closed PR's
   description triggers a gate run is untested, so such a footer may stay until
   the next backfill.
-- **Rules for agent sessions.** Copy the "Credentials" and "Copying files
-  between repositories" sections of [this repo's `CLAUDE.md`](CLAUDE.md)
-  into yours. The secret scan only sees what reaches a commit; a key an
-  agent types into a shell command is already in the session transcript.
+- **Rules for agent sessions.** Copy the "Copying files between repositories"
+  section of [this repo's `CLAUDE.md`](CLAUDE.md) into yours.
 - **Squash merges.** Set the repository's default squash message to "pull
   request title and description" so commit bodies, trailers included, don't
   reach the default branch.
