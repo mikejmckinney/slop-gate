@@ -11,12 +11,20 @@ on:
         required: false
         default: ""
 
-permissions:
-  contents: read
-  actions: read # lets slop-gate find the commit your `uses:` line resolved to
+permissions: {}
 
 jobs:
   audit:
-    uses: mikejmckinney/slop-gate/.github/workflows/slop-audit.yml@v1
-    with:
-      only: ${{ inputs.only }}
+    name: slop-audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      # The audit reads only the working tree, so a shallow checkout is enough.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: mikejmckinney/slop-gate/audit@v1
+        with:
+          only: ${{ inputs.only }}

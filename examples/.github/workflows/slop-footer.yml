@@ -18,14 +18,19 @@ on:
         type: boolean
         default: false
 
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
-  actions: read # lets slop-gate find the commit your `uses:` line resolved to
+permissions: {}
 
 jobs:
   footer:
-    uses: mikejmckinney/slop-gate/.github/workflows/slop-footer.yml@v1
-    with:
-      apply: ${{ inputs.apply || false }}
+    name: slop-footer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      # No checkout: the action edits text through the GitHub API only.
+      - uses: mikejmckinney/slop-gate/footer@v1
+        with:
+          apply: ${{ inputs.apply || false }}

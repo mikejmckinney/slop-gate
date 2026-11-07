@@ -5,7 +5,7 @@ https://github.com/user-attachments/assets/333b384b-cb58-4007-afe3-de37497a4ead
 A 98-second tour of every check, recorded from real runs. Turn the sound on
 for the music loop at 1:01 and the spoken line at 1:13.
 
-A reusable GitHub Actions workflow that blocks pull requests containing the
+A GitHub Action that blocks pull requests containing the
 patterns AI tools leave behind: stock phrasing in docs and PR text, swallowed
 errors and truncation markers in code, hidden Unicode, and broken image and
 audio assets. It checks only the lines a PR changes, posts one report comment
@@ -15,34 +15,60 @@ reads the report, fixes the findings, pushes, and the check runs again.
 ## Add it to a repo
 
 1. Copy [`examples/.github/workflows/slop-gate.yml`](examples/.github/workflows/slop-gate.yml)
-   into the repo's `.github/workflows/`.
+   into the repo's `.github/workflows/`. The job it adds:
+
+   ```yaml
+   jobs:
+     slop-gate:
+       # Keeps the check name `slop-gate / slop-gate`, which branch rulesets require.
+       name: slop-gate / slop-gate
+       runs-on: ubuntu-24.04
+       timeout-minutes: 20
+       permissions:
+         contents: read
+         pull-requests: write # the report comment
+       steps:
+         - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+           with:
+             ref: ${{ github.event.pull_request.head.sha }}
+             fetch-depth: 0
+             persist-credentials: false
+         - uses: mikejmckinney/slop-gate@v1
+   ```
+
 2. Optional: copy [`examples/.slop-gate.yml`](examples/.slop-gate.yml) to the repo
    root and trim it. Without it, the defaults apply and media gets only the
    universal checks.
 3. In the branch ruleset for `main`, require the `slop-gate / slop-gate` status
    check.
 
-Consumer repos call the workflow at `@v1`, a release branch that moves
-forward only to a commit whose CI passed on `main`. A rule change here reaches
-consumers when `v1` moves; pin a commit SHA instead to control that yourself.
+`@v1` follows releases: it is a branch that moves forward only to a commit
+whose CI passed on `main`, so a rule change here reaches you when `v1` moves.
+A commit SHA in place of `v1` freezes the version until you change it.
 
-### Which slop-gate commit runs
+Each check is a composite action, and the scripts it runs come from the same
+download as its `action.yml`, at the ref in your `uses:` line:
 
-The workflow YAML comes from your `uses:` line, but its scripts come from a
-second checkout of this repo. Each workflow finds the commit your `uses:` line
-resolved to and checks out the scripts at that commit, so a SHA pin pins both,
-and a `v1` that moves mid-run can't split them. To find it, the workflow reads
-your run's `referenced_workflows` from the GitHub API, which needs
-`actions: read` in the calling job's permissions, as in the examples.
+| Action | `uses:` | Job permissions | Checkout |
+|---|---|---|---|
+| PR gate | `mikejmckinney/slop-gate@v1` | `contents: read`, `pull-requests: write` | PR head, `fetch-depth: 0` |
+| Image and audio review | `mikejmckinney/slop-gate/judge@v1` | `contents: read`, `pull-requests: write` | PR head, `fetch-depth: 0` |
+| Whole-repo audit | `mikejmckinney/slop-gate/audit@v1` | `contents: read` | any depth |
+| Footer removal | `mikejmckinney/slop-gate/footer@v1` | `contents: read`, `issues: write`, `pull-requests: write` | none |
 
-Without `actions: read`, or when the lookup fails, the scripts run at
-`slop-gate-ref` if you set it, or `v1` if you didn't, and the run shows one
-warning telling you to add the permission. Nothing fails.
+The gate and the review stop with an error that names the fix when the
+checkout lacks the PR's base or head commit, or has another commit checked
+out. On events other than `pull_request` they skip with a warning.
 
-`slop-gate-ref` is now only an override; leave it unset. When you set it, it
-wins, and the run warns if it names a different commit from your `uses:` line.
-A value equal to the ref in your `uses:` line, such as `v1` next to `@v1`, counts
-as the same commit and runs at the SHA it resolved to.
+### Moving from the reusable workflows
+
+Earlier versions were reusable workflows
+(`uses: mikejmckinney/slop-gate/.github/workflows/slop-gate.yml@v1`). They
+still work, but they are deprecated and will be removed once consumer repos
+have moved to the actions. To move, replace the job with the one above, drop
+`actions: read` and `slop-gate-ref`, and pass the judge's key as
+`openrouter-api-key: ${{ secrets.OPENROUTER_API_KEY }}` instead of under
+`secrets:`. `slopgate/resolve_ref.py` goes with them.
 
 ## See it work
 
@@ -464,7 +490,7 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   everything it writes through GitHub (PR descriptions, issue bodies,
   comments) and puts it back on every edit. No repo setting stops it.
   - *PR descriptions:* pass `strip-attribution-footer: true` to the gate
-    workflow and it deletes footer lines (and the rule above them) before
+    action and it deletes footer lines (and the rule above them) before
     the check reads the description. Fork PRs are skipped, since their token
     can't edit the PR, and so are descriptions by authors without write
     access (earlier versions stripped those too).

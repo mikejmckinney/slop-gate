@@ -1,0 +1,58 @@
+# Removes tool attribution footers from comments and issue bodies as they're
+# posted or edited, and from everything already in the repo on demand. PR
+# descriptions on open PRs are handled by the gate's `strip-attribution-footer`
+# input.
+#
+# Only text by owners, members and collaborators is edited, slop-gate's own
+# report comments are skipped, and a footer quoted inside a code fence stays.
+# Edits made with the workflow token don't start new runs, so this can't loop.
+#
+# It works through the GitHub API alone, so the job needs no checkout:
+#
+#   - uses: mikejmckinney/slop-gate/footer@v1
+#     with:
+#       apply: ${{ inputs.apply || false }}
+name: slop-footer
+description: Remove tool attribution footers from issue bodies, comments and PR descriptions.
+author: mikejmckinney
+
+inputs:
+  apply:
+    description: >-
+      Backfill only (workflow_dispatch). false counts what would change;
+      true edits every PR description, issue body and comment that has a
+      footer.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    # Python 3.12+ is on the runner image already and the helpers use only
+    # the standard library and gh, so there is nothing to install.
+    - name: Locate slop-gate
+      shell: bash
+      env:
+        ACTION_DIR: ${{ github.action_path }}
+      run: echo "SLOPGATE_DIR=$(cd "$ACTION_DIR/.." && pwd)" >> "$GITHUB_ENV"
+
+    - name: Strip the footer from the new or edited text
+      if: github.event_name != 'workflow_dispatch'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+      run: PYTHONPATH="$SLOPGATE_DIR" python3 -m slopgate.footers strip --repo "$REPO" --event
+
+    - name: Backfill
+      if: github.event_name == 'workflow_dispatch'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+        APPLY: ${{ inputs.apply }}
+      run: |
+        args=(--repo "$REPO" --summary-md "$RUNNER_TEMP/footer-backfill.md")
+        if [ "$APPLY" = "true" ]; then args+=(--apply); fi
+        PYTHONPATH="$SLOPGATE_DIR" python3 -m slopgate.footers backfill "${args[@]}"
+        cat "$RUNNER_TEMP/footer-backfill.md" >> "$GITHUB_STEP_SUMMARY"

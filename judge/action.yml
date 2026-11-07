@@ -1,0 +1,101 @@
+# Advisory model review of the images and audio a PR changes, as a composite
+# action. It posts its own comment and never fails on findings; it fails only
+# when it cannot run. Call it from a pull_request job after checking out the PR
+# head with full history:
+#
+#   - uses: actions/checkout@<sha>
+#     with:
+#       ref: ${{ github.event.pull_request.head.sha }}
+#       fetch-depth: 0
+#       persist-credentials: false
+#   - uses: mikejmckinney/slop-gate/judge@v1
+#     with:
+#       openrouter-api-key: ${{ secrets.OPENROUTER_API_KEY }}
+name: slop-judge
+description: Advisory vision and listening review of the images and audio a PR changes.
+author: mikejmckinney
+
+inputs:
+  openrouter-api-key:
+    description: >-
+      OpenRouter API key for the review models. Pass a repository secret.
+      When it is empty, as on fork PRs, the review is skipped with a warning.
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    # The caller checks out its own repo: a checkout here would wipe this
+    # action's files whenever it runs from the same workspace (`uses: ./judge`).
+    - name: Check the event, the key and the checkout
+      id: pre
+      shell: bash
+      env:
+        ACTION_DIR: ${{ github.action_path }}
+        EVENT: ${{ github.event_name }}
+        KEY: ${{ inputs.openrouter-api-key }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        echo "SLOPGATE_DIR=$(cd "$ACTION_DIR/.." && pwd)" >> "$GITHUB_ENV"
+        if [ "$EVENT" != "pull_request" ]; then
+          echo "::warning::slop-judge skipped: it reviews pull_request events, and this run is '$EVENT'."
+          echo "run=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        if [ -z "$KEY" ]; then
+          echo "::warning::slop-judge skipped: no openrouter-api-key (fork PRs never get the secret)."
+          echo "run=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        fix="Check out the PR head with full history before this step: actions/checkout with ref set to github.event.pull_request.head.sha and fetch-depth: 0."
+        if ! git rev-parse --git-dir >/dev/null 2>&1; then
+          echo "::error::slop-judge found no git checkout in $PWD. $fix"
+          exit 1
+        fi
+        for sha in "$BASE_SHA" "$HEAD_SHA"; do
+          if ! git cat-file -e "$sha^{commit}" 2>/dev/null; then
+            echo "::error::Commit $sha is not in the checkout, so it is shallow or at the wrong ref. $fix"
+            exit 1
+          fi
+        done
+        if [ "$(git rev-parse HEAD)" != "$HEAD_SHA" ]; then
+          echo "::error::The checkout is at $(git rev-parse --short HEAD), not the PR head ${HEAD_SHA:0:7}; the review reads files from disk. $fix"
+          exit 1
+        fi
+        echo "run=true" >> "$GITHUB_OUTPUT"
+
+    - if: steps.pre.outputs.run == 'true'
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      with:
+        python-version: "3.13"
+
+    # The listening review converts audio with ffmpeg; the script skips the install when it is there.
+    - name: Install ffmpeg
+      if: steps.pre.outputs.run == 'true'
+      shell: bash
+      run: '"$SLOPGATE_DIR/scripts/install-ffmpeg.sh"'
+
+    - name: Review changed images and audio
+      if: steps.pre.outputs.run == 'true'
+      shell: bash
+      env:
+        OPENROUTER_API_KEY: ${{ inputs.openrouter-api-key }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        python -m pip install --disable-pip-version-check --progress-bar off -r "$SLOPGATE_DIR/requirements.txt"
+        PYTHONPATH="$SLOPGATE_DIR" python -m slopgate judge --repo . --base "$BASE_SHA" --head "$HEAD_SHA" \
+          --report-md "$RUNNER_TEMP/slop-judge.md" > /dev/null
+        cat "$RUNNER_TEMP/slop-judge.md" >> "$GITHUB_STEP_SUMMARY"
+
+    - name: Post review comment
+      if: steps.pre.outputs.run == 'true' && github.event.pull_request.head.repo.full_name == github.repository
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        REPO: ${{ github.repository }}
+        MARKER: "<!-- slop-judge-report -->"
+      run: '"$SLOPGATE_DIR/scripts/post-comment.sh" "$RUNNER_TEMP/slop-judge.md"'

@@ -1,0 +1,181 @@
+# The PR gate as a composite action. Call it from a pull_request job after
+# checking out the PR head with full history:
+#
+#   - uses: actions/checkout@<sha>
+#     with:
+#       ref: ${{ github.event.pull_request.head.sha }}
+#       fetch-depth: 0
+#       persist-credentials: false
+#   - uses: mikejmckinney/slop-gate@v1
+#
+# It checks only what the PR changed, posts one report comment that it updates
+# on every push, and fails the step when any finding is an error. It never
+# commits to the PR branch: the PR author stays the only writer. The scripts
+# run from this action's own directory, so they always match the ref in your
+# `uses:` line.
+name: slop-gate
+description: Block pull requests that add AI-slop patterns in prose, code, images and audio.
+author: mikejmckinney
+
+inputs:
+  comment:
+    description: Post or update the report as a PR comment (needs pull-requests write).
+    required: false
+    default: "true"
+  strip-attribution-footer:
+    description: >-
+      Delete tool attribution footers from the PR description before checking
+      it (needs pull-requests write). For agents that add a footer you can't
+      turn off. Skipped on fork PRs.
+    required: false
+    default: "false"
+  scan-secrets:
+    description: >-
+      Fail when a commit the PR adds contains a credential (gitleaks, values
+      redacted in the log). Tune with .gitleaks.toml or .gitleaksignore.
+    required: false
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    # The caller checks out its own repo: a checkout here would wipe this
+    # action's files whenever it runs from the same workspace (`uses: ./`).
+    - name: Check the event and the checkout
+      id: pre
+      shell: bash
+      env:
+        ACTION_DIR: ${{ github.action_path }}
+        EVENT: ${{ github.event_name }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        echo "SLOPGATE_DIR=$ACTION_DIR" >> "$GITHUB_ENV"
+        if [ "$EVENT" != "pull_request" ]; then
+          echo "::warning::slop-gate skipped: it checks pull_request events, and this run is '$EVENT'."
+          echo "run=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        fix="Check out the PR head with full history before this step: actions/checkout with ref set to github.event.pull_request.head.sha and fetch-depth: 0."
+        if ! git rev-parse --git-dir >/dev/null 2>&1; then
+          echo "::error::slop-gate found no git checkout in $PWD. $fix"
+          exit 1
+        fi
+        for sha in "$BASE_SHA" "$HEAD_SHA"; do
+          if ! git cat-file -e "$sha^{commit}" 2>/dev/null; then
+            echo "::error::Commit $sha is not in the checkout, so it is shallow or at the wrong ref. $fix"
+            exit 1
+          fi
+        done
+        if [ "$(git rev-parse HEAD)" != "$HEAD_SHA" ]; then
+          echo "::error::The checkout is at $(git rev-parse --short HEAD), not the PR head ${HEAD_SHA:0:7}; the checks read files from disk. $fix"
+          exit 1
+        fi
+        echo "run=true" >> "$GITHUB_OUTPUT"
+
+    - if: steps.pre.outputs.run == 'true'
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      with:
+        python-version: "3.13"
+
+    - name: Scan for credentials
+      id: secrets
+      if: steps.pre.outputs.run == 'true' && inputs.scan-secrets == 'true'
+      shell: bash
+      env:
+        GITLEAKS_VERSION: "8.30.1"
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        set +e
+        "$SLOPGATE_DIR/scripts/scan-secrets.sh" "$BASE_SHA" "$HEAD_SHA"
+        echo "code=$?" >> "$GITHUB_OUTPUT"
+
+    - name: Install tools
+      if: steps.pre.outputs.run == 'true'
+      shell: bash
+      env:
+        VALE_VERSION: "3.25.1"
+        BIOME_VERSION: "2.6.3"
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        # ffmpeg is a 150 MB download; skip it when no audio changed.
+        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+          export NEED_FFMPEG=1
+        else
+          export NEED_FFMPEG=0
+        fi
+        "$SLOPGATE_DIR/scripts/install-tools.sh"
+
+    - name: Strip attribution footer
+      if: >-
+        steps.pre.outputs.run == 'true' && inputs.strip-attribution-footer == 'true'
+        && github.event.pull_request.head.repo.full_name == github.repository
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        REPO: ${{ github.repository }}
+      run: '"$SLOPGATE_DIR/scripts/strip-footer.sh" "$RUNNER_TEMP/pr-body.md"'
+
+    - name: Run checks
+      id: check
+      if: steps.pre.outputs.run == 'true'
+      shell: bash
+      env:
+        PR_TITLE: ${{ github.event.pull_request.title }}
+        PR_BODY: ${{ github.event.pull_request.body }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      run: |
+        # The strip step leaves the current description here; otherwise use the event's.
+        [ -f "$RUNNER_TEMP/pr-body.md" ] || printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
+        set +e
+        PYTHONPATH="$SLOPGATE_DIR" python -m slopgate check \
+          --repo . --base "$BASE_SHA" --head "$HEAD_SHA" \
+          --pr-title "$PR_TITLE" --pr-body-file "$RUNNER_TEMP/pr-body.md" \
+          --report-md "$RUNNER_TEMP/slop-gate.md" --report-json "$RUNNER_TEMP/slop-gate.json" \
+          --github
+        echo "code=$?" >> "$GITHUB_OUTPUT"
+        if [ -f "$RUNNER_TEMP/slop-gate.md" ]; then
+          cat "$RUNNER_TEMP/slop-gate.md" >> "$GITHUB_STEP_SUMMARY"
+        fi
+
+    - name: Post report comment
+      if: >-
+        always() && inputs.comment == 'true' && steps.check.outputs.code != ''
+        && github.event.pull_request.head.repo.full_name == github.repository
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        REPO: ${{ github.repository }}
+        CODE: ${{ steps.check.outputs.code }}
+      run: '"$SLOPGATE_DIR/scripts/post-comment.sh" "$RUNNER_TEMP/slop-gate.md"'
+
+    - name: Upload findings
+      if: always() && steps.check.outputs.code != ''
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+      with:
+        name: slop-gate-findings
+        path: ${{ runner.temp }}/slop-gate.json
+        if-no-files-found: ignore
+
+    - name: Gate
+      if: steps.pre.outputs.run == 'true'
+      shell: bash
+      env:
+        CODE: ${{ steps.check.outputs.code }}
+        SECRETS: ${{ steps.secrets.outputs.code }}
+      run: |
+        case "$SECRETS" in
+          "" | 0) ;;
+          1) echo "::error::Credentials found in this PR's commits. The job summary lists each one; rotate them."; exit 1 ;;
+          *) echo "::error::The credential scan could not run (exit $SECRETS). See the 'Scan for credentials' step."; exit 1 ;;
+        esac
+        case "$CODE" in
+          0) echo "No blocking findings." ;;
+          1) echo "::error::slop-gate found blocking issues. The report comment and job summary list each one with a fix."; exit 1 ;;
+          *) echo "::error::slop-gate could not run (exit $CODE). See the 'Run checks' step."; exit 1 ;;
+        esac
