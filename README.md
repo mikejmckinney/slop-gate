@@ -1,6 +1,6 @@
 # slop-gate
 
-https://github.com/user-attachments/assets/30dbca3a-f3fc-464f-a058-2352f997d84b
+https://github.com/user-attachments/assets/ee9677a7-3db7-4aab-9b89-4d0eb6be7c6c
 
 A 98-second tour of the prose, code, image, audio and MIDI checks, built from
 recordings and real reports. Turn the sound on for the music loop at 1:01 and
