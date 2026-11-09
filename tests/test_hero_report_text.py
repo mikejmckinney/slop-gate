@@ -19,7 +19,7 @@ class ReportText(unittest.TestCase):
             [f[1] for f in hero.writing_findings()], ["ContrastFormula", "AIVocabulary", "CorporateVerbs"]
         )
         self.assertEqual(
-            hero.sprite_facts("gpt-image-2.5-sunburst"), "1024×1024 · 52,461 colors · soft alpha"
+            hero.sprite_facts("gpt-image-2.5-sunburst"), "1024×1024 · 60,167 colors · soft alpha"
         )
         self.assertEqual(hero.sprite_facts("seedream-5-0-pro"), "2048×2048 · JPEG named .png")
         self.assertEqual(hero.music_findings()[1][1], "−10.9 LUFS; the manifest targets −16 ±2.")
