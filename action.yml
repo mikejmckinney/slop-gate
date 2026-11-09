@@ -14,7 +14,7 @@
 # run from this action's own directory, so they always match the ref in your
 # `uses:` line.
 name: slop-gate
-description: Block pull requests that add AI-slop patterns in prose, code, images and audio.
+description: Block pull requests that add AI-slop patterns in prose, code, images, audio and video.
 author: mikejmckinney
 
 inputs:
@@ -100,8 +100,9 @@ runs:
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
       run: |
-        # ffmpeg is a 150 MB download; skip it when no audio changed.
-        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+        # ffmpeg is a 150 MB download; skip it when no audio or video changed.
+        # tests/test_actions.py keeps this list equal to AUDIO_EXTS and VIDEO_EXTS.
+        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac|mp4|webm|mov|mkv|m4v)$'; then
           export NEED_FFMPEG=1
         else
           export NEED_FFMPEG=0

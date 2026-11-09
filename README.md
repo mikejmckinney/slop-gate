@@ -8,8 +8,8 @@ the spoken line at 1:13.
 
 A GitHub Action that blocks pull requests containing the
 patterns AI tools leave behind: stock phrasing in docs and PR text, swallowed
-errors and truncation markers in code, hidden Unicode, and broken image and
-audio assets. It checks only the lines a PR changes, posts one report comment
+errors and truncation markers in code, hidden Unicode, and broken image,
+audio and video assets. It checks only the lines a PR changes, posts one report comment
 that it rewrites on every push, and never commits to the branch. The PR author
 reads the report, fixes the findings, pushes, and the check runs again.
 
@@ -302,6 +302,7 @@ by ear.
 | `ruff` (Python) | Unused imports and variables, undefined names, blind `except`, `try/except/pass`, commented-out code, mutable defaults, assign-then-return; formatting in files the PR adds (or every changed line with `ruff_format_scope: changed`) | Formatting in existing files the PR edits |
 | `biome` (JS/TS) | Unused imports and variables, empty blocks such as `catch {}`, catch-and-rethrow, unreachable code | |
 | `media` (images and audio) | Undecodable files, wrong format for the extension, oversized files, clipping, true peak above 0 dBTP, stereo that collapses in mono by more than 12 dB; and when the manifest declares it: size, frame grid, palette size, soft alpha in pixel art, off-grid pixels, tile seams, loudness target, loop gaps, loop clicks, level jumps at the loop point | True peak between −1 and 0 dBTP, long leading or trailing silence on one-shots, dropouts, cut-off endings, a click at the first sample, a WAV or FLAC that looks decoded from an MP3, hiss in pauses, mono loss over 6 dB; and when the manifest declares a minimum: flat dynamics |
+| `video` (`.mp4`, `.webm`, `.mov`, `.mkv`, `.m4v`) | Files that don't decode to the last frame, files with no video stream; and when the manifest declares it: frame rate, size, maximum length, codec. The `max_file_mb` limit from `media` applies too | Variable frame rate, video and audio streams that differ by more than 0.5 s, H.264 not in yuv420p, a check that could not run; and when the manifest asks: frozen picture, black picture, a jump at the loop point, the audio checks on the track |
 | `midi` (`.mid`, `.midi`) | Files that don't parse | Notes that never end, overlap on one channel or have no length; a part doubled note for note on a second track with the same instrument; held notes chopped into off-grid fragments; tempo maps of many tiny changes; semitone clashes held for a sixteenth or longer |
 
 The prose rules come from a house style table of AI-writing patterns. Each
@@ -352,6 +353,11 @@ fill in the commented hints, such as which tracks loop.
 For loops, prefer Ogg Vorbis or Opus. MP3 encoders pad the start and end of
 the stream, and the padding plays as a gap at the loop point.
 
+Video rules use `size` (`"1280x720"`), `max_duration_s` and `loop` as above,
+plus `fps`, `codec` (`h264`, `vp9` and so on), `max_freeze_s` and `max_black_s`.
+A key the check doesn't know, or a value that isn't a positive number, stops the
+run with an error rather than being ignored.
+
 ### Audio defects
 
 The audio checks come from an antipattern list for generated music, speech and
@@ -385,6 +391,45 @@ Detectors such as Deezer's only scan streaming playlists, their research code
 is licensed for non-commercial use, and a project that generates its music on
 purpose would be flagged on every track. A detector score says nothing about
 what to fix; these checks do.
+
+### Video
+
+Video gets the part of the video antipattern list that a measurement can
+settle. These checks read stream metadata and frame statistics, and nobody
+watches anything.
+
+| Rule | Level | Finds | Runs when |
+|---|---|---|---|
+| `video-unreadable` | error | ffprobe can't read the file, it has no video stream (cover art doesn't count), or a frame doesn't decode. Every frame is decoded, because a truncated MP4 can still have good headers | Always |
+| `file-size` | error | Over `max_file_mb` | Always |
+| `fps`, `size`, `duration`, `codec` | error | A file that breaks `fps`, `size`, `max_duration_s` or `codec`, or whose value can't be read | The manifest declares the key |
+| `variable-frame-rate` | warning | `r_frame_rate` and `avg_frame_rate` more than 1% apart | Always |
+| `stream-length-mismatch` | warning | Video and audio streams more than 0.5 s apart | Always |
+| `pixel-format` | warning | H.264 in anything other than yuv420p | Always |
+| `video-check-failed` | warning | ffprobe or ffmpeg failed or printed something unusable, so that one check is unknown | Whenever it happens |
+| `freeze` | warning | ffmpeg `freezedetect` finds a picture held longer than `max_freeze_s` | `max_freeze_s` is set |
+| `black-frames` | warning | ffmpeg `blackdetect` finds black longer than `max_black_s` | `max_black_s` is set |
+| `loop-jump` | warning | The last frame differs from the first by more than 2.5 times the clip's usual frame-to-frame change, plus 4 on a 0 to 255 scale | `loop: true` |
+| Audio rules, `no-audio-track` | warning | The audio track run through the audio checks above, as warnings | The rule sets an audio key such as `loudness_lufs` |
+
+Only an undecodable file, the size limit and a broken declaration block. Eight
+real videos were available for tuning, which is too few to trust a threshold
+with a merge. On those eight, with no manifest, the always-on checks reported
+nothing.
+
+Frozen and black picture checks are opt-in because clean footage trips them:
+on this repo's 98-second README tour, which has no defects, `freezedetect`
+flagged 47 s of held title cards and terminal pauses, and `blackdetect` flagged
+6 stretches of dark terminal. Missing colour tags aren't reported either; that
+tour has none.
+
+The rest of the list needs a person or a later model review: flicker, identity
+drift, objects appearing or vanishing, floaty timing, contact slip, stalled
+actions, camera paths, physics, cause and effect, lip-sync, sound that misses
+the picture, narration that doesn't match it, overlays, clip seams, continuity,
+screen direction, pacing and generation loss. Video isn't sent to the vision or
+listening review. A clean report means the file decodes and its numbers agree,
+and says nothing about how it looks when played.
 
 ### MIDI
 
@@ -554,3 +599,7 @@ writing trips them. They also miss what needs judgment: invented citations
 and statistics, paragraphs that repeat each other, comments that restate the
 code. Image defects such as malformed hands or garbled lettering get the
 advisory vision review described above, which is a second opinion, not a gate.
+
+Video checks read metadata and frame statistics. They can't judge flicker,
+drift, motion, physics or lip-sync, no model reviews video, and a passing file
+may still look wrong at playback speed.
