@@ -233,7 +233,9 @@ counter moved by the same amount over the run. That is:
 - $0.66 reviewing the realism clips
 - $0.36 generating them
 
-The hard cap was $20; the run stopped well under it.
+The hard cap was $20; the run stopped well under it. The published run used an
+earlier check that held nothing for calls in flight and stayed under the cap at
+$17.11 of $20; `run.py` now holds a cost bound for each attempt before sending it.
 
 ## Reproduce
 

@@ -6,9 +6,10 @@
 An approach is native:<model> (the MP4 as a video_url part) or strip<fps>:<model>
 (frames sampled at <fps>, as image parts with their timestamps, no audio).
 Replies land in results/<set>/<approach>/<clip>.run<N>.json and are not repeated
-on a re-run. Spend is the sum of usage.cost over every reply on disk, and the run
-stops before the cap instead of after it. A failed call is recorded and scored as
-failed; a timed-out call counts at the highest cost seen, since it may still bill.
+on a re-run. Spend is the sum of usage.cost over every reply on disk. Each attempt
+holds a cost bound before it is sent, so calls in flight count against the cap, and
+a call the remaining budget can't cover is refused. A failed call is recorded and
+scored as failed; an attempt that may have billed keeps its bound for good.
 """
 
 from __future__ import annotations
@@ -28,6 +29,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 API = "https://openrouter.ai/api/v1/chat/completions"
 FPS = 24  # every clip in labels.json is 24 fps
+MAX_TOKENS = 6000
+# The highest list prices among the models run here (Opus 5.5). The token ceilings are
+# above anything observed: about 1,250 a frame and 400 a second of video.
+INPUT_USD_PER_TOKEN, OUTPUT_USD_PER_TOKEN = 4e-6, 20e-6
+TOKENS_PER_IMAGE, TOKENS_PER_VIDEO_SECOND = 2000, 1000
 
 PICTURE_PATTERNS = [
     "Flicker or texture boil",
@@ -88,34 +94,53 @@ MEDIUM_STRIP = (
 )
 
 
+def request_bound(content: list[dict], seconds: float) -> float:
+    """A cost one attempt shouldn't exceed, from the request's size and the ceiling prices."""
+    tokens = 0.0
+    for part in content:
+        if part["type"] == "text":
+            tokens += len(part["text"])  # at most one token a character
+        elif part["type"] == "image_url":
+            tokens += TOKENS_PER_IMAGE
+        else:
+            tokens += TOKENS_PER_VIDEO_SECOND * seconds
+    return tokens * INPUT_USD_PER_TOKEN + MAX_TOKENS * OUTPUT_USD_PER_TOKEN
+
+
 class Budget:
-    """Keeps the cap honest across threads, including replies already on disk."""
+    """Holds a bound for every attempt in flight, so the cap covers calls not yet finished."""
 
     def __init__(self, cap: float, root: Path) -> None:
-        self.cap, self.root, self.lock = cap, root, threading.Lock()
-        self.spent = 0.0
-        self.unknown = self.seen_high = 0.0
-        self.stopped = False
+        self.cap, self.root, self.changed = cap, root, threading.Condition()
+        self.spent = self.unknown = self.outstanding = 0.0
+        self.stopped = self.overran = False
         for f in root.rglob("*.run*.json"):
             rec = json.loads(f.read_text())
             if isinstance(rec.get("cost"), (int, float)):
                 self.spent += rec["cost"]
-                self.seen_high = max(self.seen_high, rec["cost"])
+            self.unknown += rec.get("retained_usd", 0.0)
 
-    def reserve(self) -> bool:
-        with self.lock:
-            if self.spent + self.unknown >= self.cap:
-                self.stopped = True
-                return False
-            return True
+    def reserve(self, bound: float) -> bool:
+        """Hold `bound` for one attempt, waiting on attempts in flight if they might free enough."""
+        with self.changed:
+            while not self.overran and self.spent + self.unknown + bound <= self.cap:
+                if self.spent + self.unknown + self.outstanding + bound <= self.cap:
+                    self.outstanding += bound
+                    return True
+                self.changed.wait()
+            self.stopped = True
+            return False
 
-    def add(self, rec: dict) -> None:
-        with self.lock:
-            if isinstance(rec.get("cost"), (int, float)):
-                self.spent += rec["cost"]
-                self.seen_high = max(self.seen_high, rec["cost"])
-            elif rec.get("maybe_billed"):
-                self.unknown += self.seen_high
+    def settle(self, bound: float, cost: float | None) -> None:
+        """Swap a held bound for the attempt's cost. None keeps it held: the attempt may have billed."""
+        with self.changed:
+            self.outstanding -= bound
+            if cost is None:
+                self.unknown += bound
+            else:
+                self.spent += cost
+                self.overran = self.overran or cost > bound  # the bound is wrong: admit nothing more
+            self.changed.notify_all()
 
 
 def post(body: dict, timeout: int = 240) -> dict:
@@ -173,20 +198,26 @@ def strip_content(item: dict, clips: Path, cache: Path, fps: int) -> tuple[list[
     return content, len(frames)
 
 
-def call(model: str, content: list[dict]) -> dict:
+def call(model: str, content: list[dict], budget: Budget, bound: float) -> dict:
     body = {
         "model": model,
         "temperature": 0,
-        "max_tokens": 6000,
+        "max_tokens": MAX_TOKENS,
         "messages": [{"role": "user", "content": content}],
         "usage": {"include": True},
     }
-    rec: dict = {"text": None, "cost": None, "error": None, "maybe_billed": False}
+    rec: dict = {"text": None, "cost": None, "error": None, "maybe_billed": False, "retained_usd": 0.0}
     t0 = time.time()
     for attempt in range(3):
+        if not budget.reserve(bound):
+            rec["refused"] = attempt == 0
+            rec["error"] = f"{rec['error'] or 'no call made'} (budget can't cover another attempt)"
+            break
         try:
             data = post(body)
+            billed = (data.get("usage") or {}).get("cost")
         except urllib.error.HTTPError as exc:
+            budget.settle(bound, 0.0)
             detail = exc.read()[:400].decode("utf-8", "replace")
             rec["error"] = f"HTTP {exc.code}: {detail}"
             if exc.code not in (408, 429, 500, 502, 503, 504) or attempt == 2:
@@ -194,12 +225,22 @@ def call(model: str, content: list[dict]) -> dict:
             time.sleep(6 * (attempt + 1))
             continue
         except (OSError, json.JSONDecodeError) as exc:
+            budget.settle(bound, None)
+            rec["retained_usd"] += bound
             rec["error"] = f"{type(exc).__name__}: {exc}"
             rec["maybe_billed"] = True
             if attempt == 2:
                 break
             time.sleep(6 * (attempt + 1))
             continue
+        except BaseException:
+            budget.settle(bound, None)
+            raise
+        if isinstance(billed, (int, float)):
+            budget.settle(bound, billed)
+        else:
+            budget.settle(bound, None)
+            rec["retained_usd"] += bound
         rec["seconds"] = round(time.time() - t0, 1)
         rec["attempts"] = attempt + 1
         if "error" in data and not data.get("choices"):
@@ -236,18 +277,17 @@ def job(approach: str, item: dict, run: int, args, budget: Budget) -> str:
     dest = args.out / approach.replace(":", "__").replace("/", "__") / f"{item['clip']}.run{run}.json"
     if dest.exists():
         return "cached"
-    if not budget.reserve():
-        return "skipped (cap)"
     extra: dict = {}
     if kind == "native":
         content = native_content(item, args.clips)
     else:
         content, extra["frames"] = strip_content(item, args.clips, args.cache, int(kind[5:]))
-    rec = call(model, content)
+    rec = call(model, content, budget, request_bound(content, item["seconds"]))
+    if rec.get("refused"):
+        return "skipped (cap)"
     rec.update(approach=approach, model=model, clip=item["clip"], run=run, **extra)
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(rec, indent=1))
-    budget.add(rec)
     return "error" if rec["error"] else "ok"
 
 

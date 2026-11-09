@@ -93,8 +93,6 @@ def review(out: Path, approaches: list[str], cap: float) -> None:
                 dest = gen_dir / approach.replace(":", "__").replace("/", "__") / f"{name}.run{run}.json"
                 if dest.exists():
                     continue
-                if not budget.reserve():
-                    raise SystemExit("stopped at the cap")
                 extra: dict = {}
                 if kind == "native":
                     content = runner.native_content(item, out)
@@ -102,11 +100,12 @@ def review(out: Path, approaches: list[str], cap: float) -> None:
                     content, extra["frames"] = runner.strip_content(
                         item, out, Path("/tmp/sgvb/frames"), int(kind[5:])
                     )
-                rec = runner.call(model, content)
+                rec = runner.call(model, content, budget, runner.request_bound(content, item["seconds"]))
+                if rec.get("refused"):
+                    raise SystemExit("stopped at the cap")
                 rec.update(approach=approach, model=model, clip=name, run=run, **extra)
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.write_text(json.dumps(rec, indent=1))
-                budget.add(rec)
                 print(name, approach, run, "ok" if not rec["error"] else rec["error"][:120])
     print("spent on disk", round(budget.spent, 4))
 
