@@ -1,0 +1,36 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 5.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.14, 0.62, 0.24, 0.38], \"evidence\": \"Throughout the clip the man's left deltoid is a balloon-like mass far out of proportion to the head and neck, and its surface vein pattern looks like a uniform cracked web rather than natural vasculature.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}\n```",
+ "cost": 0.036776,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 490,
+  "total_tokens": 7234
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 321,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g008",
+ "run": 1,
+ "frames": 20
+}

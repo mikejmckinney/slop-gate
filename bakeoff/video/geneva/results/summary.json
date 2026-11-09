@@ -1,0 +1,1007 @@
+[
+ {
+  "approach": "native:google/gemini-4-argon",
+  "replies": {
+   "ok": 90,
+   "failed": 0,
+   "missing": 0
+  },
+  "discrimination": {
+   "value": 0.233,
+   "low": 0.033,
+   "high": 0.433
+  },
+  "flagged_annotated": {
+   "k": 52,
+   "n": 60,
+   "rate": 0.867,
+   "low": 0.758,
+   "high": 0.931
+  },
+  "flagged_unannotated": {
+   "k": 19,
+   "n": 30,
+   "rate": 0.633,
+   "low": 0.455,
+   "high": 0.781
+  },
+  "category": {
+   "k": 33,
+   "n": 60,
+   "rate": 0.55,
+   "low": 0.425,
+   "high": 0.669
+  },
+  "time": {
+   "k": 49,
+   "n": 60,
+   "rate": 0.817,
+   "low": 0.701,
+   "high": 0.894
+  },
+  "box": {
+   "k": 40,
+   "n": 60,
+   "rate": 0.667,
+   "low": 0.541,
+   "high": 0.773
+  },
+  "full": {
+   "k": 24,
+   "n": 60,
+   "rate": 0.4,
+   "low": 0.286,
+   "high": 0.526
+  },
+  "shuffled": {
+   "category": 0.513,
+   "time": 0.76,
+   "box": 0.341,
+   "full": 0.169
+  },
+  "findings": 123,
+  "malformed_findings": 0,
+  "by_generator": {
+   "sora": {
+    "flagged_annotated": {
+     "k": 17,
+     "n": 20,
+     "rate": 0.85,
+     "low": 0.64,
+     "high": 0.948
+    },
+    "flagged_unannotated": {
+     "k": 7,
+     "n": 10,
+     "rate": 0.7,
+     "low": 0.397,
+     "high": 0.892
+    },
+    "category": {
+     "k": 10,
+     "n": 20,
+     "rate": 0.5,
+     "low": 0.299,
+     "high": 0.701
+    },
+    "time": {
+     "k": 16,
+     "n": 20,
+     "rate": 0.8,
+     "low": 0.584,
+     "high": 0.919
+    },
+    "box": {
+     "k": 14,
+     "n": 20,
+     "rate": 0.7,
+     "low": 0.481,
+     "high": 0.855
+    },
+    "full": {
+     "k": 7,
+     "n": 20,
+     "rate": 0.35,
+     "low": 0.181,
+     "high": 0.567
+    }
+   },
+   "pika1": {
+    "flagged_annotated": {
+     "k": 17,
+     "n": 20,
+     "rate": 0.85,
+     "low": 0.64,
+     "high": 0.948
+    },
+    "flagged_unannotated": {
+     "k": 7,
+     "n": 10,
+     "rate": 0.7,
+     "low": 0.397,
+     "high": 0.892
+    },
+    "category": {
+     "k": 10,
+     "n": 20,
+     "rate": 0.5,
+     "low": 0.299,
+     "high": 0.701
+    },
+    "time": {
+     "k": 17,
+     "n": 20,
+     "rate": 0.85,
+     "low": 0.64,
+     "high": 0.948
+    },
+    "box": {
+     "k": 15,
+     "n": 20,
+     "rate": 0.75,
+     "low": 0.531,
+     "high": 0.888
+    },
+    "full": {
+     "k": 10,
+     "n": 20,
+     "rate": 0.5,
+     "low": 0.299,
+     "high": 0.701
+    }
+   },
+   "vc2": {
+    "flagged_annotated": {
+     "k": 18,
+     "n": 20,
+     "rate": 0.9,
+     "low": 0.699,
+     "high": 0.972
+    },
+    "flagged_unannotated": {
+     "k": 5,
+     "n": 10,
+     "rate": 0.5,
+     "low": 0.237,
+     "high": 0.763
+    },
+    "category": {
+     "k": 13,
+     "n": 20,
+     "rate": 0.65,
+     "low": 0.433,
+     "high": 0.819
+    },
+    "time": {
+     "k": 16,
+     "n": 20,
+     "rate": 0.8,
+     "low": 0.584,
+     "high": 0.919
+    },
+    "box": {
+     "k": 11,
+     "n": 20,
+     "rate": 0.55,
+     "low": 0.342,
+     "high": 0.742
+    },
+    "full": {
+     "k": 7,
+     "n": 20,
+     "rate": 0.35,
+     "low": 0.181,
+     "high": 0.567
+    }
+   }
+  },
+  "usd": 0.2425,
+  "usd_per_clip": 0.0027,
+  "usd_per_minute": 0.0505,
+  "median_seconds": 10.55
+ },
+ {
+  "approach": "native:meta/muse-spark-open",
+  "replies": {
+   "ok": 90,
+   "failed": 0,
+   "missing": 0
+  },
+  "discrimination": {
+   "value": 0.0,
+   "low": -0.217,
+   "high": 0.217
+  },
+  "flagged_annotated": {
+   "k": 26,
+   "n": 60,
+   "rate": 0.433,
+   "low": 0.316,
+   "high": 0.559
+  },
+  "flagged_unannotated": {
+   "k": 13,
+   "n": 30,
+   "rate": 0.433,
+   "low": 0.274,
+   "high": 0.608
+  },
+  "category": {
+   "k": 17,
+   "n": 60,
+   "rate": 0.283,
+   "low": 0.185,
+   "high": 0.408
+  },
+  "time": {
+   "k": 20,
+   "n": 60,
+   "rate": 0.333,
+   "low": 0.227,
+   "high": 0.459
+  },
+  "box": {
+   "k": 15,
+   "n": 60,
+   "rate": 0.25,
+   "low": 0.158,
+   "high": 0.372
+  },
+  "full": {
+   "k": 9,
+   "n": 60,
+   "rate": 0.15,
+   "low": 0.081,
+   "high": 0.261
+  },
+  "shuffled": {
+   "category": 0.261,
+   "time": 0.324,
+   "box": 0.166,
+   "full": 0.098
+  },
+  "findings": 57,
+  "malformed_findings": 0,
+  "by_generator": {
+   "sora": {
+    "flagged_annotated": {
+     "k": 4,
+     "n": 20,
+     "rate": 0.2,
+     "low": 0.081,
+     "high": 0.416
+    },
+    "flagged_unannotated": {
+     "k": 4,
+     "n": 10,
+     "rate": 0.4,
+     "low": 0.168,
+     "high": 0.687
+    },
+    "category": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "time": {
+     "k": 3,
+     "n": 20,
+     "rate": 0.15,
+     "low": 0.052,
+     "high": 0.36
+    },
+    "box": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "full": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    }
+   },
+   "pika1": {
+    "flagged_annotated": {
+     "k": 11,
+     "n": 20,
+     "rate": 0.55,
+     "low": 0.342,
+     "high": 0.742
+    },
+    "flagged_unannotated": {
+     "k": 4,
+     "n": 10,
+     "rate": 0.4,
+     "low": 0.168,
+     "high": 0.687
+    },
+    "category": {
+     "k": 8,
+     "n": 20,
+     "rate": 0.4,
+     "low": 0.219,
+     "high": 0.613
+    },
+    "time": {
+     "k": 7,
+     "n": 20,
+     "rate": 0.35,
+     "low": 0.181,
+     "high": 0.567
+    },
+    "box": {
+     "k": 5,
+     "n": 20,
+     "rate": 0.25,
+     "low": 0.112,
+     "high": 0.469
+    },
+    "full": {
+     "k": 5,
+     "n": 20,
+     "rate": 0.25,
+     "low": 0.112,
+     "high": 0.469
+    }
+   },
+   "vc2": {
+    "flagged_annotated": {
+     "k": 11,
+     "n": 20,
+     "rate": 0.55,
+     "low": 0.342,
+     "high": 0.742
+    },
+    "flagged_unannotated": {
+     "k": 5,
+     "n": 10,
+     "rate": 0.5,
+     "low": 0.237,
+     "high": 0.763
+    },
+    "category": {
+     "k": 8,
+     "n": 20,
+     "rate": 0.4,
+     "low": 0.219,
+     "high": 0.613
+    },
+    "time": {
+     "k": 10,
+     "n": 20,
+     "rate": 0.5,
+     "low": 0.299,
+     "high": 0.701
+    },
+    "box": {
+     "k": 8,
+     "n": 20,
+     "rate": 0.4,
+     "low": 0.219,
+     "high": 0.613
+    },
+    "full": {
+     "k": 4,
+     "n": 20,
+     "rate": 0.2,
+     "low": 0.081,
+     "high": 0.416
+    }
+   }
+  },
+  "usd": 0.5399,
+  "usd_per_clip": 0.006,
+  "usd_per_minute": 0.1125,
+  "median_seconds": 11.149999999999999
+ },
+ {
+  "approach": "strip4:openai/gpt-6.1-terra",
+  "replies": {
+   "ok": 90,
+   "failed": 0,
+   "missing": 0
+  },
+  "discrimination": {
+   "value": -0.05,
+   "low": -0.217,
+   "high": 0.1
+  },
+  "flagged_annotated": {
+   "k": 7,
+   "n": 60,
+   "rate": 0.117,
+   "low": 0.058,
+   "high": 0.222
+  },
+  "flagged_unannotated": {
+   "k": 5,
+   "n": 30,
+   "rate": 0.167,
+   "low": 0.073,
+   "high": 0.336
+  },
+  "category": {
+   "k": 4,
+   "n": 60,
+   "rate": 0.067,
+   "low": 0.026,
+   "high": 0.159
+  },
+  "time": {
+   "k": 7,
+   "n": 60,
+   "rate": 0.117,
+   "low": 0.058,
+   "high": 0.222
+  },
+  "box": {
+   "k": 3,
+   "n": 60,
+   "rate": 0.05,
+   "low": 0.017,
+   "high": 0.137
+  },
+  "full": {
+   "k": 1,
+   "n": 60,
+   "rate": 0.017,
+   "low": 0.003,
+   "high": 0.089
+  },
+  "shuffled": {
+   "category": 0.065,
+   "time": 0.116,
+   "box": 0.019,
+   "full": 0.009
+  },
+  "findings": 13,
+  "malformed_findings": 0,
+  "by_generator": {
+   "sora": {
+    "flagged_annotated": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "flagged_unannotated": {
+     "k": 1,
+     "n": 10,
+     "rate": 0.1,
+     "low": 0.018,
+     "high": 0.404
+    },
+    "category": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "time": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "box": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    },
+    "full": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    }
+   },
+   "pika1": {
+    "flagged_annotated": {
+     "k": 4,
+     "n": 20,
+     "rate": 0.2,
+     "low": 0.081,
+     "high": 0.416
+    },
+    "flagged_unannotated": {
+     "k": 3,
+     "n": 10,
+     "rate": 0.3,
+     "low": 0.108,
+     "high": 0.603
+    },
+    "category": {
+     "k": 3,
+     "n": 20,
+     "rate": 0.15,
+     "low": 0.052,
+     "high": 0.36
+    },
+    "time": {
+     "k": 4,
+     "n": 20,
+     "rate": 0.2,
+     "low": 0.081,
+     "high": 0.416
+    },
+    "box": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "full": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    }
+   },
+   "vc2": {
+    "flagged_annotated": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "flagged_unannotated": {
+     "k": 1,
+     "n": 10,
+     "rate": 0.1,
+     "low": 0.018,
+     "high": 0.404
+    },
+    "category": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    },
+    "time": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "box": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "full": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    }
+   }
+  },
+  "usd": 0.5189,
+  "usd_per_clip": 0.0058,
+  "usd_per_minute": 0.1081,
+  "median_seconds": 7.55
+ },
+ {
+  "approach": "strip4:openai/gpt-6.1-sol",
+  "replies": {
+   "ok": 90,
+   "failed": 0,
+   "missing": 0
+  },
+  "discrimination": {
+   "value": 0.117,
+   "low": 0.0,
+   "high": 0.217
+  },
+  "flagged_annotated": {
+   "k": 9,
+   "n": 60,
+   "rate": 0.15,
+   "low": 0.081,
+   "high": 0.261
+  },
+  "flagged_unannotated": {
+   "k": 1,
+   "n": 30,
+   "rate": 0.033,
+   "low": 0.006,
+   "high": 0.167
+  },
+  "category": {
+   "k": 4,
+   "n": 60,
+   "rate": 0.067,
+   "low": 0.026,
+   "high": 0.159
+  },
+  "time": {
+   "k": 9,
+   "n": 60,
+   "rate": 0.15,
+   "low": 0.081,
+   "high": 0.261
+  },
+  "box": {
+   "k": 5,
+   "n": 60,
+   "rate": 0.083,
+   "low": 0.036,
+   "high": 0.181
+  },
+  "full": {
+   "k": 3,
+   "n": 60,
+   "rate": 0.05,
+   "low": 0.017,
+   "high": 0.137
+  },
+  "shuffled": {
+   "category": 0.079,
+   "time": 0.136,
+   "box": 0.037,
+   "full": 0.019
+  },
+  "findings": 11,
+  "malformed_findings": 0,
+  "by_generator": {
+   "sora": {
+    "flagged_annotated": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "flagged_unannotated": {
+     "k": 0,
+     "n": 10,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.278
+    },
+    "category": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "time": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "box": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "full": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    }
+   },
+   "pika1": {
+    "flagged_annotated": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "flagged_unannotated": {
+     "k": 1,
+     "n": 10,
+     "rate": 0.1,
+     "low": 0.018,
+     "high": 0.404
+    },
+    "category": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "time": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "box": {
+     "k": 1,
+     "n": 20,
+     "rate": 0.05,
+     "low": 0.009,
+     "high": 0.236
+    },
+    "full": {
+     "k": 0,
+     "n": 20,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.161
+    }
+   },
+   "vc2": {
+    "flagged_annotated": {
+     "k": 6,
+     "n": 20,
+     "rate": 0.3,
+     "low": 0.145,
+     "high": 0.519
+    },
+    "flagged_unannotated": {
+     "k": 0,
+     "n": 10,
+     "rate": 0.0,
+     "low": 0.0,
+     "high": 0.278
+    },
+    "category": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    },
+    "time": {
+     "k": 6,
+     "n": 20,
+     "rate": 0.3,
+     "low": 0.145,
+     "high": 0.519
+    },
+    "box": {
+     "k": 3,
+     "n": 20,
+     "rate": 0.15,
+     "low": 0.052,
+     "high": 0.36
+    },
+    "full": {
+     "k": 2,
+     "n": 20,
+     "rate": 0.1,
+     "low": 0.028,
+     "high": 0.301
+    }
+   }
+  },
+  "usd": 0.9842,
+  "usd_per_clip": 0.0109,
+  "usd_per_minute": 0.205,
+  "median_seconds": 6.85
+ },
+ {
+  "approach": "strip4:anthropic/claude-opus-5.5",
+  "replies": {
+   "ok": 90,
+   "failed": 0,
+   "missing": 0
+  },
+  "discrimination": {
+   "value": 0.1,
+   "low": -0.033,
+   "high": 0.25
+  },
+  "flagged_annotated": {
+   "k": 56,
+   "n": 60,
+   "rate": 0.933,
+   "low": 0.841,
+   "high": 0.974
+  },
+  "flagged_unannotated": {
+   "k": 25,
+   "n": 30,
+   "rate": 0.833,
+   "low": 0.664,
+   "high": 0.927
+  },
+  "category": {
+   "k": 38,
+   "n": 60,
+   "rate": 0.633,
+   "low": 0.507,
+   "high": 0.744
+  },
+  "time": {
+   "k": 56,
+   "n": 60,
+   "rate": 0.933,
+   "low": 0.841,
+   "high": 0.974
+  },
+  "box": {
+   "k": 44,
+   "n": 60,
+   "rate": 0.733,
+   "low": 0.61,
+   "high": 0.829
+  },
+  "full": {
+   "k": 23,
+   "n": 60,
+   "rate": 0.383,
+   "low": 0.271,
+   "high": 0.51
+  },
+  "shuffled": {
+   "category": 0.611,
+   "time": 0.858,
+   "box": 0.476,
+   "full": 0.232
+  },
+  "findings": 205,
+  "malformed_findings": 0,
+  "by_generator": {
+   "sora": {
+    "flagged_annotated": {
+     "k": 16,
+     "n": 20,
+     "rate": 0.8,
+     "low": 0.584,
+     "high": 0.919
+    },
+    "flagged_unannotated": {
+     "k": 7,
+     "n": 10,
+     "rate": 0.7,
+     "low": 0.397,
+     "high": 0.892
+    },
+    "category": {
+     "k": 9,
+     "n": 20,
+     "rate": 0.45,
+     "low": 0.258,
+     "high": 0.658
+    },
+    "time": {
+     "k": 16,
+     "n": 20,
+     "rate": 0.8,
+     "low": 0.584,
+     "high": 0.919
+    },
+    "box": {
+     "k": 12,
+     "n": 20,
+     "rate": 0.6,
+     "low": 0.387,
+     "high": 0.781
+    },
+    "full": {
+     "k": 5,
+     "n": 20,
+     "rate": 0.25,
+     "low": 0.112,
+     "high": 0.469
+    }
+   },
+   "pika1": {
+    "flagged_annotated": {
+     "k": 20,
+     "n": 20,
+     "rate": 1.0,
+     "low": 0.839,
+     "high": 1.0
+    },
+    "flagged_unannotated": {
+     "k": 10,
+     "n": 10,
+     "rate": 1.0,
+     "low": 0.722,
+     "high": 1.0
+    },
+    "category": {
+     "k": 14,
+     "n": 20,
+     "rate": 0.7,
+     "low": 0.481,
+     "high": 0.855
+    },
+    "time": {
+     "k": 20,
+     "n": 20,
+     "rate": 1.0,
+     "low": 0.839,
+     "high": 1.0
+    },
+    "box": {
+     "k": 15,
+     "n": 20,
+     "rate": 0.75,
+     "low": 0.531,
+     "high": 0.888
+    },
+    "full": {
+     "k": 9,
+     "n": 20,
+     "rate": 0.45,
+     "low": 0.258,
+     "high": 0.658
+    }
+   },
+   "vc2": {
+    "flagged_annotated": {
+     "k": 20,
+     "n": 20,
+     "rate": 1.0,
+     "low": 0.839,
+     "high": 1.0
+    },
+    "flagged_unannotated": {
+     "k": 8,
+     "n": 10,
+     "rate": 0.8,
+     "low": 0.49,
+     "high": 0.943
+    },
+    "category": {
+     "k": 15,
+     "n": 20,
+     "rate": 0.75,
+     "low": 0.531,
+     "high": 0.888
+    },
+    "time": {
+     "k": 20,
+     "n": 20,
+     "rate": 1.0,
+     "low": 0.839,
+     "high": 1.0
+    },
+    "box": {
+     "k": 17,
+     "n": 20,
+     "rate": 0.85,
+     "low": 0.64,
+     "high": 0.948
+    },
+    "full": {
+     "k": 9,
+     "n": 20,
+     "rate": 0.45,
+     "low": 0.258,
+     "high": 0.658
+    }
+   }
+  },
+  "usd": 2.7748,
+  "usd_per_clip": 0.0308,
+  "usd_per_minute": 0.5781,
+  "median_seconds": 10.4
+ }
+]

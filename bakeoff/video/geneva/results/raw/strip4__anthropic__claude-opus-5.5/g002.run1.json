@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.03, 0.64, 0.24, 0.17], \"evidence\": \"The foreground dolphin's rostrum and mouth look malformed, with a layered beak that later becomes a puffy pink lip-like protrusion whose shape keeps changing between frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.75, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.47, 0.05, 0.14, 0.13], \"evidence\": \"The top dolphin's underside shows a jumbled cluster of several downward fins that do not match a normal fin layout.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.66, 0.34, 0.16, 0.16], \"evidence\": \"Beneath the large right dolphin, an extra fin-like shape appears behind the pectoral fin and is poorly attached to the body.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0368,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 932,
+  "total_tokens": 5472
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 518,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g002",
+ "run": 1,
+ "frames": 12
+}

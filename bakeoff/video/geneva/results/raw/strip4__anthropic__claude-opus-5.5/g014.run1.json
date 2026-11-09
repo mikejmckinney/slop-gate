@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.5, \"end_s\": 2.25, \"category\": \"Other\", \"box\": [0.08, 0.12, 0.22, 0.65], \"evidence\": \"The left child's appearance keeps changing: blonde hair becomes a grey blob and then a hood, the red jacket turns lavender-grey by 2.0 s, and the red boots become blue boots.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.15, 0.38, 0.13, 0.4], \"evidence\": \"The left child's legs break down: there is a single thin white leg at 2.25 s, and the legs are largely missing or translucent below the shorts at 2.5\u20132.75 s.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.0, \"end_s\": 2.75, \"category\": \"Other\", \"box\": [0.27, 0.05, 0.22, 0.75], \"evidence\": \"The right child's short-haired head changes to longer hair with a ponytail, and the face changes, so the child's identity drifts mid-clip.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 1.25, \"category\": \"Other\", \"box\": [0.38, 0.5, 0.18, 0.3], \"evidence\": \"The right child's orange-yellow shoes change into bare red feet that blend into the trousers.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03936,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 1060,
+  "total_tokens": 5600
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 531,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g014",
+ "run": 1,
+ "frames": 12
+}

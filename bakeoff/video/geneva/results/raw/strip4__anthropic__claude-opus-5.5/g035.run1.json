@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 0.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.36, 0.0, 0.27, 0.6], \"evidence\": \"The central woman's hair changes from large, voluminous dark curls to straight, shoulder-length brown hair, and her facial features shift noticeably over consecutive frames, an identity morph rather than natural movement.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 0.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.12, 0.72, 0.16, 0.28], \"evidence\": \"The outstretched hand of the second woman at the lower left is smeared and malformed, with indistinct fingers that blend into the neighbouring woman's arm across both frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.020752,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 642,
+  "total_tokens": 2620
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 335,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g035",
+ "run": 1,
+ "frames": 6
+}

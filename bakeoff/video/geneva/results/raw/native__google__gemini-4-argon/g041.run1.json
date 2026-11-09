@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.9, \"category\": \"Physics\", \"box\": [0.58, 0.25, 0.17, 0.38], \"evidence\": \"The purple tattoo lines morph, expand, and shift organically across the skin independent of where the marker tip touches.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.002154,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 582,
+  "completion_tokens": 99,
+  "total_tokens": 681
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 195
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g041",
+ "run": 1
+}

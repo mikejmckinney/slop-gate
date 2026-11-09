@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.38, 0.4, 0.62, 0.45], \"evidence\": \"The perforated pattern of holes and panels on the large ship's hull keeps rearranging and changing size from frame to frame instead of staying fixed to the surface.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.22, 0.15, 0.4, 0.3], \"evidence\": \"The ship's upper fin starts as a thin swept spike and grows into a broad, thick wing over the clip, so its structure is not consistent.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.94, 0.78, 0.06, 0.12], \"evidence\": \"A thin landing strut under the ship's right end is visible in the early frames, then fades and disappears.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03228,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 706,
+  "total_tokens": 5246
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 307,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g075",
+ "run": 1,
+ "frames": 12
+}

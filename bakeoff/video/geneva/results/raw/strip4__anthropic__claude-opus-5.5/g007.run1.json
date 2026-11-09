@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Physics\", \"box\": [0.03, 0.03, 0.45, 0.3], \"evidence\": \"The left breaking wave keeps its curled barrel in nearly the same spot for the whole clip and grows taller instead of advancing or collapsing, which is not how a breaking wave behaves.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Physics\", \"box\": [0.45, 0.15, 0.28, 0.25], \"evidence\": \"The middle wave lip stays suspended and curled at a fixed position across all frames, and the spray keeps building without the wave ever breaking forward.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.51, 0.24, 0.08, 0.1], \"evidence\": \"A dark, blob-like hole appears inside the middle wave's curl and persists across consecutive frames without matching the surrounding water texture.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03214,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 699,
+  "total_tokens": 5239
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 292,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g007",
+ "run": 1,
+ "frames": 12
+}

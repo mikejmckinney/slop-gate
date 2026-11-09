@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.3, \"category\": \"Shape/Form/Geometry\", \"box\": [0.03, 0.69, 0.14, 0.12], \"evidence\": \"Foreground dolphin's lower jaw/rostrum appears split/duplicated with an extra horizontal edge persisting across frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.3, \"category\": \"Shape/Form/Geometry\", \"box\": [0.38, 0.24, 0.11, 0.16], \"evidence\": \"Middle dolphin's pectoral fin shows dark duplicated/misshapen geometry with an extra lobe.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0068682,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1228,
+  "completion_tokens": 1288,
+  "total_tokens": 2516
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1123,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g002",
+ "run": 1
+}

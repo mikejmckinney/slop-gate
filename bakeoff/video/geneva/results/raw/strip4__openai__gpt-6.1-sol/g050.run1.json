@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.25,\"end_s\":0.75,\"category\":\"Visual Artifacts\",\"box\":[0.465,0.328,0.135,0.331],\"evidence\":\"A broad dark fur stripe appears and expands across the cat's previously white shoulder, changing its coat pattern across consecutive frames.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.0077385,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-sol",
+ "usage": {
+  "prompt_tokens": 1580,
+  "completion_tokens": 379,
+  "total_tokens": 1959
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1577,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 293,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-sol",
+ "model": "openai/gpt-6.1-sol",
+ "clip": "g050",
+ "run": 1,
+ "frames": 6
+}

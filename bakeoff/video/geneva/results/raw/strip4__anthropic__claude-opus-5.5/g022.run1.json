@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.25, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.4, 0.38, 0.16, 0.3], \"evidence\": \"The ball the panda holds keeps changing size and color between consecutive frames: a large white dimpled ball at 0.25 s, a smaller green-tinted ball at 0.5 s, white again at 0.75 s, two balls (white and green) at 1.0 s, then a single green ball at 1.25 s.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 0.25, \"category\": \"Visual Artifacts\", \"box\": [0.48, 0.57, 0.08, 0.18], \"evidence\": \"A thin white club-like shaft runs beside the panda's paw at 0.0 s and is gone at 0.25 s, with no motion that could explain its removal.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.15, 0.12, 0.06, 0.58], \"evidence\": \"The flagstick is a hybrid object: a thin pole with a red ball on top and a club-head-like foot standing on the green, with no flag.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.027172,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 963,
+  "total_tokens": 2941
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 498,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g022",
+ "run": 1,
+ "frames": 6
+}

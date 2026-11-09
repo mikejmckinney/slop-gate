@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.1, \"category\": \"Visual Artifacts\", \"box\": [0.11, 0.04, 0.6, 0.84], \"evidence\": \"Translucent duplicate of the cat's head, ears and torso overlaps the main body during the turn creating a double-image ghost that persists across frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0076981,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1784,
+  "completion_tokens": 1386,
+  "total_tokens": 3170
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1377,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g079",
+ "run": 1
+}

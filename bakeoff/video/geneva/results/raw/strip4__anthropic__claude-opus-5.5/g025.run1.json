@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.25, \"end_s\": 1.25, \"category\": \"Physics\", \"box\": [0.45, 0.2, 0.07, 0.58], \"evidence\": \"A single long rain streak near the center stays at the same position, ending around 77% of frame height, from 0.5 s to 1.25 s instead of falling; it also changes from a hooked shape at 0.25 s to a straight line.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.58, 0.92, 0.3, 0.08], \"evidence\": \"The dark wall or rooftop along the bottom right edge is visible through 0.75 s and is gone from 1.0 s onward without any occlusion.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.020052,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 607,
+  "total_tokens": 2585
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 311,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g025",
+ "run": 1,
+ "frames": 6
+}

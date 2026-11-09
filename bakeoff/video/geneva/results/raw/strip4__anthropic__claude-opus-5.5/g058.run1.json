@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.6, 0.53, 0.08, 0.1], \"evidence\": \"Where the third and fourth figures reach toward each other, their hands merge into a single indistinct blob with no clear fingers, and this holds in every frame.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.62, 0.32, 0.1, 0.66], \"evidence\": \"The tall staff between the third and fourth figures has a malformed ornament at the top and stands apart without being clearly held by any hand, and this is consistent across all frames.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.019892,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 599,
+  "total_tokens": 2577
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 313,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g058",
+ "run": 1,
+ "frames": 6
+}

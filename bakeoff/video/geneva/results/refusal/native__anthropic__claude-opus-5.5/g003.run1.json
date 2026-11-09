@@ -1,0 +1,11 @@
+{
+ "text": null,
+ "cost": null,
+ "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found that support input video\",\"code\":404,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":11},{\"step\":\"Filter by Regional Surcharge\",\"endpoint_count\":6}],\"failed_routing_step\":\"Filter by Input Video Support\"}}}",
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "approach": "native:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g003",
+ "run": 1
+}

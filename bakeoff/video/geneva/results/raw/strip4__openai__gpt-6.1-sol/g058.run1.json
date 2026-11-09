@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":1.25,\"category\":\"Shape/Form/Geometry\",\"box\":[0.293,0.394,0.133,0.294],\"evidence\":\"The second large figure from the left has an extra arm branching to the right, with one forearm extended horizontally and another continuing downward to a separate hand.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.0063285,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 7.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-sol",
+ "usage": {
+  "prompt_tokens": 1580,
+  "completion_tokens": 238,
+  "total_tokens": 1818
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1577,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 146,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-sol",
+ "model": "openai/gpt-6.1-sol",
+ "clip": "g058",
+ "run": 1,
+ "frames": 6
+}

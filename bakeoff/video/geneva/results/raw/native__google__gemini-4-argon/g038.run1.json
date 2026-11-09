@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.47, 0.43, 0.28, 0.56], \"evidence\": \"Strings on the cello neck float far off the fingerboard and attach inconsistently to the pegbox.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.8, \"end_s\": 3.5, \"category\": \"Shape/Form/Geometry\", \"box\": [0.24, 0.65, 0.54, 0.34], \"evidence\": \"The left hand fingers deform and blur unnaturaly while sliding down the cello neck.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003342,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 716,
+  "completion_tokens": 191,
+  "total_tokens": 907
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 325
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g038",
+ "run": 1
+}

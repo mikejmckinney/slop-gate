@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.31, 0.32, 0.15, 0.35], \"evidence\": \"elephant shows an extra vertical trunk-like appendage hanging between front legs to the mat in addition to its curled trunk\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0049741,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 7.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 720,
+  "completion_tokens": 1058,
+  "total_tokens": 1778
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 984,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g003",
+ "run": 1
+}

@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Physics\", \"box\": [0.56, 0.27, 0.16, 0.13], \"evidence\": \"Smoke from the cigarette in the soldier's mouth renders as a dense, dark, rigid horizontal streak shooting sideways, and its shape and darkness fluctuate oddly from frame to frame instead of rising and dispersing.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Other\", \"box\": [0.66, 0.77, 0.07, 0.14], \"evidence\": \"The soldier holds a second cigarette in his hand while another is already lit in his mouth, a duplicated object that persists throughout the shot.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.040016,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 652,
+  "total_tokens": 7396
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 360,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g056",
+ "run": 1,
+ "frames": 20
+}

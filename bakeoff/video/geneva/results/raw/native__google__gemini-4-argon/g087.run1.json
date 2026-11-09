@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.47, 0.44, 0.12, 0.14], \"evidence\": \"The man's hands morph into the robot's hands, which display an excess of distorted, tentacle-like fingers.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.64, 0.11, 0.12, 0.2], \"evidence\": \"The man's mouth and jaw unnaturally warp and blur as his head moves.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00462,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 359,
+  "total_tokens": 874
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 130
+  },
+  "completion": {
+   "reasoning_tokens": 162,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g087",
+ "run": 1
+}

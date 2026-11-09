@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.31, 0.58, 0.16, 0.18], \"evidence\": \"The tip of the trunk ends in a foot-like form with toenails identical to the elephant's feet.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00543295,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 702,
+  "completion_tokens": 1105,
+  "total_tokens": 1807
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1062,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g003",
+ "run": 1
+}

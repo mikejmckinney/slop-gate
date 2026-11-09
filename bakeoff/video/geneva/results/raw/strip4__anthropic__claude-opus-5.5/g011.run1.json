@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Physics\", \"box\": [0.27, 0.58, 0.18, 0.08], \"evidence\": \"The gorilla rests on a tiny thin flat sliver that floats in mid-air against the flat building facade, with no visible ledge or support that could hold its weight.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.26, 0.23, 0.29, 0.43], \"evidence\": \"A bright glowing halo outlines the gorilla's silhouette in every frame, giving it a pasted-on, cut-out look against the background.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.38, 0.17, 0.14, 0.2], \"evidence\": \"The gorilla's head and face reshape between frames: the profile snout turns into a flat, frontal, mask-like face with a ginger crown and shifting proportions.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.018932,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 551,
+  "total_tokens": 2529
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 137,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g011",
+ "run": 1,
+ "frames": 6
+}

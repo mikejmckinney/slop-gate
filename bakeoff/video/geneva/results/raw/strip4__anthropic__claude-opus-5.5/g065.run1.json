@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.04, 0.18, 0.18, 0.28], \"evidence\": \"The left poster's lettering is garbled pseudo-text ('SUT ALUTIVE', 'Adiering') and changes from frame to frame (e.g. 'Adiering' becomes 'Advertino'-like and back).\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.88, 0.17, 0.09, 0.32], \"evidence\": \"The right poster's text is illegible gibberish ('A JOEAL N.POSITIUS') and its wording and silhouette morph across frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 2.0, \"category\": \"Physics\", \"box\": [0.68, 0.38, 0.22, 0.62], \"evidence\": \"As the right-side man rises, his lower body appears to overlap and pass through the chair and table edge rather than moving around them.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 3.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.40, 0.42, 0.1, 0.2], \"evidence\": \"The central figure's hat changes from a light fedora into a white cap and then a flat cap shape as the person stands.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.048416,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 1072,
+  "total_tokens": 7816
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 529,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g065",
+ "run": 1,
+ "frames": 20
+}

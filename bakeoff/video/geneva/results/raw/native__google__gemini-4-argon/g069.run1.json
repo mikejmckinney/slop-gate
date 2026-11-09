@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 4.0, \"category\": \"Visual Artifacts\", \"box\": [0.3, 0.0, 0.14, 0.18], \"evidence\": \"A bright white dome-like shape appears on the horizon behind the skyscrapers and then vanishes as the camera tilts up.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 3.5, \"end_s\": 4.5, \"category\": \"Visual Artifacts\", \"box\": [0.7, 0.0, 0.25, 0.32], \"evidence\": \"Streaks of light trails appear floating unconnected in the dark sky on the upper right.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.005562,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 23.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 407,
+  "total_tokens": 1153
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 222,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g069",
+ "run": 1
+}

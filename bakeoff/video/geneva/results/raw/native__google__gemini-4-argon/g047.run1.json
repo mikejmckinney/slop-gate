@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.6, \"end_s\": 2.9, \"category\": \"Shape/Form/Geometry\", \"box\": [0.37, 0.72, 0.25, 0.27], \"evidence\": \"The woman's right hand becomes an indistinct, blurry mass without defined fingers, and a white sheet of paper spontaneously materializes out of it.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.2, \"end_s\": 2.9, \"category\": \"Shape/Form/Geometry\", \"box\": [0.43, 0.01, 0.19, 0.3], \"evidence\": \"As the woman turns her head to the side, her facial features warp and distort unnaturally.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}\n```",
+ "cost": 0.003234,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 582,
+  "completion_tokens": 207,
+  "total_tokens": 789
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 195
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g047",
+ "run": 1
+}

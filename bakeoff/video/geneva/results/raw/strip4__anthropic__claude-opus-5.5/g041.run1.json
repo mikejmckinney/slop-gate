@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.0, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.65, 0.2, 0.13, 0.32], \"evidence\": \"Tattoo linework near the needle tip rearranges between frames: a chain-like loop pattern forms and shifts while lines move in ways a needle stroke could not make.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.84, 0.45, 0.12, 0.22], \"evidence\": \"A thin straight line appears from under the tattoo machine grip with no clear source and lengthens across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.3, 0.48, 0.62, 0.52], \"evidence\": \"The black-gloved hands have no clear finger structure; the fingers merge into smooth blob-like masses with no distinct count or joints.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.8, 0.25, 0.2, 0.25], \"evidence\": \"The tattoo machine grip is a patterned colored cylinder whose shape and pattern shift from frame to frame, and it does not clearly join the needle.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0353,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 857,
+  "total_tokens": 5397
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 313,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g041",
+ "run": 1,
+ "frames": 12
+}

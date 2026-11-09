@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3.5,\"end_s\":4.75,\"category\":\"Shape/Form/Geometry\",\"box\":[0.48,0.12,0.16,0.09],\"evidence\":\"The cat's farther ear shrinks to a tiny triangular nub while its other ear remains full-sized.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.01003925,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 6268,
+  "completion_tokens": 441,
+  "total_tokens": 6709
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6265,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 358,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g006",
+ "run": 1,
+ "frames": 20
+}

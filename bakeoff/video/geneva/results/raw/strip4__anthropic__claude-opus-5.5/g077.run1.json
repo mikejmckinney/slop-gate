@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.32, 0.6, 0.13, 0.33], \"evidence\": \"A pale extra leg sits under the middle of the belly, between the front and hind legs, where no limb should attach, and it stays in every frame.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.06, 0.03, 0.22, 0.38], \"evidence\": \"The tiger's facial features morph between frames: the eyes shift and lose their shape, the stripe pattern on the forehead rearranges, and the muzzle warps while the head pose barely changes.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.42, 0.2, 0.38, 0.5], \"evidence\": \"The black stripes on the torso change shape and position from frame to frame instead of staying fixed on the body.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.022212,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 715,
+  "total_tokens": 2693
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 308,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g077",
+ "run": 1,
+ "frames": 6
+}

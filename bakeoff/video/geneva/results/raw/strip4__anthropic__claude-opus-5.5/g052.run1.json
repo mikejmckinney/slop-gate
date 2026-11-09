@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.75, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.17, 0.0, 0.83, 0.25], \"evidence\": \"Hanging autumn foliage appears from nowhere at the top of the frame and grows steadily across the sky. It has no visible branch or trunk supporting it.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.92, 0.1, 0.08, 0.5], \"evidence\": \"A flat, smeared green shape materializes at the right edge and expands over the frames. It has no coherent object form.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.65, 0.65, 0.35, 0.35], \"evidence\": \"The patio chairs and tables on the right melt into blurry, merged shapes with indistinct legs and backs.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.0, 0.6, 0.15, 0.35], \"evidence\": \"The pumpkins in the lower-left corner morph and change shape from frame to frame. The white pumpkin grows and the orange ones shift identity.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.02868,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 7.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 526,
+  "total_tokens": 5066
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g052",
+ "run": 1,
+ "frames": 12
+}

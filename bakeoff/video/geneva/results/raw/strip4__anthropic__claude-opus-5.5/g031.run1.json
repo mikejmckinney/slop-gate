@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.25, \"end_s\": 3.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.74, 0.45, 0.14, 0.38], \"evidence\": \"Finger-like shapes grow out of the ribbed textured surface beside the glow and stay fused with it, with no clear hand or joint structure separating them from the surrounding folds.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.25, \"end_s\": 1.0, \"category\": \"Motion\", \"box\": [0.74, 0.5, 0.1, 0.3], \"evidence\": \"Across 0.25-1.0 s the fingers appear progressively out of the textured surface rather than moving into view as a solid object.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.5, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.48, 0.0, 0.52, 1.0], \"evidence\": \"In the final frames the hood fabric and ribbed texture lose detail and become smeared and waxy, with the hood's left contour softening and shifting.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.02998,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 591,
+  "total_tokens": 5131
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 182,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g031",
+ "run": 1,
+ "frames": 12
+}

@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.42, 0.03, 0.36, 0.48], \"evidence\": \"The tile and panel pattern on the upper-right lit face changes layout from frame to frame instead of moving rigidly with the slow camera rotation, so the surface detail appears to crawl and re-form.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.6, 0.0, 0.3, 0.45], \"evidence\": \"The stepped top-right corner and notches of the right-hand block change shape and position in ways that do not match a rigid object seen from a slowly changing viewpoint.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.038556,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 579,
+  "total_tokens": 7323
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 281,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g028",
+ "run": 1,
+ "frames": 20
+}

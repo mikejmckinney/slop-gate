@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 0.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.0, 0.05, 0.3, 0.75], \"evidence\": \"The left person's face morphs from a side profile at 0.0\u20130.25 s into a different frontal face at 0.5 s and then into a bald, mask-like face at the frame edge at 0.75 s, with no consistent head structure.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 1.25, \"category\": \"Other\", \"box\": [0.0, 0.0, 0.25, 0.7], \"evidence\": \"The left person dissolves into the dark background between 0.75 s and 1.0 s without moving out of frame, and is gone from 1.0 s onward.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.02916,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 550,
+  "total_tokens": 5090
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 252,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g072",
+ "run": 1,
+ "frames": 12
+}

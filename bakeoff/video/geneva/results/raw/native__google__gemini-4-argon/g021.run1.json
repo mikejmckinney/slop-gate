@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.9, \"category\": \"Shape/Form/Geometry\", \"box\": [0.35, 0.35, 0.35, 0.25], \"evidence\": \"The bottom of the woman's suit jacket morphs between a standard blazer hem and a wide, flaring skirt-like structure as she spins.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 2.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.44, 0.81, 0.07, 0.11], \"evidence\": \"The woman's right foot and high-heeled shoe twist backwards and lose structural form during her spin.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003542,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 16.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 205,
+  "total_tokens": 951
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g021",
+ "run": 1
+}

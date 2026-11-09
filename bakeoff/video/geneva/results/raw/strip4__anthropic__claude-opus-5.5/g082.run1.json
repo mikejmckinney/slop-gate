@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.25, \"end_s\": 2.0, \"category\": \"Physics\", \"box\": [0.5, 0.86, 0.3, 0.14], \"evidence\": \"As the woman spreads her arms wide, her cast shadow on the sand stays a thin, mostly featureless streak and does not clearly show the outstretched arms or changing pose.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.039316,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 617,
+  "total_tokens": 7361
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 471,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g082",
+ "run": 1,
+ "frames": 20
+}

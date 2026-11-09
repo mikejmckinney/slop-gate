@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": []}",
+ "cost": 0.00672855,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 22.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Together",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1228,
+  "completion_tokens": 1251,
+  "total_tokens": 2479
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 112,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1235,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g015",
+ "run": 1
+}

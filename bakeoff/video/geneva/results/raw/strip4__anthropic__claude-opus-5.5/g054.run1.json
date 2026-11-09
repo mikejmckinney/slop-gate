@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.5, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.4, 0.05, 0.3, 0.65], \"evidence\": \"The monk's facial features drift across the push-in: the nose widens, the cheeks and jaw change shape, and the skin texture ages, so he looks like a different person by the end of the clip.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 4.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.2, 0.05, 0.25, 0.5], \"evidence\": \"A seated Buddha statue gradually takes shape in the background left of the head, where earlier frames showed an arched niche with indistinct figures, so the background carving morphs rather than staying fixed.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 3.0, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.25, 0.75, 0.25, 0.25], \"evidence\": \"On the monk's chest at the lower left, an indistinct hand- or finger-like shape blends into the shoulder and robe and has no clear anatomical connection.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.045396,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 921,
+  "total_tokens": 7665
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 477,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g054",
+ "run": 1,
+ "frames": 20
+}

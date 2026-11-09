@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.0,\"end_s\":2.0,\"category\":\"Shape/Form/Geometry\",\"box\":[0.03,0.14,0.18,0.68],\"evidence\":\"Right wing appears detached from torso and fused to forearm with no anatomical shoulder joint\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"},{\"start_s\":0.0,\"end_s\":2.0,\"category\":\"Shape/Form/Geometry\",\"box\":[0.6,0.02,0.26,0.13],\"evidence\":\"Top edge of circular disc shows duplicated flat bar overlapping the rim with broken engraved pattern\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00520785,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 720,
+  "completion_tokens": 1113,
+  "total_tokens": 1833
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1108,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g076",
+ "run": 1
+}

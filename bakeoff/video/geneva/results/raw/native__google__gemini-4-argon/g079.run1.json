@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 5.0, \"category\": \"Physics\", \"box\": [0.57, 0.0, 0.14, 0.35], \"evidence\": \"The silver chain hangs vertically down from the top of the frame instead of wrapping around the cat's neck.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.002472,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 98,
+  "total_tokens": 844
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g079",
+ "run": 1
+}

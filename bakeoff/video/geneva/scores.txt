@@ -1,0 +1,23 @@
+tolerance 0.5 s, minimum box IoU 0.1, one run per clip
+
+approach | discrimination (95%) | annotated flagged | unannotated flagged | ok/failed/missing
+native:google/gemini-4-argon | 0.233 (0.033 to 0.433) | 52/60 | 19/30 | 90/0/0
+native:meta/muse-spark-open | 0.0 (-0.217 to 0.217) | 26/60 | 13/30 | 90/0/0
+strip4:openai/gpt-6.1-terra | -0.05 (-0.217 to 0.1) | 7/60 | 5/30 | 90/0/0
+strip4:openai/gpt-6.1-sol | 0.117 (0.0 to 0.217) | 9/60 | 1/30 | 90/0/0
+strip4:anthropic/claude-opus-5.5 | 0.1 (-0.033 to 0.25) | 56/60 | 25/30 | 90/0/0
+
+matches on annotated clips, real / shuffled baseline
+approach | category | time | box | category+time+box | findings | malformed | $/clip | $/min
+native:google/gemini-4-argon | 33/60 / 0.513 | 49/60 / 0.76 | 40/60 / 0.341 | 24/60 / 0.169 | 123 | 0 | 0.0027 | 0.0505
+native:meta/muse-spark-open | 17/60 / 0.261 | 20/60 / 0.324 | 15/60 / 0.166 | 9/60 / 0.098 | 57 | 0 | 0.006 | 0.1125
+strip4:openai/gpt-6.1-terra | 4/60 / 0.065 | 7/60 / 0.116 | 3/60 / 0.019 | 1/60 / 0.009 | 13 | 0 | 0.0058 | 0.1081
+strip4:openai/gpt-6.1-sol | 4/60 / 0.079 | 9/60 / 0.136 | 5/60 / 0.037 | 3/60 / 0.019 | 11 | 0 | 0.0109 | 0.205
+strip4:anthropic/claude-opus-5.5 | 38/60 / 0.611 | 56/60 / 0.858 | 44/60 / 0.476 | 23/60 / 0.232 | 205 | 0 | 0.0308 | 0.5781
+
+by generator: annotated flagged, unannotated flagged, category+time+box
+native:google/gemini-4-argon | sora 17/20, 7/10, 7/20 | pika1 17/20, 7/10, 10/20 | vc2 18/20, 5/10, 7/20
+native:meta/muse-spark-open | sora 4/20, 4/10, 0/20 | pika1 11/20, 4/10, 5/20 | vc2 11/20, 5/10, 4/20
+strip4:openai/gpt-6.1-terra | sora 1/20, 1/10, 0/20 | pika1 4/20, 3/10, 1/20 | vc2 2/20, 1/10, 0/20
+strip4:openai/gpt-6.1-sol | sora 1/20, 0/10, 1/20 | pika1 2/20, 1/10, 0/20 | vc2 6/20, 0/10, 2/20
+strip4:anthropic/claude-opus-5.5 | sora 16/20, 7/10, 5/20 | pika1 20/20, 10/10, 9/20 | vc2 20/20, 8/10, 9/20

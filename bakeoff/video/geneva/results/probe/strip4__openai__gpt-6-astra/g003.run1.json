@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.5,\"end_s\":1.0,\"category\":\"Shape/Form/Geometry\",\"box\":[0.34,0.444,0.135,0.303],\"evidence\":\"A second gray trunk-like appendage hangs beneath the head behind the raised trunk, with a curled tip that becomes a pink-edged, foot-like end.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.0417175,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 21.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6-astra",
+ "usage": {
+  "prompt_tokens": 1562,
+  "completion_tokens": 444,
+  "total_tokens": 2006
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1559,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 350,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6-astra",
+ "model": "openai/gpt-6-astra",
+ "clip": "g003",
+ "run": 1,
+ "frames": 6
+}

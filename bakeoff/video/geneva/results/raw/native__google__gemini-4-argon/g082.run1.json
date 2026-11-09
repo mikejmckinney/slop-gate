@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.5, \"category\": \"Shape/Form/Geometry\", \"box\": [0.39, 0.41, 0.1, 0.36], \"evidence\": \"The sleeves of the dress drastically change shape and volume from narrow tight sleeves to wide bell sleeves as the woman raises her arms.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.0, \"end_s\": 4.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.19, 0.14, 0.09, 0.25], \"evidence\": \"The fingers on the woman's raised right hand morph and appear malformed.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003432,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 194,
+  "total_tokens": 940
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g082",
+ "run": 1
+}

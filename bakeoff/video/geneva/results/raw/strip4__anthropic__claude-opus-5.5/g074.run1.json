@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.11, 0.14, 0.44, 0.3], \"evidence\": \"The printed text on the grey and navy T-shirts is garbled pseudo-lettering that changes from frame to frame (e.g., 'HOUUS', 'SIMISH', 'BANSIDE').\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.36, 0.64, 0.24, 0.2], \"evidence\": \"The card held between the hands keeps changing form, from a patterned tan card to a flat white sheet to a yellow box, and it blends into the fingers.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.5, 0.64, 0.17, 0.2], \"evidence\": \"The curly-haired girl's hands become a malformed cluster with extra overlapping fingers near the card.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.016272,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 6.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 418,
+  "total_tokens": 2396
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g074",
+ "run": 1,
+ "frames": 6
+}

@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.04, 0.05, 0.22, 0.52], \"evidence\": \"The left wing floats beside the raised arm and does not connect to the shoulder or back. It sprouts from an unclear point near the elbow instead of from the body.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.04, 0.05, 0.22, 0.52], \"evidence\": \"On what should be a rigid statue, the feathers of the left wing change count, spacing and outline from frame to frame, so the wing appears to morph.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.58, 0.2, 0.3, 0.75], \"evidence\": \"The right-side wing has no clear form of its own: its feathers blend into the concentric rings of the golden disc behind the figure.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.42, 0.03, 0.22, 0.33], \"evidence\": \"On the static sculpture, the hair curls and facial features subtly shift and redraw between consecutive frames.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.022192,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 714,
+  "total_tokens": 2692
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 187,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g076",
+ "run": 1,
+ "frames": 6
+}
