@@ -1,0 +1,11 @@
+{
+ "text": null,
+ "cost": null,
+ "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found that support input video\",\"code\":404,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":9},{\"step\":\"Filter by Regional Surcharge\",\"endpoint_count\":6}],\"failed_routing_step\":\"Filter by Input Video Support\"}}}",
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "approach": "native:openai/gpt-6.1-sol",
+ "model": "openai/gpt-6.1-sol",
+ "clip": "g003",
+ "run": 1
+}

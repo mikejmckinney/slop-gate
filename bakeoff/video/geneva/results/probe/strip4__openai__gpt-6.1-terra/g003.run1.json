@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.5,\"end_s\":0.75,\"category\":\"Shape/Form/Geometry\",\"box\":[0.35,0.46,0.11,0.3],\"evidence\":\"A front leg beneath the elephant's head narrows and curls upward into a trunk-like hook.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00417675,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 1562,
+  "completion_tokens": 445,
+  "total_tokens": 2007
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1559,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 363,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g003",
+ "run": 1,
+ "frames": 6
+}

@@ -1,0 +1,36 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.89, 0.86, 0.11, 0.13], \"evidence\": \"The watermark-like text in the bottom-right corner is garbled and its letterforms keep changing from frame to frame (e.g., 'HUM' to 'MXED' to 'PIXI' to 'PIXI INDX').\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.84, 0.0, 0.16, 0.9], \"evidence\": \"The blue-and-white arabesque tile pattern on the right foreground wall shifts its motifs between consecutive frames instead of staying fixed, so the texture appears to boil.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}\n```",
+ "cost": 0.029528,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4517,
+  "completion_tokens": 573,
+  "total_tokens": 5090
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 258,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g001",
+ "run": 1,
+ "frames": 12
+}

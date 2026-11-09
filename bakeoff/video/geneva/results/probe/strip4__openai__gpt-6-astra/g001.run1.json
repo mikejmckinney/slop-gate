@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": []}",
+ "cost": 0.0510925,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6-astra",
+ "usage": {
+  "prompt_tokens": 3908,
+  "completion_tokens": 45,
+  "total_tokens": 3953
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3905,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 33,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6-astra",
+ "model": "openai/gpt-6-astra",
+ "clip": "g001",
+ "run": 1,
+ "frames": 12
+}

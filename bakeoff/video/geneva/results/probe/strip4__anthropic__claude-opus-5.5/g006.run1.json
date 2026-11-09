@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 3.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.32, 0.1, 0.12, 0.16], \"evidence\": \"A pointed ear-like tuft sticks up from the left top of the cat's head next to its real ear, giving it what looks like a third ear while the head turns.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.15, 0.1, 0.6, 0.75], \"evidence\": \"Measured against the table and the cup, the cat's body keeps swelling from a slim cat to a much larger, broader-chested figure, and its head and ear shapes keep changing.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.12, 0.45, 0.35, 0.3], \"evidence\": \"The cat's paws curl like human hands at first, then rearrange: a second front paw appears on the table at the left and the paw shapes melt between frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.15, 0.65, 0.25, 0.2], \"evidence\": \"The teacup has no visible handle at first, and a handle later appears on its right side touching the cat's paw.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.048444,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6721,
+  "completion_tokens": 1078,
+  "total_tokens": 7799
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 529,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g006",
+ "run": 1,
+ "frames": 20
+}
