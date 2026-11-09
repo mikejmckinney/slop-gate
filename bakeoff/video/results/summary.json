@@ -1,0 +1,3664 @@
+{
+ "clips": 30,
+ "defects": 13,
+ "clean_clips": 17,
+ "tolerance_s": 0.5,
+ "approaches": [
+  {
+   "approach": "native:google/gemini-3.8-flash",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 16,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 7,
+   "recall_defect_runs": 0.615,
+   "recall_ci95": [
+    0.43,
+    0.78
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 14,
+   "picture_defects_found_any_run": 8,
+   "picture_defects_found_both_runs": 6,
+   "picture_recall_defect_runs": 0.636,
+   "picture_recall_ci95": [
+    0.43,
+    0.8
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 14,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 6,
+   "picture_nobrief_recall_defect_runs": 0.778,
+   "picture_nobrief_recall_ci95": [
+    0.55,
+    0.91
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     0
+    ],
+    "cause_effect": [
+     0,
+     0
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 19,
+   "sibling_hits": 3,
+   "named_defect_runs": 19,
+   "located_defect_runs": 22,
+   "median_iou": 0.6,
+   "median_onset_error_s": 0.2,
+   "clean_runs_scored": 34,
+   "clean_claims": 14,
+   "clean_claims_med_high": 14,
+   "clean_runs_flagged": 14,
+   "clean_flagged_rate": 0.412,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     1
+    ],
+    "object_vanish_clean": [
+     1,
+     0
+    ],
+    "action_skip_clean": [
+     1,
+     0
+    ],
+    "action_reverse_clean": [
+     1,
+     1
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     1,
+     1
+    ],
+    "ctl_handheld": [
+     0,
+     1
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "24/30",
+   "agreement": 0.8,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 7.5,
+   "total_cost": 0.2837,
+   "cost_per_clip": 0.0047,
+   "cost_per_video_minute": 0.0299,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "native:google/gemini-4-argon",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 18,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 9,
+   "recall_defect_runs": 0.692,
+   "recall_ci95": [
+    0.5,
+    0.83
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 16,
+   "picture_defects_found_any_run": 8,
+   "picture_defects_found_both_runs": 8,
+   "picture_recall_defect_runs": 0.727,
+   "picture_recall_ci95": [
+    0.52,
+    0.87
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 16,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 8,
+   "picture_nobrief_recall_defect_runs": 0.889,
+   "picture_nobrief_recall_ci95": [
+    0.67,
+    0.97
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     0,
+     0
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     1,
+     1
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 22,
+   "sibling_hits": 4,
+   "named_defect_runs": 22,
+   "located_defect_runs": 23,
+   "median_iou": 0.63,
+   "median_onset_error_s": 0.5,
+   "clean_runs_scored": 34,
+   "clean_claims": 8,
+   "clean_claims_med_high": 8,
+   "clean_runs_flagged": 5,
+   "clean_flagged_rate": 0.147,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     0,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     0,
+     0
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 10.2,
+   "total_cost": 0.2138,
+   "cost_per_clip": 0.0036,
+   "cost_per_video_minute": 0.0225,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "native:meta/muse-spark-open",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 18,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 9,
+   "recall_defect_runs": 0.692,
+   "recall_ci95": [
+    0.5,
+    0.83
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 18,
+   "picture_defects_found_any_run": 9,
+   "picture_defects_found_both_runs": 9,
+   "picture_recall_defect_runs": 0.818,
+   "picture_recall_ci95": [
+    0.61,
+    0.93
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 18,
+   "picture_nobrief_defects_found_any_run": 9,
+   "picture_nobrief_defects_found_both_runs": 9,
+   "picture_nobrief_recall_defect_runs": 1.0,
+   "picture_nobrief_recall_ci95": [
+    0.82,
+    1.0
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 18,
+   "sibling_hits": 0,
+   "named_defect_runs": 18,
+   "located_defect_runs": 20,
+   "median_iou": 0.6,
+   "median_onset_error_s": 0.17,
+   "clean_runs_scored": 34,
+   "clean_claims": 9,
+   "clean_claims_med_high": 9,
+   "clean_runs_flagged": 7,
+   "clean_flagged_rate": 0.206,
+   "by_clean_clip": {
+    "flicker_clean": [
+     1,
+     1
+    ],
+    "identity_drift_clean": [
+     1,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     0,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     0,
+     0
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 10.7,
+   "total_cost": 0.411,
+   "cost_per_clip": 0.0068,
+   "cost_per_video_minute": 0.0433,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "native:perceptron/perceptron-mk1.5",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 2,
+   "defects_found_any_run": 1,
+   "defects_found_both_runs": 1,
+   "recall_defect_runs": 0.077,
+   "recall_ci95": [
+    0.02,
+    0.24
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 2,
+   "picture_defects_found_any_run": 1,
+   "picture_defects_found_both_runs": 1,
+   "picture_recall_defect_runs": 0.091,
+   "picture_recall_ci95": [
+    0.03,
+    0.28
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 2,
+   "picture_nobrief_defects_found_any_run": 1,
+   "picture_nobrief_defects_found_both_runs": 1,
+   "picture_nobrief_recall_defect_runs": 0.111,
+   "picture_nobrief_recall_ci95": [
+    0.03,
+    0.33
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     0,
+     0
+    ],
+    "identity_drift": [
+     0,
+     0
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     0,
+     0
+    ],
+    "action_reverse": [
+     0,
+     0
+    ],
+    "cause_effect": [
+     0,
+     0
+    ],
+    "text_mutate": [
+     0,
+     0
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     0,
+     0
+    ],
+    "identity_drift": [
+     0,
+     0
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     0,
+     0
+    ],
+    "action_reverse": [
+     0,
+     0
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     0,
+     0
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 4,
+   "sibling_hits": 2,
+   "named_defect_runs": 4,
+   "located_defect_runs": 19,
+   "median_iou": 0.36,
+   "median_onset_error_s": 0.8,
+   "clean_runs_scored": 33,
+   "clean_claims": 19,
+   "clean_claims_med_high": 19,
+   "clean_runs_flagged": 18,
+   "clean_flagged_rate": 0.545,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     1,
+     1
+    ],
+    "object_vanish_clean": [
+     1,
+     null
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     1,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     1,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     1,
+     1
+    ],
+    "brief_gap_clean": [
+     1,
+     1
+    ],
+    "brief_dense_clean": [
+     1,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     0,
+     0
+    ],
+    "ctl_screen": [
+     0,
+     1
+    ]
+   },
+   "agreement_clips": "24/27",
+   "agreement": 0.889,
+   "failed_empty_replies": 1,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 3,
+   "median_seconds": 2.9,
+   "total_cost": 0.0314,
+   "cost_per_clip": 0.0005,
+   "cost_per_video_minute": 0.0033,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "native:qwen/qwen3.8-omni-flash",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 17,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 8,
+   "recall_defect_runs": 0.654,
+   "recall_ci95": [
+    0.46,
+    0.81
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 15,
+   "picture_defects_found_any_run": 8,
+   "picture_defects_found_both_runs": 7,
+   "picture_recall_defect_runs": 0.682,
+   "picture_recall_ci95": [
+    0.47,
+    0.84
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 15,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 7,
+   "picture_nobrief_recall_defect_runs": 0.833,
+   "picture_nobrief_recall_ci95": [
+    0.61,
+    0.94
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     0,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     0,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     1,
+     1
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 17,
+   "sibling_hits": 0,
+   "named_defect_runs": 17,
+   "located_defect_runs": 22,
+   "median_iou": 0.56,
+   "median_onset_error_s": 0.5,
+   "clean_runs_scored": 34,
+   "clean_claims": 14,
+   "clean_claims_med_high": 14,
+   "clean_runs_flagged": 13,
+   "clean_flagged_rate": 0.382,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     1,
+     1
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     1
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     1,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     1,
+     0
+    ],
+    "ctl_screen": [
+     1,
+     1
+    ]
+   },
+   "agreement_clips": "26/30",
+   "agreement": 0.867,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 44.8,
+   "total_cost": 0.1242,
+   "cost_per_clip": 0.0021,
+   "cost_per_video_minute": 0.0131,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "native:xiaomi/mimo-v2.6-pro",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 0,
+   "defects_found_any_run": 0,
+   "defects_found_both_runs": 0,
+   "recall_defect_runs": 0.0,
+   "recall_ci95": [
+    0.0,
+    0.13
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 0,
+   "picture_defects_found_any_run": 0,
+   "picture_defects_found_both_runs": 0,
+   "picture_recall_defect_runs": 0.0,
+   "picture_recall_ci95": [
+    0.0,
+    0.15
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 0,
+   "picture_nobrief_defects_found_any_run": 0,
+   "picture_nobrief_defects_found_both_runs": 0,
+   "picture_nobrief_recall_defect_runs": 0.0,
+   "picture_nobrief_recall_ci95": [
+    0.0,
+    0.18
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     0,
+     0
+    ],
+    "identity_drift": [
+     0,
+     0
+    ],
+    "object_vanish": [
+     0,
+     0
+    ],
+    "action_skip": [
+     0,
+     0
+    ],
+    "action_reverse": [
+     0,
+     0
+    ],
+    "cause_effect": [
+     0,
+     0
+    ],
+    "text_mutate": [
+     0,
+     0
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     0,
+     0
+    ],
+    "identity_drift": [
+     0,
+     0
+    ],
+    "object_vanish": [
+     0,
+     0
+    ],
+    "action_skip": [
+     0,
+     0
+    ],
+    "action_reverse": [
+     0,
+     0
+    ],
+    "cause_effect": [
+     0,
+     0
+    ],
+    "text_mutate": [
+     0,
+     0
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 0,
+   "sibling_hits": 0,
+   "named_defect_runs": 15,
+   "located_defect_runs": 6,
+   "median_iou": null,
+   "median_onset_error_s": null,
+   "clean_runs_scored": 16,
+   "clean_claims": 16,
+   "clean_claims_med_high": 16,
+   "clean_runs_flagged": 10,
+   "clean_flagged_rate": 0.625,
+   "by_clean_clip": {
+    "flicker_clean": [
+     1,
+     0
+    ],
+    "identity_drift_clean": [
+     null,
+     null
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     null,
+     null
+    ],
+    "action_reverse_clean": [
+     null,
+     null
+    ],
+    "cause_effect_clean": [
+     1,
+     null
+    ],
+    "text_mutate_clean": [
+     null,
+     null
+    ],
+    "sound_off_clean": [
+     null,
+     1
+    ],
+    "narration_mismatch_clean": [
+     1,
+     1
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     null,
+     null
+    ],
+    "brief_gap_clean": [
+     null,
+     null
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     null
+    ],
+    "ctl_jumpcut": [
+     1,
+     1
+    ],
+    "ctl_handheld": [
+     null,
+     null
+    ],
+    "ctl_screen": [
+     1,
+     null
+    ]
+   },
+   "agreement_clips": "15/16",
+   "agreement": 0.938,
+   "failed_empty_replies": 23,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 79.1,
+   "total_cost": 0.2022,
+   "cost_per_clip": 0.0034,
+   "cost_per_video_minute": 0.0213,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip1:anthropic/claude-opus-5.5",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 16,
+   "defects_found_any_run": 8,
+   "defects_found_both_runs": 8,
+   "recall_defect_runs": 0.615,
+   "recall_ci95": [
+    0.43,
+    0.78
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 16,
+   "picture_defects_found_any_run": 8,
+   "picture_defects_found_both_runs": 8,
+   "picture_recall_defect_runs": 0.727,
+   "picture_recall_ci95": [
+    0.52,
+    0.87
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 16,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 8,
+   "picture_nobrief_recall_defect_runs": 0.889,
+   "picture_nobrief_recall_ci95": [
+    0.67,
+    0.97
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 18,
+   "sibling_hits": 2,
+   "named_defect_runs": 18,
+   "located_defect_runs": 19,
+   "median_iou": 0.59,
+   "median_onset_error_s": 0.1,
+   "clean_runs_scored": 34,
+   "clean_claims": 15,
+   "clean_claims_med_high": 8,
+   "clean_runs_flagged": 7,
+   "clean_flagged_rate": 0.206,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     1
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     0,
+     0
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     1,
+     1
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 6.7,
+   "total_cost": 1.3581,
+   "cost_per_clip": 0.0226,
+   "cost_per_video_minute": 0.143,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip1:google/gemini-4-argon",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 18,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 9,
+   "recall_defect_runs": 0.692,
+   "recall_ci95": [
+    0.5,
+    0.83
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 18,
+   "picture_defects_found_any_run": 9,
+   "picture_defects_found_both_runs": 9,
+   "picture_recall_defect_runs": 0.818,
+   "picture_recall_ci95": [
+    0.61,
+    0.93
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 18,
+   "picture_nobrief_defects_found_any_run": 9,
+   "picture_nobrief_defects_found_both_runs": 9,
+   "picture_nobrief_recall_defect_runs": 1.0,
+   "picture_nobrief_recall_ci95": [
+    0.82,
+    1.0
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 18,
+   "sibling_hits": 0,
+   "named_defect_runs": 18,
+   "located_defect_runs": 21,
+   "median_iou": 0.64,
+   "median_onset_error_s": 0.2,
+   "clean_runs_scored": 34,
+   "clean_claims": 6,
+   "clean_claims_med_high": 6,
+   "clean_runs_flagged": 5,
+   "clean_flagged_rate": 0.147,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     0,
+     0
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     1,
+     1
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     1,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     0,
+     0
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 14.0,
+   "total_cost": 1.337,
+   "cost_per_clip": 0.0223,
+   "cost_per_video_minute": 0.1407,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip1:openai/gpt-6.1-terra",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 16,
+   "defects_found_any_run": 8,
+   "defects_found_both_runs": 8,
+   "recall_defect_runs": 0.615,
+   "recall_ci95": [
+    0.43,
+    0.78
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 16,
+   "picture_defects_found_any_run": 8,
+   "picture_defects_found_both_runs": 8,
+   "picture_recall_defect_runs": 0.727,
+   "picture_recall_ci95": [
+    0.52,
+    0.87
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 16,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 8,
+   "picture_nobrief_recall_defect_runs": 0.889,
+   "picture_nobrief_recall_ci95": [
+    0.67,
+    0.97
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     0,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 16,
+   "sibling_hits": 0,
+   "named_defect_runs": 16,
+   "located_defect_runs": 20,
+   "median_iou": 0.59,
+   "median_onset_error_s": 0.75,
+   "clean_runs_scored": 34,
+   "clean_claims": 9,
+   "clean_claims_med_high": 9,
+   "clean_runs_flagged": 9,
+   "clean_flagged_rate": 0.265,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     0,
+     0
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     1,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     1,
+     1
+    ],
+    "ctl_screen": [
+     1,
+     1
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 4.8,
+   "total_cost": 0.1675,
+   "cost_per_clip": 0.0028,
+   "cost_per_video_minute": 0.0176,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip4:anthropic/claude-opus-5.5",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 18,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 9,
+   "recall_defect_runs": 0.692,
+   "recall_ci95": [
+    0.5,
+    0.83
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 18,
+   "picture_defects_found_any_run": 9,
+   "picture_defects_found_both_runs": 9,
+   "picture_recall_defect_runs": 0.818,
+   "picture_recall_ci95": [
+    0.61,
+    0.93
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 16,
+   "picture_nobrief_defects_found_any_run": 8,
+   "picture_nobrief_defects_found_both_runs": 8,
+   "picture_nobrief_recall_defect_runs": 0.889,
+   "picture_nobrief_recall_ci95": [
+    0.67,
+    0.97
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 2,
+   "brief_defects_found_any_run": 1,
+   "brief_defects_found_both_runs": 1,
+   "brief_recall_defect_runs": 0.5,
+   "brief_recall_ci95": [
+    0.15,
+    0.85
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     0,
+     0
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     1,
+     1
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     1,
+     1
+    ]
+   },
+   "raw_defect_run_hits": 20,
+   "sibling_hits": 2,
+   "named_defect_runs": 20,
+   "located_defect_runs": 22,
+   "median_iou": 0.79,
+   "median_onset_error_s": 0.0,
+   "clean_runs_scored": 34,
+   "clean_claims": 23,
+   "clean_claims_med_high": 19,
+   "clean_runs_flagged": 10,
+   "clean_flagged_rate": 0.294,
+   "by_clean_clip": {
+    "flicker_clean": [
+     1,
+     1
+    ],
+    "identity_drift_clean": [
+     1,
+     1
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     0,
+     0
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     1,
+     1
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     0
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     1,
+     1
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "30/30",
+   "agreement": 1.0,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 9.0,
+   "total_cost": 3.5405,
+   "cost_per_clip": 0.059,
+   "cost_per_video_minute": 0.3727,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip4:google/gemini-4-argon",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 18,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 9,
+   "recall_defect_runs": 0.692,
+   "recall_ci95": [
+    0.5,
+    0.83
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 18,
+   "picture_defects_found_any_run": 9,
+   "picture_defects_found_both_runs": 9,
+   "picture_recall_defect_runs": 0.818,
+   "picture_recall_ci95": [
+    0.61,
+    0.93
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 18,
+   "picture_nobrief_defects_found_any_run": 9,
+   "picture_nobrief_defects_found_both_runs": 9,
+   "picture_nobrief_recall_defect_runs": 1.0,
+   "picture_nobrief_recall_ci95": [
+    0.82,
+    1.0
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     1
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     1
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 18,
+   "sibling_hits": 0,
+   "named_defect_runs": 18,
+   "located_defect_runs": 19,
+   "median_iou": 0.81,
+   "median_onset_error_s": 0.02,
+   "clean_runs_scored": 34,
+   "clean_claims": 4,
+   "clean_claims_med_high": 4,
+   "clean_runs_flagged": 3,
+   "clean_flagged_rate": 0.088,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     0,
+     0
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     0,
+     0
+    ],
+    "narration_mismatch_clean": [
+     1,
+     1
+    ],
+    "caption_mismatch_clean": [
+     0,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     0,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     0,
+     0
+    ],
+    "ctl_screen": [
+     0,
+     0
+    ]
+   },
+   "agreement_clips": "29/30",
+   "agreement": 0.967,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 15.8,
+   "total_cost": 4.951,
+   "cost_per_clip": 0.0825,
+   "cost_per_video_minute": 0.5212,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  },
+  {
+   "approach": "strip4:openai/gpt-6.1-terra",
+   "calls": 60,
+   "defects_total": 13,
+   "defect_runs_total": 26,
+   "defect_run_hits": 16,
+   "defects_found_any_run": 9,
+   "defects_found_both_runs": 7,
+   "recall_defect_runs": 0.615,
+   "recall_ci95": [
+    0.43,
+    0.78
+   ],
+   "picture_defects_total": 11,
+   "picture_defect_runs_total": 22,
+   "picture_defect_run_hits": 16,
+   "picture_defects_found_any_run": 9,
+   "picture_defects_found_both_runs": 7,
+   "picture_recall_defect_runs": 0.727,
+   "picture_recall_ci95": [
+    0.52,
+    0.87
+   ],
+   "picture_nobrief_defects_total": 9,
+   "picture_nobrief_defect_runs_total": 18,
+   "picture_nobrief_defect_run_hits": 16,
+   "picture_nobrief_defects_found_any_run": 9,
+   "picture_nobrief_defects_found_both_runs": 7,
+   "picture_nobrief_recall_defect_runs": 0.889,
+   "picture_nobrief_recall_ci95": [
+    0.67,
+    0.97
+   ],
+   "brief_defects_total": 2,
+   "brief_defect_runs_total": 4,
+   "brief_defect_run_hits": 0,
+   "brief_defects_found_any_run": 0,
+   "brief_defects_found_both_runs": 0,
+   "brief_recall_defect_runs": 0.0,
+   "brief_recall_ci95": [
+    0.0,
+    0.49
+   ],
+   "per_defect": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     0
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "per_defect_raw": {
+    "flicker": [
+     1,
+     1
+    ],
+    "identity_drift": [
+     1,
+     1
+    ],
+    "object_vanish": [
+     1,
+     0
+    ],
+    "action_skip": [
+     1,
+     1
+    ],
+    "action_reverse": [
+     1,
+     1
+    ],
+    "cause_effect": [
+     1,
+     1
+    ],
+    "text_mutate": [
+     1,
+     1
+    ],
+    "sound_off": [
+     0,
+     0
+    ],
+    "narration_mismatch": [
+     0,
+     0
+    ],
+    "caption_mismatch": [
+     1,
+     1
+    ],
+    "clip_seam": [
+     1,
+     0
+    ],
+    "brief_gap": [
+     0,
+     0
+    ],
+    "brief_dense": [
+     0,
+     0
+    ]
+   },
+   "raw_defect_run_hits": 16,
+   "sibling_hits": 0,
+   "named_defect_runs": 16,
+   "located_defect_runs": 20,
+   "median_iou": 0.86,
+   "median_onset_error_s": 0.0,
+   "clean_runs_scored": 34,
+   "clean_claims": 8,
+   "clean_claims_med_high": 8,
+   "clean_runs_flagged": 8,
+   "clean_flagged_rate": 0.235,
+   "by_clean_clip": {
+    "flicker_clean": [
+     0,
+     0
+    ],
+    "identity_drift_clean": [
+     0,
+     0
+    ],
+    "object_vanish_clean": [
+     0,
+     0
+    ],
+    "action_skip_clean": [
+     0,
+     0
+    ],
+    "action_reverse_clean": [
+     0,
+     0
+    ],
+    "cause_effect_clean": [
+     1,
+     1
+    ],
+    "text_mutate_clean": [
+     0,
+     0
+    ],
+    "sound_off_clean": [
+     0,
+     0
+    ],
+    "narration_mismatch_clean": [
+     0,
+     0
+    ],
+    "caption_mismatch_clean": [
+     0,
+     0
+    ],
+    "clip_seam_clean": [
+     0,
+     0
+    ],
+    "brief_gap_clean": [
+     0,
+     0
+    ],
+    "brief_dense_clean": [
+     1,
+     1
+    ],
+    "ctl_stopmotion": [
+     0,
+     0
+    ],
+    "ctl_jumpcut": [
+     0,
+     0
+    ],
+    "ctl_handheld": [
+     1,
+     1
+    ],
+    "ctl_screen": [
+     1,
+     1
+    ]
+   },
+   "agreement_clips": "28/30",
+   "agreement": 0.933,
+   "failed_empty_replies": 0,
+   "failed_http_or_timeout": 0,
+   "unparsed_replies": 0,
+   "median_seconds": 6.7,
+   "total_cost": 0.5129,
+   "cost_per_clip": 0.0085,
+   "cost_per_video_minute": 0.054,
+   "claims_listening_with_no_audio": 0,
+   "claims_human_playback": 0
+  }
+ ],
+ "ensembles": [
+  {
+   "a": "strip1:google/gemini-4-argon",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 7,
+   "clean_runs": 34,
+   "cost_per_clip": 0.1048
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0291
+  },
+  {
+   "a": "strip1:anthropic/claude-opus-5.5",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0816
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0894
+  },
+  {
+   "a": "strip4:google/gemini-4-argon",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0911
+  },
+  {
+   "a": "strip1:google/gemini-4-argon",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0251
+  },
+  {
+   "a": "strip1:google/gemini-4-argon",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0308
+  },
+  {
+   "a": "strip1:openai/gpt-6.1-terra",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0853
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0859
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 12,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0659
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 13,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0154
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 13,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0257
+  },
+  {
+   "a": "strip4:anthropic/claude-opus-5.5",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 13,
+   "clean_runs": 34,
+   "cost_per_clip": 0.1415
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0096
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "native:xiaomi/mimo-v2.6-pro",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0102
+  },
+  {
+   "a": "strip1:openai/gpt-6.1-terra",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0618
+  },
+  {
+   "a": "strip4:anthropic/claude-opus-5.5",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0676
+  },
+  {
+   "a": "strip1:google/gemini-4-argon",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0813
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "native:qwen/qwen3.8-omni-flash",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 20,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 15,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0089
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 20,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 15,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0244
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 20,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0611
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0624
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 18,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 20,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0846
+  },
+  {
+   "a": "strip1:openai/gpt-6.1-terra",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 17,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 9,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0113
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 17,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 19,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0106
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 7,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0258
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 7,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0861
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "native:meta/muse-spark-open",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 8,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0104
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0121
+  },
+  {
+   "a": "strip1:anthropic/claude-opus-5.5",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.1052
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0064
+  },
+  {
+   "a": "strip1:anthropic/claude-opus-5.5",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0254
+  },
+  {
+   "a": "strip1:anthropic/claude-opus-5.5",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0312
+  },
+  {
+   "a": "strip1:anthropic/claude-opus-5.5",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 11,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0449
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 12,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0295
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "native:xiaomi/mimo-v2.6-pro",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 13,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0069
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 13,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0626
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "native:qwen/qwen3.8-omni-flash",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0056
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0247
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 14,
+   "clean_runs": 34,
+   "cost_per_clip": 0.026
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0049
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0062
+  },
+  {
+   "a": "native:xiaomi/mimo-v2.6-pro",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0119
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "native:perceptron/perceptron-mk1.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 18,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 18,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0041
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 18,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0228
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 19,
+   "clean_runs": 34,
+   "cost_per_clip": 0.083
+  },
+  {
+   "a": "native:meta/muse-spark-open",
+   "b": "native:perceptron/perceptron-mk1.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 20,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0074
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 16,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 22,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0595
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "native:google/gemini-4-argon",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 15,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0083
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip1:google/gemini-4-argon",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 16,
+   "clean_runs": 34,
+   "cost_per_clip": 0.027
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "native:meta/muse-spark-open",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 17,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0116
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip4:google/gemini-4-argon",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 17,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0872
+  },
+  {
+   "a": "native:qwen/qwen3.8-omni-flash",
+   "b": "native:xiaomi/mimo-v2.6-pro",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 18,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0054
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip4:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 17,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 18,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0637
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 15,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 15,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 21,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0091
+  },
+  {
+   "a": "native:google/gemini-4-argon",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 10,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0262
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "native:xiaomi/mimo-v2.6-pro",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 18,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0081
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 19,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0075
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip4:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 19,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0133
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "native:qwen/qwen3.8-omni-flash",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 20,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0068
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 14,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 20,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0232
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "strip1:openai/gpt-6.1-terra",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 14,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 21,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0033
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "native:perceptron/perceptron-mk1.5",
+   "picture_defect_run_hits": 14,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 16,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 23,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0053
+  },
+  {
+   "a": "native:google/gemini-3.8-flash",
+   "b": "strip1:anthropic/claude-opus-5.5",
+   "picture_defect_run_hits": 13,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 15,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 15,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0274
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "native:qwen/qwen3.8-omni-flash",
+   "picture_defect_run_hits": 13,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 15,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 21,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0026
+  },
+  {
+   "a": "native:perceptron/perceptron-mk1.5",
+   "b": "native:xiaomi/mimo-v2.6-pro",
+   "picture_defect_run_hits": 2,
+   "picture_defect_runs": 22,
+   "all_defect_run_hits": 2,
+   "all_defect_runs": 26,
+   "clean_runs_flagged": 23,
+   "clean_runs": 34,
+   "cost_per_clip": 0.0039
+  }
+ ]
+}

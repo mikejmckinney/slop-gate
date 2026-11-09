@@ -1,0 +1,41 @@
+30 clips: 13 defects, 17 clean, 2 runs each. net = defect-runs where the planted-pattern hit did not also fire on the clean sibling (of 26); pic = net picture-only (of 22); raw = before the sibling check (of 26); sib = same-rule hits on clean siblings; any/both = defects found net in either/both runs (of 13).
+approach                                       net    pic    raw  sib any/13  both brief named locatd   iou onset   clean  agree fail    sec   $clip  $/min
+native:google/gemini-4-argon                 18/26  16/22  22/26    4      9     9   0/4    22     23  0.63   0.5   5/34   0.967    0   10.2  0.0036 0.0225
+native:meta/muse-spark-open                  18/26  18/22  18/26    0      9     9   0/4    18     20   0.6  0.17   7/34   0.967    0   10.7  0.0068 0.0433
+strip1:google/gemini-4-argon                 18/26  18/22  18/26    0      9     9   0/4    18     21  0.64   0.2   5/34   0.967    0   14.0  0.0223 0.1407
+strip4:anthropic/claude-opus-5.5             18/26  18/22  20/26    2      9     9   2/4    20     22  0.79   0.0  10/34     1.0    0    9.0   0.059 0.3727
+strip4:google/gemini-4-argon                 18/26  18/22  18/26    0      9     9   0/4    18     19  0.81  0.02   3/34   0.967    0   15.8  0.0825 0.5212
+native:qwen/qwen3.8-omni-flash               17/26  15/22  17/26    0      9     8   0/4    17     22  0.56   0.5  13/34   0.867    0   44.8  0.0021 0.0131
+native:google/gemini-3.8-flash               16/26  14/22  19/26    3      9     7   0/4    19     22   0.6   0.2  14/34     0.8    0    7.5  0.0047 0.0299
+strip1:anthropic/claude-opus-5.5             16/26  16/22  18/26    2      8     8   0/4    18     19  0.59   0.1   7/34   0.967    0    6.7  0.0226  0.143
+strip1:openai/gpt-6.1-terra                  16/26  16/22  16/26    0      8     8   0/4    16     20  0.59  0.75   9/34   0.967    0    4.8  0.0028 0.0176
+strip4:openai/gpt-6.1-terra                  16/26  16/22  16/26    0      9     7   0/4    16     20  0.86   0.0   8/34   0.933    0    6.7  0.0085  0.054
+native:perceptron/perceptron-mk1.5            2/26   2/22   4/26    2      1     1   0/4     4     19  0.36   0.8  18/33   0.889    4    2.9  0.0005 0.0033
+native:xiaomi/mimo-v2.6-pro                   0/26   0/22   0/26    0      0     0   0/4    15      6  None  None  10/16   0.938   23   79.1  0.0034 0.0213
+
+Per defect, net hits in 2 runs (raw in summary.json):
+approach                                       flicker identity_d object_van action_ski action_rev cause_effe text_mutat  sound_off narration_ caption_mi  clip_seam  brief_gap brief_dens
+native:google/gemini-4-argon                         2          2          2          2          2          0          2          0          2          2          2          0          0
+native:meta/muse-spark-open                          2          2          2          2          2          2          2          0          0          2          2          0          0
+strip1:google/gemini-4-argon                         2          2          2          2          2          2          2          0          0          2          2          0          0
+strip4:anthropic/claude-opus-5.5                     2          2          2          2          2          2          2          0          0          0          2          0          2
+strip4:google/gemini-4-argon                         2          2          2          2          2          2          2          0          0          2          2          0          0
+native:qwen/qwen3.8-omni-flash                       1          2          2          2          2          2          2          0          2          2          0          0          0
+native:google/gemini-3.8-flash                       2          2          2          2          1          0          2          0          2          2          1          0          0
+strip1:anthropic/claude-opus-5.5                     2          2          2          2          2          2          2          0          0          0          2          0          0
+strip1:openai/gpt-6.1-terra                          2          2          2          2          2          2          2          0          0          2          0          0          0
+strip4:openai/gpt-6.1-terra                          2          2          1          2          2          2          2          0          0          2          1          0          0
+native:perceptron/perceptron-mk1.5                   0          0          2          0          0          0          0          0          0          0          0          0          0
+native:xiaomi/mimo-v2.6-pro                          0          0          0          0          0          0          0          0          0          0          0          0          0
+
+Top pairs on net picture-only defect-runs (union of findings, same run):
+strip1:google/gemini-4-argon + strip4:google/gemini-4-argon: 18/22 picture, 18/26 all, clean flagged 7/34 $0.1048/clip
+native:meta/muse-spark-open + strip1:google/gemini-4-argon: 18/22 picture, 18/26 all, clean flagged 10/34 $0.0291/clip
+strip1:anthropic/claude-opus-5.5 + strip4:anthropic/claude-opus-5.5: 18/22 picture, 18/26 all, clean flagged 10/34 $0.0816/clip
+native:meta/muse-spark-open + strip4:google/gemini-4-argon: 18/22 picture, 18/26 all, clean flagged 10/34 $0.0894/clip
+strip4:google/gemini-4-argon + strip4:openai/gpt-6.1-terra: 18/22 picture, 18/26 all, clean flagged 10/34 $0.0911/clip
+strip1:google/gemini-4-argon + strip1:openai/gpt-6.1-terra: 18/22 picture, 18/26 all, clean flagged 11/34 $0.0251/clip
+strip1:google/gemini-4-argon + strip4:openai/gpt-6.1-terra: 18/22 picture, 18/26 all, clean flagged 11/34 $0.0308/clip
+strip1:openai/gpt-6.1-terra + strip4:google/gemini-4-argon: 18/22 picture, 18/26 all, clean flagged 11/34 $0.0853/clip
+
+Spend from usage.cost: scored $13.13, superseded $2.64, probe $0.32, realism review $0.66, realism generation $0.36, total $17.11. Unadjudicated claims: 245.

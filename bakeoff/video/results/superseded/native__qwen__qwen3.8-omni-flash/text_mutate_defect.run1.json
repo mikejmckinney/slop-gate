@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 5.5, \"end_s\": 6.5, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"At 6.0s the bottom caption \\\"Checking the loop point\\\" renders blurred and ghosted while the waveforms, labels, and badges around it remain sharp, and the caption is crisp again at 5.0s and 7.0s.\", \"impact\": \"The one caption that is supposed to stay stable becomes momentarily unreadable, undermining the clean UI-recording presentation.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption as a static overlay layer so it does not jitter or blur between frames.\"}]}",
+ "cost": 0.0021128,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 44.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2257,
+  "completion_tokens": 3775,
+  "total_tokens": 6032
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 3617,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "text_mutate_defect",
+ "run": 1
+}

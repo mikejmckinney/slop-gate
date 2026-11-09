@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":6,\"end_s\":8,\"pattern\":\"Contact slip\",\"evidence\":\"The fallen blocks extend below the floor's top edge in all three frames.\",\"impact\":\"The blocks appear embedded in the floor rather than resting on it.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Align the bottoms of the fallen blocks with the floor surface.\"}]}",
+ "cost": 0.004778,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 3.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 184,
+  "total_tokens": 3271
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3084,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 100,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "cause_effect_clean",
+ "run": 1,
+ "frames": 9
+}

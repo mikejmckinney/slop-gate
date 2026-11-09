@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.75, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The car advances a steady ~11 px per frame up to t=3.75 s (left edge ~175 px), then jumps to ~356 px at t=4.0 s, about 170 px instead of 11, before resuming the same ~11 px per frame pace.\", \"impact\": \"The sudden forward jump breaks the intended constant-speed motion and reads as a glitch or missing frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Regenerate or interpolate the frames between 3.75 s and 4.0 s so the car keeps its ~11 px per 0.25 s pace, and retime the rest of the clip to match.\"}]}",
+ "cost": 0.060044,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13031,
+  "completion_tokens": 396,
+  "total_tokens": 13427
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 129,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "action_skip_defect",
+ "run": 2,
+ "frames": 40
+}

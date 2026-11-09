@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 6.0, \"end_s\": 8.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"At 6.0s the top red block is visible airborne at the upper right of the collapsing stack, but in the 7.0s and 8.0s frames only three blocks lie on the ground and the red block is completely absent.\", \"impact\": \"One of the four tower blocks disappears instead of landing, so the collapse does not match the stated setup of a four-block tower falling over.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Animate the red block falling to rest on the ground beyond the red-orange block and keep it visible through the end of the clip.\"}]}",
+ "cost": 0.00148402,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 29.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2480,
+  "completion_tokens": 2366,
+  "total_tokens": 4846
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 2194,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "cause_effect_clean",
+ "run": 1
+}

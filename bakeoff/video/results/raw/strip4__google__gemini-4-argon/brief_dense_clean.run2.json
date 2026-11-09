@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.75, \"pattern\": \"Contact slip\", \"evidence\": \"The character's body and legs remain a rigid, unchanging block while translating horizontally across the ground.\", \"impact\": \"The character appears to slide effortlessly across the grass rather than walking.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Animate a walk cycle with alternating leg movement and vertical bobbing synced to the horizontal translation.\"}]}",
+ "cost": 0.0596924,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 44851,
+  "completion_tokens": 112,
+  "total_tokens": 44963
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 16384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "brief_dense_clean",
+ "run": 2,
+ "frames": 40
+}

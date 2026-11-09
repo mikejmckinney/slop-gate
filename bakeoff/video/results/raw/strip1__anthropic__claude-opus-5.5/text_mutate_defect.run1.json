@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption reads 'Checking the loop point' at 0-3 s and 7 s, but changes to 'Checkimg the lpoo point' at 4 s, 'Chacking tha loop poimt' at 5 s, and 'Ch3cking the 1oop p0int' at 6 s.\", \"impact\": \"The caption is meant to stay the same, so the misspelled, changing text across three consecutive frames looks broken and unprofessional.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption as one static text layer that reads 'Checking the loop point' for the full 8 seconds.\"}]}",
+ "cost": 0.019864,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3121,
+  "completion_tokens": 369,
+  "total_tokens": 3490
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 107,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 8
+}

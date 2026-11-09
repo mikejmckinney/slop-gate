@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.5, \"end_s\": 8.75, \"pattern\": \"Visible clip seams\", \"evidence\": \"At 4.5 seconds, the tutorial slide ('Tap and hold' / 'Release to fire') abruptly cuts to an unrelated static title card ('WAVE 7 / 1,250 m') for the remainder of the clip.\", \"impact\": \"The sudden cut to an unrelated wave title interrupts the tutorial instruction and leaves the second half of the clip static.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the clip at 4.5 seconds or replace the second half with the intended continuation of the tutorial demonstration.\"}]}",
+ "cost": 0.082368,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 29.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 40404,
+  "completion_tokens": 156,
+  "total_tokens": 40560
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "narration_mismatch_clean",
+ "run": 1,
+ "frames": 36
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 7.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption should stay 'Checking the loop point' but reads 'Checkimg the lpoo point' at 4 s, 'Chacking tha loop poimt' at 5 s and 'Ch3cking the 1oop p0int' at 6 s, then returns to the correct text at 7 s.\", \"impact\": \"The caption is meant to stay constant, so garbled, shifting misspellings look broken and hurt readability.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption as one static text layer with the correct string for the full clip.\"}, {\"start_s\": 0.0, \"end_s\": 8.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The caption box hides most of the third 'blocks' row (only 'loop' is visible) from 0\u20134 s, and it partly covers the green 'passes, 0 findings' badge from 5\u20137 s.\", \"impact\": \"Key status information in the tool is hidden behind the caption, so viewers cannot read it.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Move the caption lower or add a bottom margin to the UI so the caption does not overlap the result rows and badge.\"}]}",
+ "cost": 0.028244,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3121,
+  "completion_tokens": 788,
+  "total_tokens": 3909
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 336,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "text_mutate_defect",
+ "run": 2,
+ "frames": 8
+}

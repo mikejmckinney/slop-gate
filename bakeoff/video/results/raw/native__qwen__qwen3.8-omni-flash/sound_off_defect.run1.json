@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 10.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The orange ball oscillates vertically between roughly y=240 and y=480 while drifting right, but the brown wooden floor band begins near y=830, so the ball's lowest point (~y=520) never touches the floor.\", \"impact\": \"The intended action of a ball bouncing on a wooden floor never occurs; the ball appears to bounce in mid-air, breaking the physical premise of the clip.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Lower the ball's bounce trajectory so the bottom of the ball contacts the top edge of the brown floor band at each bounce.\"}]}",
+ "cost": 0.00116728,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 21.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2756,
+  "completion_tokens": 1604,
+  "total_tokens": 4360
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1430,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "sound_off_defect",
+ "run": 1
+}

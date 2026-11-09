@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 16, \"end_s\": 25, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption, which reads 'Checking the loop point' before and after, mutates across consecutive frames into 'Chacking the loop poinl', 'Checking the lpoo point', and 'Ch3cking the loop p0int'.\", \"impact\": \"The caption is meant to stay identical for the whole clip, so the mutating text reads as a rendering fault and makes the caption unreliable.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption once as a locked static overlay so its text cannot change between frames.\"}]}",
+ "cost": 0.0053613,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 86.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4067,
+  "completion_tokens": 4837,
+  "total_tokens": 8904
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 4680,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "text_mutate_defect",
+ "run": 1
+}

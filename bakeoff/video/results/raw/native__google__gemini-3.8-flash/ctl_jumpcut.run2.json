@@ -1,0 +1,34 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 5.0, \"pattern\": \"Near-static clip\", \"evidence\": \"The elements remain completely motionless across the opening shot.\", \"impact\": \"The video appears frozen during the first half.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Animate the elements or trim the static duration.\"}]}\n```",
+ "cost": 0.00587625,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-3.8-flash",
+ "usage": {
+  "prompt_tokens": 1090,
+  "completion_tokens": 1349,
+  "total_tokens": 2439
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 660
+  },
+  "completion": {
+   "reasoning_tokens": 1257,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-3.8-flash",
+ "model": "google/gemini-3.8-flash",
+ "clip": "ctl_jumpcut",
+ "run": 2
+}

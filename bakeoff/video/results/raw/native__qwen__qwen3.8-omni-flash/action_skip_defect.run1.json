@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The car's center jumps from roughly x=295 to x=635 between the 3.0s and 4.0s frames (~340 px), while in every other 1-second interval it advances only ~65-75 px, and the static road dashes confirm the camera did not move.\", \"impact\": \"The teleport breaks the intended constant-speed drive, making the motion look like a skipped frame rather than smooth travel.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-interpolate the car's position between 3.0s and 4.0s so it continues at the same ~70 px/s rate as the rest of the clip.\"}]}",
+ "cost": 0.00132891,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 24.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2693,
+  "completion_tokens": 1968,
+  "total_tokens": 4661
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1772,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "action_skip_defect",
+ "run": 1
+}

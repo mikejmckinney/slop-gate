@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The car's left edge advances a steady ~44 px per second (x\u224810, 54, 98, 142) and again after t=4 (356, 400, 444, 488, 532, 576), but jumps ~214 px between t=3 and t=4.\", \"impact\": \"The sudden jump breaks the intended constant-speed motion and reads as a skipped section or teleport.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Regenerate or retime the 3\u20134 s span so the car advances by the same ~44 px per second as in the rest of the clip.\"}]}",
+ "cost": 0.022024,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3731,
+  "completion_tokens": 355,
+  "total_tokens": 4086
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 115,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "action_skip_defect",
+ "run": 2,
+ "frames": 10
+}

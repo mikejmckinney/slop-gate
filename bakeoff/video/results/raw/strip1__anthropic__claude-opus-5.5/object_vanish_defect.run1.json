@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 6.0, \"end_s\": 10.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball moves about 74 px per second (x\u224834, 108, 182, 256 at t=1\u20134 s) and is partly behind the pillar at 4 s, but it never comes out on the right side; frames 6\u20139 s show only the pillar and an empty background where the ball should be at about x\u2248404\u2013626.\", \"impact\": \"The ball disappears behind the pillar permanently, so the intended action of continuing to the right edge never happens.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the ball coming out from behind the pillar at about t\u22485.5 s and continuing at the same speed until it exits the right edge.\"}]}",
+ "cost": 0.024644,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3746,
+  "completion_tokens": 483,
+  "total_tokens": 4229
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 219,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "object_vanish_defect",
+ "run": 1,
+ "frames": 10
+}

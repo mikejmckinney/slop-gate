@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Floaty timing\", \"evidence\": \"The ball follows a repeating 3-second arc: apex at y\u224888 at 0, 3, 6 and 9 s, y\u2248172 at the 1\u20132, 4\u20135 and 7\u20138 s pairs, with floor contact implied midway. For a ball about 44 px wide, that drop of roughly 190 px (about 4 ball diameters) takes about 1.5 s, several times longer than gravity would take.\", \"impact\": \"The bounce reads as weightless and drifting instead of a ball dropping and rebounding off a floor.\", \"confidence\": \"low\", \"basis\": \"inference\", \"fix\": \"Shorten each bounce period, or raise the apex, so the fall time matches gravity for the ball's on-screen size.\"}]}",
+ "cost": 0.034048,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 13.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3727,
+  "completion_tokens": 957,
+  "total_tokens": 4684
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 674,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "sound_off_defect",
+ "run": 1,
+ "frames": 10
+}

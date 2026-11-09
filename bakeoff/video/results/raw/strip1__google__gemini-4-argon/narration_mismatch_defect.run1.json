@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 9.0, \"pattern\": \"Visible clip seams\", \"evidence\": \"At t=5.000 s the tutorial slide abruptly cuts to an unrelated static 'WAVE 3 / 400 m' level card that remains unchanged through t=8.000 s.\", \"impact\": \"The abrupt splice interrupts the tutorial instruction before demonstrating the firing action and leaves four seconds of dead static screen.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the spliced 'WAVE 3' segment from the end of the clip or replace it with the intended firing demonstration.\"}]}",
+ "cost": 0.024616,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 10433,
+  "completion_tokens": 375,
+  "total_tokens": 10808
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 225,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "narration_mismatch_defect",
+ "run": 1,
+ "frames": 9
+}

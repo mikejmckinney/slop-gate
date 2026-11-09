@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":6,\"end_s\":7,\"pattern\":\"Visible clip seams\",\"evidence\":\"The rightmost cloud is cut off at a straight vertical edge just inside the frame, leaving a narrow strip of sky beside it.\",\"impact\":\"The abrupt cutoff exposes the edge of the cloud layer.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Extend the cloud layer beyond the frame so its edge stays hidden.\"}]}",
+ "cost": 0.0065155,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3077,
+  "completion_tokens": 534,
+  "total_tokens": 3611
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3074,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 439,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "ctl_handheld",
+ "run": 1,
+ "frames": 9
+}

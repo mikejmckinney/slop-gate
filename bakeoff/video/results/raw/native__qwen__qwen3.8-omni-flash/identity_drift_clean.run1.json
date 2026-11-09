@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 10.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"At 2s an extra teal wedge-shaped limb fragment appears beside the robot's head/shoulder and persists in every subsequent frame (2s\u20139s) while the single waving arm continues its motion; frames 0\u20131s show the robot with only the one arm.\", \"impact\": \"The robot gains a phantom second limb that was not in the original design, breaking the 'same robot, one waving arm' premise.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Remove the stray wedge fragment (or fold it into the waving arm's shoulder joint) so the robot shows exactly one arm for the whole clip.\"}]}",
+ "cost": 0.00447178,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 109.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2696,
+  "completion_tokens": 8654,
+  "total_tokens": 11350
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 8474,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "identity_drift_clean",
+ "run": 1
+}

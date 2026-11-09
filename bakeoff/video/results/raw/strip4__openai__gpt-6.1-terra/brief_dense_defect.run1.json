@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.0,\"end_s\":9.75,\"pattern\":\"Contact slip\",\"evidence\":\"The pink figure moves steadily across the grass while its lower edge and pose remain unchanged, with no visible steps.\",\"impact\":\"The figure appears to slide rather than walk across the park.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate a simple walking cycle with alternating planted feet as the figure moves.\"}]}",
+ "cost": 0.00175395,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12222,
+  "completion_tokens": 228,
+  "total_tokens": 12450
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 12219,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 132,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "brief_dense_defect",
+ "run": 1,
+ "frames": 40
+}

@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [\n  {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Frames at 0 through 4 s show the same closed red door and hallway with no visible change, apart from the caption appearing at 4 s.\", \"impact\": \"Almost half the clip passes with no action, so the door opening feels delayed and the clip reads as frozen.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Start the door swing within the first second, or trim the idle lead-in.\"},\n  {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door is fully closed at 4 s and already at its final open position at 5 s, with no intermediate swing visible in any sampled frame.\", \"impact\": \"The swing the caption describes may be missing, leaving an abrupt pop from closed to open.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Animate the swing over one to two seconds so intermediate door angles are visible.\"},\n  {\"start_s\": 5.0, \"end_s\": 9.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Frames at 5 through 8 s are identical, showing the open door frozen in the same position, and only the caption removal at 8 s changes anything.\", \"impact\": \"Together with the idle opening, most of the clip is static and the single action takes up very little screen time.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Shorten the hold on the open door, or add follow-through such as a slight settle of the door.\"}\n]}\n```",
+ "cost": 0.031784,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3426,
+  "completion_tokens": 904,
+  "total_tokens": 4330
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 357,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 2,
+ "frames": 9
+}

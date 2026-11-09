@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption, which reads \\\"Checking the loop point\\\" at 0-3 s and 7 s, becomes misspelled at 4 s (\\\"Checkimg the lpoo point\\\"), 5 s (\\\"Chacking tha loop poimt\\\") and 6 s (\\\"Ch3cking the 1oop p0int\\\").\", \"impact\": \"The caption is meant to stay the same, so the changing garbled text looks broken and undermines the credibility of the tool demo.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption as one static text layer with the correct string for the whole clip.\"}, {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The caption bar sits over the third \\\"blocks\\\" row, so only \\\"loop\\\" is visible and the rest of that finding's message is hidden behind \\\"Checking the loop point\\\".\", \"impact\": \"The loop-point finding is the main subject of the video, and viewers cannot read it.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Move the caption lower, or shift or shrink the findings list so the caption does not cover any UI text.\"}]}",
+ "cost": 0.025664,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3121,
+  "completion_tokens": 659,
+  "total_tokens": 3780
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 207,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 8
+}

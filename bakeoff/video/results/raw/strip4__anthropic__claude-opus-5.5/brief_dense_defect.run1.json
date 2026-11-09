@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 4.25, \"end_s\": 4.5, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A solid bright-green square appears in the sky above the child at t=4.25 s; it is absent at t=4.00 s and gone again at t=4.50 s.\", \"impact\": \"An unexplained object pops in and out of the scene, which reads as a glitch and distracts from the walking action.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Remove the stray green square from the frame around t=4.25 s or re-render that segment.\"}]}\n```",
+ "cost": 0.061432,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13028,
+  "completion_tokens": 466,
+  "total_tokens": 13494
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 258,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "brief_dense_defect",
+ "run": 1,
+ "frames": 40
+}

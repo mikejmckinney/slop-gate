@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":4,\"pattern\":\"Unstable or unreadable overlays\",\"evidence\":\"The bottom caption covers most of the third diagnostic row.\",\"impact\":\"The row\u2019s finding cannot be read.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Move the caption below the diagnostic rows or reserve space for it.\"},{\"start_s\":4,\"end_s\":6,\"pattern\":\"Unstable or unreadable overlays\",\"evidence\":\"The bottom caption changes from its intended wording to several misspelled and altered versions across consecutive frames.\",\"impact\":\"The caption is inconsistent and harder to read.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the caption text fixed as \u201cChecking the loop point\u201d throughout the clip.\"}]}",
+ "cost": 0.0054955,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 2789,
+  "completion_tokens": 402,
+  "total_tokens": 3191
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2786,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 241,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 8
+}

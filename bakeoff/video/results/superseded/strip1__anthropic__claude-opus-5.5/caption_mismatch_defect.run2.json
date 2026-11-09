@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 5.0, \"end_s\": 7.0, \"pattern\": \"Continuity errors\", \"evidence\": \"The caption reads 'The door stays shut.' while the red door is visibly swung open onto a dark doorway in the frames at 5, 6 and 7 s.\", \"impact\": \"The caption contradicts the action it is meant to describe, which confuses viewers about what happens.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Change the caption to describe the door opening, for example 'The red door swings open.'\"}, {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"The frames from 0 to 4 s are identical, showing a closed door with no change, and the open state from 5 to 8 s is also unchanged.\", \"impact\": \"Most of the 9-second clip shows no motion, so the intended swing takes up almost none of the runtime.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Spread the door swing over several seconds so the motion fills more of the clip.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door goes from fully closed at 4 s to fully open at 5 s, with no partially open state in any sampled frame.\", \"impact\": \"The swing may read as a pop between states rather than a continuous opening.\", \"confidence\": \"low\", \"basis\": \"inference\", \"fix\": \"Animate intermediate door angles so the opening is visibly gradual.\"}]}",
+ "cost": 0.032424,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3426,
+  "completion_tokens": 936,
+  "total_tokens": 4362
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 412,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 9
+}

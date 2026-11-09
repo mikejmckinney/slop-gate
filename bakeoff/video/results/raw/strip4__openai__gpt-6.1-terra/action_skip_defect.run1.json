@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3.75,\"end_s\":4.25,\"pattern\":\"Action stalls, reverses, or skips\",\"evidence\":\"The car jumps from left of center to right of center between 3.75 and 4.0 seconds, then continues from the new position.\",\"impact\":\"The sudden displacement interrupts the intended constant-speed drive.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate the car through the missing distance at the same rate as the surrounding frames.\"}]}",
+ "cost": 0.0015641,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12225,
+  "completion_tokens": 190,
+  "total_tokens": 12415
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 12222,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 80,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "action_skip_defect",
+ "run": 1,
+ "frames": 40
+}

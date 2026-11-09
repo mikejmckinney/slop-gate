@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.2, end_s\": 10.0, \"pattern\": \"Continuity errors\", \"evidence\": \"The sky color abruptly shifts from blue to a yellowish gradient and the clouds change color without any visible cause.\", \"impact\": \"This sudden visual change breaks the intended continuity of the scene.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Ensure consistent lighting and cloud colors throughout the clip unless a deliberate transition is planned.\"}]}",
+ "cost": 0.00058545,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Perceptron",
+ "served_model": "perceptron/perceptron-mk1.5",
+ "usage": {
+  "prompt_tokens": 2783,
+  "completion_tokens": 112,
+  "total_tokens": 2895
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:perceptron/perceptron-mk1.5",
+ "model": "perceptron/perceptron-mk1.5",
+ "clip": "clip_seam_defect",
+ "run": 2
+}

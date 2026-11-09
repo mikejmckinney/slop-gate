@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4,\"end_s\":5,\"pattern\":\"Continuity errors\",\"evidence\":\"The blue sky and white clouds abruptly become warmer and yellow-tinted, with a grainier appearance that persists in later frames.\",\"impact\":\"The sudden visual change disrupts the continuous shot.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Match the color and texture across the transition.\"}]}",
+ "cost": 0.00529925,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3376,
+  "completion_tokens": 216,
+  "total_tokens": 3592
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3373,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 127,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "clip_seam_defect",
+ "run": 1,
+ "frames": 10
+}

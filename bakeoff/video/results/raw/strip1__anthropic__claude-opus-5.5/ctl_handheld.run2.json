@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 6.0, \"end_s\": 8.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The rightmost cloud is cut off by a hard vertical edge a few pixels inside the right frame border at t=6\u20137 instead of leaving the frame naturally, and at t=8 a flat white rectangular sliver appears at the left edge (x\u22480\u20135, y\u224888\u2013150) as if the cloud is wrapping around.\", \"impact\": \"Clouds visibly pop and wrap at the frame edges as hard-edged shapes, which breaks the illusion of a continuous sky.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Make the sky layer wider than the frame, or make the cloud wrap happen fully off-screen, so clouds enter and exit with their full soft shape.\"}, {\"start_s\": 1.0, \"end_s\": 2.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A thin white vertical sliver with no cloud shape sits at the extreme right edge (x\u2248638, y\u224860\u201395) in consecutive frames t=1 and t=2.\", \"impact\": \"A stray fragment at the frame edge reads as a rendering glitch rather than a cloud.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Spawn wrapping clouds far enough outside the visible frame that no partial rectangles are drawn at the border.\"}]}",
+ "cost": 0.039144,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 15.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3426,
+  "completion_tokens": 1272,
+  "total_tokens": 4698
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 780,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "ctl_handheld",
+ "run": 2,
+ "frames": 9
+}

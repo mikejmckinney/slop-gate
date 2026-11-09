@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.75, \"end_s\": 9.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball rolls behind the grey pillar by t=4.750 s and never reappears on the right side for the rest of the clip.\", \"impact\": \"The ball appears to vanish behind the pillar instead of continuing across the frame as intended.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Continue animating the red ball so it emerges from behind the right edge of the pillar and rolls to the right edge of the frame.\"}]}",
+ "cost": 0.091142,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 44861,
+  "completion_tokens": 142,
+  "total_tokens": 45003
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "object_vanish_defect",
+ "run": 1,
+ "frames": 40
+}

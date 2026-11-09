@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 4.0, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The command `git log --oneline -n 3 | cat` is shown producing the output `## slop-gate: \u2705 passed` and `0 blocking, 0 advisory. Checked 1 text files for hidden characters, 1 Python files at HEAD.`, which is a slop-gate markdown report, not git commit-log output.\", \"impact\": \"A viewer following the terminal demo would be misled into thinking git log can emit a slop-gate file-check report, breaking the instructional logic of the clip.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Replace the git log command with the actual command that produces the report (e.g., `cat r.md`) or show real git log output (commit hashes and messages) after that command.\"}]}",
+ "cost": 0.00268378,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 62.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2244,
+  "completion_tokens": 4994,
+  "total_tokens": 7238
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 4789,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "ctl_screen",
+ "run": 1
+}

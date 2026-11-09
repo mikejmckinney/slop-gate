@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Frames 0 through 4 show the identical closed red door and wall with no change at all, apart from the caption appearing at 4 s.\", \"impact\": \"Nearly half the clip shows nothing happening, so the viewer waits through dead time before the only action.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the opening hold to about one second, or start the door motion earlier.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door is fully closed at 4 s and already at its final open angle at 5 s, and it stays at that angle for every frame after.\", \"impact\": \"The swing seems to happen in under a second between long frozen holds, so it may read as a pop instead of a door swinging open.\", \"confidence\": \"low\", \"basis\": \"inference\", \"fix\": \"Animate the swing over roughly 1.5 to 2 seconds with easing so the intermediate angles are visible.\"}, {\"start_s\": 5.0, \"end_s\": 8.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Frames 5 through 8 show the open door at exactly the same angle with no further change.\", \"impact\": \"The clip ends on a long frozen hold, which adds to the overall static feel.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Shorten the end hold or add a subtle settle or follow-through motion on the door.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The caption 'The door swings open.' is visible at 4 s while the door is still fully closed.\", \"impact\": \"The caption describes an action that has not started yet, so text and picture briefly disagree.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Bring the caption in when the door starts moving.\"}]}",
+ "cost": 0.032948,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3437,
+  "completion_tokens": 960,
+  "total_tokens": 4397
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 288,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 9
+}

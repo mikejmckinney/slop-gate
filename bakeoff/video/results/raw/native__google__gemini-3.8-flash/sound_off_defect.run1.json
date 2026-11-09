@@ -1,0 +1,34 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The ball reverses upward in mid-air without contacting the floor surface.\", \"impact\": \"Disrupts physical realism and contradicts the intended bounce action.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Animate the ball trajectory downward until it contacts the floor before rebounding.\"}]}\n```",
+ "cost": 0.00432525,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-3.8-flash",
+ "usage": {
+  "prompt_tokens": 1332,
+  "completion_tokens": 887,
+  "total_tokens": 2219
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 250,
+   "video_tokens": 660
+  },
+  "completion": {
+   "reasoning_tokens": 785,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-3.8-flash",
+ "model": "google/gemini-3.8-flash",
+ "clip": "sound_off_defect",
+ "run": 1
+}

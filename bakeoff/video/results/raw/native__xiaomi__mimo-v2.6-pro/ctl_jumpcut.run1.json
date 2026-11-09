@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0, \"end_s\": 30, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The dark vertical bar floats in mid-air to the left of the rolling ball with no contact or support, yet it translates in perfect lockstep with the ball across the entire clip (visible in every sampled frame, e.g. 0s, 4s, 16s, 28s).\", \"impact\": \"An object moving with no visible cause or physical link to the ball reads as an unexplained animation artifact and breaks the scene's internal logic.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Either attach the bar to the ball with visible contact/support, give it its own independent motion, or remove it.\"}]}",
+ "cost": 0.00321574968,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 68.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4064,
+  "completion_tokens": 2114,
+  "total_tokens": 6178
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 32,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1940,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "ctl_jumpcut",
+ "run": 1
+}

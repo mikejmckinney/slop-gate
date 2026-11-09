@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": []}",
+ "cost": 0.022452,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3728,
+  "completion_tokens": 377,
+  "total_tokens": 4105
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 368,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "action_reverse_clean",
+ "run": 2,
+ "frames": 10
+}

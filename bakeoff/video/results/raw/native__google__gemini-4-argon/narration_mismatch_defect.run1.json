@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.2, \"end_s\": 8.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The on-screen text reads 'WAVE 3' and '400 m', while the narrator announces 'Wave 7 begins in 1,250 meters.'\", \"impact\": \"The conflicting numbers between the visual display and the spoken audio confuse the player about the current game state.\", \"confidence\": \"high\", \"basis\": \"listening\", \"fix\": \"Update the on-screen text or re-record the voiceover so both state the same wave number and distance.\"}]}",
+ "cost": 0.004222,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 1401,
+  "completion_tokens": 142,
+  "total_tokens": 1543
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 915
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "narration_mismatch_defect",
+ "run": 1
+}

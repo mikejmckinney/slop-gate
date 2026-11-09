@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 15, \"end_s\": 30, \"pattern\": \"Near-static clip\", \"evidence\": \"From 00:15 to the end of the file the screen holds the identical 'WAVE 3 / 400 m' card with no change in text, graphics, or background across every frame.\", \"impact\": \"Fifteen seconds of a frozen title card gives the viewer nothing to watch and makes the tutorial feel stalled or unfinished.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the static card to a brief hold (about 2-3 seconds) or add the wave-start animation/gameplay it is meant to introduce.\"}]}",
+ "cost": 0.00121603968,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 47.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4055,
+  "completion_tokens": 1525,
+  "total_tokens": 5580
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 4032,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1367,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "narration_mismatch_defect",
+ "run": 2
+}

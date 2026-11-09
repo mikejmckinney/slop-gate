@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [\n  {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"From 0.0 s to 4.0 s every frame shows the same closed red door with no change at all, and the whole swing happens only between 4.25 s and 5.0 s.\", \"impact\": \"Nearly half the clip shows nothing happening before the intended action, which reads as a frozen or broken video.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the idle lead-in to under a second, or start the door swing much earlier.\"},\n  {\"start_s\": 3.5, \"end_s\": 4.25, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The caption 'The door swings open.' appears at 3.5 s, but the door stays fully closed through 4.0 s and only starts moving at 4.25 s.\", \"impact\": \"The caption describes an event that has not happened yet, so text and picture are out of sync.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Delay the caption onset to about 4.25 s so it matches the start of the swing.\"}\n]}\n```",
+ "cost": 0.063144,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11796,
+  "completion_tokens": 798,
+  "total_tokens": 12594
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 411,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 2,
+ "frames": 36
+}

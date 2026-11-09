@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"The closed red door and hallway remain completely motionless for the first four seconds.\", \"impact\": \"The prolonged lack of motion makes the video appear frozen before the action begins.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Trim the static opening seconds or start the door opening animation earlier.\"}]}",
+ "cost": 0.02229,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 29.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 10620,
+  "completion_tokens": 105,
+  "total_tokens": 10725
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 9
+}

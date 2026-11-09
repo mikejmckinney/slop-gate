@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.75, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"A large rectangular patch of the brick wall texture becomes noisy and shifts every frame from 3.000 s to 6.750 s.\", \"impact\": \"The shifting noise in the static background is distracting and looks like a rendering error.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Replace the noisy wall patch with the clean static brick texture from the earlier frames.\"}]}",
+ "cost": 0.091342,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 16.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 45031,
+  "completion_tokens": 128,
+  "total_tokens": 45159
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "flicker_defect",
+ "run": 2,
+ "frames": 40
+}

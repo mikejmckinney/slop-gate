@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [\n  {\"start_s\": 4.75, \"end_s\": 8.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A hard-edged white vertical sliver pops in and out at the left frame edge (present at 4.75\u20135.0 s, 5.5 s, 6.25\u20136.5 s, 7.25 s, 8.0 s and 8.75 s, absent in the frames between), and it matches no cloud moving into frame.\", \"impact\": \"Flashing edge fragments read as glitches rather than clouds drifting in, which breaks the natural meadow look.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Render clouds with enough overscan beyond the frame so they enter smoothly and are never clipped to stray slivers.\"},\n  {\"start_s\": 0.25, \"end_s\": 2.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A white sliver appears at the right edge at 0.25 s, 1.75\u20132.0 s and 2.75 s, then disappears in the frames between instead of entering steadily.\", \"impact\": \"Cloud fragments blinking at the edge look like a rendering error.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Extend the cloud layer past the frame bounds and remove the wrap-around spawning of cloud sprites.\"},\n  {\"start_s\": 6.0, \"end_s\": 8.5, \"pattern\": \"Continuity errors\", \"evidence\": \"The rightmost cloud is cut off by a flat vertical edge a few pixels inside the frame at 6.0 s, 6.75\u20137.0 s and 8.5 s, while in the frames between it reaches the frame edge.\", \"impact\": \"Clouds visibly cropped by an invisible boundary expose the layer's edges.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Enlarge the sky layer canvas so the shake offset never exposes the sprite's clipping edge.\"},\n  {\"start_s\": 0.0, \"end_s\": 8.75, \"pattern\": \"Implausible camera path\", \"evidence\": \"During the shake, a thin green grass strip appears along the top edge (for example at 0.0, 1.25, 2.25, 3.25, 4.25, 5.25, 6.25, 7.25 and 8.25 s) and a blue sky strip appears along the bottom edge (for example at 0.5, 1.5, 2.5, 3.5 and 4.5 s), so the image wraps around instead of being cropped.\", \"impact\": \"The wrap-around edges show the shake is a tiled offset rather than a real camera move, which undermines the handheld look.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Scale the frame up slightly, or crop it, so the shake offset never reveals wrapped content at the edges.\"}\n]}\n```",
+ "cost": 0.085304,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 23.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11796,
+  "completion_tokens": 1906,
+  "total_tokens": 13702
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 943,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "ctl_handheld",
+ "run": 2,
+ "frames": 36
+}

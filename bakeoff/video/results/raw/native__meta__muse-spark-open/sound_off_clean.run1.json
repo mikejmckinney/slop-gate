@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.5, \"end_s\": 9.46, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The yellow ball repeatedly reverses from downward to upward motion and bounces while its bottom edge remains visibly above the brown floor bar, never contacting the floor.\", \"impact\": \"The bounce has no visible cause, making the ball appear to levitate and breaking the expected physical interaction with the floor.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-time the vertical animation so the ball's bottom edge meets the top edge of the floor on each impact frame before rebounding.\"}]}",
+ "cost": 0.0065178,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 21.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 3161,
+  "completion_tokens": 1399,
+  "total_tokens": 4560
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3072,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1487,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "sound_off_clean",
+ "run": 1
+}

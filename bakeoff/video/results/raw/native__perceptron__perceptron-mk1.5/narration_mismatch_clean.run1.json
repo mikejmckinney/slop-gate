@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.2, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The progress bar fills and the instruction text appears without a clear tap-and-hold action being shown.\", \"impact\": \"Viewers may not understand the intended interaction step.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Add a visible tap-and-hold cue or animation to match the on-screen instructions.\"}, {\"start_s\": 4.2, \"end_s\": 9.0, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The screen abruptly switches to 'WAVE 7' with distance after the tutorial overlay ends, with no transition or explanation.\", \"impact\": \"The jump breaks the logical flow of the tutorial.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Insert a brief transition or explanatory text between the tutorial and wave information.\"}]}",
+ "cost": 0.0007032,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 4.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Perceptron",
+ "served_model": "perceptron/perceptron-mk1.5",
+ "usage": {
+  "prompt_tokens": 2538,
+  "completion_tokens": 215,
+  "total_tokens": 2753
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:perceptron/perceptron-mk1.5",
+ "model": "perceptron/perceptron-mk1.5",
+ "clip": "narration_mismatch_clean",
+ "run": 1
+}

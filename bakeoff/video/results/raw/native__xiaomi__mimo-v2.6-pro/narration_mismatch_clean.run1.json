@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 15, \"end_s\": 30, \"pattern\": \"Near-static clip\", \"evidence\": \"From 00:15 to 00:30 the 'WAVE 7 / 1,250 m' card is held with no motion, animation, or change of any kind across the frames.\", \"impact\": \"Roughly half the clip is a frozen title card, so the tutorial stalls and the viewer waits through dead air with no new information.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the static hold to a brief beat or add the wave-starting animation/gameplay so the card transitions into action.\"}, {\"start_s\": 10, \"end_s\": 15, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The 'Release to fire' prompt appears at 00:10 over the full charge bar, but no release or firing action is ever shown before the cut to the WAVE 7 card at 00:14.\", \"impact\": \"The tutorial instructs an action and then never demonstrates its result, so the player cannot learn what releasing actually does.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Show the release and the resulting shot/projectile before cutting to the wave card.\"}]}",
+ "cost": 0.00253183968,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 31.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4055,
+  "completion_tokens": 1245,
+  "total_tokens": 5300
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 32,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 948,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "narration_mismatch_clean",
+ "run": 1
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.0,\"end_s\":7.75,\"pattern\":\"Unstable or unreadable overlays\",\"evidence\":\"The terminal commands and output remain extremely small and dim against the dark background throughout the clip.\",\"impact\":\"The main content is difficult to read at the displayed frame size.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Enlarge the terminal text and increase its contrast against the background.\"}]}",
+ "cost": 0.00135065,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 9856,
+  "completion_tokens": 171,
+  "total_tokens": 10027
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 9853,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 75,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "ctl_screen",
+ "run": 2,
+ "frames": 32
+}

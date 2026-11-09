@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.2, \"end_s\": 7.4, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"Caption overlay reads 'The door stays shut.' while the red door visibly swings open to reveal a dark interior.\", \"impact\": \"The caption directly contradicts the primary depicted action, making the description inaccurate and confusing.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Replace caption with an accurate description of the action, e.g., 'The red door swings open.'\"}]}",
+ "cost": 0.00816745,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 2910,
+  "completion_tokens": 1099,
+  "total_tokens": 4009
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1117,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "caption_mismatch_defect",
+ "run": 2
+}

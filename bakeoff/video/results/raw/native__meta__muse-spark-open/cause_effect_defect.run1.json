@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.0,\"end_s\":1.0,\"pattern\":\"Objects appear, vanish, or merge\",\"evidence\":\"Two overlapping blue balls are visible on the left at the start, then only a single blue ball continues rolling right\",\"impact\":\"Creates a duplicate-object artifact that breaks continuity of the intended single ball\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Remove duplicate ball asset so only one blue ball is present from frame 0\"},{\"start_s\":3.8,\"end_s\":4.3,\"pattern\":\"Broken cause and effect\",\"evidence\":\"Tower blocks start to separate and fall while the blue ball is still a clear gap away from the base block\",\"impact\":\"Makes the collapse appear to happen without contact, breaking the intended hit-causes-fall causality\",\"confidence\":\"medium\",\"basis\":\"frame inspection\",\"fix\":\"Retiming so tower remains stable until the ball's edge visibly contacts the bottom block\"},{\"start_s\":4.6,\"end_s\":8.4,\"pattern\":\"Objects appear, vanish, or merge\",\"evidence\":\"Four-block tower is shown before impact but only three blocks lie on the ground in the final settled state with the top red block missing\",\"impact\":\"Leaves an unexplained disappearance that violates object persistence after the collision\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep all four blocks visible through the fall and final rest pose on the ground\"}]}",
+ "cost": 0.0100352,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 13.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 2915,
+  "completion_tokens": 1537,
+  "total_tokens": 4452
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1312,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "cause_effect_defect",
+ "run": 1
+}

@@ -1,0 +1,34 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A stray green shape sits along the left frame edge and abruptly disappears.\", \"impact\": \"Creates a noticeable visual glitch at the beginning of the shot.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Clear the extraneous green graphic from the first frame.\"}]}\n```",
+ "cost": 0.00872175,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 16.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-3.8-flash",
+ "usage": {
+  "prompt_tokens": 1089,
+  "completion_tokens": 2108,
+  "total_tokens": 3197
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 660
+  },
+  "completion": {
+   "reasoning_tokens": 2006,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-3.8-flash",
+ "model": "google/gemini-3.8-flash",
+ "clip": "action_skip_clean",
+ "run": 1
+}

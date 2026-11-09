@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4,\"end_s\":6,\"pattern\":\"Action stalls, reverses, or skips\",\"evidence\":\"The train moves left across the frames at 4, 5, and 6 seconds after previously moving right.\",\"impact\":\"The reversal contradicts the intended continuous left-to-right travel.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the train moving consistently to the right throughout the clip.\"}]}",
+ "cost": 0.00090645,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 3.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3372,
+  "completion_tokens": 147,
+  "total_tokens": 3519
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3369,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 50,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "action_reverse_defect",
+ "run": 2,
+ "frames": 10
+}

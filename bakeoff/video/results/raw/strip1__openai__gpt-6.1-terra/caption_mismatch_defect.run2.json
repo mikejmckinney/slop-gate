@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":5,\"end_s\":7,\"pattern\":\"Narration-picture mismatch\",\"evidence\":\"The caption reads \u201cThe door stays shut\u201d while the red door is visibly open.\",\"impact\":\"The caption contradicts the action it is meant to describe.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Change the caption to describe the door opening.\"}]}",
+ "cost": 0.005013,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 231,
+  "total_tokens": 3318
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3084,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 147,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 9
+}

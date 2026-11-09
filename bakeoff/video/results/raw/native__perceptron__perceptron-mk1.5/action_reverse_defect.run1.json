@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 10.0, \"pattern\": \"Contact slip\", \"evidence\": \"The train wheels do not rotate while the train moves along the track.\", \"impact\": \"This makes the motion look physically inconsistent for a rolling train.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Add wheel rotation synchronized with forward movement.\"}]}",
+ "cost": 0.0005607,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 3.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Perceptron",
+ "served_model": "perceptron/perceptron-mk1.5",
+ "usage": {
+  "prompt_tokens": 2778,
+  "completion_tokens": 96,
+  "total_tokens": 2874
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:perceptron/perceptron-mk1.5",
+ "model": "perceptron/perceptron-mk1.5",
+ "clip": "action_reverse_defect",
+ "run": 1
+}

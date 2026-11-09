@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 5.0, \"end_s\": 6.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"At 5.0 s the bottom caption reads \\\"got the loop point\\\", while at 4.0 s and 6.0 s it reads \\\"Checking the loop point\\\"; the caption text changes for one second and then reverts.\", \"impact\": \"The clip is specified to carry a single caption that stays the same, so this one-second text swap breaks that invariant and reads as a glitch in the overlay.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Hold the caption \\\"Checking the loop point\\\" unchanged across the 5.0 s frame so the bottom text is identical for the whole clip.\"}]}",
+ "cost": 0.00259079,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 62.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2257,
+  "completion_tokens": 4792,
+  "total_tokens": 7049
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 4616,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "text_mutate_defect",
+ "run": 1
+}

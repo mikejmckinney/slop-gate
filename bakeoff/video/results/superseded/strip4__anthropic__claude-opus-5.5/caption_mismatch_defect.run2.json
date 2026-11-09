@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.5, \"end_s\": 7.25, \"pattern\": \"Continuity errors\", \"evidence\": \"The caption reads 'The door stays shut.' throughout, while the red door visibly swings open from 4.25 s and stands open from 5.0 s to 7.25 s.\", \"impact\": \"The one-line caption contradicts the action it is meant to describe, so viewers get conflicting information.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Change the caption to describe the door opening, for example 'The red door swings open.'\"}]}",
+ "cost": 0.060024,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11796,
+  "completion_tokens": 642,
+  "total_tokens": 12438
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 448,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 36
+}

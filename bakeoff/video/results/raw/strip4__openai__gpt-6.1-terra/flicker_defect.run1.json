@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3.0,\"end_s\":6.75,\"pattern\":\"Flicker or texture boil\",\"evidence\":\"A large rectangular patch of brick texture changes noisily across consecutive frames, then disappears.\",\"impact\":\"The changing patch makes the intended static wall visibly unstable.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the brick texture fixed throughout the clip.\"}]}",
+ "cost": 0.01587675,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 4.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12230,
+  "completion_tokens": 118,
+  "total_tokens": 12348
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 12227,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 29,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "flicker_defect",
+ "run": 1,
+ "frames": 40
+}

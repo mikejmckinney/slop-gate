@@ -1,0 +1,34 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 3.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The green car abruptly jumps across a large section of the road instead of maintaining constant velocity.\", \"impact\": \"Disrupts movement continuity and contradicts the intended steady pace.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Interpolate the car position smoothly between timestamps to ensure uniform speed.\"}]}\n```",
+ "cost": 0.00266925,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-3.8-flash",
+ "usage": {
+  "prompt_tokens": 1089,
+  "completion_tokens": 494,
+  "total_tokens": 1583
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 660
+  },
+  "completion": {
+   "reasoning_tokens": 385,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-3.8-flash",
+ "model": "google/gemini-3.8-flash",
+ "clip": "action_skip_defect",
+ "run": 1
+}

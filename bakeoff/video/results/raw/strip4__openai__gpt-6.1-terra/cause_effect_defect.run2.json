@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4.0,\"end_s\":5.25,\"pattern\":\"Broken cause and effect\",\"evidence\":\"The tower begins falling while the ball is still well away, and the ball stops without reaching the blocks.\",\"impact\":\"The fall is not caused by the intended impact.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Time the collapse to begin when the ball contacts the bottom block.\"},{\"start_s\":4.75,\"end_s\":8.75,\"pattern\":\"Contact slip\",\"evidence\":\"The fallen blocks extend below the floor line while the ball rests on it.\",\"impact\":\"The blocks appear to sink into the floor rather than rest on its surface.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Align the bottoms of the fallen blocks with the floor line.\"}]}",
+ "cost": 0.00218045,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 11052,
+  "completion_tokens": 325,
+  "total_tokens": 11377
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 11049,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 153,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "cause_effect_defect",
+ "run": 2,
+ "frames": 36
+}

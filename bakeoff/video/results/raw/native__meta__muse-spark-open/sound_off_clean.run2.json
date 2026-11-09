@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.5, \"pattern\": \"Implausible physics\", \"evidence\": \"Yellow ball repeatedly reverses vertical direction and bounces while remaining clearly above the brown floor bar without ever contacting it\", \"impact\": \"Bounce occurs without surface contact, breaking the intended physics of a ball bouncing across a wooden floor\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Adjust animation so ball contacts the floor at each bounce low point before rebounding\"}]}",
+ "cost": 0.0104447,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 13.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 3161,
+  "completion_tokens": 1561,
+  "total_tokens": 4722
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1737,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "sound_off_clean",
+ "run": 2
+}

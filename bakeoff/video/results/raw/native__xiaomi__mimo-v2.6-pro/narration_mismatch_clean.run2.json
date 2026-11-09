@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 15, \"end_s\": 30, \"pattern\": \"Near-static clip\", \"evidence\": \"From 15 s to the end of the file the screen holds a completely unchanged 'WAVE 7 / 1,250 m' title card with no motion, animation, or transition for 15 seconds.\", \"impact\": \"A 15-second frozen title card stalls the tutorial's pacing and leaves the viewer waiting for content that never arrives.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the static title card to a brief 1-2 second beat or add the next tutorial step before the clip ends.\"}, {\"start_s\": 10, \"end_s\": 15, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The prompt 'Release to fire' appears at 10 s while the charge bar stays full, but no release input or firing action is ever shown before the cut at 15 s.\", \"impact\": \"The tutorial instructs an action whose result is never demonstrated, so the viewer cannot learn what releasing actually does.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Show the bar draining on release together with the firing effect before cutting to the wave title.\"}]}",
+ "cost": 0.00086917068,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 32.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4055,
+  "completion_tokens": 1082,
+  "total_tokens": 5137
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 4032,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 796,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "narration_mismatch_clean",
+ "run": 2
+}

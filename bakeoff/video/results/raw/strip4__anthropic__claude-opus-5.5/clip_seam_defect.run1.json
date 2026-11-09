@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 4.75, \"end_s\": 5.0, \"pattern\": \"Visible clip seams\", \"evidence\": \"Between t=4.75 and t=5.0 the whole frame changes look at once: the sky turns from saturated blue to teal fading to cream, the clouds go from white to pale yellow, the grass becomes lighter and yellower, and heavy grain appears, while the cart and cloud positions keep moving smoothly.\", \"impact\": \"The shot is meant to be one continuous take, but a sudden full-frame grade and texture change makes it read as two clips joined together.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Apply one consistent color grade and grain treatment across the whole clip, or render it as a single pass so no look change occurs at 5.0 s.\"}]}\n```",
+ "cost": 0.06198,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13040,
+  "completion_tokens": 491,
+  "total_tokens": 13531
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 214,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "clip_seam_defect",
+ "run": 1,
+ "frames": 40
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 4.75, \"pattern\": \"Visible clip seams\", \"evidence\": \"At 4.50 s the tutorial graphic ('Tap and hold' with the progress bar and 'Release to fire') abruptly cuts to an unrelated 'WAVE 7 / 1,250 m' screen.\", \"impact\": \"The sudden cut interrupts the tutorial demonstration before showing the result of releasing to fire.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Remove the spliced 'WAVE 7' segment or replace it with the intended firing animation that completes the tutorial slide.\"}, {\"start_s\": 4.5, \"end_s\": 8.75, \"pattern\": \"Near-static clip\", \"evidence\": \"From 4.50 s through 8.75 s every frame is an identical static 'WAVE 7 / 1,250 m' card with no animation or visual change.\", \"impact\": \"Holding on a frozen title card for the second half of the clip makes the video appear stuck.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the frozen 'WAVE 7' hold or animate the transition into gameplay.\"}]}",
+ "cost": 0.087368,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 21.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 40404,
+  "completion_tokens": 656,
+  "total_tokens": 41060
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 378,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "narration_mismatch_clean",
+ "run": 2,
+ "frames": 36
+}

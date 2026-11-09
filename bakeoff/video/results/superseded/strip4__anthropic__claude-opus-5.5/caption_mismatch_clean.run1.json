@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"The door stays fully closed and nothing in the frame changes for the first 4 seconds, from t=0.0 to t=4.0.\", \"impact\": \"Almost half the clip shows no action, so the video feels frozen before the door finally moves.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Start the door swing within the first second, or trim the static lead-in.\"}, {\"start_s\": 5.0, \"end_s\": 9.0, \"pattern\": \"Near-static clip\", \"evidence\": \"After the door reaches its open position at t=5.0, every remaining frame is identical apart from the caption disappearing at t=7.5.\", \"impact\": \"The whole swing takes only about 0.75 s of a 9 s clip, leaving a long frozen tail.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Slow the swing over a longer span or shorten the hold on the open door.\"}, {\"start_s\": 3.5, \"end_s\": 4.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The caption 'The door swings open.' appears at t=3.5, but the door is still fully closed in the frames at t=3.5, 3.75 and 4.0 and only starts moving at t=4.25.\", \"impact\": \"The caption describes an action that has not started yet, so text and picture are out of sync.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Delay the caption so it appears when the door begins to swing at about t=4.25.\"}]}",
+ "cost": 0.066024,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11796,
+  "completion_tokens": 942,
+  "total_tokens": 12738
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 399,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 36
+}

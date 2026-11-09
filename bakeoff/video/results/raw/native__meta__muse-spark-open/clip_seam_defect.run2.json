@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.6, \"end_s\": 5.6, \"pattern\": \"Visible clip seams\", \"evidence\": \"Sky and clouds abruptly shift from bright blue with white clouds to muted yellow-gray with pale yellow clouds and added grain while the cart motion continues uninterrupted\", \"impact\": \"Breaks the intended one continuous shot of clouds drifting over a meadow\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-grade and re-render as a single continuous take to maintain consistent sky color, cloud color, and grain throughout\"}]}",
+ "cost": 0.0049948,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 17.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 3170,
+  "completion_tokens": 1038,
+  "total_tokens": 4208
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3072,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 973,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "clip_seam_defect",
+ "run": 2
+}

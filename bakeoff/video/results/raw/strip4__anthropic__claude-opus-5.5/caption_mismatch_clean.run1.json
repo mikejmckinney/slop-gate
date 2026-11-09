@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.5, \"end_s\": 4.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The caption 'The door swings open.' appears at 3.5 s, but the door stays fully closed through 4.0 s and only starts opening at 4.25 s.\", \"impact\": \"The caption describes an action that has not started yet, so text and picture disagree for three consecutive frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Delay the caption to start at about 4.25 s, when the door begins to swing.\"}, {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"For the first 4 seconds every frame shows the same closed door with no change at all, which is nearly half of the 9-second clip.\", \"impact\": \"The long dead hold before the only action makes the clip feel stalled and delays the intended event.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Trim the opening hold or start the door swing earlier, around 1 s.\"}]}",
+ "cost": 0.060628,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11807,
+  "completion_tokens": 670,
+  "total_tokens": 12477
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 303,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 36
+}

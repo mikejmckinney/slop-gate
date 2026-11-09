@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The frames at 0, 1, 2, 3 and 4 s show the red door closed and identical, with no sign that the door is starting to move.\", \"impact\": \"Almost half the clip passes before the promised action begins, so it reads as frozen or stalled.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Start the door swing within the first second, or trim the static lead-in.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door is fully closed at 4 s and fully open at 5 s, with the same open position held through 8 s, so the whole swing fits inside one sampling interval.\", \"impact\": \"The swing may read as a pop from closed to open rather than a visible swing, but 1 fps sampling cannot confirm this.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Spread the door swing over a couple of seconds so the opening motion is visible.\"}, {\"start_s\": 5.0, \"end_s\": 8.0, \"pattern\": \"Near-static clip\", \"evidence\": \"The frames at 5, 6, 7 and 8 s are identical, with the door held at the same open angle and no other movement.\", \"impact\": \"Combined with the static opening, most of the clip shows no change.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Let the door continue to swing or settle during these seconds, or shorten the hold on the open door.\"}]}",
+ "cost": 0.030064,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3426,
+  "completion_tokens": 818,
+  "total_tokens": 4244
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 276,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 9
+}

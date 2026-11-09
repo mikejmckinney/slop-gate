@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 5.25, \"end_s\": 10.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball moves right about 18 px per frame and slips behind the grey pillar by t=4.5 s, but it never comes out on the right side; every frame from 4.75 s to 9.75 s shows only the pillar and the background.\", \"impact\": \"The brief says the ball keeps going to the right edge, so the second half of the clip fails the intended action and is effectively an empty static shot.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Keep rendering the ball's trajectory behind the occluder so it emerges from the pillar's right edge around 5.25 s and continues at the same speed until it exits the right edge of the frame.\"}]}\n```",
+ "cost": 0.063924,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13046,
+  "completion_tokens": 587,
+  "total_tokens": 13633
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 314,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "object_vanish_defect",
+ "run": 2,
+ "frames": 40
+}

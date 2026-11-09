@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.0, \"end_s\": 3.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"When the marble strikes the coin stack, a second marble appears and rolls out to the right while the original marble remains on the left, and additional coins materialize out of the stack without the stack shrinking.\", \"impact\": \"The sudden duplication of the marble and coins breaks object permanence and makes the clip unusable.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Regenerate or reshoot the collision so only one marble and a consistent number of coins are present throughout the action.\"}, {\"start_s\": 2.0, \"end_s\": 3.0, \"pattern\": \"Implausible physics\", \"evidence\": \"One of the knocked coins stops in an impossible diagonal balance leaning loosely against the stack while the marble on the left freezes in place after bouncing back.\", \"impact\": \"The unnatural resting position of the coin makes the physical interaction look fake.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-render the physics simulation or reshoot so the coins fall flat onto the table naturally.\"}]}",
+ "cost": 0.004114,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 752,
+  "completion_tokens": 261,
+  "total_tokens": 1013
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 284
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "gen_marble",
+ "run": 1
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 6.0, \"pattern\": \"Identity or background drift\", \"evidence\": \"Across consecutive frames the robot gradually shifts from teal with round green eyes, a tall antenna and a wide head to orange with square red eyes, a much shorter antenna and a narrower head, and it stays that way through 9.75 s.\", \"impact\": \"The brief requires the same robot throughout, but by the end it reads as a different character.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Lock the robot's color, eye shape, antenna length and head proportions to the 0-4 s design for the whole clip.\"}, {\"start_s\": 1.5, \"end_s\": 1.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"At the top of the wave the arm overlaps the right edge of the head and fuses into its silhouette as a wedge-like protrusion, and the same thing happens again at 3.5-3.75 s.\", \"impact\": \"The arm briefly stops reading as a separate limb and looks like part of the head.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Limit the arm's peak angle or layer it clearly in front of or behind the head so the two shapes stay distinct.\"}]}",
+ "cost": 0.064532,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13038,
+  "completion_tokens": 619,
+  "total_tokens": 13657
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 189,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "identity_drift_defect",
+ "run": 1,
+ "frames": 40
+}

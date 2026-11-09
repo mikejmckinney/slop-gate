@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 10.0, \"pattern\": \"Floaty timing\", \"evidence\": \"The clouds drift at a constant speed while the cart moves steadily across the meadow without any acceleration or deceleration, giving an unnatural floating feel.\", \"impact\": \"This makes the motion look unrealistic and breaks the intended natural movement of the scene.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Adjust the animation timing to include realistic acceleration and deceleration for both the clouds and the cart.\"}]}",
+ "cost": 0.00061095,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Perceptron",
+ "served_model": "perceptron/perceptron-mk1.5",
+ "usage": {
+  "prompt_tokens": 2783,
+  "completion_tokens": 129,
+  "total_tokens": 2912
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:perceptron/perceptron-mk1.5",
+ "model": "perceptron/perceptron-mk1.5",
+ "clip": "clip_seam_defect",
+ "run": 1
+}

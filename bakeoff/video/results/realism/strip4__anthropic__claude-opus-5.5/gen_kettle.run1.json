@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.75, \"end_s\": 3.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The blue burner flame under the kettle is visible through 1.75 s, but from 2.0 s onward the burner shows no flame even though the kettle has barely lifted and the hand stays on the handle, so nobody turned the knob.\", \"impact\": \"A gas flame that disappears with no cause breaks the believability of the stove scene once the burner is exposed.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Keep the burner flame lit and visible under the kettle as it lifts, or show a hand turning the knob off before the lift.\"}]}",
+ "cost": 0.09326,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 19960,
+  "completion_tokens": 671,
+  "total_tokens": 20631
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 433,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "gen_kettle",
+ "run": 1,
+ "frames": 16
+}

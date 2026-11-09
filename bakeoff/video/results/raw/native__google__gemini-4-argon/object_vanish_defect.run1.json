@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 5.0, \"end_s\": 9.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball rolls behind the grey pillar by 5.0s and never emerges on the right side for the rest of the clip.\", \"impact\": \"The subject vanishes mid-action instead of completing its path to the right edge, breaking object permanence.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Keep the red ball on its trajectory behind the pillar so it reappears on the right side and continues to the frame edge.\"}]}",
+ "cost": 0.004478,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 25.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 1194,
+  "completion_tokens": 209,
+  "total_tokens": 1403
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 710
+  },
+  "completion": {
+   "reasoning_tokens": 71,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "object_vanish_defect",
+ "run": 1
+}

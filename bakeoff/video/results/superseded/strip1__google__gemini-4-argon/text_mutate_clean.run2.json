@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The black background box for the bottom caption 'Checking the loop point' covers the third 'blocks' diagnostic row, cutting off the label after 'loop' and hiding its message.\", \"impact\": \"Viewers cannot read the third diagnostic finding that explains the loop defect being demonstrated.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Move the caption overlay lower or add bottom padding to the layout so all diagnostic rows remain fully visible.\"}]}",
+ "cost": 0.007841,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 9506,
+  "completion_tokens": 268,
+  "total_tokens": 9774
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 7290,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 133,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "text_mutate_clean",
+ "run": 2,
+ "frames": 8
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.0, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"A large rectangular patch of the brick wall texture shifts and degrades in resolution across frames 3.0 to 6.0.\", \"impact\": \"The shifting background texture distracts from the main action and makes the static wall appear unstable.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Replace the background layer with a single static image across the entire duration.\"}]}",
+ "cost": 0.024672,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 33.3,
+ "attempts": 2,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11731,
+  "completion_tokens": 121,
+  "total_tokens": 11852
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "flicker_defect",
+ "run": 2,
+ "frames": 10
+}
