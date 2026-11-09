@@ -1,4 +1,4 @@
-"""Send every GeneVA clip to every approach, twice, and keep each raw reply.
+"""Send every GeneVA clip to every approach once and keep each raw reply.
 
     set -a; . openrouter.env; set +a
     python -I bakeoff/video/geneva/review.py CLIP_DIR native:google/gemini-4-argon strip4:openai/gpt-6.1-terra ...
@@ -28,9 +28,6 @@ from pick_clips import SAFE_INPUT  # noqa: E402
 
 STRIP_FPS = 4
 LONG_SIDE = 640
-# Ceiling prices for the models here (Astra); the token counts are above anything seen in #36.
-INPUT_USD_PER_TOKEN, OUTPUT_USD_PER_TOKEN = 10e-6, 50e-6
-TOKENS_PER_IMAGE, TOKENS_PER_VIDEO_SECOND = 3000, 1500
 
 PROMPT = """You review one short video clip for visual artifacts.
 
@@ -43,8 +40,9 @@ occurs and one box around it.
 Use only these category names: Shape/Form/Geometry; Visual Artifacts; Motion; Physics; Other.
 Do not report deliberate style: jump cuts, handheld shake, stepped stop-motion timing, animation
 smears, slow motion, film grain and stylized physics are fine. Do not guess how the video was
-made. Compression and motion blur can look like a fault in one frame: report an artifact only if
-it holds across consecutive frames. If you see nothing wrong, return no findings.
+made. A generator's watermark or logo is not a defect, so do not report it. Compression and motion
+blur can look like a fault in one frame: report an artifact only if it holds across consecutive
+frames. If you see nothing wrong, return no findings.
 
 For "basis" say how you know: "frame inspection" for what you saw in frames, or "inference".
 Never claim that a person watched the clip.
@@ -94,19 +92,6 @@ def strip_content(clip: Path, cache: Path, seconds: float) -> tuple[list[dict], 
     return content, len(frames)
 
 
-def request_bound(content: list[dict], seconds: float) -> float:
-    """A cost one attempt shouldn't exceed, from the request's size and the ceiling prices."""
-    tokens = 0.0
-    for part in content:
-        if part["type"] == "text":
-            tokens += len(part["text"])
-        elif part["type"] == "image_url":
-            tokens += TOKENS_PER_IMAGE
-        else:
-            tokens += TOKENS_PER_VIDEO_SECOND * seconds
-    return tokens * INPUT_USD_PER_TOKEN + base.MAX_TOKENS * OUTPUT_USD_PER_TOKEN
-
-
 def job(approach: str, item: dict, run: int, args, budget: base.Budget) -> str:
     kind, model = approach.split(":", 1)
     dest = args.out / approach.replace(":", "__").replace("/", "__") / f"{item['clip']}.run{run}.json"
@@ -118,7 +103,7 @@ def job(approach: str, item: dict, run: int, args, budget: base.Budget) -> str:
         content = native_content(clip)
     else:
         content, extra["frames"] = strip_content(clip, args.cache, item["seconds"])
-    rec = base.call(model, content, budget, request_bound(content, item["seconds"]))
+    rec = base.call(model, content, budget, base.request_bound(content, item["seconds"]))
     if rec.get("refused"):
         return "skipped (cap)"
     rec.update(approach=approach, model=model, clip=item["clip"], run=run, **extra)
@@ -132,7 +117,7 @@ def main() -> None:
     ap.add_argument("clips", type=Path)
     ap.add_argument("approaches", nargs="+")
     ap.add_argument("--set", default="raw", help="results/<set> directory")
-    ap.add_argument("--runs", type=int, default=2)
+    ap.add_argument("--runs", type=int, default=1)
     ap.add_argument("--only", help="comma-separated clip names")
     ap.add_argument("--cap", type=float, default=20.0)
     ap.add_argument("--cache", type=Path, default=Path("/tmp/gv/frames"))
