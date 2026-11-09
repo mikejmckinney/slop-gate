@@ -28,6 +28,11 @@ SECTION_HELP = {
 }
 
 
+def not_checked_message(what: str, why: object) -> str:
+    """Wording for a measurement that failed, so a failed read can't pass for a clean file."""
+    return f"{what} was not checked: {why}. Treat it as unknown, not as a pass."
+
+
 @dataclass(frozen=True)
 class Finding:
     check: str  # family: prose, pr-text, unicode, residue, ruff, biome, media, midi, video

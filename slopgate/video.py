@@ -24,7 +24,7 @@ from pathlib import Path
 import numpy as np
 
 from .audio_defects import clock
-from .findings import Finding
+from .findings import Finding, not_checked_message
 
 VIDEO_EXTS = {".mp4", ".webm", ".mov", ".mkv", ".m4v"}
 # `size`, `loop` and `max_duration_s` already exist for images or audio and mean the same thing here.
@@ -320,7 +320,7 @@ class _Report:
         self.add(
             "video-check-failed",
             "warning",
-            f"{what} was not checked: {why}. Treat it as unknown, not as a pass.",
+            not_checked_message(what, why),
             "Open the file with ffprobe locally, or re-export it.",
         )
 
@@ -499,8 +499,12 @@ def _audio_track(report: _Report, abs_path: Path, info: dict, r: dict) -> None:
         if extract.returncode != 0 or not wav.is_file() or wav.stat().st_size == 0:
             report.not_checked("The audio track", _first_line(extract.stderr, "ffmpeg extracted nothing"))
             return
-        # check_audio says nothing about loudness it can't measure; a declared target must not pass that way.
-        if "loudness_lufs" in r and media._ebur128(wav)[0] is None:
+        # check_audio reports a run that failed, so only a run that finished with no number is left here.
+        try:
+            unmeasured = "loudness_lufs" in r and media._ebur128(wav)[0] is None
+        except RuntimeError:
+            unmeasured = False  # check_audio below repeats this read and reports the failure
+        if unmeasured:
             report.not_checked("Audio loudness", "ffmpeg reported no integrated loudness for the track")
         # The video's own length is checked against max_duration_s in _declared. The repo path
         # goes in, not the temp .wav, so the lossless-only check skips a track that was lossy.

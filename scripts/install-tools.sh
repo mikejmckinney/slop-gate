@@ -7,6 +7,8 @@ set -euo pipefail
 here="$(cd "$(dirname "$0")/.." && pwd)"
 : "${VALE_VERSION:?set VALE_VERSION}"
 : "${BIOME_VERSION:?set BIOME_VERSION}"
+# shellcheck source=scripts/download.sh
+source "$here/scripts/download.sh"
 tools="${RUNNER_TEMP:-/tmp}/slop-gate-tools"
 mkdir -p "$tools/bin"
 
@@ -20,8 +22,8 @@ end
 step "Vale ${VALE_VERSION}"
 asset="vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
 base="https://github.com/vale-cli/vale/releases/download/v${VALE_VERSION}"
-curl -fsSL --retry 3 --connect-timeout 20 --max-time 120 -o "$tools/$asset" "$base/$asset"
-curl -fsSL --retry 3 --connect-timeout 20 --max-time 60 -o "$tools/vale-checksums.txt" "$base/vale_${VALE_VERSION}_checksums.txt"
+download 120 "$tools/$asset" "$base/$asset"
+download 60 "$tools/vale-checksums.txt" "$base/vale_${VALE_VERSION}_checksums.txt"
 if ! (cd "$tools" && grep " ${asset}\$" vale-checksums.txt | sha256sum --check); then
 	echo "::error::Vale ${VALE_VERSION} checksum did not match" >&2
 	exit 1

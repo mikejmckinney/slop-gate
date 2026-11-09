@@ -372,6 +372,7 @@ effects, and cover the defects a measurement can find:
 | `mono-collapse` | Stereo that loses more than 6 dB summed to mono (error above 12 dB), usually an inverted channel | Width that survives the mono sum |
 | `hiss` | Spectrally flat noise above −72 dBFS in at least 0.3 s of pauses | Reverb tails and decays, which aren't flat |
 | `flat-dynamics` | An EBU R128 loudness range under the manifest's `min_loudness_range_lu`, for tracks of 30 s or more | Anything, until you set the minimum: genres differ too much for a default |
+| `audio-check-failed` | A warning that ffmpeg's EBU R128 run failed or printed something unusable, so loudness, loudness range and true peak are unknown for that file | A file ffmpeg measured |
 
 The thresholds were tuned on 206 shipped game assets (Mureka and ElevenLabs
 music and effects and a third-party effects pack). On that set the checks
