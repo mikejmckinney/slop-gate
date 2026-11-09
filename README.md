@@ -2,8 +2,9 @@
 
 https://github.com/user-attachments/assets/30dbca3a-f3fc-464f-a058-2352f997d84b
 
-A 98-second tour of every check, recorded from real runs. Turn the sound on
-for the music loop at 1:01 and the spoken line at 1:13.
+A 98-second tour of the prose, code, image, audio and MIDI checks, built from
+recordings and real reports. Turn the sound on for the music loop at 1:01 and
+the spoken line at 1:13.
 
 A GitHub Action that blocks pull requests containing the
 patterns AI tools leave behind: stock phrasing in docs and PR text, swallowed
@@ -505,9 +506,6 @@ and made no medium or high finding on the clean clips, at about $0.014 per
   the next backfill.
 - **Rules for agent sessions.** Copy the "Copying files between repositories"
   section of [this repo's `CLAUDE.md`](CLAUDE.md) into yours.
-- **Squash merges.** Set the repository's default squash message to "pull
-  request title and description" so commit bodies, trailers included, don't
-  reach the default branch.
 - **Review.** Require one approving review from an account other than the
   PR author, dismiss stale approvals on new pushes, and require the
   `slop-gate` check.
