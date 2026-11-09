@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.0, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"From t=3 s through t=6 s, a rectangular region of the static brick wall (roughly x 80\u2013420, y 45\u2013210) shows grainy, noisy texture that differs from the surrounding bricks and changes from frame to frame; it is absent at t=2 s and t=7 s.\", \"impact\": \"The wall is meant to be static under a locked camera, so a boiling patch that appears and disappears draws the eye and reads as a rendering fault.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-render or composite the wall from a single static background plate for the whole clip, so the brick texture stays identical in every frame.\"}]}",
+ "cost": 0.022992,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3743,
+  "completion_tokens": 401,
+  "total_tokens": 4144
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 139,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "flicker_defect",
+ "run": 1,
+ "frames": 10
+}

@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0, \"end_s\": 12, \"pattern\": \"Near-static clip\", \"evidence\": \"Frame inspection shows the red door and wall completely motionless for the first 12 seconds, with no caption or action until 00:12.\", \"impact\": \"Nearly half the clip is dead time before anything happens, which will read as a stalled or broken video to viewers.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the opening hold so the caption and door motion begin within the first second or two.\"}, {\"start_s\": 14, \"end_s\": 18, \"pattern\": \"Contact slip\", \"evidence\": \"Frame inspection shows the swinging door panel's bottom edge slanting upward to the right so its free corner hovers above the floor line while the doorway opening stays seated on the floor.\", \"impact\": \"The door appears to lift off the ground as it opens, breaking the contact between door and floor.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Keep the door's bottom edge pinned to the floor line throughout the swing, using perspective only on the top and side edges.\"}, {\"start_s\": 18, \"end_s\": 30, \"pattern\": \"Near-static clip\", \"evidence\": \"Frame inspection shows the door frozen in the open position with the caption unchanged for the final 12 seconds of the clip.\", \"impact\": \"The clip ends on a long static hold, making the video feel unfinished or padded.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Cut the clip shortly after the door finishes opening, leaving only a brief hold.\"}]}",
+ "cost": 0.00275573268,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 70.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4065,
+  "completion_tokens": 1526,
+  "total_tokens": 5591
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 32,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1154,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "caption_mismatch_clean",
+ "run": 1
+}

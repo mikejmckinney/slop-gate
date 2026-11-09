@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4,\"end_s\":6,\"pattern\":\"Action stalls, reverses, or skips\",\"evidence\":\"The red front car shifts left from about x=194 at 4 seconds to x=104 at 5 seconds and x=82 at 6 seconds.\",\"impact\":\"The train moves backward instead of continuing left to right.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the train moving continuously to the right through this interval.\"}]}",
+ "cost": 0.00510425,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3372,
+  "completion_tokens": 178,
+  "total_tokens": 3550
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3369,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 73,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "action_reverse_defect",
+ "run": 1,
+ "frames": 10
+}

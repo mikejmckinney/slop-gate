@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": []}",
+ "cost": 0.0012472,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 218,
+  "total_tokens": 3305
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3084,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 206,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "caption_mismatch_clean",
+ "run": 2,
+ "frames": 9
+}

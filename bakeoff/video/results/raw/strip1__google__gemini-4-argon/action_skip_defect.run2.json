@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"Between t=3.000 s and t=4.000 s, the green car jumps forward by roughly three road-dash lengths instead of advancing by the steady single-dash increment seen in all other intervals.\", \"impact\": \"The sudden spatial jump breaks the intended constant-speed motion across the road.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-interpolate the car's horizontal position between 3.0 s and 4.0 s so it advances at the same constant rate as the rest of the clip.\"}]}",
+ "cost": 0.026738,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11554,
+  "completion_tokens": 363,
+  "total_tokens": 11917
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 200,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "action_skip_defect",
+ "run": 2,
+ "frames": 10
+}

@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 15, \"end_s\": 31, \"pattern\": \"Visible clip seams\", \"evidence\": \"At 00:15 the whole frame abruptly changes look: the blue sky turns pale yellow, the white clouds turn cream, and a grain texture appears, and this new look persists to the end while the cart and clouds keep moving.\", \"impact\": \"The sudden palette and texture shift reads as a splice between two differently graded clips, breaking the single continuous shot.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-grade the second half to match the first half's blue sky and white clouds, or blend the transition so the look change is gradual and motivated.\"}]}",
+ "cost": 0.00262418868,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 61.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4065,
+  "completion_tokens": 1358,
+  "total_tokens": 5423
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 32,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1198,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "clip_seam_defect",
+ "run": 1
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"The mottled blue sky texture shifts randomly in every frame while the scene remains static.\", \"impact\": \"The boiling background texture distracts from the main subject.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Lock the sky texture to a single static image across all frames.\"}, {\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Contact slip\", \"evidence\": \"The figure slides horizontally across the grass as a rigid block without any walking animation.\", \"impact\": \"The motion looks like an object sliding rather than a character walking.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Add simple leg or vertical bobbing animation to match the horizontal travel.\"}]}",
+ "cost": 0.025422,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11721,
+  "completion_tokens": 198,
+  "total_tokens": 11919
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "brief_dense_clean",
+ "run": 2,
+ "frames": 10
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 4.25, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A solid bright-green square appears in the sky above the child at t=4.25 s; it is absent at 4.0 s and gone again at 4.5 s.\", \"impact\": \"A sharp, unexplained object flashing on screen is a clear visual glitch that distracts from the child's walk and does not fit the scene.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Remove the stray green square from the frame around 4.25 s, or re-render that segment, so the sky matches the neighbouring frames.\"}]}",
+ "cost": 0.062092,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13028,
+  "completion_tokens": 499,
+  "total_tokens": 13527
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 273,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "brief_dense_defect",
+ "run": 2,
+ "frames": 40
+}

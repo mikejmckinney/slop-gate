@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3.75,\"end_s\":4.0,\"pattern\":\"Action stalls, reverses, or skips\",\"evidence\":\"The car jumps much farther to the right between these frames than it does in the neighboring intervals, while the road remains unchanged.\",\"impact\":\"The jump breaks the intended constant-speed drive.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Adjust the car's position over this interval to maintain the same steady speed.\"}]}",
+ "cost": 0.0164705,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12225,
+  "completion_tokens": 238,
+  "total_tokens": 12463
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 12222,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 135,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "action_skip_defect",
+ "run": 2,
+ "frames": 40
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4.0,\"end_s\":6.25,\"pattern\":\"Unstable or unreadable overlays\",\"evidence\":\"The bottom caption repeatedly changes from \u201cChecking the loop point\u201d to misspelled variants such as \u201cCh3cking the 1oop p0int.\u201d\",\"impact\":\"The intended constant caption becomes distracting and harder to read.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the caption text fixed as \u201cChecking the loop point\u201d throughout the clip.\"}]}",
+ "cost": 0.0130805,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 9869,
+  "completion_tokens": 149,
+  "total_tokens": 10018
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 9866,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 37,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 32
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The ball repeatedly reverses vertical direction in mid-air near the center of the frame without ever dropping down to touch the brown floor.\", \"impact\": \"The animation fails to depict a ball bouncing on the floor as intended, looking like it is floating or bouncing off an invisible barrier.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Adjust the vertical trajectory of the ball so that the bottom of each bounce arc makes contact with the floor surface.\"}]}",
+ "cost": 0.027084,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 24.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11547,
+  "completion_tokens": 399,
+  "total_tokens": 11946
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 264,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "sound_off_clean",
+ "run": 1,
+ "frames": 10
+}

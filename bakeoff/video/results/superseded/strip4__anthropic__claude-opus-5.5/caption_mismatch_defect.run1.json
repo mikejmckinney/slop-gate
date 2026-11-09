@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 7.25, \"pattern\": \"Continuity errors\", \"evidence\": \"The caption reads 'The door stays shut.' while the red door visibly swings open from about 4.25 s and stays wide open through 7.25 s.\", \"impact\": \"The one-line caption contradicts the action it is meant to describe, which confuses viewers about what happens.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Change the caption to describe the door opening, for example 'The red door swings open.'\"}, {\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door stays closed and nothing in the frame changes for the first 4 seconds, nearly half the clip, before it starts to swing.\", \"impact\": \"The long static lead-in delays the only action and makes the clip feel stalled.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Shorten the static hold so the door starts opening within the first second or two.\"}]}",
+ "cost": 0.062764,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 11796,
+  "completion_tokens": 779,
+  "total_tokens": 12575
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 424,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_defect",
+ "run": 1,
+ "frames": 36
+}

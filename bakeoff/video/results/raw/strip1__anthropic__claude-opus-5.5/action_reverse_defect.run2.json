@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The red lead car's front edge advances steadily (about x=89, 135, 181, 227, 273 at t=0\u20134 s), then jumps back to about x=183 at t=5 s and x=161 at t=6 s before resuming forward motion (207, 253, 299 at t=7\u20139 s).\", \"impact\": \"The train visibly moves backward partway through, which contradicts the brief of a train driving left to right without stopping.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Make the train's horizontal position increase steadily across the whole clip so there is no backward jump or reversal between 4 s and 6 s.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Visible clip seams\", \"evidence\": \"Between t=4 s and t=5 s the whole train shifts about 90 px back to the left in one step, while the static background and track stay identical, which looks like a splice back to an earlier point in the motion.\", \"impact\": \"A sudden positional reset reads as a loop or edit seam rather than continuous travel.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Render the motion as one continuous take, or join the segments at matching train positions so the train does not jump back.\"}]}",
+ "cost": 0.032532,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3728,
+  "completion_tokens": 881,
+  "total_tokens": 4609
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 421,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "action_reverse_defect",
+ "run": 2,
+ "frames": 10
+}

@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.5, \"pattern\": \"Continuity errors\", \"evidence\": \"The coin stack shows six to seven coins throughout instead of the intended three\", \"impact\": \"The central setup does not match the described three-coin stack and undermines the intended knock-over\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Reshoot or edit to show exactly three coins in the stack from start to finish\"}, {\"start_s\": 2.0, \"end_s\": 3.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A second blue-tinted marble appears on the right side of the frame and then vanishes in the following frame\", \"impact\": \"An unexplained duplicate object breaks object permanence and distracts from the single-marble action\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Remove the spurious second marble so only one marble is present throughout\"}, {\"start_s\": 1.1, \"end_s\": 2.5, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The marble contacts the stack then moves backward to the left while the stack remains mostly standing and two coins fall to the right\", \"impact\": \"Impact does not produce the expected toppling and the marble rebounds without plausible momentum transfer\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Correct physics so forward momentum carries through and the stack topples on contact instead of the marble reversing\"}]}",
+ "cost": 0.01015745,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1612,
+  "completion_tokens": 1949,
+  "total_tokens": 3561
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1855,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "gen_marble",
+ "run": 1
+}

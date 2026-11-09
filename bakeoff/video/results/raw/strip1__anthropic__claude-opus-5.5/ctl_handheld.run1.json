@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 6.0, \"end_s\": 8.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The rightmost cloud is cut off by a hard vertical edge just inside the right frame border at t=6 and t=7, and a hard-edged white sliver appears at the left edge at t=8 (similar slivers also show at the right edge at t=2 and the left edge at t=5).\", \"impact\": \"Clouds that are clipped and then reappear as thin slivers on the opposite edge look like a wrap-around rendering artifact rather than a continuous sky.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Render the cloud layer wider than the frame with soft or offscreen exits so clouds leave the frame cleanly without clipping or wrapping.\"}]}",
+ "cost": 0.032524,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3426,
+  "completion_tokens": 941,
+  "total_tokens": 4367
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 663,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "ctl_handheld",
+ "run": 1,
+ "frames": 9
+}

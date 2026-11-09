@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":8,\"pattern\":\"Near-static clip\",\"evidence\":\"The sampled frames show the door closed from 0 to 4 seconds and in the same open pose from 5 to 8 seconds, with no intermediate swing visible.\",\"impact\":\"The intended door-opening action is barely represented across the clip.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Show the door moving through intermediate positions rather than holding the two poses for most of the clip.\"}]}",
+ "cost": 0.00139195,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3082,
+  "completion_tokens": 247,
+  "total_tokens": 3329
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3079,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 137,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 9
+}

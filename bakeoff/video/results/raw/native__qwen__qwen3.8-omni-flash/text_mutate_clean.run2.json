@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Continuity errors\", \"evidence\": \"Across the 4\u20135 s boundary the highlighted panel inverts and the playheads jump discontinuously: the 'before' track's playhead teleports backward from roughly x\u2248520 to x\u2248380 while the 'after' track's playhead suddenly appears mid-waveform at x\u2248310, never having traversed from the track start.\", \"impact\": \"The playback markers change position without any visible cause, so the clip no longer reads as a continuous capture of the tool and the loop-check demo loses credibility.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Make the panel switch continuous \u2014 reset the inactive playhead to its track start (or keep it frozen at its last position) and begin the new track's playhead at the left edge, or edit the cut so marker positions match across the boundary.\"}]}",
+ "cost": 0.00461931,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 122.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2257,
+  "completion_tokens": 9108,
+  "total_tokens": 11365
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 8890,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "text_mutate_clean",
+ "run": 2
+}

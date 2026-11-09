@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 6.0, \"pattern\": \"Identity or background drift\", \"evidence\": \"The robot gradually changes from a teal body with round green eyes, a tall antenna and a wide head (0\u20134.0 s) to an orange body with square red eyes, a stubby antenna and a narrower head (6.0\u20139.75 s), passing through grey-green and tan intermediate states.\", \"impact\": \"The brief requires the same robot throughout, but the clip ends with a visibly different character.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Lock the robot's color, eye shape, antenna length and head proportions for the full clip so that only the arm animates.\"}, {\"start_s\": 1.5, \"end_s\": 1.75, \"pattern\": \"Implausible physics\", \"evidence\": \"At the top of the wave the arm overlaps the right edge of the head and is drawn merged into it, and the same overlap recurs at 3.5\u20133.75 s.\", \"impact\": \"The arm appears to pass through the robot's own head, which reads as a rigging error.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Limit the arm's rotation so that it stops short of the head, or layer it cleanly in front of the head.\"}]}",
+ "cost": 0.064572,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13038,
+  "completion_tokens": 621,
+  "total_tokens": 13659
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 197,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "identity_drift_defect",
+ "run": 2,
+ "frames": 40
+}

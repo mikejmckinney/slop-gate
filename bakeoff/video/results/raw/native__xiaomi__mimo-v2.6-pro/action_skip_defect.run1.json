@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 12, \"end_s\": 13, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"Between 00:12 and 00:13 the car's position jumps roughly 125 px to the right in a single frame, far more than the ~20 px per frame it covers before and after, breaking the constant-speed motion.\", \"impact\": \"The sudden forward leap reads as a skipped chunk of motion and breaks the stated constant-speed drive.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-time or re-render the segment so the car advances a uniform distance per frame across the 00:12-00:13 boundary.\"}]}",
+ "cost": 0.00260462268,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 57.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4063,
+  "completion_tokens": 1334,
+  "total_tokens": 5397
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 32,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1164,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "action_skip_defect",
+ "run": 1
+}

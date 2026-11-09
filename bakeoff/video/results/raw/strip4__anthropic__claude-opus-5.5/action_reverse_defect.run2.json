@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 5.5, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The red front car's right edge moves rightward to about x=273 at 4.0 s, then moves back left to about x=250 (4.25 s), x=205 (4.75 s) and x=138 (5.5 s), before resuming rightward motion from 5.75 s.\", \"impact\": \"The train visibly backs up along the track, which contradicts the intended continuous left-to-right drive without stopping.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Make the train's horizontal position increase steadily across the whole clip so there is no backward segment between 4.0 s and 5.5 s.\"}]}",
+ "cost": 0.066532,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13028,
+  "completion_tokens": 721,
+  "total_tokens": 13749
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 468,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "action_reverse_defect",
+ "run": 2,
+ "frames": 40
+}

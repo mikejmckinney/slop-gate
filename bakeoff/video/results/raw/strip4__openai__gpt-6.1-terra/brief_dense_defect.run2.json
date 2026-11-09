@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":9.75,\"pattern\":\"Contact slip\",\"evidence\":\"The figure slides steadily across the grass in an unchanged pose, with no visible stepping.\",\"impact\":\"The intended walk reads as gliding rather than walking.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate a simple stepping cycle synchronized with the figure's movement.\"}]}",
+ "cost": 0.01623675,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12222,
+  "completion_tokens": 192,
+  "total_tokens": 12414
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 12219,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 106,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "brief_dense_defect",
+ "run": 2,
+ "frames": 40
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4.75,\"end_s\":5.25,\"pattern\":\"Visible clip seams\",\"evidence\":\"The sky, clouds and meadow abruptly change color at 5.0 seconds while the objects continue moving.\",\"impact\":\"The sudden change interrupts the appearance of a continuous shot.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Match the colors across the transition or make the change gradual.\"}]}",
+ "cost": 0.01701175,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12226,
+  "completion_tokens": 346,
+  "total_tokens": 12572
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 12223,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 253,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "clip_seam_defect",
+ "run": 1,
+ "frames": 40
+}

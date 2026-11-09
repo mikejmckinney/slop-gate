@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3,\"end_s\":4,\"pattern\":\"Action stalls, reverses, or skips\",\"evidence\":\"The car advances about 214 pixels between frames, compared with roughly 44 pixels per second in the surrounding frames.\",\"impact\":\"The sudden jump breaks the intended constant-speed motion.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Adjust the car's position over this interval to maintain a consistent speed.\"}]}",
+ "cost": 0.004898,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3375,
+  "completion_tokens": 136,
+  "total_tokens": 3511
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3372,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 39,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "action_skip_defect",
+ "run": 1,
+ "frames": 10
+}

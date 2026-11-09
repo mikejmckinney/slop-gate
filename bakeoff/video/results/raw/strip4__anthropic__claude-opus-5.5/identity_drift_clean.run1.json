@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.5, \"end_s\": 1.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"At the top of the wave the raised arm overlaps the right edge of the head and fuses with it into a single wedge shape, so the arm's outline is lost for consecutive frames.\", \"impact\": \"The arm reads as passing into the head instead of waving beside it, which breaks the solidity of the robot.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Limit the arm's peak angle or move the shoulder pivot outward so the arm stays clear of the head.\"}, {\"start_s\": 3.5, \"end_s\": 3.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"On the second wave peak the arm again merges into the side of the head across two consecutive frames.\", \"impact\": \"The repeated interpenetration makes the defect noticeable on every wave cycle.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Clamp the arm rotation at the apex so it never overlaps the head.\"}, {\"start_s\": 5.5, \"end_s\": 6.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"From 5.5 s to 6.0 s the raised arm overlaps and fuses with the head edge for three consecutive frames.\", \"impact\": \"The arm visibly clips into the head and loses a clear silhouette.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Adjust the wave keyframes so the arm's maximum angle stays outside the head boundary.\"}, {\"start_s\": 7.75, \"end_s\": 8.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"On the next wave peak the arm merges into the right side of the head for two consecutive frames.\", \"impact\": \"The recurring clipping undermines the readability of the wave.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Reduce the peak arm rotation or layer the arm cleanly in front of the head with its full outline visible.\"}]}",
+ "cost": 0.072812,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13038,
+  "completion_tokens": 1033,
+  "total_tokens": 14071
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 323,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "identity_drift_clean",
+ "run": 1,
+ "frames": 40
+}

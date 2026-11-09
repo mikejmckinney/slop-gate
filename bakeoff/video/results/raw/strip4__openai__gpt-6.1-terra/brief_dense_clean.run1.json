@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":9.75,\"pattern\":\"Floaty timing\",\"evidence\":\"The pink-and-blue figure moves steadily right while its shape remains rigid, with no visible stepping motion.\",\"impact\":\"The figure appears to glide rather than walk across the park.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate a visible walking cycle as the figure moves across the scene.\"}]}",
+ "cost": 0.00174395,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 12222,
+  "completion_tokens": 226,
+  "total_tokens": 12448
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 12219,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 134,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "brief_dense_clean",
+ "run": 1,
+ "frames": 40
+}

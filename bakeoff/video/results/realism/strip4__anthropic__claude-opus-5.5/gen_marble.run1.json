@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [\n{\"start_s\": 2.0, \"end_s\": 2.75, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"A second glass marble suddenly appears to the right of the coins at 2.0 s, rolls right, and has left the frame by 3.0 s.\", \"impact\": \"The scene is meant to have one marble, and a duplicate appearing from nowhere breaks believability.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Regenerate the impact so only the single marble exists and nothing spawns from the collision.\"},\n{\"start_s\": 1.0, \"end_s\": 1.5, \"pattern\": \"Broken cause and effect\", \"evidence\": \"The marble sits pressed against the coin stack for about half a second while the stack stays upright, then the top coins shift right without any visible new impulse.\", \"impact\": \"The collision reads as delayed and disconnected from the toppling, which weakens the core action.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Have the stack react on the frame of contact, with the coins tipping in direct response to the marble's momentum.\"},\n{\"start_s\": 2.0, \"end_s\": 2.5, \"pattern\": \"Implausible physics\", \"evidence\": \"After being struck from the left, the main coin stack slides left toward the marble, from about x=560-710 to about x=480-630.\", \"impact\": \"Objects moving against the direction of the hit contradict basic momentum.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Keep the base of the stack fixed or push it rightward, away from the impact.\"},\n{\"start_s\": 2.0, \"end_s\": 3.75, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The marble rolls back left from about x=460 to about x=285 by 3.25 s, then drifts right again to about x=325 by 3.75 s with nothing hitting it.\", \"impact\": \"The unmotivated back-and-forth motion makes the marble's path look erratic.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Have the marble either continue forward or come to rest after a single small rebound.\"},\n{\"start_s\": 0.0, \"end_s\": 3.75, \"pattern\": \"Continuity errors\", \"evidence\": \"The stack holds roughly nine or ten coins rather than three, and most of it is still standing at the end while only about three coins scatter.\", \"impact\": \"The clip does not show the brief's small three-coin stack being knocked over.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Use a three-coin stack and have it fully topple on impact.\"}\n]}",
+ "cost": 0.109572,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 19.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 19953,
+  "completion_tokens": 1488,
+  "total_tokens": 21441
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 604,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "gen_marble",
+ "run": 1,
+ "frames": 16
+}

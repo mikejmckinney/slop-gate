@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 6.0, \"end_s\": 8.0, \"pattern\": \"Implausible physics\", \"evidence\": \"At t=6 s and again at t=8 s the raised arm swings so far inward that its upper end overlaps the right edge of the head, as if passing through it; t=7 s sits between them with the arm lowered.\", \"impact\": \"The arm clipping into the head breaks the solid look of the robot and draws attention to the error at the top of each wave.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Limit the arm's upward rotation so it stops short of the head, or move the shoulder pivot outward so the full swing clears the head.\"}]}",
+ "cost": 0.027232,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3738,
+  "completion_tokens": 614,
+  "total_tokens": 4352
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 386,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "identity_drift_clean",
+ "run": 2,
+ "frames": 10
+}

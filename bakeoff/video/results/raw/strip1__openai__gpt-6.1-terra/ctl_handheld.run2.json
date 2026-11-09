@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4,\"end_s\":8,\"pattern\":\"Visible clip seams\",\"evidence\":\"A thin blue strip is visible along the bottom edge beneath the green meadow across consecutive frames.\",\"impact\":\"The exposed edge breaks the continuity of the meadow image.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Extend the meadow layer beyond the frame so camera movement does not expose its edge.\"}]}",
+ "cost": 0.0037617,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 13.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3077,
+  "completion_tokens": 721,
+  "total_tokens": 3798
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3074,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 631,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "ctl_handheld",
+ "run": 2,
+ "frames": 9
+}

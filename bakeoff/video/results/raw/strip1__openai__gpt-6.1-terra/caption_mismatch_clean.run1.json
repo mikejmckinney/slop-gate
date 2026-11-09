@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":8,\"pattern\":\"Near-static clip\",\"evidence\":\"The sampled frames show the same closed door from 0\u20134 s and the same open door from 5\u20138 s, with no intermediate swing visible.\",\"impact\":\"The intended opening is difficult to perceive in the sampled frames.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Extend the door-opening motion so the swing is visible between the closed and open holds.\"}]}",
+ "cost": 0.006148,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 458,
+  "total_tokens": 3545
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3084,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 352,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "caption_mismatch_clean",
+ "run": 1,
+ "frames": 9
+}

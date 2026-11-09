@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The train moves rightward up to 4.0 s, then moves leftward backward along the track at 5.0 s and 6.0 s before resuming rightward motion at 7.0 s.\", \"impact\": \"This violates the intended continuous left-to-right movement without stopping.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Ensure the train's horizontal position increases monotonically from left to right across the entire clip.\"}]}",
+ "cost": 0.024832,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11721,
+  "completion_tokens": 139,
+  "total_tokens": 11860
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "action_reverse_defect",
+ "run": 2,
+ "frames": 10
+}

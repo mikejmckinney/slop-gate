@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.25, \"end_s\": 9.75, \"pattern\": \"Identity or background drift\", \"evidence\": \"The robot gradually morphs from a teal body with round green eyes and a tall antenna into an orange body with square red eyes and a short antenna.\", \"impact\": \"This violates character consistency since it is meant to be the same robot throughout the clip.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Lock the robot's color, eye shape, and antenna length so its appearance remains constant across all frames.\"}]}",
+ "cost": 0.091384,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 16.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 45027,
+  "completion_tokens": 133,
+  "total_tokens": 45160
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "identity_drift_defect",
+ "run": 2,
+ "frames": 40
+}

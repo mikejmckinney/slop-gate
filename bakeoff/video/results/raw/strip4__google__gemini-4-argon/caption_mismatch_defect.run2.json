@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.5, \"end_s\": 7.25, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The on-screen caption reads \\\"The door stays shut.\\\" while the red door swings wide open starting at 4.250 s.\", \"impact\": \"The caption directly contradicts the visual action it is meant to describe.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Change the caption text to accurately state that the door swings open.\"}]}",
+ "cost": 0.082032,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 13.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 40421,
+  "completion_tokens": 119,
+  "total_tokens": 40540
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 36
+}

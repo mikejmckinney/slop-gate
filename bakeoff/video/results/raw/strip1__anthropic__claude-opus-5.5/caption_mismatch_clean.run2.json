@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Frames at 0, 1, 2, 3 and 4 s show the same closed red door with no visible change, and frames 5\u20138 s show the same open door with no visible change, so the only visible change falls between 4 s and 5 s.\", \"impact\": \"Roughly eight of nine seconds show no motion, so the clip reads as two still images instead of a door swinging open.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Spread the door's swing over several seconds, or trim the static lead-in and hold so the motion fills the clip.\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The caption 'The door swings open.' is already on screen at 4 s while the door is still fully closed, and the door appears open only at 5 s.\", \"impact\": \"The caption describes an action before it is visible, which slightly breaks the sync between caption and picture.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Bring the caption in when the door starts to move.\"}]}",
+ "cost": 0.026568,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3437,
+  "completion_tokens": 641,
+  "total_tokens": 4078
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 245,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_clean",
+ "run": 2,
+ "frames": 9
+}

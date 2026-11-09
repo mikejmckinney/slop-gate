@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3,\"end_s\":5,\"pattern\":\"Broken cause and effect\",\"evidence\":\"The tower begins to fall while the ball is still visibly separated from it, and a gap remains when the blocks reach the ground.\",\"impact\":\"The fall does not read as caused by the ball hitting the tower.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Time the tower's fall to begin when the ball contacts its base.\"},{\"start_s\":5,\"end_s\":8,\"pattern\":\"Contact slip\",\"evidence\":\"The fallen blocks extend below the ground surface in every sampled frame from 5 to 8 seconds.\",\"impact\":\"The blocks appear embedded in the floor rather than resting on it.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Place the fallen blocks with their bottom edges aligned to the ground.\"}]}",
+ "cost": 0.005703,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 9.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 369,
+  "total_tokens": 3456
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3084,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 191,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "cause_effect_defect",
+ "run": 2,
+ "frames": 9
+}

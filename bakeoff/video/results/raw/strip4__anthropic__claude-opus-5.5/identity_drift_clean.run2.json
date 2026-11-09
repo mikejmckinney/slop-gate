@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 1.5, \"end_s\": 1.75, \"pattern\": \"Implausible physics\", \"evidence\": \"At the top of the wave the arm rotates past vertical and its upper half disappears into the right side of the head, leaving only a wedge visible between head and body.\", \"impact\": \"The limb appears to pass through the solid head, which breaks the read of a rigid robot.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Limit the arm's rotation so it stops short of the head, or offset the shoulder pivot outward.\"}, {\"start_s\": 3.5, \"end_s\": 3.75, \"pattern\": \"Implausible physics\", \"evidence\": \"The arm again swings into the head silhouette and is hidden behind its right edge across two consecutive frames.\", \"impact\": \"The repeated interpenetration makes the defect noticeable on every wave cycle.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Clamp the peak arm angle so the arm stays clear of the head.\"}, {\"start_s\": 5.5, \"end_s\": 6.0, \"pattern\": \"Implausible physics\", \"evidence\": \"Across three frames the arm overlaps the head and body junction, sliding behind the head as a thin sliver.\", \"impact\": \"The arm visibly passes through the robot's own head.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Reduce the wave amplitude or move the shoulder pivot away from the head.\"}, {\"start_s\": 7.75, \"end_s\": 8.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The arm clips into the head's right side and only its lower portion remains visible.\", \"impact\": \"This is the same self-intersection on yet another cycle.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Clamp the arm rotation before it reaches the head outline.\"}, {\"start_s\": 9.75, \"end_s\": 10.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The final frame shows the arm overlapping and hidden behind the head edge.\", \"impact\": \"The clip ends on a frame where the limb interpenetrates the head.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Apply the same rotation limit to the final wave cycle.\"}]}\n```",
+ "cost": 0.074012,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13038,
+  "completion_tokens": 1093,
+  "total_tokens": 14131
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 318,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "identity_drift_clean",
+ "run": 2,
+ "frames": 40
+}

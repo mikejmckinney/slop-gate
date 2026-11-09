@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.9, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"A rectangular patch in the center of the brick wall exhibits rapid grainy texture boiling across consecutive frames while the rest of the wall stays stable.\", \"impact\": \"Violates the intended static brick wall and creates a distracting localized flicker behind the moving cart.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Replace the wall with a single locked static texture and prevent any per-frame texture regeneration in that region.\"}]}",
+ "cost": 0.00436955,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 15.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 3173,
+  "completion_tokens": 890,
+  "total_tokens": 4063
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3072,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 902,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "flicker_defect",
+ "run": 2
+}

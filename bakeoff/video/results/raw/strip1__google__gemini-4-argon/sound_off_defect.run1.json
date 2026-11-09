@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The yellow ball oscillates vertically in mid-air as it moves right, reversing downward trajectories around mid-frame without ever touching the brown floor.\", \"impact\": \"The animation fails to depict the intended action of a ball bouncing on the floor, looking instead like it is floating.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Adjust the vertical keyframes so the lowest points of the ball's trajectory make contact with the floor plane.\"}]}",
+ "cost": 0.024774,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 15.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11717,
+  "completion_tokens": 134,
+  "total_tokens": 11851
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "sound_off_defect",
+ "run": 1,
+ "frames": 10
+}

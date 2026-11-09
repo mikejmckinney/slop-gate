@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 5.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption box 'Checking the loop point' sits on top of the third 'blocks' row, so only 'loop' is visible and the rest of that finding's text is hidden in every frame from 0 to 4 s.\", \"impact\": \"Viewers cannot read the loop-related finding, which is the main point of the clip.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Move the caption lower or into a reserved safe area, or shift the findings list up so the caption does not overlap it.\"}, {\"start_s\": 5.0, \"end_s\": 8.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"From 5 to 7 s the caption box covers the lower half of the green 'passes, 0 findings' badge.\", \"impact\": \"The pass result is partly hidden, which weakens the conclusion of the comparison.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Raise the result line and badge above the caption area, or reposition the caption so it does not overlap UI content.\"}]}\n```",
+ "cost": 0.024484,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3121,
+  "completion_tokens": 600,
+  "total_tokens": 3721
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 201,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "text_mutate_clean",
+ "run": 2,
+ "frames": 8
+}

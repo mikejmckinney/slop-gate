@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 0.25, \"pattern\": \"Identity or background drift\", \"evidence\": \"The raincoat reads as dull olive-mustard at 0.0 s and turns bright saturated yellow by 0.25 s, then stays bright yellow for the rest of the walk.\", \"impact\": \"A visible shift in the coat's hue undercuts the 'yellow raincoat' identity at the start of the shot.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Match the coat's color and saturation in the opening frames to the rest of the clip, while keeping any change consistent with the backlight from the shop window.\"}]}",
+ "cost": 0.097116,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 19954,
+  "completion_tokens": 865,
+  "total_tokens": 20819
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 640,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "gen_street",
+ "run": 1,
+ "frames": 16
+}

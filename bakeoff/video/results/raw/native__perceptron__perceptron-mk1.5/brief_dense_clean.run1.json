@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 10.0, \"pattern\": \"Continuity errors\", \"evidence\": \"The child is shown wearing pink in the description but appears as a red circle with a dark blue body throughout the clip.\", \"impact\": \"This mismatch between the intended appearance and the visual representation creates confusion about the character's identity.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Update the character's color to match the described pink outfit.\"}]}",
+ "cost": 0.0005922,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 2.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Perceptron",
+ "served_model": "perceptron/perceptron-mk1.5",
+ "usage": {
+  "prompt_tokens": 2778,
+  "completion_tokens": 117,
+  "total_tokens": 2895
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:perceptron/perceptron-mk1.5",
+ "model": "perceptron/perceptron-mk1.5",
+ "clip": "brief_dense_clean",
+ "run": 1
+}

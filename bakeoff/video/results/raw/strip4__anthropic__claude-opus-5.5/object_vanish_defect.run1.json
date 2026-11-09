@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.5, \"end_s\": 10.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball moves steadily right at about 18 px per frame and is last seen partly behind the pillar's left edge at 4.25 s; from 4.5 s to 9.75 s it never comes out on the right side, although at that speed it should reappear by about 5.5\u20136.0 s.\", \"impact\": \"The intended action of the ball passing behind the pillar and continuing to the right edge never completes, so the clip fails its core brief.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Keep rendering the ball's trajectory behind the pillar so it comes out on the right side at the same speed and rolls off the right edge before the clip ends.\"}, {\"start_s\": 4.75, \"end_s\": 10.0, \"pattern\": \"Near-static clip\", \"evidence\": \"Every frame from 4.75 s to 9.75 s shows only the unchanged pillar and background, with no moving element.\", \"impact\": \"Over half the clip is a frozen empty scene, which reads as dead air or a broken render.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Fill the second half with the ball rolling out from behind the pillar to the right edge, or trim the clip to the section that has motion.\"}]}",
+ "cost": 0.066864,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 11.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13046,
+  "completion_tokens": 734,
+  "total_tokens": 13780
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 283,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "object_vanish_defect",
+ "run": 1,
+ "frames": 40
+}

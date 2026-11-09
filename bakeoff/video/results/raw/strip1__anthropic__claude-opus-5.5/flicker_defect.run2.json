@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.0, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"From t=3 to t=6 a rectangular region of the brick wall (roughly x 80\u2013420, y 45\u2013210) turns noticeably noisier and grainier than the surrounding bricks, and its speckle pattern changes from frame to frame; it is absent at t=2 and t=7.\", \"impact\": \"The wall is meant to be static, so a shimmering, mismatched patch on the background draws the eye away from the cart and looks like a rendering fault.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-render or composite the wall from a single static plate for 3\u20136 s so the patch matches the rest of the brick texture and stays constant.\"}]}",
+ "cost": 0.023092,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3743,
+  "completion_tokens": 406,
+  "total_tokens": 4149
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 138,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "flicker_defect",
+ "run": 2,
+ "frames": 10
+}

@@ -1,0 +1,34 @@
+{
+ "text": "```json\n{\n  \"findings\": [\n    {\n      \"start_s\": 3.0,\n      \"end_s\": 4.0,\n      \"pattern\": \"Action stalls, reverses, or skips\",\n      \"evidence\": \"The car suddenly skips forward along the road instead of moving at a constant rate.\",\n      \"impact\": \"Disrupts the continuity and intended constant speed of the motion.\",\n      \"confidence\": \"medium\",\n      \"basis\": \"frame inspection\",\n      \"fix\": \"Re-render the animation with linear interpolation between keyframes.\"\n    }\n  ]\n}\n```",
+ "cost": 0.00343425,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 5.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-3.8-flash",
+ "usage": {
+  "prompt_tokens": 1089,
+  "completion_tokens": 698,
+  "total_tokens": 1787
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 660
+  },
+  "completion": {
+   "reasoning_tokens": 561,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-3.8-flash",
+ "model": "google/gemini-3.8-flash",
+ "clip": "action_skip_defect",
+ "run": 2
+}

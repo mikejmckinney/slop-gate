@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.25, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption should stay fixed as 'Checking the loop point', but across consecutive frames from 4.0 s to 6.25 s it cycles through garbled variants such as 'Checkimg the lpoo point', 'Chacking tha loop poimt' and 'Ch3cking the 1oop p0int', then returns to the correct text at 6.5 s.\", \"impact\": \"A caption that is meant to be constant mutates into misspelled text, which looks broken and undermines trust in the tool being demonstrated.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Render the caption as one static text layer for the whole clip so its characters cannot change between frames.\"}]}",
+ "cost": 0.047824,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 10561,
+  "completion_tokens": 279,
+  "total_tokens": 10840
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "text_mutate_defect",
+ "run": 2,
+ "frames": 32
+}

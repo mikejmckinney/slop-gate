@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.25, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption 'Checking the loop point' repeatedly mutates into misspelled variants like 'Checkimg the lpoo point', 'Chacking tha loop poimt', and 'Ch3cking the 1oop p0int' across consecutive frames.\", \"impact\": \"The shifting, garbled text is distracting and undermines the professionalism of the screen recording.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Replace the corrupted caption frames with a static, correctly spelled 'Checking the loop point' overlay across the entire clip.\"}]}",
+ "cost": 0.076474,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 14.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 35977,
+  "completion_tokens": 452,
+  "total_tokens": 36429
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 299,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 32
+}

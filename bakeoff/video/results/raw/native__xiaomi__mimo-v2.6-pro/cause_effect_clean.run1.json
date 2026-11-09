@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 21, \"end_s\": 30, \"pattern\": \"Near-static clip\", \"evidence\": \"From about 21s to the end at 30s the ball and the fallen blocks hold completely still in identical positions across all frames.\", \"impact\": \"Roughly the last third of the clip contains no action, so the video drags and feels unfinished after the tower falls.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Trim the clip to end shortly after the blocks settle, around 22s.\"}]}",
+ "cost": 0.002745675,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 31.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4070,
+  "completion_tokens": 1495,
+  "total_tokens": 5565
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1363,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "cause_effect_clean",
+ "run": 1
+}

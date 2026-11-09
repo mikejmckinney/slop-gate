@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 9.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The red ball rolls rightward and reaches the pillar's left edge around 4s, but from 5s through the end of the clip the ball is entirely absent and never re-emerges on the right side of the pillar.\", \"impact\": \"The intended action of passing behind the pillar and continuing to the right edge fails, leaving the scene static and empty for the final five seconds.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Keep the ball drawn behind the pillar while it traverses its width, then let it reappear on the right side and roll to the right edge before the clip ends.\"}]}",
+ "cost": 0.000716182,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 15.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Alibaba",
+ "served_model": "qwen/qwen3.8-omni-flash",
+ "usage": {
+  "prompt_tokens": 2700,
+  "completion_tokens": 1173,
+  "total_tokens": 3873
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 1792,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 997,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:qwen/qwen3.8-omni-flash",
+ "model": "qwen/qwen3.8-omni-flash",
+ "clip": "object_vanish_defect",
+ "run": 2
+}

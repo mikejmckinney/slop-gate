@@ -1,0 +1,19 @@
+{
+ "model": "google/veo-3.1-lite",
+ "seconds": 4,
+ "prompts": {
+  "gen_marble": "A glass marble rolls along a wooden table and knocks over a small stack of three coins.",
+  "gen_street": "A person in a yellow raincoat walks past a shop window on a rainy street at dusk.",
+  "gen_kettle": "Close-up of a kettle on a stove, steam rising, a hand lifts it and pours water into a mug."
+ },
+ "cost": {
+  "gen_marble": 0.12,
+  "gen_street": 0.12,
+  "gen_kettle": 0.12
+ },
+ "sha256": {
+  "gen_kettle.mp4": "e2c72948afe869d930538ea9f54e0fac2bd5953f451769c631fc6e126b3bac6c",
+  "gen_marble.mp4": "7c98e38fe7f3e9e012dcc46ad04f8fae5126495e87f4e41686b9344748d29366",
+  "gen_street.mp4": "b9214e32c0b795db68ed388351c884dedb999ca9ba1f99b791a14467ca956022"
+ }
+}

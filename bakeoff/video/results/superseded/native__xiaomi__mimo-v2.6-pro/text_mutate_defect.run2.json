@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 16, \"end_s\": 26, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption, which should read \\\"Checking the loop point\\\" throughout, scrambles into variants like \\\"Chacking tha loop point\\\", \\\"Checking the lpoo point\\\", and \\\"Ch3cking the loop p0int\\\" across these frames.\", \"impact\": \"The caption is the one element meant to stay constant, so the garbling reads as a rendering fault and makes the text briefly unreadable.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Lock the caption string to \\\"Checking the loop point\\\" for the full duration and remove the per-frame text corruption.\"}, {\"start_s\": 20, \"end_s\": 31, \"pattern\": \"Identity or background drift\", \"evidence\": \"At 00:20 the \\\"Before\\\" waveform switches from blue to gray while the \\\"After\\\" waveform switches from gray to blue, and both stay swapped to the end.\", \"impact\": \"The two tracks trade visual identities mid-clip, so the viewer can no longer tell which waveform is the before and which is the after.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Keep the waveform colors assigned consistently to each track for the whole clip.\"}, {\"start_s\": 20, \"end_s\": 31, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"The three red \\\"blocks\\\" rows (true-peak, loudness, loop) disappear at 00:20 and are replaced by a new summary line and a green \\\"passes, 0 findings\\\" badge.\", \"impact\": \"The lower panel content changes without any transition, breaking the continuity of the screen recording.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Either keep the blocks list on screen or show the pass state as an explicit, deliberate UI transition.\"}]}",
+ "cost": 0.00110570652,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 36.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4067,
+  "completion_tokens": 1386,
+  "total_tokens": 5453
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 4048,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 955,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "text_mutate_defect",
+ "run": 2
+}

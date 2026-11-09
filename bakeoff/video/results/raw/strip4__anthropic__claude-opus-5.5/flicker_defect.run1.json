@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.0, \"end_s\": 6.75, \"pattern\": \"Flicker or texture boil\", \"evidence\": \"A rectangular patch of the brick wall (roughly x 80-420, y 45-210) turns grainy and noisy, and its speckle pattern changes from frame to frame from 3.0 s through 6.75 s; at 7.0 s the wall returns to its smooth texture.\", \"impact\": \"The wall is supposed to be static, so a boiling rectangle of texture behind the cart draws the eye and reads as a rendering glitch.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-render or replace the affected wall region from 3.0-6.75 s with the stable brick texture used in the rest of the clip.\"}]}",
+ "cost": 0.057412,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13043,
+  "completion_tokens": 262,
+  "total_tokens": 13305
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "flicker_defect",
+ "run": 1,
+ "frames": 40
+}

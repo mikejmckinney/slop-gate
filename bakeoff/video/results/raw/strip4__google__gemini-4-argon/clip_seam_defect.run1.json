@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.75, \"end_s\": 9.75, \"pattern\": \"Visible clip seams\", \"evidence\": \"At t=5.000 s, the entire scene abruptly shifts in color palette and texture, with the blue sky and white clouds turning yellowish and grainy while the grass and brown rectangle change hue.\", \"impact\": \"The sudden shift in color grading and noise mid-shot breaks visual continuity in what is meant to be one continuous shot.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Match the color grading and grain profile across both halves of the clip or re-render the shot as a single continuous pass.\"}]}",
+ "cost": 0.0929,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 16.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 44855,
+  "completion_tokens": 319,
+  "total_tokens": 45174
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 166,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "clip_seam_defect",
+ "run": 1,
+ "frames": 40
+}

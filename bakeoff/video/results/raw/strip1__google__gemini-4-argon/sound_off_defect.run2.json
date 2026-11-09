@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 9.0, \"pattern\": \"Implausible physics\", \"evidence\": \"The ball changes vertical direction in mid-air without ever contacting the floor below.\", \"impact\": \"The animation fails to depict a ball bouncing on the floor as intended.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Adjust the ball's vertical trajectory so its lowest points make contact with the brown floor line.\"}]}",
+ "cost": 0.024534,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 30.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 11717,
+  "completion_tokens": 110,
+  "total_tokens": 11827
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "sound_off_defect",
+ "run": 2,
+ "frames": 10
+}

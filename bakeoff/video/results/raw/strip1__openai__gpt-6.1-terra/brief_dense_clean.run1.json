@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":9,\"pattern\":\"Contact slip\",\"evidence\":\"The figure moves across the grass while its lower body remains the same rigid rectangle in every sampled frame.\",\"impact\":\"The movement reads as sliding rather than walking.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate a walking cycle with alternating leg movement and planted steps.\"}]}",
+ "cost": 0.00122145,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3372,
+  "completion_tokens": 210,
+  "total_tokens": 3582
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3369,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 125,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "brief_dense_clean",
+ "run": 1,
+ "frames": 10
+}

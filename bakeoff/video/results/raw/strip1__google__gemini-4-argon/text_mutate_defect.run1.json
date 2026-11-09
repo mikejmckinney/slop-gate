@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 6.0, \"pattern\": \"Unstable or unreadable overlays\", \"evidence\": \"The bottom caption corrupts from 'Checking the loop point' into 'Checkimg the lpoo point' (4.0s), 'Chacking tha loop poimt' (5.0s), and 'Ch3cking the 1oop p0int' (6.0s).\", \"impact\": \"The garbled text is distracting and violates the requirement for a consistent static caption.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Replace the corrupted caption overlay with a single static text layer spelling 'Checking the loop point' throughout the clip.\"}]}",
+ "cost": 0.020622,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 12.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 9506,
+  "completion_tokens": 161,
+  "total_tokens": 9667
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "text_mutate_defect",
+ "run": 1,
+ "frames": 8
+}

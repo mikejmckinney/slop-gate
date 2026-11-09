@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 5.0, \"end_s\": 7.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The caption states 'The door stays shut.' while the visual shows the red door open.\", \"impact\": \"The text directly contradicts the visual action.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Update the caption to state that the door opens.\"}]}",
+ "cost": 0.02223,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 26.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google AI Studio",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 10620,
+  "completion_tokens": 99,
+  "total_tokens": 10719
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 9
+}

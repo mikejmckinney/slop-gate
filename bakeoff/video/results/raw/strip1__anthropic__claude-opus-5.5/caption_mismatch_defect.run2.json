@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 4.0, \"end_s\": 7.0, \"pattern\": \"Narration-picture mismatch\", \"evidence\": \"The caption reads 'The door stays shut.' while the door is shown wide open from 5.0 s to 7.0 s.\", \"impact\": \"The caption contradicts the visible action and the intended description of a door swinging open.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Change the caption to describe the door opening, for example 'The red door swings open.'\"}, {\"start_s\": 4.0, \"end_s\": 5.0, \"pattern\": \"Action stalls, reverses, or skips\", \"evidence\": \"The door is fully closed and unchanged from 0.0 s to 4.0 s, then fully open at 5.0 s, with no partially open position in any sampled frame, and it stays frozen open through 8.0 s.\", \"impact\": \"The 'swing' may read as an instant pop between two static states instead of a door swinging open.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\", \"fix\": \"Animate the door rotating gradually over a second or more so intermediate open angles are visible.\"}]}",
+ "cost": 0.024528,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 7.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 3437,
+  "completion_tokens": 539,
+  "total_tokens": 3976
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 158,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "caption_mismatch_defect",
+ "run": 2,
+ "frames": 9
+}

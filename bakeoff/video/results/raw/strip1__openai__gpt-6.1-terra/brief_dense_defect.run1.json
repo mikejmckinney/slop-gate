@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":9,\"pattern\":\"Contact slip\",\"evidence\":\"The figure moves right across successive frames while its circle-and-rectangle pose remains unchanged, with no visible steps.\",\"impact\":\"The child appears to glide across the grass rather than walk.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Animate a stepping cycle with feet that plant on the ground.\"}]}",
+ "cost": 0.00164145,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3372,
+  "completion_tokens": 294,
+  "total_tokens": 3666
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3369,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 204,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "brief_dense_defect",
+ "run": 1,
+ "frames": 10
+}

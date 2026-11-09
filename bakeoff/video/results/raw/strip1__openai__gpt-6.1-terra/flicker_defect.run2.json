@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":3,\"end_s\":6,\"pattern\":\"Flicker or texture boil\",\"evidence\":\"A rectangular patch of brick wall develops a coarse, shifting texture across consecutive frames.\",\"impact\":\"The changing patch breaks the intended static background.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the brick texture consistent throughout the shot.\"}]}",
+ "cost": 0.00078185,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 4.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3380,
+  "completion_tokens": 122,
+  "total_tokens": 3502
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3377,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 40,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "flicker_defect",
+ "run": 2,
+ "frames": 10
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":4,\"end_s\":9,\"pattern\":\"Objects appear, vanish, or merge\",\"evidence\":\"The ball enters behind the pillar at 4 s and does not reappear on the right in any subsequent sampled frame.\",\"impact\":\"The intended passage to the right edge is not shown.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Continue the ball's motion behind the pillar and make it emerge on the right toward the edge.\"}]}",
+ "cost": 0.00129195,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 6.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3382,
+  "completion_tokens": 224,
+  "total_tokens": 3606
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3379,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 121,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "object_vanish_defect",
+ "run": 2,
+ "frames": 10
+}

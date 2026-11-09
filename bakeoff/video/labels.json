@@ -1,0 +1,403 @@
+[
+ {
+  "clip": "flicker_defect",
+  "kind": "defect",
+  "group": "flicker",
+  "seconds": 10.0,
+  "brief": "A blue cart rolls left to right in front of a static brick wall. The camera doesn't move.",
+  "has_audio": false,
+  "file": "flicker_defect.mp4",
+  "pattern": "Flicker or texture boil",
+  "start_s": 3.0,
+  "end_s": 7.0,
+  "note": "A 340x160 patch of the wall boils for four seconds.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   3.0,
+   7.0
+  ]
+ },
+ {
+  "clip": "flicker_clean",
+  "kind": "clean_sibling",
+  "group": "flicker",
+  "seconds": 10.0,
+  "brief": "A blue cart rolls left to right in front of a static brick wall. The camera doesn't move.",
+  "has_audio": false,
+  "file": "flicker_clean.mp4"
+ },
+ {
+  "clip": "identity_drift_defect",
+  "kind": "defect",
+  "group": "identity_drift",
+  "seconds": 10.0,
+  "brief": "A robot stands in a room and waves one arm. It is the same robot throughout.",
+  "has_audio": false,
+  "file": "identity_drift_defect.mp4",
+  "pattern": "Identity or background drift",
+  "start_s": 4.0,
+  "end_s": 6.0,
+  "note": "Head and body color, eye shape and antenna morph over two seconds and stay changed.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   4.042,
+   10.0
+  ]
+ },
+ {
+  "clip": "identity_drift_clean",
+  "kind": "clean_sibling",
+  "group": "identity_drift",
+  "seconds": 10.0,
+  "brief": "A robot stands in a room and waves one arm. It is the same robot throughout.",
+  "has_audio": false,
+  "file": "identity_drift_clean.mp4"
+ },
+ {
+  "clip": "object_vanish_defect",
+  "kind": "defect",
+  "group": "object_vanish",
+  "seconds": 10.0,
+  "brief": "A red ball rolls left to right, passes behind a grey pillar, and keeps going to the right edge.",
+  "has_audio": false,
+  "file": "object_vanish_defect.mp4",
+  "pattern": "Objects appear, vanish, or merge",
+  "start_s": 5.2,
+  "end_s": 8.0,
+  "note": "The ball goes behind the pillar and never comes out.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   5.25,
+   9.542
+  ]
+ },
+ {
+  "clip": "object_vanish_clean",
+  "kind": "clean_sibling",
+  "group": "object_vanish",
+  "seconds": 10.0,
+  "brief": "A red ball rolls left to right, passes behind a grey pillar, and keeps going to the right edge.",
+  "has_audio": false,
+  "file": "object_vanish_clean.mp4"
+ },
+ {
+  "clip": "action_skip_defect",
+  "kind": "defect",
+  "group": "action_skip",
+  "seconds": 10.0,
+  "brief": "A green car drives left to right along a road at a constant speed.",
+  "has_audio": false,
+  "file": "action_skip_defect.mp4",
+  "pattern": "Action stalls, reverses, or skips",
+  "start_s": 3.75,
+  "end_s": 4.25,
+  "note": "The car jumps 170 px forward between two frames at 4.0 s, and keeps going from there.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   4.0,
+   10.0
+  ]
+ },
+ {
+  "clip": "action_skip_clean",
+  "kind": "clean_sibling",
+  "group": "action_skip",
+  "seconds": 10.0,
+  "brief": "A green car drives left to right along a road at a constant speed.",
+  "has_audio": false,
+  "file": "action_skip_clean.mp4"
+ },
+ {
+  "clip": "action_reverse_defect",
+  "kind": "defect",
+  "group": "action_reverse",
+  "seconds": 10.0,
+  "brief": "A train drives left to right along a track without stopping.",
+  "has_audio": false,
+  "file": "action_reverse_defect.mp4",
+  "pattern": "Action stalls, reverses, or skips",
+  "start_s": 4.0,
+  "end_s": 5.5,
+  "note": "The train runs backward for 1.5 s, then forward again from further back.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   4.042,
+   10.0
+  ]
+ },
+ {
+  "clip": "action_reverse_clean",
+  "kind": "clean_sibling",
+  "group": "action_reverse",
+  "seconds": 10.0,
+  "brief": "A train drives left to right along a track without stopping.",
+  "has_audio": false,
+  "file": "action_reverse_clean.mp4"
+ },
+ {
+  "clip": "cause_effect_defect",
+  "kind": "defect",
+  "group": "cause_effect",
+  "seconds": 9.0,
+  "brief": "A blue ball rolls right, hits a tower of orange blocks, and the tower falls over from the hit.",
+  "has_audio": false,
+  "file": "cause_effect_defect.mp4",
+  "pattern": "Broken cause and effect",
+  "start_s": 3.8,
+  "end_s": 5.0,
+  "note": "The tower falls a second before the ball arrives at 5.0 s.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   3.833,
+   6.0
+  ]
+ },
+ {
+  "clip": "cause_effect_clean",
+  "kind": "clean_sibling",
+  "group": "cause_effect",
+  "seconds": 9.0,
+  "brief": "A blue ball rolls right, hits a tower of orange blocks, and the tower falls over from the hit.",
+  "has_audio": false,
+  "file": "cause_effect_clean.mp4"
+ },
+ {
+  "clip": "text_mutate_defect",
+  "kind": "defect",
+  "group": "text_mutate",
+  "seconds": 8.0,
+  "brief": "A screen recording of a music waveform tool with one caption at the bottom that stays the same.",
+  "has_audio": false,
+  "file": "text_mutate_defect.mp4",
+  "pattern": "Unstable or unreadable overlays",
+  "start_s": 4.0,
+  "end_s": 6.5,
+  "note": "The caption's letters change for 2.5 s on a real recording from docs/media.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   4.0,
+   6.5
+  ]
+ },
+ {
+  "clip": "text_mutate_clean",
+  "kind": "clean_sibling",
+  "group": "text_mutate",
+  "seconds": 8.0,
+  "brief": "A screen recording of a music waveform tool with one caption at the bottom that stays the same.",
+  "has_audio": false,
+  "file": "text_mutate_clean.mp4"
+ },
+ {
+  "clip": "sound_off_defect",
+  "kind": "defect",
+  "group": "sound_off",
+  "seconds": 10.0,
+  "brief": "A ball bounces across a wooden floor.",
+  "has_audio": true,
+  "file": "sound_off_defect.mp4",
+  "pattern": "Sound event misses picture",
+  "start_s": 5.25,
+  "end_s": 5.85,
+  "note": "One bounce sounds 0.5 s after the ball lands. The other five are in sync.",
+  "needs_audio": true,
+  "tags": [],
+  "picture_differs_s": null
+ },
+ {
+  "clip": "sound_off_clean",
+  "kind": "clean_sibling",
+  "group": "sound_off",
+  "seconds": 10.0,
+  "brief": "A ball bounces across a wooden floor.",
+  "has_audio": true,
+  "file": "sound_off_clean.mp4"
+ },
+ {
+  "clip": "narration_mismatch_defect",
+  "kind": "defect",
+  "group": "narration_mismatch",
+  "seconds": 9.0,
+  "brief": "A narrated game tutorial slide.",
+  "has_audio": true,
+  "file": "narration_mismatch_defect.mp4",
+  "pattern": "Narration-picture mismatch",
+  "start_s": 4.7,
+  "end_s": 8.35,
+  "note": "Narration says wave seven in 1,250 meters; the picture shows wave 3 and 400 m.",
+  "needs_audio": true,
+  "tags": [],
+  "picture_differs_s": [
+   4.333,
+   9.0
+  ]
+ },
+ {
+  "clip": "narration_mismatch_clean",
+  "kind": "clean_sibling",
+  "group": "narration_mismatch",
+  "seconds": 9.0,
+  "brief": "A narrated game tutorial slide.",
+  "has_audio": true,
+  "file": "narration_mismatch_clean.mp4"
+ },
+ {
+  "clip": "caption_mismatch_defect",
+  "kind": "defect",
+  "group": "caption_mismatch",
+  "seconds": 9.0,
+  "brief": "A red door swings open in a hallway, with a one-line caption describing it.",
+  "has_audio": false,
+  "file": "caption_mismatch_defect.mp4",
+  "pattern": "Narration-picture mismatch",
+  "start_s": 4.0,
+  "end_s": 7.5,
+  "note": "The caption says \"The door stays shut.\" while the door opens.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   3.5,
+   7.5
+  ]
+ },
+ {
+  "clip": "caption_mismatch_clean",
+  "kind": "clean_sibling",
+  "group": "caption_mismatch",
+  "seconds": 9.0,
+  "brief": "A red door swings open in a hallway, with a one-line caption describing it.",
+  "has_audio": false,
+  "file": "caption_mismatch_clean.mp4"
+ },
+ {
+  "clip": "clip_seam_defect",
+  "kind": "defect",
+  "group": "clip_seam",
+  "seconds": 10.0,
+  "brief": "One continuous shot: clouds drift over a meadow while a small cart crosses it.",
+  "has_audio": false,
+  "file": "clip_seam_defect.mp4",
+  "pattern": "Visible clip seams",
+  "start_s": 4.75,
+  "end_s": 5.25,
+  "note": "Exposure, color and grain jump at 5.0 s, as at a poor extension join.",
+  "needs_audio": false,
+  "tags": [],
+  "picture_differs_s": [
+   5.0,
+   10.0
+  ]
+ },
+ {
+  "clip": "clip_seam_clean",
+  "kind": "clean_sibling",
+  "group": "clip_seam",
+  "seconds": 10.0,
+  "brief": "One continuous shot: clouds drift over a meadow while a small cart crosses it.",
+  "has_audio": false,
+  "file": "clip_seam_clean.mp4"
+ },
+ {
+  "clip": "brief_gap_defect",
+  "kind": "defect",
+  "group": "brief_gap",
+  "seconds": 10.0,
+  "brief": "A yellow star moves across a night sky and stays on screen until it leaves.",
+  "has_audio": false,
+  "file": "brief_gap_defect.mp4",
+  "pattern": "Objects appear, vanish, or merge",
+  "start_s": 3.333,
+  "end_s": 3.458,
+  "note": "The star is gone for frames 80-82 (3 frames, 125 ms), between the 4 fps samples.",
+  "needs_audio": false,
+  "tags": [
+   "brief"
+  ],
+  "picture_differs_s": [
+   3.333,
+   3.458
+  ]
+ },
+ {
+  "clip": "brief_gap_clean",
+  "kind": "clean_sibling",
+  "group": "brief_gap",
+  "seconds": 10.0,
+  "brief": "A yellow star moves across a night sky and stays on screen until it leaves.",
+  "has_audio": false,
+  "file": "brief_gap_clean.mp4"
+ },
+ {
+  "clip": "brief_dense_defect",
+  "kind": "defect",
+  "group": "brief_dense",
+  "seconds": 10.0,
+  "brief": "A child in pink walks across a park past a tree.",
+  "has_audio": false,
+  "file": "brief_dense_defect.mp4",
+  "pattern": "Objects appear, vanish, or merge",
+  "start_s": 4.25,
+  "end_s": 4.375,
+  "note": "A green cube is visible for frames 102-104 (3 frames, 125 ms), on one 4 fps sample.",
+  "needs_audio": false,
+  "tags": [
+   "brief"
+  ],
+  "picture_differs_s": [
+   4.25,
+   4.375
+  ]
+ },
+ {
+  "clip": "brief_dense_clean",
+  "kind": "clean_sibling",
+  "group": "brief_dense",
+  "seconds": 10.0,
+  "brief": "A child in pink walks across a park past a tree.",
+  "has_audio": false,
+  "file": "brief_dense_clean.mp4"
+ },
+ {
+  "clip": "ctl_stopmotion",
+  "kind": "control",
+  "group": "ctl_stopmotion",
+  "seconds": 8.0,
+  "brief": "Stop-motion puppet animation. The stepped timing, about 6 poses a second, is deliberate.",
+  "has_audio": false,
+  "file": "ctl_stopmotion.mp4"
+ },
+ {
+  "clip": "ctl_jumpcut",
+  "kind": "control",
+  "group": "ctl_jumpcut",
+  "seconds": 10.0,
+  "brief": "One subject shown in two shots with a deliberate jump cut at 5 seconds.",
+  "has_audio": false,
+  "file": "ctl_jumpcut.mp4"
+ },
+ {
+  "clip": "ctl_handheld",
+  "kind": "control",
+  "group": "ctl_handheld",
+  "seconds": 9.0,
+  "brief": "A meadow shot with deliberate handheld camera shake and film grain.",
+  "has_audio": false,
+  "file": "ctl_handheld.mp4"
+ },
+ {
+  "clip": "ctl_screen",
+  "kind": "control",
+  "group": "ctl_screen",
+  "seconds": 8.0,
+  "brief": "A silent terminal screen recording.",
+  "has_audio": false,
+  "file": "ctl_screen.mp4"
+ }
+]

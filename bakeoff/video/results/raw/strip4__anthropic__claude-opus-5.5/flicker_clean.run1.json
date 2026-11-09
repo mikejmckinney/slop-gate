@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 9.0, \"end_s\": 10.0, \"pattern\": \"Identity or background drift\", \"evidence\": \"After the cart leaves frame at about 9.0 s, the brick wall in the 9.25\u20139.75 s frames looks paler and its mottled pattern looks different from the wall in the earlier frames, and this holds across all three consecutive frames.\", \"impact\": \"A static wall that changes its look on a locked-off camera reads as a rendering glitch at the end of the clip.\", \"confidence\": \"low\", \"basis\": \"frame inspection\", \"fix\": \"Keep the wall texture identical for the whole clip, for example by compositing one fixed background plate under the cart animation.\"}]}",
+ "cost": 0.062032,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 10.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 13043,
+  "completion_tokens": 493,
+  "total_tokens": 13536
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 260,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "flicker_clean",
+ "run": 1,
+ "frames": 40
+}

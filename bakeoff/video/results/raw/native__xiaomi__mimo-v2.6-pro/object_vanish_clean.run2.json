@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": []}",
+ "cost": 0.00066525552,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 46.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "DeepInfra",
+ "served_model": "xiaomi/mimo-v2.6-pro",
+ "usage": {
+  "prompt_tokens": 4070,
+  "completion_tokens": 822,
+  "total_tokens": 4892
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 4048,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 813,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:xiaomi/mimo-v2.6-pro",
+ "model": "xiaomi/mimo-v2.6-pro",
+ "clip": "object_vanish_clean",
+ "run": 2
+}

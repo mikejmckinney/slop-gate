@@ -1,0 +1,34 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.0, \"end_s\": 3.0, \"pattern\": \"Objects appear, vanish, or merge\", \"evidence\": \"Upon hitting the coins, the single marble splits into two marbles\u2014one rolling left and one rolling right\u2014while three new coins materialize next to the intact stack.\", \"impact\": \"The spontaneous duplication of the marble and coins breaks object permanence and ruins the physical believability of the shot.\", \"confidence\": \"high\", \"basis\": \"frame inspection\", \"fix\": \"Re-generate or composite the impact so that a single marble knocks over the existing stack of coins without creating duplicate objects.\"}]}",
+ "cost": 0.002934,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 8.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 752,
+  "completion_tokens": 143,
+  "total_tokens": 895
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 284
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "gen_marble",
+ "run": 2
+}

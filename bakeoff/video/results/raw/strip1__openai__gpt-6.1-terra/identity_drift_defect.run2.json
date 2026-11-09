@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\":[{\"start_s\":5,\"end_s\":9,\"pattern\":\"Identity or background drift\",\"evidence\":\"The turquoise robot with round green eyes and a wide head changes into an orange robot with square red eyes, a narrower head, and a shorter antenna.\",\"impact\":\"The persistent design change makes the robot appear to be a different character.\",\"confidence\":\"high\",\"basis\":\"frame inspection\",\"fix\":\"Keep the robot's colors, eye shapes, head proportions, and antenna consistent throughout the clip.\"}]}",
+ "cost": 0.00114175,
+ "error": null,
+ "maybe_billed": false,
+ "seconds": 4.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3378,
+  "completion_tokens": 194,
+  "total_tokens": 3572
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 3375,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 85,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip1:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "identity_drift_defect",
+ "run": 2,
+ "frames": 10
+}
