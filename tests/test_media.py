@@ -4,13 +4,18 @@ import tempfile
 import unittest
 import wave
 from pathlib import Path
+from unittest import mock
 
 import numpy as np
 from PIL import Image
 
+from slopgate import media_init
 from slopgate.media import check_audio, check_image, rules_for
+from tests.fake_tools import FakeToolMixin
 
 SR = 44100
+REAL_FFMPEG = shutil.which("ffmpeg")
+REAL_FFPROBE = shutil.which("ffprobe")
 
 
 def write_wav(path: Path, samples: np.ndarray) -> None:
@@ -255,6 +260,141 @@ class AudioDefectTests(unittest.TestCase):
         flat = self.music(40.0) * 0.5
         self.assertNotIn("flat-dynamics", self.check("song.wav", flat))
         self.assertIn("flat-dynamics", self.check("song.wav", flat, min_loudness_range_lu=8))
+
+
+def only_when(arg: str, body: str, real: str) -> str:
+    """A fake tool's script: `body` when the command line has `arg`, the real tool otherwise."""
+    return f'case "$*" in *{arg}*) {body} ;; *) exec {real} "$@" ;; esac'
+
+
+SUMMARY_HEAD = "[Parsed_ebur128_0 @ 0x1] Summary:\n\n  Integrated loudness:\n    I:         -21.8 LUFS\n"
+SUMMARY_LRA = "  Loudness range:\n    LRA:        20.0 LU\n    LRA low:   -41.8 LUFS\n"
+SUMMARY_PEAK = "  True peak:\n    Peak:      -18.1 dBFS\n"
+
+
+def on_stderr(text: str, code: int = 0) -> str:
+    quoted = text.replace("\n", "\\n")
+    return f"printf '{quoted}' >&2; exit {code}"
+
+
+@unittest.skipUnless(REAL_FFMPEG and REAL_FFPROBE, "ffmpeg not installed")
+class FailedReadTests(FakeToolMixin, unittest.TestCase):
+    """Fake tools on PATH stand in for each ffmpeg and ffprobe read failing or printing nonsense."""
+
+    def setUp(self):
+        self.dir = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.dir)
+        self.path = self.dir / "a.wav"
+        write_wav(self.path, tone(2.0))
+
+    def check(self, **rule):
+        name = self.path.name
+        return check_audio(self.path, name, rules_for(name, {"rules": [{"glob": "*.wav", **rule}]}))
+
+    def fails_loudness(self, body):
+        self.fake("ffmpeg", only_when("ebur128", body, REAL_FFMPEG))
+        [found] = [f for f in self.check(loop=True) if f.rule == "audio-check-failed"]
+        self.assertEqual(found.severity, "warning")
+        self.assertIn("was not checked", found.message)
+        self.assertIn("Treat it as unknown, not as a pass.", found.message)
+        return found
+
+    def test_loudness_run_exits_non_zero(self):
+        self.assertIn("boom", self.fails_loudness("echo banner >&2; echo boom >&2; exit 1").message)
+
+    def test_loudness_run_exits_non_zero_without_output(self):
+        self.assertIn("ffmpeg exited 3", self.fails_loudness("exit 3").message)
+
+    def test_loudness_run_exits_non_zero_after_a_good_summary(self):
+        self.fails_loudness(on_stderr(SUMMARY_HEAD + SUMMARY_LRA + SUMMARY_PEAK, code=1))
+
+    def test_loudness_run_prints_nothing(self):
+        self.assertIn("without its loudness summary", self.fails_loudness("exit 0").message)
+
+    def test_loudness_run_stops_before_the_summary(self):
+        frame = (
+            "[Parsed_ebur128_0 @ 0x1] t: 0.1 TARGET:-23 LUFS M: -21.8 S:-120.7 I: -21.8 LUFS LRA: 0.0 LU\n"
+        )
+        self.fails_loudness(on_stderr(frame))
+
+    def test_a_file_tag_cannot_pose_as_the_summary(self):
+        self.fails_loudness(on_stderr("    title : Summary:\n    I: -21.8 LUFS\n"))
+
+    def test_summary_missing_a_value(self):
+        for parts in (SUMMARY_HEAD + SUMMARY_PEAK, SUMMARY_HEAD + SUMMARY_LRA):
+            with self.subTest(parts=parts):
+                self.fails_loudness(on_stderr(parts))
+
+    def test_summary_with_a_garbled_number(self):
+        garbled = SUMMARY_HEAD.replace("-21.8", "-2.1.8") + SUMMARY_LRA + SUMMARY_PEAK
+        self.fails_loudness(on_stderr(garbled))
+
+    def test_the_other_audio_checks_still_run(self):
+        self.fake("ffmpeg", only_when("ebur128", "exit 1", REAL_FFMPEG))
+        self.assertLessEqual({"audio-check-failed", "channels"}, rule_ids(self.check(channels=2)))
+
+    def test_a_good_summary_is_read(self):
+        good = SUMMARY_HEAD + SUMMARY_LRA + SUMMARY_PEAK
+        self.fake("ffmpeg", only_when("ebur128", on_stderr(good), REAL_FFMPEG))
+        self.assertNotIn("audio-check-failed", rule_ids(self.check(loop=True)))
+        found = self.check(loudness_lufs=-14, loudness_tolerance=1, loop=True)
+        self.assertIn(
+            "Integrated loudness -21.8 LUFS", next(f for f in found if f.rule == "loudness").message
+        )
+
+    def test_clean_audio_gets_no_new_finding(self):
+        clips = {"tone": tone(2.0), "silent": np.zeros(SR * 2), "short": tone(0.1)}
+        for name, samples in clips.items():
+            with self.subTest(name):
+                write_wav(self.path, samples)
+                self.assertNotIn("audio-check-failed", rule_ids(self.check()))
+
+    def unreadable(self):
+        [found] = self.check()
+        self.assertEqual((found.rule, found.severity), ("audio-unreadable", "error"))
+        return found
+
+    def test_probe_failures_are_reported(self):
+        bodies = {
+            "non-zero": "echo boom >&2; exit 1",
+            "non-zero, silent": "exit 3",
+            "empty": "exit 0",
+            "not json": "echo '{not json'",
+            "not an object": "echo '[1]'",
+            "no streams": "echo '{}'",
+            "streams not a list": """echo '{"streams": "x"}'""",
+            "stream not an object": """echo '{"streams": [1]}'""",
+            "no sample rate": """echo '{"streams": [{"channels": 1}]}'""",
+            "unusable sample rate": """echo '{"streams": [{"sample_rate": "N/A", "channels": 1}]}'""",
+            "zero channels": """echo '{"streams": [{"sample_rate": "44100", "channels": 0}]}'""",
+        }
+        for name, body in bodies.items():
+            with self.subTest(name):
+                self.fake("ffprobe", body)
+                self.unreadable()
+
+    def test_probe_without_a_usable_duration_still_checks_the_file(self):
+        streams = '{"streams": [{"sample_rate": "44100", "channels": 1}], "format": {"duration": "N/A"}}'
+        self.fake("ffprobe", f"echo '{streams}'")
+        self.assertEqual(rule_ids(self.check(loop=True)), set())
+
+    def test_decode_exits_non_zero(self):
+        self.fake("ffmpeg", only_when("f32le", "echo boom >&2; exit 1", REAL_FFMPEG))
+        self.assertIn("boom", self.unreadable().message)
+
+    def test_decode_prints_nothing(self):
+        self.fake("ffmpeg", only_when("f32le", "exit 0", REAL_FFMPEG))
+        [found] = self.check()
+        self.assertEqual((found.rule, found.severity), ("audio-empty", "error"))
+
+    def test_decode_prints_a_partial_sample(self):
+        self.fake("ffmpeg", only_when("f32le", "printf abc", REAL_FFMPEG))
+        self.assertIn("3 bytes", self.unreadable().message)
+
+    def test_media_init_skips_a_file_whose_loudness_read_failed(self):
+        self.fake("ffmpeg", only_when("ebur128", "exit 1", REAL_FFMPEG))
+        with mock.patch.object(media_init, "all_files", return_value={"a.wav": None}):
+            self.assertNotIn("loudness_lufs", media_init.draft(self.dir))
 
 
 if __name__ == "__main__":

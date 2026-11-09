@@ -1,7 +1,6 @@
 import json
 import os
 import shutil
-import stat
 import subprocess
 import tempfile
 import unittest
@@ -10,6 +9,7 @@ from unittest import mock
 
 from slopgate import cli, media, media_init
 from slopgate.video import VIDEO_EXTS, check_video
+from tests.fake_tools import FakeToolMixin
 
 REAL_FFMPEG = shutil.which("ffmpeg")
 REAL_FFPROBE = shutil.which("ffprobe")
@@ -339,23 +339,22 @@ class CorruptFileTests(VideoCase):
 
 
 @unittest.skipUnless(REAL_FFMPEG and REAL_FFPROBE, "ffmpeg not installed")
-class FailClosedTests(VideoCase):
+class FailClosedTests(FakeToolMixin, VideoCase):
     """Fake tools on PATH stand in for ffprobe and ffmpeg failing or printing nonsense."""
-
-    def fake(self, tool, body, **env):
-        folder = Path(tempfile.mkdtemp())
-        self.addCleanup(shutil.rmtree, folder)
-        script = folder / tool
-        script.write_text(f"#!/bin/sh\n{body}\n")
-        script.chmod(script.stat().st_mode | stat.S_IEXEC)
-        patcher = mock.patch.dict(os.environ, {"PATH": f"{folder}:{os.environ['PATH']}", **env})
-        patcher.start()
-        self.addCleanup(patcher.stop)
 
     def blocks(self):
         [found] = self.check(self.clean)
         self.assertEqual((found.rule, found.severity), ("video-unreadable", "error"))
         return found
+
+    def test_a_failed_loudness_run_on_the_audio_track_is_reported_once(self):
+        self.fake(
+            "ffmpeg", f'case "$*" in *ebur128*) echo boom >&2; exit 1 ;; *) exec {REAL_FFMPEG} "$@" ;; esac'
+        )
+        [found] = self.warning(self.clean, "audio-check-failed", loudness_lufs=-16)
+        self.assertTrue(found.message.startswith("Audio track:"))
+        self.assertIn("boom", found.message)
+        self.assertNotIn("video-check-failed", rule_ids(self.check(self.clean, loudness_lufs=-16)))
 
     def test_ffprobe_failure(self):
         self.fake("ffprobe", "echo boom >&2; exit 1")

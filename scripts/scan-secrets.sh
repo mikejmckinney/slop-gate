@@ -8,6 +8,8 @@
 # Exit:  0 clean, 1 credentials found, 2 the scan could not run.
 set -euo pipefail
 
+# shellcheck source=scripts/download.sh
+source "$(dirname "$0")/download.sh"
 base="${1:?base sha}"
 head="${2:?head sha}"
 : "${GITLEAKS_VERSION:?set GITLEAKS_VERSION}"
@@ -17,9 +19,8 @@ mkdir -p "$tools/bin"
 
 asset="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
 url="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
-if ! curl -fsSL --retry 3 --connect-timeout 20 --max-time 120 -o "$tools/$asset" "$url/$asset" ||
-	! curl -fsSL --retry 3 --connect-timeout 20 --max-time 60 -o "$tools/gitleaks-checksums.txt" \
-		"$url/gitleaks_${GITLEAKS_VERSION}_checksums.txt"; then
+if ! download 120 "$tools/$asset" "$url/$asset" ||
+	! download 60 "$tools/gitleaks-checksums.txt" "$url/gitleaks_${GITLEAKS_VERSION}_checksums.txt"; then
 	echo "::error::Could not download gitleaks ${GITLEAKS_VERSION}" >&2
 	exit 2
 fi

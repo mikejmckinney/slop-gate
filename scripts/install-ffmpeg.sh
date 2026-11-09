@@ -8,6 +8,8 @@
 # here rather than trust a checksum file from the same release.
 set -euo pipefail
 
+# shellcheck source=scripts/download.sh
+source "$(dirname "$0")/download.sh"
 tools="${RUNNER_TEMP:-/tmp}/slop-gate-tools"
 mkdir -p "$tools/bin"
 step() { echo "::group::$1"; }
@@ -18,7 +20,7 @@ ffmpeg_asset="ffmpeg-n8.1.3-27-g8dca1586f4-linux64-gpl-8.1"
 ffmpeg_sha256="41e9c565594c390622cf968d82fa4135d9e9a11d06c1515644288cbc844e3380"
 if ! command -v ffmpeg >/dev/null && ! [ -x "$tools/bin/ffmpeg" ]; then
 	step "ffmpeg ${ffmpeg_asset}"
-	curl -fsSL --retry 3 --connect-timeout 20 --max-time 300 -o "$tools/ffmpeg.tar.xz" \
+	download 120 "$tools/ffmpeg.tar.xz" \
 		"https://github.com/BtbN/FFmpeg-Builds/releases/download/${ffmpeg_release}/${ffmpeg_asset}.tar.xz"
 	if ! echo "${ffmpeg_sha256}  $tools/ffmpeg.tar.xz" | sha256sum --check --quiet; then
 		echo "::error::ffmpeg ${ffmpeg_asset} checksum did not match" >&2

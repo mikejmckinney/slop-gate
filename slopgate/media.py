@@ -6,10 +6,8 @@ Universal checks run on every changed media file. Checks that need intent
 
 from __future__ import annotations
 
-import json
 import re
 import shutil
-import subprocess
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 
@@ -17,9 +15,18 @@ import numpy as np
 from PIL import Image, UnidentifiedImageError
 
 from . import audio_defects as ad
-from .findings import Finding
+from .findings import Finding, not_checked_message
 from .midi import MIDI_EXTS, check_midi
-from .video import VIDEO_EXTS, VIDEO_KEYS, check_video, validate_rule
+from .video import (
+    VIDEO_EXTS,
+    VIDEO_KEYS,
+    _ffprobe_json,
+    _first_line,
+    _number,
+    _run,
+    check_video,
+    validate_rule,
+)
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
 AUDIO_EXTS = {".wav", ".mp3", ".ogg", ".oga", ".opus", ".flac", ".m4a", ".aac"}
@@ -93,6 +100,14 @@ class _Ctx:
 
     def add(self, rule: str, severity: str, message: str, fix: str = "") -> None:
         self.findings.append(Finding("media", rule, severity, self.path, None, message, fix))
+
+    def not_checked(self, what: str, why: object) -> None:
+        self.add(
+            "audio-check-failed",
+            "warning",
+            not_checked_message(what, why),
+            "Open the file with ffmpeg locally, or re-export it.",
+        )
 
 
 # ------------------------------------------------------------------ images
@@ -213,8 +228,15 @@ def check_image(abs_path: Path, rel: str, r: dict) -> list[Finding]:
 # ------------------------------------------------------------------ audio
 
 
+# Anchored to the start of a line so that a file's own metadata tag can't pose as ffmpeg's output.
+_EBUR128_SUMMARY = re.compile(r"^\[[^\]]*ebur128[^\]]*\] Summary:\s*$", re.M)
+_EBUR128_NUMBER = r"(-?\d+(?:\.\d+)?|-inf)"
+
+
 def _probe(path: Path) -> dict:
-    out = subprocess.run(
+    """Facts about the first audio stream. Raises RuntimeError when ffprobe fails,
+    prints something unusable, or finds no audio stream."""
+    data, _ = _ffprobe_json(
         [
             "ffprobe",
             "-v",
@@ -226,27 +248,29 @@ def _probe(path: Path) -> dict:
             "-of",
             "json",
             str(path),
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
+        ]
     )
-    if out.returncode != 0:
-        raise RuntimeError(out.stderr.strip() or "ffprobe failed")
-    data = json.loads(out.stdout)
-    if not data.get("streams"):
+    streams = data.get("streams")
+    if not streams:
         raise RuntimeError("no audio stream")
-    s = data["streams"][0]
+    if not isinstance(streams, list) or not isinstance(streams[0], dict):
+        raise RuntimeError("ffprobe listed its streams in an unreadable form")
+    s = streams[0]
+    sample_rate, channels = _number(s.get("sample_rate"), int), _number(s.get("channels"), int)
+    if sample_rate is None or channels is None or sample_rate < 1 or channels < 1:
+        raise RuntimeError("ffprobe gave no usable sample rate or channel count")
+    container = data.get("format")
     return {
-        "sample_rate": int(s["sample_rate"]),
-        "channels": int(s["channels"]),
-        "duration": float(data.get("format", {}).get("duration") or 0),
+        "sample_rate": sample_rate,
+        "channels": channels,
+        # Optional: check_audio takes the length from the decoded samples.
+        "duration": (_number(container.get("duration")) if isinstance(container, dict) else None) or 0.0,
         "codec": s.get("codec_name"),
     }
 
 
 def _decode(path: Path, sr: int, ch: int) -> np.ndarray:
-    raw = subprocess.run(
+    raw = _run(
         [
             "ffmpeg",
             "-v",
@@ -263,11 +287,14 @@ def _decode(path: Path, sr: int, ch: int) -> np.ndarray:
             str(sr),
             "-",
         ],
-        capture_output=True,
-        check=False,
+        text=False,
     )
     if raw.returncode != 0:
-        raise RuntimeError(raw.stderr.decode(errors="replace").strip() or "ffmpeg decode failed")
+        raise RuntimeError(
+            _first_line(raw.stderr.decode(errors="replace"), f"ffmpeg exited {raw.returncode}")
+        )
+    if len(raw.stdout) % (4 * ch):
+        raise RuntimeError(f"ffmpeg returned {len(raw.stdout)} bytes, not whole {ch}-channel samples")
     return np.frombuffer(raw.stdout, dtype="<f4").reshape(-1, ch)
 
 
@@ -277,24 +304,34 @@ def _loudness(path: Path) -> tuple[float | None, float | None]:
 
 
 def _ebur128(path: Path) -> tuple[float | None, float | None, float | None]:
-    """Integrated loudness (LUFS), true peak (dBTP) and loudness range (LU)."""
-    out = subprocess.run(
-        ["ffmpeg", "-nostats", "-v", "info", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"],
-        capture_output=True,
-        text=True,
-        check=False,
+    """Integrated loudness (LUFS), true peak (dBTP) and loudness range (LU).
+
+    None means ffmpeg measured the file and printed -inf, as it does for the
+    true peak of digital silence. Raises RuntimeError when the run fails or
+    its summary is missing or unreadable."""
+    out = _run(
+        ["ffmpeg", "-nostats", "-v", "info", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"]
     )
-    summary = out.stderr.rsplit("Summary:", 1)[-1]
-    lufs = re.search(r"I:\s+(-?[\d.]+|-inf) LUFS", summary)
-    peak = re.search(r"True peak:\s+Peak:\s+(-?[\d.]+|-inf) dBFS", summary)
-    lra = re.search(r"LRA:\s+(-?[\d.]+) LU", summary)
+    if out.returncode != 0:
+        # The last line, because at -v info the first is ffmpeg's banner.
+        lines = out.stderr.strip().splitlines()
+        raise RuntimeError(lines[-1][:200] if lines else f"ffmpeg exited {out.returncode}")
+    marks = list(_EBUR128_SUMMARY.finditer(out.stderr))
+    if not marks:
+        raise RuntimeError("ffmpeg finished without its loudness summary")
+    summary = out.stderr[marks[-1].end() :]
 
-    def num(m):
-        if not m or m.group(1) == "-inf":
-            return None
-        return float(m.group(1))
+    def num(label: str, pattern: str) -> float | None:
+        m = re.search(pattern, summary)
+        if not m:
+            raise RuntimeError(f"ffmpeg's loudness summary has no readable {label}")
+        return None if m.group(1) == "-inf" else float(m.group(1))
 
-    return num(lufs), num(peak), num(lra)
+    return (
+        num("integrated loudness", rf"I:\s+{_EBUR128_NUMBER} LUFS"),
+        num("true peak", rf"True peak:\s+Peak:\s+{_EBUR128_NUMBER} dBFS"),
+        num("loudness range", rf"LRA:\s+{_EBUR128_NUMBER} LU\b"),
+    )
 
 
 def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
@@ -343,7 +380,11 @@ def check_audio(abs_path: Path, rel: str, r: dict) -> list[Finding]:
             "Re-render with lower gain or a true-peak limiter; clipping can't be repaired after the fact.",
         )
 
-    lufs, true_peak, lra = _ebur128(abs_path)
+    try:
+        lufs, true_peak, lra = _ebur128(abs_path)
+    except RuntimeError as exc:
+        ctx.not_checked("Loudness (LUFS, range and true peak)", exc)
+        lufs = true_peak = lra = None
     if true_peak is not None and true_peak > r["max_true_peak_dbtp"]:
         ctx.add(
             "true-peak",

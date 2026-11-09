@@ -38,9 +38,9 @@ def _image_facts(path: Path) -> dict | None:
 def _audio_facts(path: Path) -> dict | None:
     try:
         info = media._probe(path)
-    except RuntimeError:
+        lufs, _ = media._loudness(path)
+    except RuntimeError:  # an unreadable file is reported by the check, not the draft
         return None
-    lufs, _ = media._loudness(path)
     return {**info, "lufs": lufs}
 
 
