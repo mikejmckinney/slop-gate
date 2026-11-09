@@ -173,7 +173,7 @@ None of the five delivered it; the gate reported 16 blocking findings.
 
 | Model | Output | Findings |
 |---|---|---|
-| `gpt-image-2.5-sunburst` | <img src="docs/media/before-after/sprites/gpt-image-2.5-sunburst.webp" width="96" alt="Knight with red plume, shield with a gold cross, sword raised, on a transparent background."> | 1024×1024, 52,461 colors, 328,245 semi-transparent pixels: the knight itself is at alpha 252–254, slightly see-through in a game |
+| `gpt-image-2.5-sunburst` | <img src="docs/media/before-after/sprites/gpt-image-2.5-sunburst.webp" width="96" alt="Knight with red plume, shield with a gold cross, sword raised, on a transparent background."> | 1024×1024, 60,167 colors, 343,644 semi-transparent pixels: the knight itself is at alpha 252–254, slightly see-through in a game |
 | `gemini-3-pro-image` | <img src="docs/media/before-after/sprites/gemini-3-pro-image.webp" width="96" alt="Horned knight with a red lion shield, on a gray checkerboard painted into the image."> | 1024×1024, 65,818 colors, no transparency: the checkerboard is painted in |
 | `gemini-3.1-flash-image` | <img src="docs/media/before-after/sprites/gemini-3.1-flash-image.webp" width="96" alt="Knight with red plume and cape, on a light checkerboard painted into the image."> | 1024×1024, 65,759 colors, painted checkerboard |
 | `mai-image-2.5-pro` | <img src="docs/media/before-after/sprites/mai-image-2.5-pro.webp" width="96" alt="Gray knight with a red lion shield, on a faint checkerboard painted into the image."> | 1024×1024, 77,346 colors, painted checkerboard |
