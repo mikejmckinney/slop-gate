@@ -122,6 +122,8 @@ class DownloadTests(unittest.TestCase):
             "PATH": f"{self.bin}:{env['PATH']}",
             "RUNNER_TEMP": str(self.temp),
             "SLOPGATE_RETRY_DELAY_S": "1",
+            "GITHUB_PATH": "/dev/null",
+            "GITHUB_ENV": "/dev/null",
             **extra,
         }
 
@@ -178,26 +180,59 @@ class DownloadTests(unittest.TestCase):
         self.assertNotEqual(done.returncode, 0)
         self.assertEqual(len(outage.requests(f"vale_{VALE}_Linux_64-bit.tar.gz")), 6)
 
-    def in_helper(self, seconds_used: int, url: str) -> subprocess.CompletedProcess:
-        """Call download() with `seconds_used` of the budget already gone."""
-        script = f'source "{ROOT}/scripts/download.sh"; SECONDS={seconds_used}; download 60 out "{url}"'
+    def test_time_spent_in_pip_does_not_use_the_download_budget(self):
+        """The shell has run 300 s, pip's whole limit, when the installer reaches its first request."""
+        asset = f"vale_{VALE}_Linux_64-bit.tar.gz"
+        data = tarball("vale")
+        sums = f"{hashlib.sha256(data).hexdigest()}  {asset}\n".encode()
+        outage = self.serve({asset: data, f"vale_{VALE}_checksums.txt": sums}, failures=0)
+        self.executable("python", "#!/bin/sh\nexit 0\n")
+        self.executable("ruff", "#!/bin/sh\nexit 0\n")
+        biome = self.temp / "slop-gate-tools" / "biome" / "node_modules" / ".bin"
+        self.executable(
+            "npm",
+            f'#!/bin/sh\nmkdir -p "{biome}"\nprintf "#!/bin/sh\\n" > "{biome}/biome"\n'
+            f'chmod +x "{biome}/biome"\n',
+        )
+        done = subprocess.run(
+            ["bash", "-c", 'SECONDS=300; source "$0"', str(ROOT / "scripts" / "install-tools.sh")],
+            capture_output=True,
+            text=True,
+            check=False,
+            env=self.env(VALE_VERSION=VALE, BIOME_VERSION="2.6.3", NEED_FFMPEG="0"),
+        )
+        self.assertEqual(done.returncode, 0, done.stderr)
+        self.assertNotIn("download budget", done.stderr)
+        self.assertEqual(len(outage.requests(asset)), 1)
+
+    def in_helper(self, before: str, url: str, calls: int = 1) -> subprocess.CompletedProcess:
+        """Run `before`, then call download() `calls` times, printing each exit code."""
+        call = f'download 60 out "{url}"; echo "exit=$?"; ' * calls
+        script = f'source "{ROOT}/scripts/download.sh"; {before}; {call}'
         return subprocess.run(
             ["bash", "-c", script], capture_output=True, text=True, check=False, cwd=self.dir, env=self.env()
         )
 
     def test_a_spent_budget_fails_without_a_request(self):
         outage = self.serve({"f": b"x"}, failures=0)
-        done = self.in_helper(160, f"http://127.0.0.1:{outage.port}/f")
-        self.assertEqual(done.returncode, 1)
+        done = self.in_helper("download_spent_s=160", f"http://127.0.0.1:{outage.port}/f")
+        self.assertIn("exit=1", done.stdout)
         self.assertIn("download budget", done.stderr)
         self.assertEqual(outage.hits, {})
 
     def test_a_hung_server_cannot_outlast_the_budget(self):
         outage = self.serve({"f": b"x"}, failures=0, kind="hang")
         started = time.monotonic()
-        done = self.in_helper(158, f"http://127.0.0.1:{outage.port}/f")
-        self.assertEqual(done.returncode, 124)
+        done = self.in_helper("download_spent_s=158", f"http://127.0.0.1:{outage.port}/f")
+        self.assertIn("exit=124", done.stdout)
         self.assertLess(time.monotonic() - started, 10)
+
+    def test_time_in_a_download_counts_against_the_next_one(self):
+        outage = self.serve({"f": b"x"}, failures=0, kind="hang")
+        done = self.in_helper("download_spent_s=158", f"http://127.0.0.1:{outage.port}/f", calls=2)
+        self.assertEqual(done.stdout.split(), ["exit=124", "exit=1"])
+        self.assertIn("download budget", done.stderr)
+        self.assertEqual(len(outage.requests("/f")), 1)
 
     def test_no_download_bypasses_the_helper(self):
         files = [*(ROOT / "scripts").glob("*.sh"), ROOT / "action.yml", *ROOT.glob("*/action.yml")]
