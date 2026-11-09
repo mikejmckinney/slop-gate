@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.5, \"end_s\": 0.75, \"category\": \"Visual Artifacts\", \"box\": [0.55, 0.35, 0.3, 0.2], \"evidence\": \"At 0.50 s two separate damselflies fly side by side near the center-right. By 0.75 s only one damselfly is there, so one insect vanishes or merges into the other.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.2, 0.3, 0.7, 0.35], \"evidence\": \"The same damselflies' wings switch abruptly between dark, cyan-blue and bright magenta in consecutive frames, for example the right-hand insect at 0.00\u20130.75 s and the left-hand one at 2.00\u20133.25 s.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.75, \"end_s\": 3.5, \"category\": \"Shape/Form/Geometry\", \"box\": [0.42, 0.65, 0.2, 0.33], \"evidence\": \"The damselfly rising from the lily pads changes form between frames: its wing shape and colour shift, and at 3.25 s its body appears as a white streak.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.047516,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 1027,
+  "total_tokens": 7771
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 575,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g039",
+ "run": 1,
+ "frames": 20
+}

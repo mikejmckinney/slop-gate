@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.36, 0.3, 0.3, 0.45], \"evidence\": \"The dark central opening changes from a smooth oval into an irregular heart-like shape, with a notch forming at its top edge across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.75, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.65, 0.2, 0.35, 0.7], \"evidence\": \"The beads on the right side lose their distinct spherical form and smear into elongated, melted blobs with no clear boundaries.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.0, 0.68, 0.33, 0.32], \"evidence\": \"A flat white triangular shape at the bottom-left steadily grows and intrudes into the bead surface, and it does not resolve into any coherent object.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03122,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 653,
+  "total_tokens": 5193
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 249,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g030",
+ "run": 1,
+ "frames": 12
+}

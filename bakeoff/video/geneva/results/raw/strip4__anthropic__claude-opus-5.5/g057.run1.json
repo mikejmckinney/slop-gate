@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.52, 0.0, 0.2, 0.35], \"evidence\": \"The performer's face loses its structure and smears into an indistinct, melting shape with misplaced sunglasses over consecutive frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.6, 0.15, 0.2, 0.4], \"evidence\": \"The guitar headstock and neck break apart: white tuning-peg-like dots repeat far down the neck and the headstock shape dissolves.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.5, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.47, 0.45, 0.22, 0.55], \"evidence\": \"The guitar body loses its defined outline and pickguard, becoming a vague glowing shape merged with the hands.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.5, \"end_s\": 2.75, \"category\": \"Visual Artifacts\", \"box\": [0.6, 0.0, 0.22, 0.3], \"evidence\": \"A brick archway appears behind the performer where earlier frames showed a lit window and flat wall.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.033636,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4264,
+  "completion_tokens": 829,
+  "total_tokens": 5093
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 317,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g057",
+ "run": 1,
+ "frames": 12
+}

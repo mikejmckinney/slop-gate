@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.5, \"category\": \"Visual Artifacts\", \"box\": [0.0, 0.3, 0.76, 0.16], \"evidence\": \"The wall scoreboard shows garbled, unreadable text under the main digits, and the timer value jumps back and forth irregularly between frames (25:81.0, 25:79.5, 25:02, 25:63, 25:65, 25:61, 25:69, 25:83) instead of counting steadily.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.75, \"end_s\": 4.75, \"category\": \"Physics\", \"box\": [0.62, 0.2, 0.32, 0.38], \"evidence\": \"The barbell she is lifting runs through the vertical rack upright, with the right-side plates sitting on the far side of the post, so the bar would have to pass through the solid steel upright.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.048716,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 8124,
+  "completion_tokens": 811,
+  "total_tokens": 8935
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 482,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g060",
+ "run": 1,
+ "frames": 20
+}

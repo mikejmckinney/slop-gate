@@ -1,0 +1,36 @@
+{
+ "text": "```json\n{\"findings\": [\n  {\"start_s\": 0.25, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.3, 0.3, 0.42, 0.35], \"evidence\": \"The suit jacket hem repeatedly balloons into a wide disc-like flared skirt, then shrinks back to a short blazer, changing length and shape between frames in a way a tailored jacket cannot.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"},\n  {\"start_s\": 2.25, \"end_s\": 3.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.38, 0.08, 0.16, 0.2], \"evidence\": \"The woman's hair shifts from long, wavy and past the shoulders to a shorter bob-like cut and back across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"},\n  {\"start_s\": 1.0, \"end_s\": 3.75, \"category\": \"Other\", \"box\": [0.25, 0.4, 0.4, 0.18], \"evidence\": \"Desk items are inconsistent: two laptops (black and silver) appear early on, the silver laptop is missing around 2.0\u20133.5 s, and later only one silver laptop sits at a different spot.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"},\n  {\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Other\", \"box\": [0.0, 0.0, 0.4, 0.65], \"evidence\": \"The background layout changes: the small bookshelf grows into a full wall of books, and a potted plant appears and becomes larger, beyond what the camera shift accounts for.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}\n]}\n```",
+ "cost": 0.046936,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 998,
+  "total_tokens": 7742
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 416,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g021",
+ "run": 1,
+ "frames": 20
+}

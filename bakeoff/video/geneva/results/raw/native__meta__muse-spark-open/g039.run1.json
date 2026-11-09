@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.3, \"category\": \"Shape/Form/Geometry\", \"box\": [0.53, 0.74, 0.36, 0.22], \"evidence\": \"Dragonfly on lily pad shows duplicated body and extra translucent wing/leg fragments that flicker and merge across consecutive frames\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00918135,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 19.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1784,
+  "completion_tokens": 1735,
+  "total_tokens": 3519
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1730,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g039",
+ "run": 1
+}

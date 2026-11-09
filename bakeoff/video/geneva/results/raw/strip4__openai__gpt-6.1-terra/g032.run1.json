@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":1.25,\"end_s\":2.75,\"category\":\"Visual Artifacts\",\"box\":[0.31,0.66,0.23,0.16],\"evidence\":\"The board-like dark shape beneath the surfer disappears, leaving no visible board under the surfer's feet.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.01006175,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 6230,
+  "completion_tokens": 455,
+  "total_tokens": 6685
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6227,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 373,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g032",
+ "run": 1,
+ "frames": 12
+}

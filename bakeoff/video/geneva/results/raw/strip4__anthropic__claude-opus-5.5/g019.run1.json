@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.8, 0.45, 0.1, 0.32], \"evidence\": \"The distant worker's clothing appears to shift from a mostly dark outfit with small orange patches to a distinct orange hi-vis vest as the camera approaches, though the change could be explained by distance and resolution.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.038296,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 566,
+  "total_tokens": 7310
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 405,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g019",
+ "run": 1,
+ "frames": 20
+}

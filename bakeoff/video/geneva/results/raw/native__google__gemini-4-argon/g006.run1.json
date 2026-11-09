@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.18, 0.56, 0.25, 0.22], \"evidence\": \"The cat's front paws morph unnaturally out of each other and split into two separate arms as they move apart.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 4.0, \"category\": \"Physics\", \"box\": [0.0, 0.0, 1.0, 1.0], \"evidence\": \"The background pans horizontally to the right while the cat and foreground table remain completely stationary relative to the camera frame, creating a disconnected parallax effect.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003482,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 199,
+  "total_tokens": 945
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g006",
+ "run": 1
+}

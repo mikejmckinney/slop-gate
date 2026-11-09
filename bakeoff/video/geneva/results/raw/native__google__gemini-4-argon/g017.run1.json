@@ -1,0 +1,35 @@
+{
+ "text": "```json\n{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.9, \"category\": \"Physics\", \"box\": [0.27, 0.36, 0.35, 0.56], \"evidence\": \"While the foam and bubbles rapidly pop and move at the top of the glass, the lime slices submerged inside the liquid remain completely static and frozen in place without any buoyancy or shifting.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}\n```",
+ "cost": 0.002672,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 118,
+  "total_tokens": 864
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g017",
+ "run": 1
+}

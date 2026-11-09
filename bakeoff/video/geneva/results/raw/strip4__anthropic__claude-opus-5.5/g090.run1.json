@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.0, 0.36, 1.0, 0.26], \"evidence\": \"The backdrop text is garbled pseudo-lettering ('Sunsct', 'Runc', 'Rouc', 'Ingtcc') that does not form real words, and it stays that way in every frame.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.53, 0.06, 0.18, 0.14], \"evidence\": \"The glasses frames keep changing shape between frames, from squashed ovals to heart-like lenses to tilted lenses with uneven sides, and they never hold a consistent rigid form.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.0, \"end_s\": 2.25, \"category\": \"Visual Artifacts\", \"box\": [0.17, 0.62, 0.2, 0.33], \"evidence\": \"The puppet's left hand (viewer's left) near the podium turns smeared and semi-translucent and blends into the background instead of keeping a solid clay form.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 1.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.18, 0.4, 0.75, 0.3], \"evidence\": \"The hands lose a coherent finger structure and become mitten-like lumps with merged or extra-looking fingers that change shape from frame to frame.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03852,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.0,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 1018,
+  "total_tokens": 5558
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 440,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g090",
+ "run": 1,
+ "frames": 12
+}

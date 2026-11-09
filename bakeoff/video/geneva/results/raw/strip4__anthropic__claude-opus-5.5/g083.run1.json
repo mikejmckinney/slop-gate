@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Other\", \"box\": [0.43, 0.02, 0.3, 0.45], \"evidence\": \"The girl's hair changes from long, straight, waist-length dark hair at 0.0\u20130.5 s to shorter, curly, shoulder-length hair by 0.75\u20131.0 s, an identity inconsistency during the spin.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.25, \"end_s\": 0.5, \"category\": \"Shape/Form/Geometry\", \"box\": [0.45, 0.03, 0.14, 0.18], \"evidence\": \"As she turns toward the camera, the face looks smeared and warped, with blank, misplaced eyes and features that do not resolve into a coherent face.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 0.75, \"category\": \"Motion\", \"box\": [0.42, 0.72, 0.25, 0.27], \"evidence\": \"Her torso and head rotate roughly 180 degrees from back-facing to front-facing while both feet stay planted in nearly the same stance, with no stepping or pivot of the feet.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Other\", \"box\": [0.38, 0.4, 0.28, 0.35], \"evidence\": \"The skirt's design keeps changing between frames, including the waistband ribbon, sequin patterns and hem trim, and the top changes from puffed sleeves to a plain T-shirt and back.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0367,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 927,
+  "total_tokens": 5467
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 347,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g083",
+ "run": 1,
+ "frames": 12
+}

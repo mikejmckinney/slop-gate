@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.35, 0.06, 0.36, 0.26], \"evidence\": \"The spiky hair strands change shape, count and arrangement from frame to frame and shimmer, so they never form a consistent hair structure.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Motion\", \"box\": [0.4, 0.6, 0.26, 0.34], \"evidence\": \"The character holds a mid-stride walking pose with one leg raised, yet the legs and body stay essentially frozen in place across all frames, so the walk does not progress.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.38, 0.24, 0.3, 0.24], \"evidence\": \"The goggle strap appears as several black bands wrapping the body, including one cutting across near the mouth, which is inconsistent with a single strap.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.021552,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 682,
+  "total_tokens": 2660
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 278,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g067",
+ "run": 1,
+ "frames": 6
+}

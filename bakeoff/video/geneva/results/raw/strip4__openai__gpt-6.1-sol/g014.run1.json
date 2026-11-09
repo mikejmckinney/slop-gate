@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":1.5,\"end_s\":2.25,\"category\":\"Visual Artifacts\",\"box\":[0.094,0.314,0.183,0.378],\"evidence\":\"The left child's bright pink coat progressively changes into a pale gray-purple hooded jacket across consecutive frames.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"},{\"start_s\":2.25,\"end_s\":2.75,\"category\":\"Shape/Form/Geometry\",\"box\":[0.161,0.479,0.091,0.285],\"evidence\":\"The left child's lower legs and boots fade into faint translucent streaks beneath abruptly rounded blue trouser ends.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.0132935,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-sol",
+ "usage": {
+  "prompt_tokens": 3926,
+  "completion_tokens": 348,
+  "total_tokens": 4274
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3923,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 194,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-sol",
+ "model": "openai/gpt-6.1-sol",
+ "clip": "g014",
+ "run": 1,
+ "frames": 12
+}

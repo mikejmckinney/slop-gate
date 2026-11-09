@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 3.3, \"end_s\": 4.4, \"category\": \"Shape/Form/Geometry\", \"box\": [0.52, 0.38, 0.32, 0.32], \"evidence\": \"left bell sleeve geometry breaks with hand appearing outside the cuff and fabric hanging detached from arm\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0079106,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 18.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1784,
+  "completion_tokens": 1436,
+  "total_tokens": 3220
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1312,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g082",
+ "run": 1
+}

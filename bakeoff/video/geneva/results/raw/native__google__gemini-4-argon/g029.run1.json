@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 4.9, \"category\": \"Physics\", \"box\": [0.43, 0.13, 0.43, 0.78], \"evidence\": \"The woman's hair continuously morphs in length and shape, unnaturally vanishing and regrowing instead of floating consistently in the water.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.002532,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 104,
+  "total_tokens": 850
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g029",
+ "run": 1
+}

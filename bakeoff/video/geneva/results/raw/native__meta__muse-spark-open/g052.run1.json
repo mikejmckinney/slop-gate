@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.33, \"category\": \"Shape/Form/Geometry\", \"box\": [0.32, 0.55, 0.62, 0.38], \"evidence\": \"Garden chairs and tables warp and merge with unstable geometry across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.33, \"category\": \"Shape/Form/Geometry\", \"box\": [0.0, 0.62, 0.22, 0.38], \"evidence\": \"Pumpkins and foliage in the left foreground morph in shape and color across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0081676,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 13.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Modal",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 1228,
+  "completion_tokens": 1660,
+  "total_tokens": 2888
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 384,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1576,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g052",
+ "run": 1
+}

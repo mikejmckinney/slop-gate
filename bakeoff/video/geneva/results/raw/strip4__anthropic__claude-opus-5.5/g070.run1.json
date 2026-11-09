@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 0.75, \"category\": \"Physics\", \"box\": [0.45, 0.0, 0.55, 1.0], \"evidence\": \"The large blue-white burst on the right does not expand and fade from a fixed center; within 0.25 s steps its streaks turn gold, shift position and reshape, unlike a single firework shell.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.25, \"end_s\": 1.25, \"category\": \"Motion\", \"box\": [0.25, 0.1, 0.5, 0.75], \"evidence\": \"New bursts appear already partly formed and overlapping the older bursts, and their centers slide across the frame between consecutive frames instead of staying fixed where they burst.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.020352,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 622,
+  "total_tokens": 2600
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 340,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g070",
+ "run": 1,
+ "frames": 6
+}

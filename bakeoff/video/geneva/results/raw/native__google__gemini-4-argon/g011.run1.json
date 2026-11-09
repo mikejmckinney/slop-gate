@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Physics\", \"box\": [0.27, 0.17, 0.28, 0.5], \"evidence\": \"The gorilla figure floats in mid-air against the flat vertical wall of the building without any ledge or physical support.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 0.9, \"category\": \"Visual Artifacts\", \"box\": [0.39, 0.58, 0.14, 0.42], \"evidence\": \"A ghostly, semi-transparent grey column artifact extends downward from the gorilla's body over the building facade before fading away.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.4, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.27, 0.17, 0.26, 0.49], \"evidence\": \"The gorilla's head, limbs, and torso morph and merge together in an anatomically incoherent manner as it turns.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00396,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 293,
+  "total_tokens": 808
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 130
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g011",
+ "run": 1
+}

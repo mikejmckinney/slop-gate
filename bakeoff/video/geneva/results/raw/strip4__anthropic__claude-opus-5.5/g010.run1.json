@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.25, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.5, 0.15, 0.16, 0.32], \"evidence\": \"Across consecutive frames, the woman's raised hands lose distinct fingers and merge into a blurry, malformed blob that changes shape from frame to frame.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.25, \"end_s\": 1.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.34, 0.4, 0.14, 0.3], \"evidence\": \"The arm held at her waist in earlier frames fades into the dress and torso, and its hand disappears instead of staying a consistent limb.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.02902,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 543,
+  "total_tokens": 5083
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 263,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g010",
+ "run": 1,
+ "frames": 12
+}

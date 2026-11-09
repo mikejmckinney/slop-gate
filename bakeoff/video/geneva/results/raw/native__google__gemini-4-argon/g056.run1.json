@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.9, \"category\": \"Visual Artifacts\", \"box\": [0.55, 0.25, 0.22, 0.14], \"evidence\": \"A cigarette spontaneously materializes inside the cloud of smoke in front of the soldier's mouth while he is already holding a cigarette in his hand.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.002562,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 107,
+  "total_tokens": 853
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g056",
+ "run": 1
+}

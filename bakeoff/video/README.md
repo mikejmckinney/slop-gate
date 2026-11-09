@@ -7,6 +7,8 @@ the same 30 labeled clips, two runs each, temperature 0, with the same rubric
 or `listen.py`: Mike picks the models from these results, and a later PR builds
 the job.
 
+**Round two, on real generated footage, is in [`geneva/`](geneva/README.md).** The numbers below are from drawn clips.
+
 ## The approaches
 
 - **Native video (six models).** The MP4 as a `video_url` part: `google/gemini-4-argon`, `google/gemini-3.8-flash`,

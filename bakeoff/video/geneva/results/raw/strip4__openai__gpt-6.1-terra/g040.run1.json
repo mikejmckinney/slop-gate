@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":2.75,\"category\":\"Shape/Form/Geometry\",\"box\":[0.548,0.641,0.05,0.194],\"evidence\":\"A second hoof-like shape floats directly below the cow's right front leg, separated from the hoof above it.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00613175,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3926,
+  "completion_tokens": 245,
+  "total_tokens": 4171
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3923,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 162,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g040",
+ "run": 1,
+ "frames": 12
+}

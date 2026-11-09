@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0.0,\"end_s\":1.25,\"category\":\"Shape/Form/Geometry\",\"box\":[0.81,0.43,0.19,0.3],\"evidence\":\"The whale's tail branches into three prominent lobes rather than a two-lobed fluke.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00381925,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 1580,
+  "completion_tokens": 369,
+  "total_tokens": 1949
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1577,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 287,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g078",
+ "run": 1,
+ "frames": 6
+}

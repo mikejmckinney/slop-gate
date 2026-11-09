@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.34, 0.6, 0.14, 0.12], \"evidence\": \"The distant pedestrians on the sidewalk and street are rendered as smeared, limbless dark blobs with no clear body structure in every frame.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.3, 0.05, 0.5, 0.55], \"evidence\": \"The canopies of the central orange and red trees lose their leaf detail and turn into a soft, smeary painted texture that keeps shifting from frame to frame.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.25, \"end_s\": 3.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.0, 0.3, 0.27, 0.48], \"evidence\": \"On the left house, the windows, door and wall details change shape between frames, and the facade layout warps so that window panes merge and distort.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0315,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 667,
+  "total_tokens": 5207
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 260,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g071",
+ "run": 1,
+ "frames": 12
+}

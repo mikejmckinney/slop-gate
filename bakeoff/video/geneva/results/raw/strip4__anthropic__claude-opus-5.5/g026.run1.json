@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 0.25, \"category\": \"Visual Artifacts\", \"box\": [0.75, 0.25, 0.25, 0.5], \"evidence\": \"Dark, smeared blotches float in the sky on the right side over two consecutive frames and are gone by 0.5 s; they do not match the surrounding cloud texture.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.035076,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 405,
+  "total_tokens": 7149
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 256,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g026",
+ "run": 1,
+ "frames": 20
+}

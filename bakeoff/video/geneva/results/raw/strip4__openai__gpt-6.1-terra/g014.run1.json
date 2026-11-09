@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":1.75,\"end_s\":2.25,\"category\":\"Visual Artifacts\",\"box\":[0.152,0.383,0.122,0.309],\"evidence\":\"The left child's bright pink coat turns lavender across consecutive frames without being obscured.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"},{\"start_s\":2.25,\"end_s\":2.5,\"category\":\"Shape/Form/Geometry\",\"box\":[0.172,0.562,0.069,0.207],\"evidence\":\"A pale lower leg and foot remain near the ground and become detached from the jumping child's body.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00753675,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3926,
+  "completion_tokens": 526,
+  "total_tokens": 4452
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3923,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 378,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g014",
+ "run": 1,
+ "frames": 12
+}

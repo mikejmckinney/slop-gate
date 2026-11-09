@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Physics\", \"box\": [0.0, 0.0, 0.7, 1.0], \"evidence\": \"Across consecutive frames the water streaks and droplets on the left and center change shape and position incoherently: the long horizontal streak near the center at 0.0\u20130.25 s becomes scattered droplets at the bottom by 0.5 s, and new diagonal streaks appear without continuity at 0.75\u20131.25 s, unlike real flowing liquid.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Motion\", \"box\": [0.45, 0.0, 0.55, 1.0], \"evidence\": \"The rippled pattern on the right side and the droplets at the right edge stay nearly identical in every frame while the streaks to their left change drastically, so the water in the scene does not move consistently.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.018032,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.3,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 506,
+  "total_tokens": 2484
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 163,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g045",
+ "run": 1,
+ "frames": 6
+}

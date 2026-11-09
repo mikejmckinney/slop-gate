@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.035, 0.169, 0.258, 0.65], \"evidence\": \"The figure's right arm lacks a forearm and hand, fusing directly into a golden wing at the elbow.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0026,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 157,
+  "total_tokens": 672
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 130
+  },
+  "completion": {
+   "reasoning_tokens": 51,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g076",
+ "run": 1
+}

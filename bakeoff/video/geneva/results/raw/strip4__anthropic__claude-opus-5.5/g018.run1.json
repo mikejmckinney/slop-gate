@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.2, 0.38, 0.34, 0.12], \"evidence\": \"The painted sign reads as malformed pseudo-text ('DARRTTUT') with doubled, merged letterforms, and individual glyphs change shape from frame to frame.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.0, 0.76, 0.52, 0.21], \"evidence\": \"The carved lettering on the lower left board is illegible garbled script, with the 'WORP' fragment and squiggle shapes deforming between frames.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 3.0, \"category\": \"Visual Artifacts\", \"box\": [0.6, 0.79, 0.4, 0.17], \"evidence\": \"The carved script on the lower right board is nonsensical, malformed lettering whose strokes morph across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.03026,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 605,
+  "total_tokens": 5145
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 199,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g018",
+ "run": 1,
+ "frames": 12
+}

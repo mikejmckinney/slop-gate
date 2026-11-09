@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 3.5, \"category\": \"Shape/Form/Geometry\", \"box\": [0.51, 0.35, 0.08, 0.25], \"evidence\": \"A backpack appears and disappears on the soldier's back as they walk.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.0, \"end_s\": 3.0, \"category\": \"Motion\", \"box\": [0.49, 0.56, 0.23, 0.35], \"evidence\": \"The soldier's legs swap positions unnaturally between steps without proper intermediate motion.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003312,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.7,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 746,
+  "completion_tokens": 182,
+  "total_tokens": 928
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 355
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g026",
+ "run": 1
+}

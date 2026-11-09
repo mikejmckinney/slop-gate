@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.25, \"end_s\": 2.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.62, 0.15, 0.2, 0.75], \"evidence\": \"The right dancer's crocodile head changes shape over consecutive frames: it shrinks, darkens and loses its snout definition, and its orientation flips between frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.36, 0.08, 0.13, 0.88], \"evidence\": \"The tall yellow-black snake-like figure has no clear head or body structure and morphs from a vertical pillar into a curved serpent with an inconsistent top.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 1.5, \"end_s\": 2.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.43, 0.06, 0.2, 0.3], \"evidence\": \"The middle dancer's head melts into a dark, indistinct blob with the snout merging into the raised arm before it re-forms.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.025436,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 7.9,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4264,
+  "completion_tokens": 419,
+  "total_tokens": 4683
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g048",
+ "run": 1,
+ "frames": 12
+}

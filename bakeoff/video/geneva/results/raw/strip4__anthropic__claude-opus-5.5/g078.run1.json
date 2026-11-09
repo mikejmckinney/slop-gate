@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.82, 0.43, 0.17, 0.24], \"evidence\": \"The whale's tail end shows a duplicated, fused fluke structure: one upright V-shaped fluke stacks on top of a second horizontal fluke and they merge without clear anatomy.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.66, 0.24, 0.25, 0.22], \"evidence\": \"The large central bird has a fish-like pale body and a forked fish tail attached to its wings, forming an inconsistent bird/fish hybrid in every frame.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.5, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.38, 0.58, 0.15, 0.18], \"evidence\": \"The whale's pectoral fin area changes from a white splash into a flat light-blue patch with an ill-defined shape that does not read as a fin.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Motion\", \"box\": [0.4, 0.0, 0.3, 0.25], \"evidence\": \"Small birds in the upper sky change shape, count and position inconsistently between frames, appearing and dissolving rather than flying.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.027332,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 971,
+  "total_tokens": 2949
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 421,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g078",
+ "run": 1,
+ "frames": 6
+}

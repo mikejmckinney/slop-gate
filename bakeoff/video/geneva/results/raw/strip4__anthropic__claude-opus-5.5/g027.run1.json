@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 1.75, \"end_s\": 2.75, \"category\": \"Physics\", \"box\": [0.0, 0.6, 1.0, 0.4], \"evidence\": \"Tomatoes fall onto the pile, for example the central one between 1.75 s and 2.0 s, yet the pile stays completely static with no displacement or bounce, and the landed fruit simply sits on top.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 2.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.08, 0.03, 0.1, 0.47], \"evidence\": \"Two green tomatoes on the left stay fused together as a stacked pair, keeping the same contact and spacing while they fall across four frames.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.07, 0.0, 0.15, 0.6], \"evidence\": \"A falling stream of brown debris particles on the upper left thins out and vanishes over these frames without reaching the pile.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.04074,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 4540,
+  "completion_tokens": 1129,
+  "total_tokens": 5669
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 718,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g027",
+ "run": 1,
+ "frames": 12
+}

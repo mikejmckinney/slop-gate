@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.22, 0.39, 0.09, 0.32], \"evidence\": \"The person standing to the left of the fire morphs in body shape and clothing, with limbs distorting unnaturally.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.13, 0.36, 0.11, 0.45], \"evidence\": \"The person in the left foreground has warping limbs and hands that blur and disappear during movement.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.51, 0.41, 0.1, 0.25], \"evidence\": \"The two background figures to the right of the fire have malformed, indistinct limbs and morphing body geometry.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00393,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 11.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 290,
+  "total_tokens": 805
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 130
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g016",
+ "run": 1
+}

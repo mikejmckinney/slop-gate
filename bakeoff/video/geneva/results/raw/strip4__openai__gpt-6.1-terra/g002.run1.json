@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":1.75,\"end_s\":2.75,\"category\":\"Shape/Form/Geometry\",\"box\":[0.045,0.67,0.228,0.106],\"evidence\":\"The foreground dolphin's snout has an extra rounded, beak-like lobe layered over its mouth.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.00664175,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 3926,
+  "completion_tokens": 347,
+  "total_tokens": 4273
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3923,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 263,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g002",
+ "run": 1,
+ "frames": 12
+}

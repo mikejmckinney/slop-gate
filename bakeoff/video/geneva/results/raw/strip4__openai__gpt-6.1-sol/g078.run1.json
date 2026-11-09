@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":1.25,\"category\":\"Shape/Form/Geometry\",\"box\":[0.8,0.43,0.2,0.29],\"evidence\":\"The whale's tail has an extra forked pair of lobes projecting upward above the broad right-hand fluke, creating a malformed, multiply branched tail.\",\"confidence\":\"medium\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.0077285,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 14.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-sol",
+ "usage": {
+  "prompt_tokens": 1580,
+  "completion_tokens": 378,
+  "total_tokens": 1958
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1577,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 285,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-sol",
+ "model": "openai/gpt-6.1-sol",
+ "clip": "g078",
+ "run": 1,
+ "frames": 6
+}

@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.25, \"end_s\": 1.25, \"category\": \"Shape/Form/Geometry\", \"box\": [0.4, 0.0, 0.17, 0.25], \"evidence\": \"The small earpiece-and-ponytail headgear grows into a large round helmet with a headphone covering the whole head and back of the skull, and the goggles change shape.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 1.25, \"category\": \"Visual Artifacts\", \"box\": [0.0, 0.37, 0.27, 0.33], \"evidence\": \"The car parked at the left changes from a yellow taxi with a white roof into a silver-white sedan of a different shape across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.017512,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 8.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 480,
+  "total_tokens": 2458
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 200,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g036",
+ "run": 1,
+ "frames": 6
+}

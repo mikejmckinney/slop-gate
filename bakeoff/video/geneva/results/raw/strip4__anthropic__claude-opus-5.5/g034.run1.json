@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.5, \"end_s\": 2.5, \"category\": \"Other\", \"box\": [0.58, 0.85, 0.14, 0.15], \"evidence\": \"Her raised left hand holds a sparkling wand while a second wand-like stick still sits at bottom right where her other hand was, so the wand appears duplicated.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 4.5, \"end_s\": 4.5, \"category\": \"Other\", \"box\": [0.55, 0.82, 0.16, 0.16], \"evidence\": \"A second wand or stick appears near her lower hand while she holds the main wand up toward the sparks.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 4.75, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.22, 0.12, 0.32, 0.3], \"evidence\": \"The hat's cone and brim bend into an irregular shape, and her face smears into the brim and arm so her features dissolve.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 4.75, \"end_s\": 4.75, \"category\": \"Other\", \"box\": [0.47, 0.55, 0.08, 0.1], \"evidence\": \"A lit candle appears in front of her torso, overlapping her body where no candle was before.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.047796,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.4,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 1041,
+  "total_tokens": 7785
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 556,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g034",
+ "run": 1,
+ "frames": 20
+}

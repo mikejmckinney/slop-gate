@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 1.6, \"category\": \"Shape/Form/Geometry\", \"box\": [0.43, 0.72, 0.25, 0.28], \"evidence\": \"The strap and neckline of the woman's top morph and change structure unnaturally as she turns her torso.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.00206,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 9.1,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 103,
+  "total_tokens": 618
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 130
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g004",
+ "run": 1
+}

@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 2.9, \"category\": \"Visual Artifacts\", \"box\": [0.22, 0.39, 0.32, 0.07], \"evidence\": \"The gibberish text on the middle panel constantly morphs and shifts its letter shapes throughout the clip.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 2.9, \"category\": \"Visual Artifacts\", \"box\": [0.0, 0.77, 1.0, 0.23], \"evidence\": \"The unreadable text and decorative plaques along the bottom edge warp and distort unnaturally over time.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.003014,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 10.6,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "STOP",
+ "provider": "Google",
+ "served_model": "google/gemini-4-argon",
+ "usage": {
+  "prompt_tokens": 582,
+  "completion_tokens": 185,
+  "total_tokens": 767
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 195
+  },
+  "completion": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:google/gemini-4-argon",
+ "model": "google/gemini-4-argon",
+ "clip": "g018",
+ "run": 1
+}

@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\":[{\"start_s\":0,\"end_s\":4.75,\"category\":\"Visual Artifacts\",\"box\":[0.039,0.164,0.2,0.331],\"evidence\":\"The lettering on the large left poster is malformed and reads as inconsistent, nonsensical text.\",\"confidence\":\"high\",\"basis\":\"frame inspection\"}]}",
+ "cost": 0.01015675,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 15.5,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "completed",
+ "provider": "OpenAI",
+ "served_model": "openai/gpt-6.1-terra",
+ "usage": {
+  "prompt_tokens": 6286,
+  "completion_tokens": 460,
+  "total_tokens": 6746
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6283,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 381,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:openai/gpt-6.1-terra",
+ "model": "openai/gpt-6.1-terra",
+ "clip": "g065",
+ "run": 1,
+ "frames": 20
+}

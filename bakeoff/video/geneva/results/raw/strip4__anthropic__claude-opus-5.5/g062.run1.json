@@ -1,0 +1,36 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 2.0, \"end_s\": 2.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.24, 0.52, 0.16, 0.25], \"evidence\": \"The two raised hands blur into each other, and the rear hand looks undersized and poorly formed, with indistinct fingers across consecutive frames.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}, {\"start_s\": 3.0, \"end_s\": 4.75, \"category\": \"Shape/Form/Geometry\", \"box\": [0.38, 0.3, 0.14, 0.15], \"evidence\": \"As the camera moves behind the person, the glowing headset band does not wrap around the head consistently: it shows as a flat bright strip that ends abruptly partway across the back of the head.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 4.75, \"category\": \"Visual Artifacts\", \"box\": [0.8, 0.15, 0.2, 0.75], \"evidence\": \"The numeric readouts on the side walls are garbled mixes of letters and digits (e.g. '5.9C2', '8CH') that change form from frame to frame.\", \"confidence\": \"low\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.042596,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 12.8,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "end_turn",
+ "provider": "Claude Platform on AWS",
+ "served_model": "anthropic/claude-opus-5.5",
+ "usage": {
+  "prompt_tokens": 6744,
+  "completion_tokens": 781,
+  "total_tokens": 7525
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 355,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "strip4:anthropic/claude-opus-5.5",
+ "model": "anthropic/claude-opus-5.5",
+ "clip": "g062",
+ "run": 1,
+ "frames": 20
+}

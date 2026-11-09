@@ -1,0 +1,35 @@
+{
+ "text": "{\"findings\": [{\"start_s\": 0.0, \"end_s\": 5.0, \"category\": \"Visual Artifacts\", \"box\": [0.3, 0.05, 0.4, 0.45], \"evidence\": \"Smoke above fire forms large rounded cotton-like blobs with smooth banded edges unlike natural smoke.\", \"confidence\": \"high\", \"basis\": \"frame inspection\"}, {\"start_s\": 0.0, \"end_s\": 5.0, \"category\": \"Shape/Form/Geometry\", \"box\": [0.76, 0.33, 0.13, 0.52], \"evidence\": \"Rightmost dancer's legs appear fused into a single dark shape with missing foot and joint definition.\", \"confidence\": \"medium\", \"basis\": \"frame inspection\"}]}",
+ "cost": 0.0088301,
+ "error": null,
+ "maybe_billed": false,
+ "retained_usd": 0.0,
+ "seconds": 27.2,
+ "attempts": 1,
+ "finish_reason": "stop",
+ "native_finish": "stop",
+ "provider": "Together",
+ "served_model": "meta/muse-spark-open",
+ "usage": {
+  "prompt_tokens": 720,
+  "completion_tokens": 1986,
+  "total_tokens": 2706
+ },
+ "usage_detail": {
+  "prompt": {
+   "cached_tokens": 464,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "completion": {
+   "reasoning_tokens": 1801,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "approach": "native:meta/muse-spark-open",
+ "model": "meta/muse-spark-open",
+ "clip": "g016",
+ "run": 1
+}
