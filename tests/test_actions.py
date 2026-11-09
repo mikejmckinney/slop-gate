@@ -6,6 +6,9 @@ from pathlib import Path
 
 import yaml
 
+from slopgate.media import AUDIO_EXTS
+from slopgate.video import VIDEO_EXTS
+
 ROOT = Path(__file__).resolve().parent.parent
 ACTIONS = {
     "action.yml": ROOT / "action.yml",
@@ -99,6 +102,19 @@ class ActionsTest(unittest.TestCase):
             for step in steps(load(path)):
                 cond = str(step.get("if", ""))
                 self.assertIsNone(BARE_INPUT_IN_IF.search(cond), f"{name}: {cond}")
+
+
+class FfmpegInstallConditionTest(unittest.TestCase):
+    """Each grep runs before Python's packages exist, so it stays literal and is checked here."""
+
+    GREP = re.compile(r"grep -qiE '\\\.\(([a-z0-9|]+)\)\$'")
+
+    def test_grep_lists_exactly_the_extensions_that_need_ffmpeg(self):
+        for name in ("action.yml", "audit/action.yml"):
+            text = "\n".join(s["run"] for s in steps(load(ACTIONS[name])) if "run" in s)
+            found = self.GREP.findall(text)
+            self.assertEqual(len(found), 1, f"{name}: expected one extension grep")
+            self.assertEqual({f".{e}" for e in found[0].split("|")}, AUDIO_EXTS | VIDEO_EXTS, name)
 
 
 class CallersTest(unittest.TestCase):

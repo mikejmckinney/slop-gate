@@ -1,4 +1,4 @@
-"""Deterministic image and audio checks driven by the manifest in .slop-gate.yml.
+"""Deterministic image, audio and video checks driven by the manifest in .slop-gate.yml.
 
 Universal checks run on every changed media file. Checks that need intent
 (exact size, palette, loop) run only when a manifest rule declares it.
@@ -19,6 +19,7 @@ from PIL import Image, UnidentifiedImageError
 from . import audio_defects as ad
 from .findings import Finding
 from .midi import MIDI_EXTS, check_midi
+from .video import VIDEO_EXTS, VIDEO_KEYS, check_video, validate_rule
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
 AUDIO_EXTS = {".wav", ".mp3", ".ogg", ".oga", ".opus", ".flac", ".m4a", ".aac"}
@@ -62,14 +63,19 @@ def rules_for(path: str, media_cfg: dict) -> dict:
     merged = {k: v for k, v in DEFAULTS.items()}
     merged.update({k: v for k, v in media_cfg.items() if k != "rules"})
     p = PurePosixPath(path)
+    # Which keys a rule set for this file, as opposed to defaults. Video checks its
+    # audio track only on request, and defaults alone can't ask.
+    merged["_declared"] = set()
     for rule in media_cfg.get("rules") or []:
-        unknown = set(rule) - IMAGE_KEYS - AUDIO_KEYS - COMMON_KEYS
+        unknown = set(rule) - IMAGE_KEYS - AUDIO_KEYS - VIDEO_KEYS - COMMON_KEYS
         if unknown:
             raise ValueError(f"media rule {rule.get('glob')!r}: unknown keys {sorted(unknown)}")
         if rule.get("alpha", "any") not in ("required", "forbidden", "any"):
             raise ValueError(f"media rule {rule['glob']!r}: alpha must be required, forbidden, or any")
+        validate_rule(rule)
         if p.full_match(rule["glob"]):
             merged.update({k: v for k, v in rule.items() if k != "glob"})
+            merged["_declared"] |= set(rule) - {"glob"}
     return merged
 
 
@@ -441,7 +447,11 @@ def check(repo: Path, changed, excluded, media_cfg: dict) -> tuple[list[Finding]
     checked = 0
     for rel in sorted(changed):
         ext = PurePosixPath(rel).suffix.lower()
-        if ext not in IMAGE_EXTS | AUDIO_EXTS | MIDI_EXTS or excluded(rel) or not (repo / rel).is_file():
+        if (
+            ext not in IMAGE_EXTS | AUDIO_EXTS | MIDI_EXTS | VIDEO_EXTS
+            or excluded(rel)
+            or not (repo / rel).is_file()
+        ):
             continue
         r = rules_for(rel, media_cfg)
         if r.get("skip"):
@@ -465,9 +475,11 @@ def check(repo: Path, changed, excluded, media_cfg: dict) -> tuple[list[Finding]
         elif ext in MIDI_EXTS:
             findings += check_midi(repo / rel, rel)
         else:
-            if shutil.which("ffmpeg") is None:
-                raise RuntimeError("ffmpeg is required for audio checks")
-            findings += check_audio(repo / rel, rel, r)
+            for tool in ("ffmpeg", "ffprobe"):
+                if shutil.which(tool) is None:
+                    raise RuntimeError(f"{tool} is required for audio and video checks")
+            checker = check_video if ext in VIDEO_EXTS else check_audio
+            findings += checker(repo / rel, rel, r)
     return findings, checked
 
 

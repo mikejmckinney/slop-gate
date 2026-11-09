@@ -47,8 +47,9 @@ runs:
         VALE_VERSION: "3.25.1"
         BIOME_VERSION: "2.6.3"
       run: |
-        # ffmpeg is only needed when the repo tracks audio.
-        if git ls-files | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac)$'; then
+        # ffmpeg is only needed when the repo tracks audio or video.
+        # tests/test_actions.py keeps this list equal to AUDIO_EXTS and VIDEO_EXTS.
+        if git ls-files | grep -qiE '\.(wav|mp3|ogg|oga|opus|flac|m4a|aac|mp4|webm|mov|mkv|m4v)$'; then
           export NEED_FFMPEG=1
         else
           export NEED_FFMPEG=0

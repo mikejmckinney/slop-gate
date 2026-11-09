@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install the pinned tools slop-gate runs. Versions come from the workflow env
 # (VALE_VERSION, BIOME_VERSION) so one place controls what blocks a PR.
-# Set NEED_FFMPEG=0 to skip ffmpeg when no audio changed.
+# Set NEED_FFMPEG=0 to skip ffmpeg when no audio or video changed.
 set -euo pipefail
 
 here="$(cd "$(dirname "$0")/.." && pwd)"

@@ -13,7 +13,7 @@ from pathlib import Path, PurePosixPath
 import numpy as np
 from PIL import Image
 
-from . import media
+from . import media, video
 from .gitdiff import all_files
 
 
@@ -44,12 +44,27 @@ def _audio_facts(path: Path) -> dict | None:
     return {**info, "lufs": lufs}
 
 
+def _video_facts(path: Path) -> dict | None:
+    try:
+        return video.probe(path)
+    except RuntimeError:  # an unreadable file is reported by the check, not the draft
+        return None
+
+
 def draft(repo: Path) -> str:
     groups: dict[tuple[str, str, str], list[str]] = defaultdict(list)
     for rel in sorted(all_files(repo)):
         p = PurePosixPath(rel)
         ext = p.suffix.lower()
-        kind = "image" if ext in media.IMAGE_EXTS else "audio" if ext in media.AUDIO_EXTS else None
+        kind = (
+            "image"
+            if ext in media.IMAGE_EXTS
+            else "audio"
+            if ext in media.AUDIO_EXTS
+            else "video"
+            if ext in video.VIDEO_EXTS
+            else None
+        )
         if kind:
             groups[(str(p.parent), kind, ext)].append(rel)
 
@@ -77,6 +92,25 @@ def draft(repo: Path) -> str:
             if all(f["transparent"] for f in facts):
                 lines.append("      alpha: required")
             lines.append("      # tileable: true  # for textures that repeat")
+        elif kind == "video":
+            facts = [f for f in (_video_facts(repo / r) for r in files) if f]
+            if not facts:
+                continue
+            sizes = {f"{f['width']}x{f['height']}" for f in facts}
+            if len(sizes) == 1 and None not in (facts[0]["width"], facts[0]["height"]):
+                lines.append(f'      size: "{sizes.pop()}"')
+            rates = {round(f["avg_fps"], 3) for f in facts if f["avg_fps"]}
+            if len(rates) == 1 and all(f["avg_fps"] for f in facts):
+                lines.append(f"      fps: {rates.pop():g}")
+            codecs = {f["codec"] for f in facts}
+            if len(codecs) == 1 and None not in codecs:
+                lines.append(f"      codec: {codecs.pop()}")
+            lines.append("      # max_duration_s: 60  # the longest this may run")
+            lines.append(
+                "      # max_freeze_s: 5  # warns on a picture held longer; deliberate holds trip it"
+            )
+            lines.append("      # max_black_s: 1  # warns on black longer than this; dark footage trips it")
+            lines.append("      # loop: true  # set for video that repeats")
         else:
             facts = [f for f in (_audio_facts(repo / r) for r in files) if f]
             if not facts:
