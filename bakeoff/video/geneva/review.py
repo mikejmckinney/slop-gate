@@ -1,7 +1,7 @@
 """Send every GeneVA clip to every approach once and keep each raw reply.
 
     set -a; . openrouter.env; set +a
-    python -I bakeoff/video/geneva/review.py CLIP_DIR native:google/gemini-4-argon strip4:openai/gpt-6.1-terra ...
+    python -I bakeoff/video/geneva/review.py CLIP_DIR native:google/gemini-4-argon strip4:<model> ...
 
 An approach is native:<model> (the MP4 as a video_url part) or strip4:<model> (frames at
 4 per second, long side at most 640 px, each preceded by its timestamp). Replies land in
@@ -62,8 +62,9 @@ def frames_for(clip: Path, cache: Path) -> list[Path]:
     out = cache / clip.stem
     if not (out / ".done").exists():
         out.mkdir(parents=True, exist_ok=True)
-        side = f"min({LONG_SIDE}\\,iw)", f"min({LONG_SIDE}\\,ih)"
-        vf = f"fps={STRIP_FPS},scale=w='if(gte(iw\\,ih)\\,{side[0]}\\,-2)':h='if(gte(iw\\,ih)\\,-2\\,{side[1]})'"
+        wide, tall = f"min({LONG_SIDE}\\,iw)", f"min({LONG_SIDE}\\,ih)"
+        scale = f"scale=w='if(gte(iw\\,ih)\\,{wide}\\,-2)':h='if(gte(iw\\,ih)\\,-2\\,{tall})'"
+        vf = f"fps={STRIP_FPS},{scale}"
         cmd = ["ffmpeg", "-v", "error", "-y", *SAFE_INPUT, "-i", str(clip), "-vf", vf]
         cmd += ["-q:v", "3", "-start_number", "0", str(out / "%05d.jpg")]
         subprocess.run(cmd, check=True, capture_output=True)

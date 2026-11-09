@@ -106,7 +106,8 @@ def load_labels(path: Path) -> tuple[dict[str, dict], dict[str, int]]:
         if annotation and not found:
             counts["semantic_only_videos"] += 1
             continue
-        videos[vid] = {"generator": vid.split("/")[0], "artifacts": found, "rating": str(row.get("videoRating"))}
+        rating = str(row.get("videoRating"))
+        videos[vid] = {"generator": vid.split("/")[0], "artifacts": found, "rating": rating}
     return videos, counts
 
 
@@ -210,7 +211,8 @@ def main() -> None:
         return
     selection = build(videos, counts, clips)
     SELECTION.write_text(json.dumps(selection, indent=1) + "\n")
-    print(json.dumps(counts), len(selection["clips"]), "clips;", len(selection["skipped_candidates"]), "skipped")
+    skipped = len(selection["skipped_candidates"])
+    print(json.dumps(counts), len(selection["clips"]), "clips;", skipped, "skipped")
 
 
 if __name__ == "__main__":
