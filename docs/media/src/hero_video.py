@@ -14,6 +14,7 @@ scene's speech-before.ogg and speech-after.ogg, each laid on at its offset.
 """
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -24,6 +25,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 HERE = Path(__file__).resolve().parent
 MEDIA = HERE.parent
+REPORTS = HERE / "before-after/reports"
 W, H, FPS = 1280, 720, 30
 HEAD = 72  # height of the title strip above each scene
 BG, PANEL, LINE = (13, 17, 23), (22, 27, 34), (48, 54, 61)
@@ -128,6 +130,112 @@ def blend(a: Image.Image, b: Image.Image, seconds: float = 0.4):
         yield Image.blend(a, b, k / n), 1 / FPS
 
 
+# -------------------------------------------------------------- report text
+# The numbers and findings on screen come from the reports slop-gate wrote, so a
+# new report can't leave the video quoting an old one. A missing value stops the
+# build instead of drawing a blank.
+
+
+def report_text(name: str) -> str:
+    return (REPORTS / f"{name}.md").read_text()
+
+
+def report_rows(name: str) -> list[tuple[str, str, str, str]]:
+    """(level, file, rule, message) for each finding in a report's table."""
+    row = re.compile(r"^\| (\S+) \| `([^`]+)`(?::\d+)? \| `([^`]+)` \| (.*) \|$", re.M)
+    rows = row.findall(report_text(name))
+    if not rows:
+        sys.exit(f"{name}: no findings table")
+    return rows
+
+
+def report_value(name: str, pattern: str, text: str) -> tuple[str, ...]:
+    found = re.search(pattern, text)
+    if not found:
+        sys.exit(f"{name}: nothing matches {pattern!r}")
+    return found.groups()
+
+
+def rule_message(name: str, rule: str, path: str = "") -> str:
+    for _, file, found, message in report_rows(name):
+        if found == rule and path in file:
+            return message
+    sys.exit(f"{name}: no {rule} finding for {path!r}")
+
+
+def blocking_count(name: str) -> int:
+    return int(report_value(name, r"(\d+) blocking, \d+ advisory", report_text(name))[0])
+
+
+def passes_badge(name: str) -> str:
+    counts = report_value(name, r"(\d+) blocking, (\d+) advisory", report_text(name))
+    if counts != ("0", "0"):
+        sys.exit(f"{name}: expected a clean report, found {counts}")
+    return "passes, 0 findings"
+
+
+def minus(number: str) -> str:
+    return number.replace("-", "−")
+
+
+def writing_findings() -> list[tuple[str, str, str, str]]:
+    """(level, rule, sentence, flagged phrase) for the sample shown on screen."""
+    found = []
+    for icon, file, rule, message in report_rows("writing_before"):
+        if "gemini-2.5-flash" in file:
+            sentence = message.split(". ")[0] + "."
+            phrase = report_value("writing_before", r"'(.*)'", sentence)[0]
+            found.append(
+                ("blocks" if icon == "🛑" else "warns", rule.removeprefix("SlopGate."), sentence, phrase)
+            )
+    return found
+
+
+def sprite_facts(model: str) -> str:
+    """The caption under one model's sprite."""
+    name, path = "pixel_before", f"knight_{model}.png"
+    size = report_value(name, r"Image is (\d+×\d+)", rule_message(name, "size", path))[0]
+    rules = {rule for _, file, rule, _ in report_rows(name) if path in file}
+    if "format-mismatch" in rules:
+        real, ext = report_value(
+            name, r"File is (\w+) data with a `(\.\w+)`", rule_message(name, "format-mismatch", path)
+        )
+        return f"{size} · {real} named {ext}"
+    colors = int(report_value(name, r"(\d+) distinct colors", rule_message(name, "palette", path))[0])
+    return f"{size} · {colors:,} colors · {'soft alpha' if 'soft-alpha' in rules else 'no alpha'}"
+
+
+def music_findings() -> list[tuple[str, str]]:
+    """(rule, sentence) for the "before" music report, worded to fit one row."""
+    name = "music_before"
+    peak, limit = report_value(
+        name, r"True peak ([+-][\d.]+) dBTP exceeds ([+-][\d.]+) dBTP", rule_message(name, "true-peak")
+    )
+    lufs, target, tolerance = report_value(
+        name,
+        r"loudness (-?[\d.]+) LUFS; the manifest targets (-?[\d.]+) ±(\d+(?:\.\d+)?)",
+        rule_message(name, "loudness"),
+    )
+    gap = report_value(name, r"and (\d+) ms at the end", rule_message(name, "loop-gap"))[0]
+    return [
+        ("true-peak", f"True peak {peak} dBTP exceeds {minus(limit)} dBTP."),
+        (
+            "loudness",
+            f"{minus(lufs)} LUFS; the manifest targets {minus(f'{float(target):g}')} ±{float(tolerance):g}.",
+        ),
+        ("loop-gap", f"{gap} ms of silence at the end plays as a gap on every wrap."),
+    ]
+
+
+def speech_diffs() -> list[tuple[str, str, str]]:
+    """(where, expected, heard) from the transcript comparison."""
+    name = "speech_before"
+    diffs = re.findall(r"^- (after “.*?”): expected “(.*?)”, heard “(.*?)”$", report_text(name), re.M)
+    if not diffs:
+        sys.exit(f"{name}: no transcript differences")
+    return diffs
+
+
 # --------------------------------------------------------------------- scenes
 
 
@@ -174,11 +282,9 @@ def writing_scene():
     after = " ".join(
         ln for ln in src.joinpath("writing-after.md").read_text().splitlines() if not ln.startswith("#")
     )
-    flagged = {
-        "This isn't just tedious; it's": RED,
-        "meticulously": AMBER,
-        "streamlines": AMBER,
-    }
+    findings = writing_findings()
+    level_color = {"blocks": RED, "warns": AMBER}
+    flagged = {phrase: level_color[level] for level, _, _, phrase in findings}
     body, rule = font("Regular", 21), font("Medium", 19)
 
     def text_block(d, paras, top, marks):
@@ -200,11 +306,7 @@ def writing_scene():
     a, d = canvas("Writing: a model's README section")
     d.text((60, HEAD + 22), "gemini-2.5-flash wrote:", font=font("Medium", 20), fill=MUTED)
     y = text_block(d, before, HEAD + 58, flagged)
-    rows = [
-        (RED, "blocks", "ContrastFormula", "'This isn't just tedious; it's' is a contrast formula."),
-        (AMBER, "warns", "AIVocabulary", "'meticulously' is inflated vocabulary."),
-        (AMBER, "warns", "CorporateVerbs", "'streamlines' names no concrete action."),
-    ]
+    rows = [(level_color[level], level, name, why) for level, name, why, _ in findings]
     y += 4
     for color, level, name, why in rows:
         d.rounded_rectangle((60, y, W - 60, y + 38), radius=6, fill=PANEL)
@@ -216,20 +318,21 @@ def writing_scene():
     b, d = canvas("Writing: the rewrite")
     d.text((60, HEAD + 22), "After following the fix text:", font=font("Medium", 20), fill=MUTED)
     y = text_block(d, [after], HEAD + 58, {})
-    badge(d, (60, y + 10), "passes, 0 findings", GREEN)
+    badge(d, (60, y + 10), passes_badge("writing_after"), GREEN)
     yield from still(a, 5.5)
     yield from blend(a, b)
     yield from still(b, 3.5)
 
 
 def sprite_scene():
-    sprites = [
-        ("gpt-image-2.5-sunburst", "1024×1024 · 52,461 colors · soft alpha"),
-        ("gemini-3-pro-image", "1024×1024 · 65,818 colors · no alpha"),
-        ("gemini-3.1-flash-image", "1024×1024 · 65,759 colors · no alpha"),
-        ("mai-image-2.5-pro", "1024×1024 · 77,346 colors · no alpha"),
-        ("seedream-5-0-pro", "2048×2048 · JPEG named .png"),
+    models = [
+        "gpt-image-2.5-sunburst",
+        "gemini-3-pro-image",
+        "gemini-3.1-flash-image",
+        "mai-image-2.5-pro",
+        "seedream-5-0-pro",
     ]
+    sprites = [(model, sprite_facts(model)) for model in models]
     a, d = canvas("Pixel art: five models, one 32×32 sprite prompt")
     cell = (W - 80) // 5
     for k, (name, why) in enumerate(sprites):
@@ -248,7 +351,7 @@ def sprite_scene():
         fill=MUTED,
         anchor="mm",
     )
-    badge_center(d, HEAD + 490, "16 blocking findings", RED)
+    badge_center(d, HEAD + 490, f"{blocking_count('pixel_before')} blocking findings", RED)
 
     b, d = canvas("Pixel art: after the fix text")
     pic = Image.open(MEDIA / "before-after/sprite-after.webp").convert("RGBA")
@@ -262,7 +365,7 @@ def sprite_scene():
         fill=FG,
         anchor="mm",
     )
-    badge_center(d, HEAD + 440, "passes, 0 findings", GREEN)
+    badge_center(d, HEAD + 440, passes_badge("pixel_after"), GREEN)
     yield from still(a, 4.5)
     yield from blend(a, b)
     yield from still(b, 3.0)
@@ -288,11 +391,7 @@ def probe_size(path: Path) -> tuple[int, int]:
 def music_frames():
     """Frames of loop-wrap.mp4 inside MUSIC_CUTS, with the report rows below."""
     src = MEDIA / "before-after/loop-wrap.mp4"
-    rows_before = [
-        ("true-peak", "True peak +0.9 dBTP exceeds −1.0 dBTP."),
-        ("loudness", "−10.9 LUFS; the manifest targets −16 ±2."),
-        ("loop-gap", "933 ms of silence at the end plays as a gap on every wrap."),
-    ]
+    rows_before = music_findings()
     vw, vh = probe_size(src)
     for n, (t0, t1) in enumerate(MUSIC_CUTS):
         proc = subprocess.run(
@@ -340,7 +439,7 @@ def music_frames():
                     fill=FG,
                     anchor="mm",
                 )
-                badge_center(d, y + 64, "passes, 0 findings", GREEN)
+                badge_center(d, y + 64, passes_badge("music_after"), GREEN)
             yield img, 1 / FPS
 
 
@@ -410,7 +509,7 @@ def speech_frame(after: bool) -> Image.Image:
     if after:
         badge(d, (60, y + 4), "no differences", GREEN)
         return img
-    rows = [("after “hold to charge”", "then", "(nothing)"), ("after “seven begins in”", "1250", "12050")]
+    rows = speech_diffs()
     for where, want, got in rows:
         d.rounded_rectangle((60, y, W - 60, y + 52), radius=6, fill=PANEL)
         d.text((80, y + 26), where, font=font("Medium", 21), fill=FG, anchor="lm")

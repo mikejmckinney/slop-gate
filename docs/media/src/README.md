@@ -6,7 +6,7 @@ when the report format or the UI changes.
 
 | File | Shows | Made with |
 |---|---|---|
-| `hero-tour.mp4` | The README hero: a 98-second tour of every check, with the sound of the music loop and the spoken line | `hero_video.py`, from the files in this table and the before-after inputs and reports |
+| `hero-tour.mp4` | The README hero: a 98-second tour of the prose, code, image, audio and MIDI checks, with the sound of the music loop and the spoken line | `hero_video.py`, from the files in this table and the before-after inputs and reports |
 | `hero.webp` | PR #11 blocked, fixed and green, with captions; the tour's second scene | Screen recording of headed Chromium |
 | `pr-blocked-then-fixed.webp` | The same PR, uncut | Screen recording of headed Chromium |
 | `residue.webp` | Hidden characters and generation residue, before and after | VHS terminal recording |

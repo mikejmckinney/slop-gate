@@ -31,8 +31,7 @@ _RULE_LINE = re.compile(r"\s*(?:-{3,}|\*{3,}|_{3,})\s*")
 
 TRAILER_FIX = (
     "Turn attribution off at the source (Claude Code: `attribution.commit` in "
-    ".claude/settings.json) and squash-merge with the PR title and description as the "
-    "message so commit bodies never reach the default branch."
+    ".claude/settings.json), then amend the commit to remove the line."
 )
 FOOTER_FIX = "Delete the footer. For Claude Code, set `attribution.pr` in .claude/settings.json."
 
